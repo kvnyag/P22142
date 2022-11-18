@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<settings>
+  <SQLServer>
+    <IP>192.168.9.18</IP>
+    <DBName>DB22142</DBName>
+    <UserID>sa</UserID>
+    <Password>chi</Password>
+  </SQLServer>
+</settings>
