@@ -29,30 +29,59 @@ namespace P2214201
             {
                 if(e.Node.Name == "StaffInfo")
                 {
-                    MessageBox.Show("人員基本資料");
                     this.IsMdiContainer = true;                    //設置 MainForm 為父視窗
-                    StaffInfo stInfo = new StaffInfo();
-                    stInfo.MdiParent = this;                       //設置視窗的父子關係
-                    stInfo.Parent = splitContainer1.Panel2;        //子視窗的容器是父視窗的 Panel2
-                    stInfo.TopLevel = false;                       //必須關閉否則會衝突
-                    stInfo.FormBorderStyle = FormBorderStyle.None; //視窗右上角(放大、縮小、關閉)功能拿掉
-                    splitContainer1.Panel2.Controls.Add(stInfo);   //將子視窗放入 Panel2 中
-                    stInfo.UserAccount = this.UserAccount;         //傳回人員帳號
-                    stInfo.UserRole = this.UserRole;               //傳回人員權限
-                    stInfo.Show();
-                    stInfo.BringToFront();
+                    StaffInfo sfInfo = new StaffInfo();
+                    sfInfo.MdiParent = this;                       //設置視窗的父子關係
+                    sfInfo.Parent = splitContainer1.Panel2;        //子視窗的容器是父視窗的 Panel2
+                    sfInfo.TopLevel = false;                       //必須關閉否則會衝突
+                    sfInfo.FormBorderStyle = FormBorderStyle.None; //視窗右上角(放大、縮小、關閉)功能拿掉
+                    splitContainer1.Panel2.Controls.Add(sfInfo);   //將子視窗放入 Panel2 中
+                    sfInfo.UserAccount = this.UserAccount;         //傳回人員帳號
+                    sfInfo.UserRole = this.UserRole;               //傳回人員權限
+                    sfInfo.Show();
+                    sfInfo.BringToFront();
                 }
                 else if (e.Node.Name == "FactoryInfo")
                 {
-                    MessageBox.Show("廠房基本資料");
+                    this.IsMdiContainer = true;                    //設置 MainForm 為父視窗
+                    FactoryInfo sfInfo = new FactoryInfo();
+                    sfInfo.MdiParent = this;                       //設置視窗的父子關係
+                    sfInfo.Parent = splitContainer1.Panel2;        //子視窗的容器是父視窗的 Panel2
+                    sfInfo.TopLevel = false;                       //必須關閉否則會衝突
+                    sfInfo.FormBorderStyle = FormBorderStyle.None; //視窗右上角(放大、縮小、關閉)功能拿掉
+                    splitContainer1.Panel2.Controls.Add(sfInfo);   //將子視窗放入 Panel2 中
+                    sfInfo.UserAccount = this.UserAccount;         //傳回人員帳號
+                    sfInfo.UserRole = this.UserRole;               //傳回人員權限
+                    sfInfo.Show();
+                    sfInfo.BringToFront();
                 }
                 else if (e.Node.Name == "ReportInfo")
                 {
-                    MessageBox.Show("類別基本資料");
+                    this.IsMdiContainer = true;                    //設置 MainForm 為父視窗
+                    ReportInfo sfInfo = new ReportInfo();
+                    sfInfo.MdiParent = this;                       //設置視窗的父子關係
+                    sfInfo.Parent = splitContainer1.Panel2;        //子視窗的容器是父視窗的 Panel2
+                    sfInfo.TopLevel = false;                       //必須關閉否則會衝突
+                    sfInfo.FormBorderStyle = FormBorderStyle.None; //視窗右上角(放大、縮小、關閉)功能拿掉
+                    splitContainer1.Panel2.Controls.Add(sfInfo);   //將子視窗放入 Panel2 中
+                    sfInfo.UserAccount = this.UserAccount;         //傳回人員帳號
+                    sfInfo.UserRole = this.UserRole;               //傳回人員權限
+                    sfInfo.Show();
+                    sfInfo.BringToFront();
                 }
                 else if (e.Node.Name == "MachineInfo")
                 {
-                    MessageBox.Show("單位機械編號資料");
+                    this.IsMdiContainer = true;                    //設置 MainForm 為父視窗
+                    MachineInfo sfInfo = new MachineInfo();
+                    sfInfo.MdiParent = this;                       //設置視窗的父子關係
+                    sfInfo.Parent = splitContainer1.Panel2;        //子視窗的容器是父視窗的 Panel2
+                    sfInfo.TopLevel = false;                       //必須關閉否則會衝突
+                    sfInfo.FormBorderStyle = FormBorderStyle.None; //視窗右上角(放大、縮小、關閉)功能拿掉
+                    splitContainer1.Panel2.Controls.Add(sfInfo);   //將子視窗放入 Panel2 中
+                    sfInfo.UserAccount = this.UserAccount;         //傳回人員帳號
+                    sfInfo.UserRole = this.UserRole;               //傳回人員權限
+                    sfInfo.Show();
+                    sfInfo.BringToFront();
                 }
                 else if (e.Node.Name == "CheckInfo")
                 {
@@ -109,7 +138,6 @@ namespace P2214201
                 }
                 else if (e.Node.Name == "Exit")
                 {
-                    MessageBox.Show("離開");
                     Environment.Exit(0);
                 }
             }

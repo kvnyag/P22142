@@ -37,3 +37,6 @@ D:\Kevin\Tutorial\P22142_PC(國巨)\P22142_PC\P2214201\obj\Debug\P2214201.csproj
 D:\Kevin\Tutorial\P22142_PC(國巨)\P22142_PC\P2214201\obj\Debug\P2214201.exe
 D:\Kevin\Tutorial\P22142_PC(國巨)\P22142_PC\P2214201\obj\Debug\P2214201.pdb
 D:\Kevin\Tutorial\P22142_PC(國巨)\P22142_PC\P2214201\obj\Debug\P2214201.EmptyForm.resources
+D:\Kevin\Tutorial\P22142_PC(國巨)\P22142_PC\P2214201\obj\Debug\P2214201.FactoryInfo.resources
+D:\Kevin\Tutorial\P22142_PC(國巨)\P22142_PC\P2214201\obj\Debug\P2214201.ReportInfo.resources
+D:\Kevin\Tutorial\P22142_PC(國巨)\P22142_PC\P2214201\obj\Debug\P2214201.MachineInfo.resources

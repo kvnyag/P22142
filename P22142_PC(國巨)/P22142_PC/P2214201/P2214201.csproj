@@ -56,6 +56,24 @@
     <Compile Include="EmptyForm.Designer.cs">
       <DependentUpon>EmptyForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="MachineInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MachineInfo.Designer.cs">
+      <DependentUpon>MachineInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportInfo.Designer.cs">
+      <DependentUpon>ReportInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FactoryInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FactoryInfo.Designer.cs">
+      <DependentUpon>FactoryInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -86,6 +104,15 @@
     <Compile Include="UseXML.cs" />
     <EmbeddedResource Include="EmptyForm.resx">
       <DependentUpon>EmptyForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MachineInfo.resx">
+      <DependentUpon>MachineInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportInfo.resx">
+      <DependentUpon>ReportInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FactoryInfo.resx">
+      <DependentUpon>FactoryInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
