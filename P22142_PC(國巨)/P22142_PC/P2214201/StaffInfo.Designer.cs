@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StaffInfo));
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btnStaffInfoAdd = new System.Windows.Forms.Button();
             this.btnStaffInfoModify = new System.Windows.Forms.Button();
             this.btnStaffInfoDelete = new System.Windows.Forms.Button();
@@ -38,6 +36,7 @@
             this.btnStaffInfoExit = new System.Windows.Forms.Button();
             this.btnStaffInfoStore = new System.Windows.Forms.Button();
             this.dgvStaff = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.cbxRuleCode = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -46,127 +45,138 @@
             this.tbxStaffAcount = new System.Windows.Forms.TextBox();
             this.tbxStaffName = new System.Windows.Forms.TextBox();
             this.cbxAccountStatus = new System.Windows.Forms.ComboBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStaff)).BeginInit();
             this.SuspendLayout();
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.FloralWhite;
-            this.pictureBox1.Location = new System.Drawing.Point(-2, 2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1122, 115);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.BackgroundImage")));
-            this.pictureBox2.Location = new System.Drawing.Point(-2, 123);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(1122, 227);
-            this.pictureBox2.TabIndex = 1;
-            this.pictureBox2.TabStop = false;
-            // 
             // btnStaffInfoAdd
             // 
-            this.btnStaffInfoAdd.BackColor = System.Drawing.Color.Transparent;
+            this.btnStaffInfoAdd.BackColor = System.Drawing.Color.Teal;
             this.btnStaffInfoAdd.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnStaffInfoAdd.FlatAppearance.BorderSize = 0;
+            this.btnStaffInfoAdd.Font = new System.Drawing.Font("微軟正黑體", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnStaffInfoAdd.ForeColor = System.Drawing.Color.Cyan;
             this.btnStaffInfoAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnStaffInfoAdd.Image")));
             this.btnStaffInfoAdd.Location = new System.Drawing.Point(9, 9);
             this.btnStaffInfoAdd.Name = "btnStaffInfoAdd";
             this.btnStaffInfoAdd.Size = new System.Drawing.Size(100, 100);
             this.btnStaffInfoAdd.TabIndex = 2;
+            this.btnStaffInfoAdd.Text = "新增";
+            this.btnStaffInfoAdd.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnStaffInfoAdd.UseVisualStyleBackColor = false;
             this.btnStaffInfoAdd.Click += new System.EventHandler(this.btnStaffInfoAdd_Click);
             // 
             // btnStaffInfoModify
             // 
-            this.btnStaffInfoModify.BackColor = System.Drawing.Color.Transparent;
+            this.btnStaffInfoModify.BackColor = System.Drawing.Color.Teal;
             this.btnStaffInfoModify.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnStaffInfoModify.FlatAppearance.BorderSize = 0;
+            this.btnStaffInfoModify.Font = new System.Drawing.Font("微軟正黑體", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnStaffInfoModify.ForeColor = System.Drawing.Color.Cyan;
             this.btnStaffInfoModify.Image = ((System.Drawing.Image)(resources.GetObject("btnStaffInfoModify.Image")));
-            this.btnStaffInfoModify.Location = new System.Drawing.Point(115, 9);
+            this.btnStaffInfoModify.Location = new System.Drawing.Point(116, 9);
             this.btnStaffInfoModify.Name = "btnStaffInfoModify";
             this.btnStaffInfoModify.Size = new System.Drawing.Size(100, 100);
             this.btnStaffInfoModify.TabIndex = 3;
+            this.btnStaffInfoModify.Text = "修改";
+            this.btnStaffInfoModify.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnStaffInfoModify.UseVisualStyleBackColor = false;
             this.btnStaffInfoModify.Click += new System.EventHandler(this.btnStaffInfoModify_Click);
             // 
             // btnStaffInfoDelete
             // 
-            this.btnStaffInfoDelete.BackColor = System.Drawing.Color.Transparent;
+            this.btnStaffInfoDelete.BackColor = System.Drawing.Color.Teal;
             this.btnStaffInfoDelete.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnStaffInfoDelete.FlatAppearance.BorderSize = 0;
+            this.btnStaffInfoDelete.Font = new System.Drawing.Font("微軟正黑體", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnStaffInfoDelete.ForeColor = System.Drawing.Color.Cyan;
             this.btnStaffInfoDelete.Image = ((System.Drawing.Image)(resources.GetObject("btnStaffInfoDelete.Image")));
-            this.btnStaffInfoDelete.Location = new System.Drawing.Point(221, 9);
+            this.btnStaffInfoDelete.Location = new System.Drawing.Point(220, 9);
             this.btnStaffInfoDelete.Name = "btnStaffInfoDelete";
             this.btnStaffInfoDelete.Size = new System.Drawing.Size(100, 100);
             this.btnStaffInfoDelete.TabIndex = 4;
+            this.btnStaffInfoDelete.Text = "刪除";
+            this.btnStaffInfoDelete.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnStaffInfoDelete.UseVisualStyleBackColor = false;
             this.btnStaffInfoDelete.Click += new System.EventHandler(this.btnStaffInfoDelete_Click);
             // 
             // btnStaffInfoDemand
             // 
-            this.btnStaffInfoDemand.BackColor = System.Drawing.Color.Transparent;
+            this.btnStaffInfoDemand.BackColor = System.Drawing.Color.Teal;
             this.btnStaffInfoDemand.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnStaffInfoDemand.FlatAppearance.BorderSize = 0;
+            this.btnStaffInfoDemand.Font = new System.Drawing.Font("微軟正黑體", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnStaffInfoDemand.ForeColor = System.Drawing.Color.Cyan;
             this.btnStaffInfoDemand.Image = ((System.Drawing.Image)(resources.GetObject("btnStaffInfoDemand.Image")));
             this.btnStaffInfoDemand.Location = new System.Drawing.Point(327, 9);
             this.btnStaffInfoDemand.Name = "btnStaffInfoDemand";
             this.btnStaffInfoDemand.Size = new System.Drawing.Size(100, 100);
             this.btnStaffInfoDemand.TabIndex = 5;
+            this.btnStaffInfoDemand.Text = "查詢";
+            this.btnStaffInfoDemand.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnStaffInfoDemand.UseVisualStyleBackColor = false;
             this.btnStaffInfoDemand.Click += new System.EventHandler(this.btnStaffInfoDemand_Click);
             // 
             // btnStaffInfoExit
             // 
-            this.btnStaffInfoExit.BackColor = System.Drawing.Color.Transparent;
+            this.btnStaffInfoExit.BackColor = System.Drawing.Color.Teal;
             this.btnStaffInfoExit.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnStaffInfoExit.FlatAppearance.BorderSize = 0;
+            this.btnStaffInfoExit.Font = new System.Drawing.Font("微軟正黑體", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnStaffInfoExit.ForeColor = System.Drawing.Color.Cyan;
             this.btnStaffInfoExit.Image = ((System.Drawing.Image)(resources.GetObject("btnStaffInfoExit.Image")));
-            this.btnStaffInfoExit.Location = new System.Drawing.Point(1009, 9);
+            this.btnStaffInfoExit.Location = new System.Drawing.Point(1010, 9);
             this.btnStaffInfoExit.Name = "btnStaffInfoExit";
             this.btnStaffInfoExit.Size = new System.Drawing.Size(100, 100);
             this.btnStaffInfoExit.TabIndex = 6;
+            this.btnStaffInfoExit.Text = "離開";
+            this.btnStaffInfoExit.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnStaffInfoExit.UseVisualStyleBackColor = false;
             this.btnStaffInfoExit.Visible = false;
             // 
             // btnStaffInfoStore
             // 
-            this.btnStaffInfoStore.BackColor = System.Drawing.Color.Transparent;
+            this.btnStaffInfoStore.BackColor = System.Drawing.Color.Teal;
             this.btnStaffInfoStore.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnStaffInfoStore.FlatAppearance.BorderSize = 0;
+            this.btnStaffInfoStore.Font = new System.Drawing.Font("微軟正黑體", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnStaffInfoStore.ForeColor = System.Drawing.Color.Cyan;
             this.btnStaffInfoStore.Image = ((System.Drawing.Image)(resources.GetObject("btnStaffInfoStore.Image")));
             this.btnStaffInfoStore.Location = new System.Drawing.Point(903, 9);
             this.btnStaffInfoStore.Name = "btnStaffInfoStore";
             this.btnStaffInfoStore.Size = new System.Drawing.Size(100, 100);
             this.btnStaffInfoStore.TabIndex = 7;
+            this.btnStaffInfoStore.Text = "儲存";
+            this.btnStaffInfoStore.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnStaffInfoStore.UseVisualStyleBackColor = false;
             this.btnStaffInfoStore.Visible = false;
             // 
             // dgvStaff
             // 
             this.dgvStaff.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvStaff.Location = new System.Drawing.Point(-2, 356);
+            this.dgvStaff.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1});
+            this.dgvStaff.Location = new System.Drawing.Point(0, 320);
             this.dgvStaff.MultiSelect = false;
             this.dgvStaff.Name = "dgvStaff";
             this.dgvStaff.RowTemplate.Height = 31;
-            this.dgvStaff.Size = new System.Drawing.Size(1122, 459);
+            this.dgvStaff.Size = new System.Drawing.Size(1120, 730);
             this.dgvStaff.TabIndex = 8;
             this.dgvStaff.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvStaff_CellClick);
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Column1";
+            this.Column1.Name = "Column1";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label1.ForeColor = System.Drawing.Color.Green;
-            this.label1.Location = new System.Drawing.Point(22, 148);
+            this.label1.Font = new System.Drawing.Font("微軟正黑體", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label1.ForeColor = System.Drawing.Color.LimeGreen;
+            this.label1.Location = new System.Drawing.Point(70, 170);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(110, 31);
+            this.label1.Size = new System.Drawing.Size(127, 36);
             this.label1.TabIndex = 9;
             this.label1.Text = "權限群組";
             // 
@@ -174,7 +184,7 @@
             // 
             this.cbxRuleCode.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.cbxRuleCode.FormattingEnabled = true;
-            this.cbxRuleCode.Location = new System.Drawing.Point(138, 140);
+            this.cbxRuleCode.Location = new System.Drawing.Point(202, 166);
             this.cbxRuleCode.Name = "cbxRuleCode";
             this.cbxRuleCode.Size = new System.Drawing.Size(202, 39);
             this.cbxRuleCode.TabIndex = 10;
@@ -183,11 +193,11 @@
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label2.ForeColor = System.Drawing.Color.Green;
-            this.label2.Location = new System.Drawing.Point(22, 195);
+            this.label2.Font = new System.Drawing.Font("微軟正黑體", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label2.ForeColor = System.Drawing.Color.LimeGreen;
+            this.label2.Location = new System.Drawing.Point(70, 220);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(110, 31);
+            this.label2.Size = new System.Drawing.Size(127, 36);
             this.label2.TabIndex = 11;
             this.label2.Text = "人員帳號";
             // 
@@ -195,11 +205,11 @@
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label3.ForeColor = System.Drawing.Color.Green;
-            this.label3.Location = new System.Drawing.Point(22, 245);
+            this.label3.Font = new System.Drawing.Font("微軟正黑體", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label3.ForeColor = System.Drawing.Color.LimeGreen;
+            this.label3.Location = new System.Drawing.Point(465, 170);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(110, 31);
+            this.label3.Size = new System.Drawing.Size(127, 36);
             this.label3.TabIndex = 12;
             this.label3.Text = "人員名稱";
             // 
@@ -207,18 +217,18 @@
             // 
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label4.ForeColor = System.Drawing.Color.Green;
-            this.label4.Location = new System.Drawing.Point(22, 293);
+            this.label4.Font = new System.Drawing.Font("微軟正黑體", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label4.ForeColor = System.Drawing.Color.LimeGreen;
+            this.label4.Location = new System.Drawing.Point(465, 220);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(110, 31);
+            this.label4.Size = new System.Drawing.Size(127, 36);
             this.label4.TabIndex = 13;
             this.label4.Text = "帳號狀態";
             // 
             // tbxStaffAcount
             // 
             this.tbxStaffAcount.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.tbxStaffAcount.Location = new System.Drawing.Point(138, 187);
+            this.tbxStaffAcount.Location = new System.Drawing.Point(202, 218);
             this.tbxStaffAcount.Name = "tbxStaffAcount";
             this.tbxStaffAcount.Size = new System.Drawing.Size(202, 39);
             this.tbxStaffAcount.TabIndex = 14;
@@ -226,7 +236,7 @@
             // tbxStaffName
             // 
             this.tbxStaffName.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.tbxStaffName.Location = new System.Drawing.Point(138, 237);
+            this.tbxStaffName.Location = new System.Drawing.Point(598, 166);
             this.tbxStaffName.Name = "tbxStaffName";
             this.tbxStaffName.Size = new System.Drawing.Size(202, 39);
             this.tbxStaffName.TabIndex = 15;
@@ -235,7 +245,7 @@
             // 
             this.cbxAccountStatus.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.cbxAccountStatus.FormattingEnabled = true;
-            this.cbxAccountStatus.Location = new System.Drawing.Point(138, 285);
+            this.cbxAccountStatus.Location = new System.Drawing.Point(598, 218);
             this.cbxAccountStatus.Name = "cbxAccountStatus";
             this.cbxAccountStatus.Size = new System.Drawing.Size(202, 39);
             this.cbxAccountStatus.TabIndex = 16;
@@ -245,7 +255,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FloralWhite;
-            this.ClientSize = new System.Drawing.Size(1121, 817);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.ClientSize = new System.Drawing.Size(1120, 1044);
+            this.Controls.Add(this.dgvStaff);
             this.Controls.Add(this.cbxAccountStatus);
             this.Controls.Add(this.tbxStaffName);
             this.Controls.Add(this.tbxStaffAcount);
@@ -254,20 +266,15 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.cbxRuleCode);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.dgvStaff);
             this.Controls.Add(this.btnStaffInfoStore);
             this.Controls.Add(this.btnStaffInfoExit);
             this.Controls.Add(this.btnStaffInfoDemand);
             this.Controls.Add(this.btnStaffInfoDelete);
             this.Controls.Add(this.btnStaffInfoModify);
             this.Controls.Add(this.btnStaffInfoAdd);
-            this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.pictureBox1);
             this.Name = "StaffInfo";
             this.Text = "StaffInfo";
             this.Load += new System.EventHandler(this.StaffInfo_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStaff)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -275,9 +282,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button btnStaffInfoAdd;
         private System.Windows.Forms.Button btnStaffInfoModify;
         private System.Windows.Forms.Button btnStaffInfoDelete;
@@ -293,5 +297,6 @@
         private System.Windows.Forms.TextBox tbxStaffAcount;
         private System.Windows.Forms.TextBox tbxStaffName;
         private System.Windows.Forms.ComboBox cbxAccountStatus;
+        private System.Windows.Forms.DataGridViewButtonColumn Column1;
     }
 }

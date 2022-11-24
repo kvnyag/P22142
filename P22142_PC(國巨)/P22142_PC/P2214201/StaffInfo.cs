@@ -8,7 +8,7 @@ namespace P2214201
     public partial class StaffInfo : Form
     {
         //公用變數
-        public string UserAccount, UserRole;
+        public string UserAccount, UserName, UserRole;
         string UR001, UR002, UR003, UR004, UR005, UR006, UR007, UR008, UR009, UR010, UR011, UR012; //人員基本資料 欄位名
         string strDemand = "";
         UseSQLServer USQL = new UseSQLServer();
@@ -18,6 +18,7 @@ namespace P2214201
         public StaffInfo()
         {
             InitializeComponent();
+            
         }
 
         private void StaffInfo_Load(object sender, EventArgs e)
@@ -84,7 +85,7 @@ namespace P2214201
             UR002 = tbxStaffName.Text;                            //人員名稱(UR002)
             UR003 = cbxAccountStatus.Text.Substring(0, 1);        //狀態(停用Y、啟用N)(UR003)
             UR005 = "";                                           //備註(UR005)
-            UR006 = UserAccount;                                  //建立者(UR006)
+            UR006 = UserName;                                     //建立者(UR006)
             UR007 = "";                                           //修改者(UR007)
             UR008 = DateTime.Now.ToString("yyyy/MM/dd hh:mm:ss"); //建立時間(UR008)
             UR009 = "";                                           //修改時間(UR009)
@@ -151,7 +152,7 @@ namespace P2214201
 
             strSQL = "";
             strSQL += "Update USERS Set UR002 = '" + UR002 + "',UR003 = '" + UR003 + "',UR004 = '" + UR004 + "',";
-            strSQL += "UR007 = '" + UserAccount + "',UR009 = '" + DateTime.Now.ToString("yyyy/MM/dd hh:mm:ss") + "'";
+            strSQL += "UR007 = '" + UserName + "',UR009 = '" + DateTime.Now.ToString("yyyy/MM/dd hh:mm:ss") + "'";
             strSQL += "Where UR001 = '" + UR001 + "'";
             USQL.SQLNonSelect(ref da, strSQL);
 
@@ -267,5 +268,6 @@ namespace P2214201
                     cbxAccountStatus.Text = "N:啟用";
             }
         }
+        
     }
 }

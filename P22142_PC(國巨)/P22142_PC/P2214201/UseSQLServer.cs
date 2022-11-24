@@ -38,8 +38,8 @@ namespace P2214201
             da = new DataAccess();
             objTrans = null;
 
-            //Access_Server.ConnectionString = @"Data Source=192.168.9.18;Database=DB22055;User Id=sa;Password=chi";
-            //Access_Server.ConnectionString = @"Data Source=DESKTOP-S567K53\SQLEXPRESS;Database=DB22055;User Id=sa;Password=sa";
+            //da.ConnectionString = @"Data Source=192.168.9.18;Database=DB22055;User Id=sa;Password=chi";
+            //da.ConnectionString = @"Data Source=DESKTOP-S567K53\SQLEXPRESS;Database=DB22142;User Id=sa;Password=sa";
             da.ConnectionString = @"Data Source=" + SQLBackData[0] + ";Database=" + SQLBackData[1] + ";User Id=" + SQLBackData[2] + ";Password=" + SQLBackData[3];
 
             da.ProviderName = "System.Data.SqlClient";

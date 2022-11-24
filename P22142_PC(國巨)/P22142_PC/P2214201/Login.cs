@@ -45,7 +45,7 @@ namespace P2214201
             }
             //查詢登入權限
             strSQL = "";
-            strSQL += "Select UR004 From USERS Where UR001 = '" + tbxStaffNo.Text.Trim() + "' And UR003 = 'N'";
+            strSQL += "Select * From USERS Where UR001 = '" + tbxStaffNo.Text.Trim() + "' And UR003 = 'N'";
             dt = USQL.SQLSelect(ref da, strSQL);
             //開啟 MainForm
             using (MainForm mf = new MainForm())
@@ -53,6 +53,7 @@ namespace P2214201
                 this.Visible = false;
                 mf.UserAccount = tbxStaffNo.Text.Trim();
                 mf.tbxLoginAccount.Text = mf.UserAccount;
+                mf.UserName = dt.Rows[0]["UR002"].ToString().Trim();
                 mf.UserRole = dt.Rows[0]["UR004"].ToString().Trim();
                 mf.tbxLoginRole.Text = mf.UserRole;
                 mf.ShowDialog();

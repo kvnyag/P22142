@@ -41,8 +41,9 @@
             this.pictureBox1.BackColor = System.Drawing.Color.DarkSeaGreen;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(0, -1);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(672, 586);
+            this.pictureBox1.Size = new System.Drawing.Size(448, 391);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
@@ -52,20 +53,22 @@
             this.lbLogin.BackColor = System.Drawing.Color.DarkSeaGreen;
             this.lbLogin.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.lbLogin.ForeColor = System.Drawing.Color.Navy;
-            this.lbLogin.Location = new System.Drawing.Point(19, 410);
+            this.lbLogin.Location = new System.Drawing.Point(13, 273);
+            this.lbLogin.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbLogin.Name = "lbLogin";
-            this.lbLogin.Size = new System.Drawing.Size(158, 31);
+            this.lbLogin.Size = new System.Drawing.Size(106, 21);
             this.lbLogin.TabIndex = 1;
             this.lbLogin.Text = "請輸入薪號：";
             // 
             // tbxStaffNo
             // 
             this.tbxStaffNo.Font = new System.Drawing.Font("微軟正黑體", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.tbxStaffNo.Location = new System.Drawing.Point(183, 403);
+            this.tbxStaffNo.Location = new System.Drawing.Point(122, 269);
+            this.tbxStaffNo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbxStaffNo.Name = "tbxStaffNo";
-            this.tbxStaffNo.Size = new System.Drawing.Size(356, 45);
+            this.tbxStaffNo.Size = new System.Drawing.Size(239, 32);
             this.tbxStaffNo.TabIndex = 2;
-            this.tbxStaffNo.Text = "12345675";
+            this.tbxStaffNo.Text = "00000000";
             this.tbxStaffNo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // button1
@@ -75,9 +78,10 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("微軟正黑體", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.button1.ForeColor = System.Drawing.Color.Black;
-            this.button1.Location = new System.Drawing.Point(254, 477);
+            this.button1.Location = new System.Drawing.Point(169, 318);
+            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(132, 56);
+            this.button1.Size = new System.Drawing.Size(88, 37);
             this.button1.TabIndex = 3;
             this.button1.Text = "登入";
             this.button1.UseVisualStyleBackColor = false;
@@ -85,14 +89,16 @@
             // 
             // Login
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(671, 584);
+            this.ClientSize = new System.Drawing.Size(447, 389);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.tbxStaffNo);
             this.Controls.Add(this.lbLogin);
             this.Controls.Add(this.pictureBox1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Login";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

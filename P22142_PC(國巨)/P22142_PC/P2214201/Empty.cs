@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace P2214201
 {
-    public partial class EmptyForm : Form
+    public partial class Empty : Form
     {
-        public EmptyForm()
+        public Empty()
         {
             InitializeComponent();
         }

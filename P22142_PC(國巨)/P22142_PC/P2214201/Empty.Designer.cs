@@ -1,6 +1,6 @@
 ﻿namespace P2214201
 {
-    partial class EmptyForm
+    partial class Empty
     {
         /// <summary>
         /// Required designer variable.
@@ -30,14 +30,15 @@
         {
             this.SuspendLayout();
             // 
-            // EmptyForm
+            // Empty
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FloralWhite;
-            this.ClientSize = new System.Drawing.Size(1121, 817);
-            this.Name = "EmptyForm";
-            this.Text = "EmptyForm";
+            this.ClientSize = new System.Drawing.Size(763, 735);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Name = "Empty";
+            this.Text = "Empty";
             this.ResumeLayout(false);
 
         }
