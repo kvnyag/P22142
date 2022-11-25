@@ -118,7 +118,7 @@ namespace P2214201
             strSQL += MN001 + "','" + MN002 + "','" + MN003 + "','" + MN004 + "','" + MN005 + "','" + MN006 + "','";
             strSQL += MN007 + "','" + MN008 + "','" + MN009 + "','" + MN010 + "','" + MN011 + "')";
             USQL.SQLNonSelect(ref da, strSQL);
-
+            
             //重整 DataGridView 顯示
             try
             {

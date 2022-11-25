@@ -51,10 +51,9 @@
             this.btnReportInfoStore.Font = new System.Drawing.Font("微軟正黑體", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.btnReportInfoStore.ForeColor = System.Drawing.Color.Cyan;
             this.btnReportInfoStore.Image = ((System.Drawing.Image)(resources.GetObject("btnReportInfoStore.Image")));
-            this.btnReportInfoStore.Location = new System.Drawing.Point(602, 6);
-            this.btnReportInfoStore.Margin = new System.Windows.Forms.Padding(2);
+            this.btnReportInfoStore.Location = new System.Drawing.Point(903, 9);
             this.btnReportInfoStore.Name = "btnReportInfoStore";
-            this.btnReportInfoStore.Size = new System.Drawing.Size(67, 67);
+            this.btnReportInfoStore.Size = new System.Drawing.Size(100, 100);
             this.btnReportInfoStore.TabIndex = 13;
             this.btnReportInfoStore.Text = "儲存";
             this.btnReportInfoStore.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -69,10 +68,9 @@
             this.btnReportInfoExit.Font = new System.Drawing.Font("微軟正黑體", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.btnReportInfoExit.ForeColor = System.Drawing.Color.Cyan;
             this.btnReportInfoExit.Image = ((System.Drawing.Image)(resources.GetObject("btnReportInfoExit.Image")));
-            this.btnReportInfoExit.Location = new System.Drawing.Point(673, 6);
-            this.btnReportInfoExit.Margin = new System.Windows.Forms.Padding(2);
+            this.btnReportInfoExit.Location = new System.Drawing.Point(1010, 9);
             this.btnReportInfoExit.Name = "btnReportInfoExit";
-            this.btnReportInfoExit.Size = new System.Drawing.Size(67, 67);
+            this.btnReportInfoExit.Size = new System.Drawing.Size(100, 100);
             this.btnReportInfoExit.TabIndex = 12;
             this.btnReportInfoExit.Text = "離開";
             this.btnReportInfoExit.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -87,10 +85,9 @@
             this.btnReportInfoDemand.Font = new System.Drawing.Font("微軟正黑體", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.btnReportInfoDemand.ForeColor = System.Drawing.Color.Cyan;
             this.btnReportInfoDemand.Image = ((System.Drawing.Image)(resources.GetObject("btnReportInfoDemand.Image")));
-            this.btnReportInfoDemand.Location = new System.Drawing.Point(218, 6);
-            this.btnReportInfoDemand.Margin = new System.Windows.Forms.Padding(2);
+            this.btnReportInfoDemand.Location = new System.Drawing.Point(327, 9);
             this.btnReportInfoDemand.Name = "btnReportInfoDemand";
-            this.btnReportInfoDemand.Size = new System.Drawing.Size(67, 67);
+            this.btnReportInfoDemand.Size = new System.Drawing.Size(100, 100);
             this.btnReportInfoDemand.TabIndex = 11;
             this.btnReportInfoDemand.Text = "查詢";
             this.btnReportInfoDemand.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -105,10 +102,9 @@
             this.btnReportInfoDelete.Font = new System.Drawing.Font("微軟正黑體", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.btnReportInfoDelete.ForeColor = System.Drawing.Color.Cyan;
             this.btnReportInfoDelete.Image = ((System.Drawing.Image)(resources.GetObject("btnReportInfoDelete.Image")));
-            this.btnReportInfoDelete.Location = new System.Drawing.Point(147, 6);
-            this.btnReportInfoDelete.Margin = new System.Windows.Forms.Padding(2);
+            this.btnReportInfoDelete.Location = new System.Drawing.Point(220, 9);
             this.btnReportInfoDelete.Name = "btnReportInfoDelete";
-            this.btnReportInfoDelete.Size = new System.Drawing.Size(67, 67);
+            this.btnReportInfoDelete.Size = new System.Drawing.Size(100, 100);
             this.btnReportInfoDelete.TabIndex = 10;
             this.btnReportInfoDelete.Text = "刪除";
             this.btnReportInfoDelete.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -123,10 +119,9 @@
             this.btnReportInfoModify.Font = new System.Drawing.Font("微軟正黑體", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.btnReportInfoModify.ForeColor = System.Drawing.Color.Cyan;
             this.btnReportInfoModify.Image = ((System.Drawing.Image)(resources.GetObject("btnReportInfoModify.Image")));
-            this.btnReportInfoModify.Location = new System.Drawing.Point(77, 6);
-            this.btnReportInfoModify.Margin = new System.Windows.Forms.Padding(2);
+            this.btnReportInfoModify.Location = new System.Drawing.Point(116, 9);
             this.btnReportInfoModify.Name = "btnReportInfoModify";
-            this.btnReportInfoModify.Size = new System.Drawing.Size(67, 67);
+            this.btnReportInfoModify.Size = new System.Drawing.Size(100, 100);
             this.btnReportInfoModify.TabIndex = 9;
             this.btnReportInfoModify.Text = "修改";
             this.btnReportInfoModify.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -141,10 +136,9 @@
             this.btnReportInfoAdd.Font = new System.Drawing.Font("微軟正黑體", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.btnReportInfoAdd.ForeColor = System.Drawing.Color.Cyan;
             this.btnReportInfoAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnReportInfoAdd.Image")));
-            this.btnReportInfoAdd.Location = new System.Drawing.Point(6, 6);
-            this.btnReportInfoAdd.Margin = new System.Windows.Forms.Padding(2);
+            this.btnReportInfoAdd.Location = new System.Drawing.Point(9, 9);
             this.btnReportInfoAdd.Name = "btnReportInfoAdd";
-            this.btnReportInfoAdd.Size = new System.Drawing.Size(67, 67);
+            this.btnReportInfoAdd.Size = new System.Drawing.Size(100, 100);
             this.btnReportInfoAdd.TabIndex = 8;
             this.btnReportInfoAdd.Text = "新增";
             this.btnReportInfoAdd.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -154,31 +148,28 @@
             // dgvReport
             // 
             this.dgvReport.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvReport.Location = new System.Drawing.Point(0, 213);
-            this.dgvReport.Margin = new System.Windows.Forms.Padding(2);
+            this.dgvReport.Location = new System.Drawing.Point(0, 320);
             this.dgvReport.MultiSelect = false;
             this.dgvReport.Name = "dgvReport";
             this.dgvReport.RowTemplate.Height = 31;
-            this.dgvReport.Size = new System.Drawing.Size(747, 487);
+            this.dgvReport.Size = new System.Drawing.Size(1120, 730);
             this.dgvReport.TabIndex = 15;
             this.dgvReport.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvReport_CellClick);
             // 
             // tbxReportName
             // 
             this.tbxReportName.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.tbxReportName.Location = new System.Drawing.Point(135, 145);
-            this.tbxReportName.Margin = new System.Windows.Forms.Padding(2);
+            this.tbxReportName.Location = new System.Drawing.Point(202, 218);
             this.tbxReportName.Name = "tbxReportName";
-            this.tbxReportName.Size = new System.Drawing.Size(136, 29);
+            this.tbxReportName.Size = new System.Drawing.Size(202, 39);
             this.tbxReportName.TabIndex = 19;
             // 
             // tbxReportCode
             // 
             this.tbxReportCode.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.tbxReportCode.Location = new System.Drawing.Point(135, 111);
-            this.tbxReportCode.Margin = new System.Windows.Forms.Padding(2);
+            this.tbxReportCode.Location = new System.Drawing.Point(202, 166);
             this.tbxReportCode.Name = "tbxReportCode";
-            this.tbxReportCode.Size = new System.Drawing.Size(136, 29);
+            this.tbxReportCode.Size = new System.Drawing.Size(202, 39);
             this.tbxReportCode.TabIndex = 18;
             // 
             // label3
@@ -187,10 +178,9 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("微軟正黑體", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.label3.ForeColor = System.Drawing.Color.LimeGreen;
-            this.label3.Location = new System.Drawing.Point(47, 147);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Location = new System.Drawing.Point(70, 220);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(86, 24);
+            this.label3.Size = new System.Drawing.Size(127, 36);
             this.label3.TabIndex = 17;
             this.label3.Text = "類別名稱";
             // 
@@ -200,19 +190,18 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("微軟正黑體", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.label2.ForeColor = System.Drawing.Color.LimeGreen;
-            this.label2.Location = new System.Drawing.Point(47, 113);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(70, 170);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(86, 24);
+            this.label2.Size = new System.Drawing.Size(127, 36);
             this.label2.TabIndex = 16;
             this.label2.Text = "類別代號";
             // 
             // ReportInfo
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(747, 696);
+            this.ClientSize = new System.Drawing.Size(1120, 1044);
             this.Controls.Add(this.tbxReportName);
             this.Controls.Add(this.tbxReportCode);
             this.Controls.Add(this.label3);
@@ -224,9 +213,8 @@
             this.Controls.Add(this.btnReportInfoDelete);
             this.Controls.Add(this.btnReportInfoModify);
             this.Controls.Add(this.btnReportInfoAdd);
-            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "ReportInfo";
-            this.Text = "ReportInfo";
+            this.Text = "類別基本資料";
             this.Load += new System.EventHandler(this.ReportInfo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvReport)).EndInit();
             this.ResumeLayout(false);

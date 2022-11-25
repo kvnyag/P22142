@@ -50,11 +50,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AirConditionRep.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AirConditionRep.Designer.cs">
+      <DependentUpon>AirConditionRep.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CompressRep.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CompressRep.Designer.cs">
+      <DependentUpon>CompressRep.cs</DependentUpon>
+    </Compile>
     <Compile Include="Empty.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Empty.Designer.cs">
       <DependentUpon>Empty.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HydropowerRep.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HydropowerRep.Designer.cs">
+      <DependentUpon>HydropowerRep.cs</DependentUpon>
     </Compile>
     <Compile Include="MachineInfo.cs">
       <SubType>Form</SubType>
@@ -108,8 +126,23 @@
     </Compile>
     <Compile Include="UseSQLServer.cs" />
     <Compile Include="UseXML.cs" />
+    <Compile Include="VacuumRep.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VacuumRep.Designer.cs">
+      <DependentUpon>VacuumRep.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AirConditionRep.resx">
+      <DependentUpon>AirConditionRep.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CompressRep.resx">
+      <DependentUpon>CompressRep.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Empty.resx">
       <DependentUpon>Empty.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HydropowerRep.resx">
+      <DependentUpon>HydropowerRep.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MachineInfo.resx">
       <DependentUpon>MachineInfo.cs</DependentUpon>
@@ -143,6 +176,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="StaffInfo.resx">
       <DependentUpon>StaffInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VacuumRep.resx">
+      <DependentUpon>VacuumRep.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

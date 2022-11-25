@@ -51,10 +51,9 @@
             this.btnFactoryInfoStore.Font = new System.Drawing.Font("微軟正黑體", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.btnFactoryInfoStore.ForeColor = System.Drawing.Color.Cyan;
             this.btnFactoryInfoStore.Image = ((System.Drawing.Image)(resources.GetObject("btnFactoryInfoStore.Image")));
-            this.btnFactoryInfoStore.Location = new System.Drawing.Point(602, 6);
-            this.btnFactoryInfoStore.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnFactoryInfoStore.Location = new System.Drawing.Point(903, 9);
             this.btnFactoryInfoStore.Name = "btnFactoryInfoStore";
-            this.btnFactoryInfoStore.Size = new System.Drawing.Size(67, 67);
+            this.btnFactoryInfoStore.Size = new System.Drawing.Size(100, 100);
             this.btnFactoryInfoStore.TabIndex = 13;
             this.btnFactoryInfoStore.Text = "儲存";
             this.btnFactoryInfoStore.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -69,10 +68,9 @@
             this.btnFactoryInfoExit.Font = new System.Drawing.Font("微軟正黑體", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.btnFactoryInfoExit.ForeColor = System.Drawing.Color.Cyan;
             this.btnFactoryInfoExit.Image = ((System.Drawing.Image)(resources.GetObject("btnFactoryInfoExit.Image")));
-            this.btnFactoryInfoExit.Location = new System.Drawing.Point(673, 6);
-            this.btnFactoryInfoExit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnFactoryInfoExit.Location = new System.Drawing.Point(1010, 9);
             this.btnFactoryInfoExit.Name = "btnFactoryInfoExit";
-            this.btnFactoryInfoExit.Size = new System.Drawing.Size(67, 67);
+            this.btnFactoryInfoExit.Size = new System.Drawing.Size(100, 100);
             this.btnFactoryInfoExit.TabIndex = 12;
             this.btnFactoryInfoExit.Text = "離開";
             this.btnFactoryInfoExit.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -87,10 +85,9 @@
             this.btnFactoryInfoDemand.Font = new System.Drawing.Font("微軟正黑體", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.btnFactoryInfoDemand.ForeColor = System.Drawing.Color.Cyan;
             this.btnFactoryInfoDemand.Image = ((System.Drawing.Image)(resources.GetObject("btnFactoryInfoDemand.Image")));
-            this.btnFactoryInfoDemand.Location = new System.Drawing.Point(218, 6);
-            this.btnFactoryInfoDemand.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnFactoryInfoDemand.Location = new System.Drawing.Point(327, 9);
             this.btnFactoryInfoDemand.Name = "btnFactoryInfoDemand";
-            this.btnFactoryInfoDemand.Size = new System.Drawing.Size(67, 67);
+            this.btnFactoryInfoDemand.Size = new System.Drawing.Size(100, 100);
             this.btnFactoryInfoDemand.TabIndex = 11;
             this.btnFactoryInfoDemand.Text = "查詢";
             this.btnFactoryInfoDemand.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -105,10 +102,9 @@
             this.btnFactoryInfoDelete.Font = new System.Drawing.Font("微軟正黑體", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.btnFactoryInfoDelete.ForeColor = System.Drawing.Color.Cyan;
             this.btnFactoryInfoDelete.Image = ((System.Drawing.Image)(resources.GetObject("btnFactoryInfoDelete.Image")));
-            this.btnFactoryInfoDelete.Location = new System.Drawing.Point(147, 6);
-            this.btnFactoryInfoDelete.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnFactoryInfoDelete.Location = new System.Drawing.Point(220, 9);
             this.btnFactoryInfoDelete.Name = "btnFactoryInfoDelete";
-            this.btnFactoryInfoDelete.Size = new System.Drawing.Size(67, 67);
+            this.btnFactoryInfoDelete.Size = new System.Drawing.Size(100, 100);
             this.btnFactoryInfoDelete.TabIndex = 10;
             this.btnFactoryInfoDelete.Text = "刪除";
             this.btnFactoryInfoDelete.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -123,10 +119,9 @@
             this.btnFactoryInfoModify.Font = new System.Drawing.Font("微軟正黑體", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.btnFactoryInfoModify.ForeColor = System.Drawing.Color.Cyan;
             this.btnFactoryInfoModify.Image = ((System.Drawing.Image)(resources.GetObject("btnFactoryInfoModify.Image")));
-            this.btnFactoryInfoModify.Location = new System.Drawing.Point(77, 6);
-            this.btnFactoryInfoModify.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnFactoryInfoModify.Location = new System.Drawing.Point(116, 9);
             this.btnFactoryInfoModify.Name = "btnFactoryInfoModify";
-            this.btnFactoryInfoModify.Size = new System.Drawing.Size(67, 67);
+            this.btnFactoryInfoModify.Size = new System.Drawing.Size(100, 100);
             this.btnFactoryInfoModify.TabIndex = 9;
             this.btnFactoryInfoModify.Text = "修改";
             this.btnFactoryInfoModify.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -141,10 +136,9 @@
             this.btnFactoryInfoAdd.Font = new System.Drawing.Font("微軟正黑體", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.btnFactoryInfoAdd.ForeColor = System.Drawing.Color.Cyan;
             this.btnFactoryInfoAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnFactoryInfoAdd.Image")));
-            this.btnFactoryInfoAdd.Location = new System.Drawing.Point(6, 6);
-            this.btnFactoryInfoAdd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnFactoryInfoAdd.Location = new System.Drawing.Point(9, 9);
             this.btnFactoryInfoAdd.Name = "btnFactoryInfoAdd";
-            this.btnFactoryInfoAdd.Size = new System.Drawing.Size(67, 67);
+            this.btnFactoryInfoAdd.Size = new System.Drawing.Size(100, 100);
             this.btnFactoryInfoAdd.TabIndex = 8;
             this.btnFactoryInfoAdd.Text = "新增";
             this.btnFactoryInfoAdd.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -154,31 +148,28 @@
             // dgvFactory
             // 
             this.dgvFactory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvFactory.Location = new System.Drawing.Point(0, 213);
-            this.dgvFactory.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvFactory.Location = new System.Drawing.Point(0, 320);
             this.dgvFactory.MultiSelect = false;
             this.dgvFactory.Name = "dgvFactory";
             this.dgvFactory.RowTemplate.Height = 31;
-            this.dgvFactory.Size = new System.Drawing.Size(747, 487);
+            this.dgvFactory.Size = new System.Drawing.Size(1120, 730);
             this.dgvFactory.TabIndex = 15;
             this.dgvFactory.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFactory_CellClick);
             // 
             // tbxFactoryName
             // 
             this.tbxFactoryName.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.tbxFactoryName.Location = new System.Drawing.Point(135, 145);
-            this.tbxFactoryName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbxFactoryName.Location = new System.Drawing.Point(202, 218);
             this.tbxFactoryName.Name = "tbxFactoryName";
-            this.tbxFactoryName.Size = new System.Drawing.Size(136, 29);
+            this.tbxFactoryName.Size = new System.Drawing.Size(202, 39);
             this.tbxFactoryName.TabIndex = 19;
             // 
             // tbxFactoryCode
             // 
             this.tbxFactoryCode.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.tbxFactoryCode.Location = new System.Drawing.Point(135, 111);
-            this.tbxFactoryCode.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbxFactoryCode.Location = new System.Drawing.Point(202, 166);
             this.tbxFactoryCode.Name = "tbxFactoryCode";
-            this.tbxFactoryCode.Size = new System.Drawing.Size(136, 29);
+            this.tbxFactoryCode.Size = new System.Drawing.Size(202, 39);
             this.tbxFactoryCode.TabIndex = 18;
             // 
             // label3
@@ -187,10 +178,9 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("微軟正黑體", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.label3.ForeColor = System.Drawing.Color.LimeGreen;
-            this.label3.Location = new System.Drawing.Point(47, 147);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Location = new System.Drawing.Point(70, 220);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(86, 24);
+            this.label3.Size = new System.Drawing.Size(127, 36);
             this.label3.TabIndex = 17;
             this.label3.Text = "廠房名稱";
             // 
@@ -200,19 +190,18 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("微軟正黑體", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.label2.ForeColor = System.Drawing.Color.LimeGreen;
-            this.label2.Location = new System.Drawing.Point(47, 113);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(70, 170);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(86, 24);
+            this.label2.Size = new System.Drawing.Size(127, 36);
             this.label2.TabIndex = 16;
             this.label2.Text = "廠房代號";
             // 
             // FactoryInfo
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(747, 696);
+            this.ClientSize = new System.Drawing.Size(1120, 1044);
             this.Controls.Add(this.tbxFactoryName);
             this.Controls.Add(this.tbxFactoryCode);
             this.Controls.Add(this.label3);
@@ -224,9 +213,8 @@
             this.Controls.Add(this.btnFactoryInfoDelete);
             this.Controls.Add(this.btnFactoryInfoModify);
             this.Controls.Add(this.btnFactoryInfoAdd);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FactoryInfo";
-            this.Text = "FactoryInfo";
+            this.Text = "廠房基本資料";
             this.Load += new System.EventHandler(this.FactoryInfo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvFactory)).EndInit();
             this.ResumeLayout(false);

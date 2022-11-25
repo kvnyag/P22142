@@ -60,3 +60,11 @@ E:\Tutorial\P22142_PC(國巨)\P22142_PC\P2214201\obj\Debug\P2214201.exe
 E:\Tutorial\P22142_PC(國巨)\P22142_PC\P2214201\obj\Debug\P2214201.pdb
 E:\Tutorial\P22142_PC(國巨)\P22142_PC\P2214201\obj\Debug\P2214201.Empty.resources
 D:\Kevin\Tutorial\P22142_PC(國巨)\P22142_PC\P2214201\obj\Debug\P2214201.Empty.resources
+D:\Kevin\Tutorial\P22142_PC(國巨)\P22142_PC\P2214201\obj\Debug\P2214201.AirConditionRep.resources
+D:\Kevin\Tutorial\P22142_PC(國巨)\P22142_PC\P2214201\obj\Debug\P2214201.CompressRep.resources
+D:\Kevin\Tutorial\P22142_PC(國巨)\P22142_PC\P2214201\obj\Debug\P2214201.HydropowerRep.resources
+D:\Kevin\Tutorial\P22142_PC(國巨)\P22142_PC\P2214201\obj\Debug\P2214201.VacuumRep.resources
+E:\Tutorial\P22142_PC(國巨)\P22142_PC\P2214201\obj\Debug\P2214201.AirConditionRep.resources
+E:\Tutorial\P22142_PC(國巨)\P22142_PC\P2214201\obj\Debug\P2214201.CompressRep.resources
+E:\Tutorial\P22142_PC(國巨)\P22142_PC\P2214201\obj\Debug\P2214201.HydropowerRep.resources
+E:\Tutorial\P22142_PC(國巨)\P22142_PC\P2214201\obj\Debug\P2214201.VacuumRep.resources

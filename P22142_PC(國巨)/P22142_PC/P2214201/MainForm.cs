@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace P2214201
@@ -110,22 +103,69 @@ namespace P2214201
                 else if (e.Node.Name == "VacuumRep")
                 {
                     splitContainer1.Panel2.Controls.Clear();
-                    MessageBox.Show("真空機運轉記錄表");
+                    this.IsMdiContainer = true;                    //設置 MainForm 為父視窗
+                    VacuumRep sfInfo = new VacuumRep();
+                    sfInfo.MdiParent = this;                       //設置視窗的父子關係
+                    sfInfo.Parent = splitContainer1.Panel2;        //子視窗的容器是父視窗的 Panel2
+                    sfInfo.TopLevel = false;                       //必須關閉否則會衝突
+                    sfInfo.FormBorderStyle = FormBorderStyle.None; //視窗右上角(放大、縮小、關閉)功能拿掉
+                    splitContainer1.Panel2.Controls.Add(sfInfo);   //將子視窗放入 Panel2 中
+                    sfInfo.UserAccount = this.UserAccount;         //傳回人員帳號
+                    sfInfo.UserName = this.UserName;               //傳回人員姓名
+                    sfInfo.UserRole = this.UserRole;               //傳回人員權限
+                    sfInfo.Show();
+                    sfInfo.BringToFront();
                 }
                 else if (e.Node.Name == "CompressRep")
                 {
                     splitContainer1.Panel2.Controls.Clear();
-                    MessageBox.Show("空壓機運轉記錄表");
+                    this.IsMdiContainer = true;                    //設置 MainForm 為父視窗
+                    CompressRep sfInfo = new CompressRep();
+                    sfInfo.MdiParent = this;                       //設置視窗的父子關係
+                    sfInfo.Parent = splitContainer1.Panel2;        //子視窗的容器是父視窗的 Panel2
+                    sfInfo.TopLevel = false;                       //必須關閉否則會衝突
+                    sfInfo.FormBorderStyle = FormBorderStyle.None; //視窗右上角(放大、縮小、關閉)功能拿掉
+                    splitContainer1.Panel2.Controls.Add(sfInfo);   //將子視窗放入 Panel2 中
+                    sfInfo.UserAccount = this.UserAccount;         //傳回人員帳號
+                    sfInfo.UserName = this.UserName;               //傳回人員姓名
+                    sfInfo.UserRole = this.UserRole;               //傳回人員權限
+                    sfInfo.Show();
+                    sfInfo.BringToFront();
                 }
                 else if (e.Node.Name == "AirConditionRep")
                 {
                     splitContainer1.Panel2.Controls.Clear();
-                    MessageBox.Show("冷氣運轉記錄表");
+                    splitContainer1.Panel2.Controls.Clear();
+                    this.IsMdiContainer = true;                    //設置 MainForm 為父視窗
+                    AirConditionRep sfInfo = new AirConditionRep();
+                    sfInfo.MdiParent = this;                       //設置視窗的父子關係
+                    sfInfo.Parent = splitContainer1.Panel2;        //子視窗的容器是父視窗的 Panel2
+                    sfInfo.TopLevel = false;                       //必須關閉否則會衝突
+                    sfInfo.FormBorderStyle = FormBorderStyle.None; //視窗右上角(放大、縮小、關閉)功能拿掉
+                    splitContainer1.Panel2.Controls.Add(sfInfo);   //將子視窗放入 Panel2 中
+                    sfInfo.UserAccount = this.UserAccount;         //傳回人員帳號
+                    sfInfo.UserName = this.UserName;               //傳回人員姓名
+                    sfInfo.UserRole = this.UserRole;               //傳回人員權限
+                    sfInfo.Show();
+                    sfInfo.BringToFront();
                 }
                 else if (e.Node.Name == "HydropowerRep")
                 {
                     splitContainer1.Panel2.Controls.Clear();
-                    MessageBox.Show("水電運轉記錄表");
+                    splitContainer1.Panel2.Controls.Clear();
+                    splitContainer1.Panel2.Controls.Clear();
+                    this.IsMdiContainer = true;                    //設置 MainForm 為父視窗
+                    HydropowerRep sfInfo = new HydropowerRep();
+                    sfInfo.MdiParent = this;                       //設置視窗的父子關係
+                    sfInfo.Parent = splitContainer1.Panel2;        //子視窗的容器是父視窗的 Panel2
+                    sfInfo.TopLevel = false;                       //必須關閉否則會衝突
+                    sfInfo.FormBorderStyle = FormBorderStyle.None; //視窗右上角(放大、縮小、關閉)功能拿掉
+                    splitContainer1.Panel2.Controls.Add(sfInfo);   //將子視窗放入 Panel2 中
+                    sfInfo.UserAccount = this.UserAccount;         //傳回人員帳號
+                    sfInfo.UserName = this.UserName;               //傳回人員姓名
+                    sfInfo.UserRole = this.UserRole;               //傳回人員權限
+                    sfInfo.Show();
+                    sfInfo.BringToFront();
                 }
                 else if (e.Node.Name == "VacuumDem")
                 {

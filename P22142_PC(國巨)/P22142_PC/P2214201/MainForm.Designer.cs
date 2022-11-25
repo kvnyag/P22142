@@ -79,7 +79,6 @@
             // 
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer1.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
@@ -96,44 +95,39 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.BackColor = System.Drawing.Color.FloralWhite;
-            this.splitContainer1.Size = new System.Drawing.Size(1034, 696);
-            this.splitContainer1.SplitterDistance = 281;
-            this.splitContainer1.SplitterWidth = 3;
+            this.splitContainer1.Size = new System.Drawing.Size(1551, 1044);
+            this.splitContainer1.SplitterDistance = 421;
             this.splitContainer1.TabIndex = 0;
             // 
             // tbxLoginRole
             // 
-            this.tbxLoginRole.Location = new System.Drawing.Point(112, 625);
-            this.tbxLoginRole.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbxLoginRole.Location = new System.Drawing.Point(168, 938);
             this.tbxLoginRole.Name = "tbxLoginRole";
-            this.tbxLoginRole.Size = new System.Drawing.Size(87, 22);
+            this.tbxLoginRole.Size = new System.Drawing.Size(128, 29);
             this.tbxLoginRole.TabIndex = 6;
             // 
             // tbxLoginAccount
             // 
-            this.tbxLoginAccount.Location = new System.Drawing.Point(112, 601);
-            this.tbxLoginAccount.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbxLoginAccount.Location = new System.Drawing.Point(168, 902);
             this.tbxLoginAccount.Name = "tbxLoginAccount";
-            this.tbxLoginAccount.Size = new System.Drawing.Size(87, 22);
+            this.tbxLoginAccount.Size = new System.Drawing.Size(128, 29);
             this.tbxLoginAccount.TabIndex = 0;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(55, 631);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Location = new System.Drawing.Point(82, 946);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(53, 12);
+            this.label3.Size = new System.Drawing.Size(80, 18);
             this.label3.TabIndex = 5;
             this.label3.Text = "登入權限";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(55, 609);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(82, 914);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(53, 12);
+            this.label2.Size = new System.Drawing.Size(80, 18);
             this.label2.TabIndex = 4;
             this.label2.Text = "登入帳號";
             // 
@@ -143,10 +137,9 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("標楷體", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.label1.ForeColor = System.Drawing.Color.LimeGreen;
-            this.label1.Location = new System.Drawing.Point(41, 15);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(62, 22);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(160, 24);
+            this.label1.Size = new System.Drawing.Size(237, 36);
             this.label1.TabIndex = 3;
             this.label1.Text = "國巨巡檢系統";
             // 
@@ -156,8 +149,7 @@
             this.trvSelectFn.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.trvSelectFn.Font = new System.Drawing.Font("微軟正黑體", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.trvSelectFn.ForeColor = System.Drawing.Color.LimeGreen;
-            this.trvSelectFn.Location = new System.Drawing.Point(15, 52);
-            this.trvSelectFn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.trvSelectFn.Location = new System.Drawing.Point(22, 78);
             this.trvSelectFn.Name = "trvSelectFn";
             treeNode1.Name = "StaffInfo";
             treeNode1.Text = "人員基本資料";
@@ -206,20 +198,19 @@
             treeNode18,
             treeNode19,
             treeNode20});
-            this.trvSelectFn.Size = new System.Drawing.Size(243, 633);
+            this.trvSelectFn.Size = new System.Drawing.Size(364, 950);
             this.trvSelectFn.TabIndex = 1;
             this.trvSelectFn.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.trvSelectFn_AfterSelect);
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1034, 696);
+            this.ClientSize = new System.Drawing.Size(1551, 1044);
             this.Controls.Add(this.splitContainer1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "MainForm";
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
