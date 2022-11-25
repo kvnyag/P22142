@@ -62,6 +62,7 @@
     <Compile Include="CompressRep.Designer.cs">
       <DependentUpon>CompressRep.cs</DependentUpon>
     </Compile>
+    <Compile Include="DealRecord.cs" />
     <Compile Include="Empty.cs">
       <SubType>Form</SubType>
     </Compile>

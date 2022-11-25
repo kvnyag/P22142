@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VacuumRep));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.btnVacuumRepStore = new System.Windows.Forms.Button();
@@ -124,10 +125,12 @@
             this.btnVacuumRepDemand.Text = "查詢";
             this.btnVacuumRepDemand.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnVacuumRepDemand.UseVisualStyleBackColor = false;
+            this.btnVacuumRepDemand.Visible = false;
             // 
             // btnVacuumRepDelete
             // 
             this.btnVacuumRepDelete.BackColor = System.Drawing.Color.Teal;
+            this.btnVacuumRepDelete.Enabled = false;
             this.btnVacuumRepDelete.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnVacuumRepDelete.FlatAppearance.BorderSize = 0;
             this.btnVacuumRepDelete.Font = new System.Drawing.Font("微軟正黑體", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
@@ -144,6 +147,7 @@
             // btnVacuumRepModify
             // 
             this.btnVacuumRepModify.BackColor = System.Drawing.Color.Teal;
+            this.btnVacuumRepModify.Enabled = false;
             this.btnVacuumRepModify.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnVacuumRepModify.FlatAppearance.BorderSize = 0;
             this.btnVacuumRepModify.Font = new System.Drawing.Font("微軟正黑體", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
@@ -160,6 +164,7 @@
             // btnVacuumRepAdd
             // 
             this.btnVacuumRepAdd.BackColor = System.Drawing.Color.Teal;
+            this.btnVacuumRepAdd.Enabled = false;
             this.btnVacuumRepAdd.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnVacuumRepAdd.FlatAppearance.BorderSize = 0;
             this.btnVacuumRepAdd.Font = new System.Drawing.Font("微軟正黑體", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
@@ -179,6 +184,8 @@
             this.dgvVacuumFrom.Location = new System.Drawing.Point(0, 320);
             this.dgvVacuumFrom.MultiSelect = false;
             this.dgvVacuumFrom.Name = "dgvVacuumFrom";
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("新細明體", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.dgvVacuumFrom.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvVacuumFrom.RowTemplate.Height = 31;
             this.dgvVacuumFrom.Size = new System.Drawing.Size(563, 730);
             this.dgvVacuumFrom.TabIndex = 30;
@@ -205,13 +212,13 @@
             // 
             // cbxCategorysName
             // 
+            this.cbxCategorysName.Enabled = false;
             this.cbxCategorysName.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.cbxCategorysName.FormattingEnabled = true;
             this.cbxCategorysName.Location = new System.Drawing.Point(202, 177);
             this.cbxCategorysName.Name = "cbxCategorysName";
             this.cbxCategorysName.Size = new System.Drawing.Size(225, 38);
             this.cbxCategorysName.TabIndex = 33;
-            this.cbxCategorysName.SelectedIndexChanged += new System.EventHandler(this.cbxCategorysName_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -264,6 +271,7 @@
             this.btnLeft.Size = new System.Drawing.Size(65, 65);
             this.btnLeft.TabIndex = 38;
             this.btnLeft.UseVisualStyleBackColor = false;
+            this.btnLeft.Click += new System.EventHandler(this.btnLeft_Click);
             // 
             // btnRight
             // 
@@ -274,6 +282,7 @@
             this.btnRight.Size = new System.Drawing.Size(65, 65);
             this.btnRight.TabIndex = 39;
             this.btnRight.UseVisualStyleBackColor = false;
+            this.btnRight.Click += new System.EventHandler(this.btnRight_Click);
             // 
             // VacuumRep
             // 
@@ -301,6 +310,7 @@
             this.Controls.Add(this.btnVacuumRepAdd);
             this.Name = "VacuumRep";
             this.Text = "真空機運轉記錄表";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.VacuumRep_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvVacuumFrom)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVacuumTo)).EndInit();

@@ -39,8 +39,8 @@ namespace P2214201
             objTrans = null;
 
             //da.ConnectionString = @"Data Source=192.168.9.18;Database=DB22055;User Id=sa;Password=chi";
-            da.ConnectionString = @"Data Source=DESKTOP-S567K53\SQLEXPRESS;Database=DB22142;User Id=sa;Password=sa";
-            //da.ConnectionString = @"Data Source=" + SQLBackData[0] + ";Database=" + SQLBackData[1] + ";User Id=" + SQLBackData[2] + ";Password=" + SQLBackData[3];
+            //da.ConnectionString = @"Data Source=DESKTOP-S567K53\SQLEXPRESS;Database=DB22142;User Id=sa;Password=sa";
+            da.ConnectionString = @"Data Source=" + SQLBackData[0] + ";Database=" + SQLBackData[1] + ";User Id=" + SQLBackData[2] + ";Password=" + SQLBackData[3];
 
             da.ProviderName = "System.Data.SqlClient";
             objTrans = da.CreateDbTransaction();
@@ -99,6 +99,58 @@ namespace P2214201
                 da = CreateSQL();
             //執行 Insert、Update、Delete
             da.ExecuteNonQuery(strNonSelect);
+        }
+
+        public string FindCG(string CG001, string CG002)
+        {//查詢 類別 代號及名稱
+            //參數
+            string strSQL, backCG = "";
+            DataTable dt = new DataTable();
+
+            if(CG001 != "")
+            {
+                strSQL = "";
+                strSQL += "Select CG002 From CATEGORYS Where CG001 = '" + CG001 + "'";
+                dt = SQLSelect(ref da, strSQL);
+                CG002 = dt.Rows[0]["CG002"].ToString().Trim();
+                backCG = CG002;
+            }
+            else if(CG002 != "")
+            {
+                strSQL = "";
+                strSQL += "Select CG001 From CATEGORYS Where CG002 = '" + CG002 + "'";
+                dt = SQLSelect(ref da, strSQL);
+                CG001 = dt.Rows[0]["CG001"].ToString().Trim();
+                backCG = CG001;
+            }
+
+            return backCG;
+        }
+
+        public string FindMN(string MN001, string MN002)
+        {//查詢 機械 代號及名稱
+            //參數
+            string strSQL, backMN = "";
+            DataTable dt = new DataTable();
+
+            if (MN001 != "")
+            {
+                strSQL = "";
+                strSQL += "Select MN002 From MECHNUMBERS Where MN001 = '" + MN001 + "'";
+                dt = SQLSelect(ref da, strSQL);
+                MN002 = dt.Rows[0]["MN002"].ToString().Trim();
+                backMN = MN002;
+            }
+            else if (MN002 != "")
+            {
+                strSQL = "";
+                strSQL += "Select MN001 From MECHNUMBERS Where MN002 = '" + MN002 + "'";
+                dt = SQLSelect(ref da, strSQL);
+                MN001 = dt.Rows[0]["CG001"].ToString().Trim();
+                backMN = MN001;
+            }
+
+            return backMN;
         }
     }
 }
