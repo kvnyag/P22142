@@ -56,7 +56,7 @@
             this.btnStaffInfoAdd.ForeColor = System.Drawing.Color.Cyan;
             this.btnStaffInfoAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnStaffInfoAdd.Image")));
             this.btnStaffInfoAdd.Location = new System.Drawing.Point(6, 6);
-            this.btnStaffInfoAdd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnStaffInfoAdd.Margin = new System.Windows.Forms.Padding(2);
             this.btnStaffInfoAdd.Name = "btnStaffInfoAdd";
             this.btnStaffInfoAdd.Size = new System.Drawing.Size(67, 67);
             this.btnStaffInfoAdd.TabIndex = 2;
@@ -74,7 +74,7 @@
             this.btnStaffInfoModify.ForeColor = System.Drawing.Color.Cyan;
             this.btnStaffInfoModify.Image = ((System.Drawing.Image)(resources.GetObject("btnStaffInfoModify.Image")));
             this.btnStaffInfoModify.Location = new System.Drawing.Point(77, 6);
-            this.btnStaffInfoModify.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnStaffInfoModify.Margin = new System.Windows.Forms.Padding(2);
             this.btnStaffInfoModify.Name = "btnStaffInfoModify";
             this.btnStaffInfoModify.Size = new System.Drawing.Size(67, 67);
             this.btnStaffInfoModify.TabIndex = 3;
@@ -92,7 +92,7 @@
             this.btnStaffInfoDelete.ForeColor = System.Drawing.Color.Cyan;
             this.btnStaffInfoDelete.Image = ((System.Drawing.Image)(resources.GetObject("btnStaffInfoDelete.Image")));
             this.btnStaffInfoDelete.Location = new System.Drawing.Point(147, 6);
-            this.btnStaffInfoDelete.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnStaffInfoDelete.Margin = new System.Windows.Forms.Padding(2);
             this.btnStaffInfoDelete.Name = "btnStaffInfoDelete";
             this.btnStaffInfoDelete.Size = new System.Drawing.Size(67, 67);
             this.btnStaffInfoDelete.TabIndex = 4;
@@ -110,7 +110,7 @@
             this.btnStaffInfoDemand.ForeColor = System.Drawing.Color.Cyan;
             this.btnStaffInfoDemand.Image = ((System.Drawing.Image)(resources.GetObject("btnStaffInfoDemand.Image")));
             this.btnStaffInfoDemand.Location = new System.Drawing.Point(218, 6);
-            this.btnStaffInfoDemand.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnStaffInfoDemand.Margin = new System.Windows.Forms.Padding(2);
             this.btnStaffInfoDemand.Name = "btnStaffInfoDemand";
             this.btnStaffInfoDemand.Size = new System.Drawing.Size(67, 67);
             this.btnStaffInfoDemand.TabIndex = 5;
@@ -127,8 +127,8 @@
             this.btnStaffInfoExit.Font = new System.Drawing.Font("微軟正黑體", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.btnStaffInfoExit.ForeColor = System.Drawing.Color.Cyan;
             this.btnStaffInfoExit.Image = ((System.Drawing.Image)(resources.GetObject("btnStaffInfoExit.Image")));
-            this.btnStaffInfoExit.Location = new System.Drawing.Point(673, 6);
-            this.btnStaffInfoExit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnStaffInfoExit.Location = new System.Drawing.Point(790, 6);
+            this.btnStaffInfoExit.Margin = new System.Windows.Forms.Padding(2);
             this.btnStaffInfoExit.Name = "btnStaffInfoExit";
             this.btnStaffInfoExit.Size = new System.Drawing.Size(67, 67);
             this.btnStaffInfoExit.TabIndex = 6;
@@ -145,8 +145,8 @@
             this.btnStaffInfoStore.Font = new System.Drawing.Font("微軟正黑體", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.btnStaffInfoStore.ForeColor = System.Drawing.Color.Cyan;
             this.btnStaffInfoStore.Image = ((System.Drawing.Image)(resources.GetObject("btnStaffInfoStore.Image")));
-            this.btnStaffInfoStore.Location = new System.Drawing.Point(602, 6);
-            this.btnStaffInfoStore.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnStaffInfoStore.Location = new System.Drawing.Point(720, 6);
+            this.btnStaffInfoStore.Margin = new System.Windows.Forms.Padding(2);
             this.btnStaffInfoStore.Name = "btnStaffInfoStore";
             this.btnStaffInfoStore.Size = new System.Drawing.Size(67, 67);
             this.btnStaffInfoStore.TabIndex = 7;
@@ -161,7 +161,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("微軟正黑體", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.label1.ForeColor = System.Drawing.Color.LimeGreen;
-            this.label1.Location = new System.Drawing.Point(47, 113);
+            this.label1.Location = new System.Drawing.Point(85, 110);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(86, 24);
@@ -172,8 +172,8 @@
             // 
             this.cbxRuleCode.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.cbxRuleCode.FormattingEnabled = true;
-            this.cbxRuleCode.Location = new System.Drawing.Point(135, 111);
-            this.cbxRuleCode.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbxRuleCode.Location = new System.Drawing.Point(173, 105);
+            this.cbxRuleCode.Margin = new System.Windows.Forms.Padding(2);
             this.cbxRuleCode.Name = "cbxRuleCode";
             this.cbxRuleCode.Size = new System.Drawing.Size(136, 29);
             this.cbxRuleCode.TabIndex = 10;
@@ -184,7 +184,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("微軟正黑體", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.label2.ForeColor = System.Drawing.Color.LimeGreen;
-            this.label2.Location = new System.Drawing.Point(47, 147);
+            this.label2.Location = new System.Drawing.Point(85, 145);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(86, 24);
@@ -197,7 +197,7 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("微軟正黑體", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.label3.ForeColor = System.Drawing.Color.LimeGreen;
-            this.label3.Location = new System.Drawing.Point(310, 113);
+            this.label3.Location = new System.Drawing.Point(470, 105);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(86, 24);
@@ -210,7 +210,7 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("微軟正黑體", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.label4.ForeColor = System.Drawing.Color.LimeGreen;
-            this.label4.Location = new System.Drawing.Point(310, 147);
+            this.label4.Location = new System.Drawing.Point(470, 140);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(86, 24);
@@ -220,8 +220,8 @@
             // tbxStaffAcount
             // 
             this.tbxStaffAcount.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.tbxStaffAcount.Location = new System.Drawing.Point(135, 145);
-            this.tbxStaffAcount.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbxStaffAcount.Location = new System.Drawing.Point(173, 140);
+            this.tbxStaffAcount.Margin = new System.Windows.Forms.Padding(2);
             this.tbxStaffAcount.Name = "tbxStaffAcount";
             this.tbxStaffAcount.Size = new System.Drawing.Size(136, 29);
             this.tbxStaffAcount.TabIndex = 14;
@@ -229,8 +229,8 @@
             // tbxStaffName
             // 
             this.tbxStaffName.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.tbxStaffName.Location = new System.Drawing.Point(399, 111);
-            this.tbxStaffName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbxStaffName.Location = new System.Drawing.Point(560, 105);
+            this.tbxStaffName.Margin = new System.Windows.Forms.Padding(2);
             this.tbxStaffName.Name = "tbxStaffName";
             this.tbxStaffName.Size = new System.Drawing.Size(136, 29);
             this.tbxStaffName.TabIndex = 15;
@@ -239,8 +239,8 @@
             // 
             this.cbxAccountStatus.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.cbxAccountStatus.FormattingEnabled = true;
-            this.cbxAccountStatus.Location = new System.Drawing.Point(399, 145);
-            this.cbxAccountStatus.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbxAccountStatus.Location = new System.Drawing.Point(560, 140);
+            this.cbxAccountStatus.Margin = new System.Windows.Forms.Padding(2);
             this.cbxAccountStatus.Name = "cbxAccountStatus";
             this.cbxAccountStatus.Size = new System.Drawing.Size(136, 29);
             this.cbxAccountStatus.TabIndex = 16;
@@ -251,7 +251,7 @@
             this.dgvStaff.Location = new System.Drawing.Point(0, 213);
             this.dgvStaff.Name = "dgvStaff";
             this.dgvStaff.RowTemplate.Height = 24;
-            this.dgvStaff.Size = new System.Drawing.Size(747, 487);
+            this.dgvStaff.Size = new System.Drawing.Size(864, 487);
             this.dgvStaff.TabIndex = 17;
             // 
             // StaffInfo
@@ -260,7 +260,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FloralWhite;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(747, 696);
+            this.ClientSize = new System.Drawing.Size(864, 696);
             this.Controls.Add(this.dgvStaff);
             this.Controls.Add(this.cbxAccountStatus);
             this.Controls.Add(this.tbxStaffName);
@@ -276,7 +276,7 @@
             this.Controls.Add(this.btnStaffInfoDelete);
             this.Controls.Add(this.btnStaffInfoModify);
             this.Controls.Add(this.btnStaffInfoAdd);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "StaffInfo";
             this.Text = "人員基本資料";
             this.Load += new System.EventHandler(this.StaffInfo_Load);

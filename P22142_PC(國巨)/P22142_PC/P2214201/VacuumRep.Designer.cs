@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VacuumRep));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.btnVacuumRepStore = new System.Windows.Forms.Button();
@@ -58,9 +58,10 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("微軟正黑體", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.label3.ForeColor = System.Drawing.Color.LimeGreen;
-            this.label3.Location = new System.Drawing.Point(69, 179);
+            this.label3.Location = new System.Drawing.Point(85, 119);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(127, 36);
+            this.label3.Size = new System.Drawing.Size(86, 24);
             this.label3.TabIndex = 27;
             this.label3.Text = "類別名稱";
             // 
@@ -70,9 +71,10 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("微軟正黑體", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.label2.ForeColor = System.Drawing.Color.LimeGreen;
-            this.label2.Location = new System.Drawing.Point(69, 134);
+            this.label2.Location = new System.Drawing.Point(85, 89);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(127, 36);
+            this.label2.Size = new System.Drawing.Size(86, 24);
             this.label2.TabIndex = 26;
             this.label2.Text = "廠房代號";
             // 
@@ -84,9 +86,10 @@
             this.btnVacuumRepStore.Font = new System.Drawing.Font("微軟正黑體", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.btnVacuumRepStore.ForeColor = System.Drawing.Color.Cyan;
             this.btnVacuumRepStore.Image = ((System.Drawing.Image)(resources.GetObject("btnVacuumRepStore.Image")));
-            this.btnVacuumRepStore.Location = new System.Drawing.Point(907, 9);
+            this.btnVacuumRepStore.Location = new System.Drawing.Point(720, 6);
+            this.btnVacuumRepStore.Margin = new System.Windows.Forms.Padding(2);
             this.btnVacuumRepStore.Name = "btnVacuumRepStore";
-            this.btnVacuumRepStore.Size = new System.Drawing.Size(100, 100);
+            this.btnVacuumRepStore.Size = new System.Drawing.Size(67, 67);
             this.btnVacuumRepStore.TabIndex = 25;
             this.btnVacuumRepStore.Text = "儲存";
             this.btnVacuumRepStore.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -101,9 +104,10 @@
             this.btnVacuumRepExit.Font = new System.Drawing.Font("微軟正黑體", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.btnVacuumRepExit.ForeColor = System.Drawing.Color.Cyan;
             this.btnVacuumRepExit.Image = ((System.Drawing.Image)(resources.GetObject("btnVacuumRepExit.Image")));
-            this.btnVacuumRepExit.Location = new System.Drawing.Point(1013, 9);
+            this.btnVacuumRepExit.Location = new System.Drawing.Point(790, 6);
+            this.btnVacuumRepExit.Margin = new System.Windows.Forms.Padding(2);
             this.btnVacuumRepExit.Name = "btnVacuumRepExit";
-            this.btnVacuumRepExit.Size = new System.Drawing.Size(100, 100);
+            this.btnVacuumRepExit.Size = new System.Drawing.Size(67, 67);
             this.btnVacuumRepExit.TabIndex = 24;
             this.btnVacuumRepExit.Text = "離開";
             this.btnVacuumRepExit.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -118,9 +122,10 @@
             this.btnVacuumRepDemand.Font = new System.Drawing.Font("微軟正黑體", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.btnVacuumRepDemand.ForeColor = System.Drawing.Color.Cyan;
             this.btnVacuumRepDemand.Image = ((System.Drawing.Image)(resources.GetObject("btnVacuumRepDemand.Image")));
-            this.btnVacuumRepDemand.Location = new System.Drawing.Point(327, 9);
+            this.btnVacuumRepDemand.Location = new System.Drawing.Point(218, 6);
+            this.btnVacuumRepDemand.Margin = new System.Windows.Forms.Padding(2);
             this.btnVacuumRepDemand.Name = "btnVacuumRepDemand";
-            this.btnVacuumRepDemand.Size = new System.Drawing.Size(100, 100);
+            this.btnVacuumRepDemand.Size = new System.Drawing.Size(67, 67);
             this.btnVacuumRepDemand.TabIndex = 23;
             this.btnVacuumRepDemand.Text = "查詢";
             this.btnVacuumRepDemand.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -136,13 +141,15 @@
             this.btnVacuumRepDelete.Font = new System.Drawing.Font("微軟正黑體", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.btnVacuumRepDelete.ForeColor = System.Drawing.Color.Cyan;
             this.btnVacuumRepDelete.Image = ((System.Drawing.Image)(resources.GetObject("btnVacuumRepDelete.Image")));
-            this.btnVacuumRepDelete.Location = new System.Drawing.Point(221, 9);
+            this.btnVacuumRepDelete.Location = new System.Drawing.Point(147, 6);
+            this.btnVacuumRepDelete.Margin = new System.Windows.Forms.Padding(2);
             this.btnVacuumRepDelete.Name = "btnVacuumRepDelete";
-            this.btnVacuumRepDelete.Size = new System.Drawing.Size(100, 100);
+            this.btnVacuumRepDelete.Size = new System.Drawing.Size(67, 67);
             this.btnVacuumRepDelete.TabIndex = 22;
             this.btnVacuumRepDelete.Text = "刪除";
             this.btnVacuumRepDelete.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnVacuumRepDelete.UseVisualStyleBackColor = false;
+            this.btnVacuumRepDelete.Click += new System.EventHandler(this.btnVacuumRepDelete_Click);
             // 
             // btnVacuumRepModify
             // 
@@ -153,13 +160,15 @@
             this.btnVacuumRepModify.Font = new System.Drawing.Font("微軟正黑體", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.btnVacuumRepModify.ForeColor = System.Drawing.Color.Cyan;
             this.btnVacuumRepModify.Image = ((System.Drawing.Image)(resources.GetObject("btnVacuumRepModify.Image")));
-            this.btnVacuumRepModify.Location = new System.Drawing.Point(115, 9);
+            this.btnVacuumRepModify.Location = new System.Drawing.Point(77, 6);
+            this.btnVacuumRepModify.Margin = new System.Windows.Forms.Padding(2);
             this.btnVacuumRepModify.Name = "btnVacuumRepModify";
-            this.btnVacuumRepModify.Size = new System.Drawing.Size(100, 100);
+            this.btnVacuumRepModify.Size = new System.Drawing.Size(67, 67);
             this.btnVacuumRepModify.TabIndex = 21;
             this.btnVacuumRepModify.Text = "修改";
             this.btnVacuumRepModify.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnVacuumRepModify.UseVisualStyleBackColor = false;
+            this.btnVacuumRepModify.Click += new System.EventHandler(this.btnVacuumRepModify_Click);
             // 
             // btnVacuumRepAdd
             // 
@@ -170,43 +179,49 @@
             this.btnVacuumRepAdd.Font = new System.Drawing.Font("微軟正黑體", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.btnVacuumRepAdd.ForeColor = System.Drawing.Color.Cyan;
             this.btnVacuumRepAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnVacuumRepAdd.Image")));
-            this.btnVacuumRepAdd.Location = new System.Drawing.Point(9, 9);
+            this.btnVacuumRepAdd.Location = new System.Drawing.Point(6, 6);
+            this.btnVacuumRepAdd.Margin = new System.Windows.Forms.Padding(2);
             this.btnVacuumRepAdd.Name = "btnVacuumRepAdd";
-            this.btnVacuumRepAdd.Size = new System.Drawing.Size(100, 100);
+            this.btnVacuumRepAdd.Size = new System.Drawing.Size(67, 67);
             this.btnVacuumRepAdd.TabIndex = 20;
             this.btnVacuumRepAdd.Text = "新增";
             this.btnVacuumRepAdd.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnVacuumRepAdd.UseVisualStyleBackColor = false;
+            this.btnVacuumRepAdd.Click += new System.EventHandler(this.btnVacuumRepAdd_Click);
             // 
             // dgvVacuumFrom
             // 
             this.dgvVacuumFrom.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvVacuumFrom.Location = new System.Drawing.Point(0, 320);
+            this.dgvVacuumFrom.Location = new System.Drawing.Point(0, 213);
+            this.dgvVacuumFrom.Margin = new System.Windows.Forms.Padding(2);
             this.dgvVacuumFrom.MultiSelect = false;
             this.dgvVacuumFrom.Name = "dgvVacuumFrom";
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("新細明體", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.dgvVacuumFrom.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("新細明體", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.dgvVacuumFrom.RowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvVacuumFrom.RowTemplate.Height = 31;
-            this.dgvVacuumFrom.Size = new System.Drawing.Size(563, 730);
+            this.dgvVacuumFrom.Size = new System.Drawing.Size(400, 487);
             this.dgvVacuumFrom.TabIndex = 30;
             // 
             // dgvVacuumTo
             // 
             this.dgvVacuumTo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvVacuumTo.Location = new System.Drawing.Point(640, 320);
+            this.dgvVacuumTo.Location = new System.Drawing.Point(452, 213);
+            this.dgvVacuumTo.Margin = new System.Windows.Forms.Padding(2);
             this.dgvVacuumTo.MultiSelect = false;
             this.dgvVacuumTo.Name = "dgvVacuumTo";
             this.dgvVacuumTo.RowTemplate.Height = 31;
-            this.dgvVacuumTo.Size = new System.Drawing.Size(480, 730);
+            this.dgvVacuumTo.Size = new System.Drawing.Size(412, 487);
             this.dgvVacuumTo.TabIndex = 31;
+            this.dgvVacuumTo.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvVacuumTo_CellContentClick);
             // 
             // cbxFactoryCode
             // 
             this.cbxFactoryCode.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.cbxFactoryCode.FormattingEnabled = true;
-            this.cbxFactoryCode.Location = new System.Drawing.Point(202, 132);
+            this.cbxFactoryCode.Location = new System.Drawing.Point(175, 85);
+            this.cbxFactoryCode.Margin = new System.Windows.Forms.Padding(2);
             this.cbxFactoryCode.Name = "cbxFactoryCode";
-            this.cbxFactoryCode.Size = new System.Drawing.Size(225, 38);
+            this.cbxFactoryCode.Size = new System.Drawing.Size(151, 28);
             this.cbxFactoryCode.TabIndex = 32;
             this.cbxFactoryCode.SelectedIndexChanged += new System.EventHandler(this.cbxFactoryCode_SelectedIndexChanged);
             // 
@@ -215,9 +230,10 @@
             this.cbxCategorysName.Enabled = false;
             this.cbxCategorysName.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.cbxCategorysName.FormattingEnabled = true;
-            this.cbxCategorysName.Location = new System.Drawing.Point(202, 177);
+            this.cbxCategorysName.Location = new System.Drawing.Point(175, 115);
+            this.cbxCategorysName.Margin = new System.Windows.Forms.Padding(2);
             this.cbxCategorysName.Name = "cbxCategorysName";
-            this.cbxCategorysName.Size = new System.Drawing.Size(225, 38);
+            this.cbxCategorysName.Size = new System.Drawing.Size(151, 28);
             this.cbxCategorysName.TabIndex = 33;
             // 
             // label1
@@ -226,9 +242,10 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("微軟正黑體", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.label1.ForeColor = System.Drawing.Color.LimeGreen;
-            this.label1.Location = new System.Drawing.Point(69, 224);
+            this.label1.Location = new System.Drawing.Point(85, 149);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(127, 36);
+            this.label1.Size = new System.Drawing.Size(86, 24);
             this.label1.TabIndex = 34;
             this.label1.Text = "機械編號";
             // 
@@ -238,9 +255,10 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("微軟正黑體", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.label4.ForeColor = System.Drawing.Color.LimeGreen;
-            this.label4.Location = new System.Drawing.Point(69, 269);
+            this.label4.Location = new System.Drawing.Point(85, 179);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(127, 36);
+            this.label4.Size = new System.Drawing.Size(86, 24);
             this.label4.TabIndex = 35;
             this.label4.Text = "機械名稱";
             // 
@@ -248,27 +266,30 @@
             // 
             this.cbxMachineCode.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.cbxMachineCode.FormattingEnabled = true;
-            this.cbxMachineCode.Location = new System.Drawing.Point(202, 222);
+            this.cbxMachineCode.Location = new System.Drawing.Point(175, 145);
+            this.cbxMachineCode.Margin = new System.Windows.Forms.Padding(2);
             this.cbxMachineCode.Name = "cbxMachineCode";
-            this.cbxMachineCode.Size = new System.Drawing.Size(225, 38);
+            this.cbxMachineCode.Size = new System.Drawing.Size(151, 28);
             this.cbxMachineCode.TabIndex = 36;
             this.cbxMachineCode.SelectedIndexChanged += new System.EventHandler(this.cbxMachineCode_SelectedIndexChanged);
             // 
             // tbxMachineName
             // 
             this.tbxMachineName.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.tbxMachineName.Location = new System.Drawing.Point(202, 266);
+            this.tbxMachineName.Location = new System.Drawing.Point(175, 175);
+            this.tbxMachineName.Margin = new System.Windows.Forms.Padding(2);
             this.tbxMachineName.Name = "tbxMachineName";
-            this.tbxMachineName.Size = new System.Drawing.Size(348, 39);
+            this.tbxMachineName.Size = new System.Drawing.Size(233, 29);
             this.tbxMachineName.TabIndex = 37;
             // 
             // btnLeft
             // 
             this.btnLeft.BackColor = System.Drawing.Color.Teal;
             this.btnLeft.Image = ((System.Drawing.Image)(resources.GetObject("btnLeft.Image")));
-            this.btnLeft.Location = new System.Drawing.Point(569, 449);
+            this.btnLeft.Location = new System.Drawing.Point(404, 327);
+            this.btnLeft.Margin = new System.Windows.Forms.Padding(2);
             this.btnLeft.Name = "btnLeft";
-            this.btnLeft.Size = new System.Drawing.Size(65, 65);
+            this.btnLeft.Size = new System.Drawing.Size(43, 43);
             this.btnLeft.TabIndex = 38;
             this.btnLeft.UseVisualStyleBackColor = false;
             this.btnLeft.Click += new System.EventHandler(this.btnLeft_Click);
@@ -277,19 +298,20 @@
             // 
             this.btnRight.BackColor = System.Drawing.Color.Teal;
             this.btnRight.Image = ((System.Drawing.Image)(resources.GetObject("btnRight.Image")));
-            this.btnRight.Location = new System.Drawing.Point(569, 822);
+            this.btnRight.Location = new System.Drawing.Point(404, 522);
+            this.btnRight.Margin = new System.Windows.Forms.Padding(2);
             this.btnRight.Name = "btnRight";
-            this.btnRight.Size = new System.Drawing.Size(65, 65);
+            this.btnRight.Size = new System.Drawing.Size(43, 43);
             this.btnRight.TabIndex = 39;
             this.btnRight.UseVisualStyleBackColor = false;
             this.btnRight.Click += new System.EventHandler(this.btnRight_Click);
             // 
             // VacuumRep
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(1120, 1044);
+            this.ClientSize = new System.Drawing.Size(864, 696);
             this.Controls.Add(this.btnRight);
             this.Controls.Add(this.btnLeft);
             this.Controls.Add(this.tbxMachineName);
@@ -308,6 +330,7 @@
             this.Controls.Add(this.btnVacuumRepDelete);
             this.Controls.Add(this.btnVacuumRepModify);
             this.Controls.Add(this.btnVacuumRepAdd);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "VacuumRep";
             this.Text = "真空機運轉記錄表";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

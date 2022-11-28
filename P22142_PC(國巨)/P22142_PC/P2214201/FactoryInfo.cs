@@ -179,6 +179,7 @@ namespace P2214201
             strSQL += "FT002 as '廠房名稱',";
             strSQL += "FT003 as '建立人員',";
             strSQL += "FT005 as '建立時間',";
+            strSQL += "FT004 as '修改人員',";
             strSQL += "FT006 as '修改時間' ";
             strSQL += "From FACTORYS ";
             strSQL += "Where 1 = 1 ";

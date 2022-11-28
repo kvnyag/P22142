@@ -137,7 +137,7 @@
         LhHzbxUhhBBCiDB03QuoXHrV3Z5+bAAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="btnVacuumRepStore.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnCompressRepStore.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAAaJJREFUaEPt
         0jFOw1AMxvEK1FN06nngOCCxsTFyBgaqcgGOVNSBhR0U7PgvFkjzOWmLh/eTLFWJPz8/pYumaZr6uq67
@@ -150,7 +150,7 @@
         AAAASUVORK5CYII=
 </value>
   </data>
-  <data name="btnVacuumRepExit.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnCompressRepExit.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAAW5JREFUaEPt
         2VtOwzAUhOHsA5bBZWu8sZqys/IEKjsI4/TviEigHNP0JJb8SX5g6tGxEZdehq7ruv0ax/Fe603rXStb
@@ -162,7 +162,7 @@
         RiW/8hAi+QAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="btnVacuumRepDemand.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnCompressRepDemand.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAAmpJREFUaEPt
         mc1OFEEUhSchkpDIAxAwGH94JEngGXCHLn0WF4pseA1Z+ghulAVhAxvxbzyn7hmSoed219ypKmLSX3KS
@@ -178,7 +178,7 @@
         +pa2HxkZcZlM/gEpZtKIiPhwewAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="btnVacuumRepDelete.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnCompressRepDelete.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAAN5JREFUaEPt
         0dENwjAMANHu0WE7TUcrX+wQbHIDgMhZqPKT/Fmfq2yttXYPY4wj5lMHn/2HPGje9ZXanyBahuw67C1D
@@ -187,7 +187,7 @@
         ipOMJyJ7zPOdWyt37mRcGYrJl3jE/Cp35K6a41trbaFtewFS3YyRXdMl4AAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="btnVacuumRepModify.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnCompressRepModify.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAAaVJREFUaEPt
         mEFKA0EQRUNyh2SZ7M1JvI3beAGXugyIIuIVdBvwIJ7AjbhwF9+f/IbJJDGxF5lq6AcfZqo69CuYyUAP
@@ -200,7 +200,7 @@
         yUcAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="btnVacuumRepAdd.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnCompressRepAdd.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAAXNJREFUaEPt
         2UtOAzEQhOG5BgqcNWdhEbgWm8ACuACv4e+4NCKCGeT2S4L+JIvguMuudaYQwu/med6xDqx7Vqm9Yvvg

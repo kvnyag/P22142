@@ -12,7 +12,7 @@ namespace P2214201
 
         string MN001, MN002, MN003, MN004, MN005, MN006, MN007, MN008, MN009, MN010, MN011; //單位機械編號資料 欄位名
         string CK001, CK002, CK003, CK004, CK005, CK006, CK007, CK008, CK009, CK010, CK011, CK012, CK013, CK014, CK015, CK016; //檢查項目基本資料 欄位名
-        string CG001, FT001;
+        string CG001, CG002, FT001;
         string strDemand = "";
         UseSQLServer USQL = new UseSQLServer();
         DataAccess da = new DataAccess();
@@ -73,8 +73,10 @@ namespace P2214201
 
             //檢查項目代號(CK001)
             //....查目前類別名稱，找出目前類別代號
+            CG002 = cbxReportCode.Text;
+
             strSQL = "";
-            strSQL += "Select * From CATEGORYS Where CG002 = '" + cbxReportCode.Text + "'";
+            strSQL += "Select * From CATEGORYS Where CG002 = '" + CG002 + "'";
             dt = USQL.SQLSelect(ref da, strSQL);
             CG001 = dt.Rows[0]["CG001"].ToString().Trim();
             //....若類別代號是 D(水電機械指數表)，需多填入 廠房代號

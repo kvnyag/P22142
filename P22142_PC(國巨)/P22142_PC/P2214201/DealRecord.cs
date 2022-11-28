@@ -10,19 +10,18 @@ namespace P2214201
     {//專用來處理記錄檔那四份資料表
         //公用參數
 
-        public string DGVShowSQL(string RecordName, int iRec, string[] arrDeal, string KeyValue, string PutINorOut)
+        public string DGVShowSQL(string RecordName, int iRec, string[] arrDeal, string KeyValue, string INorNot)
         {//********************************************************************
          //專用來組顯示各記錄檔 DataGridView SQL 語法
          //輸入值：RecordName --> 記錄檔名稱 ex: Vacuum or Compress ....
          //........iRec --> 各記錄檔要組的第幾種型態
          //........arrDeal --> 記錄 DataGridViewTo 內的記錄序號
-         //........KeyValue --> 記錄目前 DataGridViewTo 選定的值
-         //........PutINorOut --> DataGridViewTo 是 PutIN or PutOut
+         //........KeyValue --> 記錄檔表頭編號
          //********************************************************************
          //參數
-            string strSQL, tCK001;
+            string strSQL = "", tCK001;
 
-            if(RecordName == "Vacuum")
+            if(RecordName == "Vacuum_CHECKITEMS" || RecordName == "Compress_CHECKITEMS")
             {
                 strSQL = "";
                 strSQL += "Select CK001 as '項目代號 ',";
@@ -32,22 +31,56 @@ namespace P2214201
                 strSQL += "(CK003 + CK004 + CK005) as '參考值' ";
                 strSQL += "From CHECKITEMS ";
                 strSQL += "Where CK016 = 'A' ";
-                
+
                 if (iRec == 2)
                 {
-                    //將項目代號放入陣列
-                    if (PutINorOut == "IN")
-                        arrDeal = arrPutIn(arrDeal, KeyValue);
-                    else if (PutINorOut == "OUT")
-                        arrDeal = arrPutOut(arrDeal, KeyValue);
-                    //將陣列串成一串文字
                     tCK001 = arrTostr(arrDeal);
                     //查詢
-                    strSQL += "And CK001 in (" + tCK001 + ") ";
-                }
-                
+                    if (INorNot == "IN")
+                    {
+                        if (tCK001 != "")
+                            strSQL += "And CK001 in (" + tCK001 + ") ";
+                        else
+                            strSQL += "And CK001 = '" + tCK001 + "' ";
+                    }
+                    else
+                    {
+                        if (tCK001 != "")
+                            strSQL += "And CK001 not in (" + tCK001 + ") ";
+                        else
+                            strSQL += "";
+                    }
+                }         
                 strSQL += "Order by CK001 ";
             }
+            else if(RecordName == "Vacuum_VACUUM_BODYS")
+            {
+                strSQL = "";
+                strSQL += "Select VMB003 as '項目代號 ',";
+                strSQL += "VMB004 as '項目名稱',";
+                strSQL += "VMB008 as '備註1',";
+                strSQL += "VMB009 as '備註2',";
+                strSQL += "(VMB005 + VMB006 + VMB007) as '參考值',";
+                strSQL += "VMB015 as '是否作廢' ";
+                strSQL += "From VACUUM_BODYS ";
+                strSQL += "Where VMB001 = '" + KeyValue + "' ";
+                //strSQL += "And VMB015 = 'N' ";
+            }
+            else if(RecordName == "Compress_COMPRESSEDAIR_BODYS")
+            {
+                strSQL = "";
+                strSQL += "Select CAB003 as '項目代號 ',";
+                strSQL += "CAB004 as '項目名稱',";
+                strSQL += "CAB008 as '備註1',";
+                strSQL += "CAB009 as '備註2',";
+                strSQL += "(CAB005 + CAB006 + CAB007) as '參考值',";
+                strSQL += "CAB015 as '是否作廢' ";
+                strSQL += "From COMPRESS_BODYS ";
+                strSQL += "Where CAB001 = '" + KeyValue + "' ";
+                //strSQL += "And CAB015 = 'N' ";
+            }
+
+            return strSQL;
         }
 
         public string[] arrPutIn(string[] arrDeal, string dataIn)

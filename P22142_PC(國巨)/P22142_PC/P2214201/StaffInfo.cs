@@ -224,6 +224,7 @@ namespace P2214201
             strSQL += "b.RL002 as '權限群組',";
             strSQL += "a.UR006 as '建立人員',";
             strSQL += "a.UR008 as '建立時間',";
+            strSQL += "a.UR007 as '修改人員',";
             strSQL += "a.UR009 as '修改時間',";
             strSQL += "a.UR003 as '狀態' ";
             strSQL += "From USERS a, ROLES b ";

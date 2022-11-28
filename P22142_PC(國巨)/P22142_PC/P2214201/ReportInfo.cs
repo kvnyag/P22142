@@ -22,6 +22,9 @@ namespace P2214201
 
         private void ReportInfo_Load(object sender, EventArgs e)
         {
+            //參數
+            string strSQL;
+
             if (UserRole == "OP") //操作者身份
             {
                 //管理者身份可使用 新增、刪除、修改、查詢、離開
@@ -171,21 +174,25 @@ namespace P2214201
         private void btnReportInfoDemand_Click(object sender, EventArgs e)
         {//執行"查詢"動作
             //參數
-            string strSQL;
+            string strSQL, CG001;
 
             //搜尋結果填入 DataGridView
+            CG001 = tbxReportCode.Text.Trim();
+            CG002 = tbxReportName.Text.Trim();
+
             strSQL = "";
             strSQL += "Select CG001 as '類別代號',";
             strSQL += "CG002 as '類別名稱',";
             strSQL += "CG003 as '建立人員',";
             strSQL += "CG005 as '建立時間',";
+            strSQL += "CG004 as '修改人員',";
             strSQL += "CG006 as '修改時間' ";
             strSQL += "From CATEGORYS ";
             strSQL += "Where 1 = 1 ";
-            if (tbxReportCode.Text.Trim() != "")
-                strSQL += "And CG001 = '" + tbxReportCode.Text.Trim() + "' ";
-            if (tbxReportName.Text.Trim() != "")
-                strSQL += "And CG002 = '" + tbxReportName.Text.Trim() + "' ";
+            if (CG001 != "")
+                strSQL += "And CG001 = '" + CG001 + "' ";
+            if (CG002 != "")
+                strSQL += "And CG002 = '" + CG002 + "' ";
 
             strDemand = strSQL; //記錄查詢過的語句，方便新增、修改、刪除後重整 DataGridView 顯示
 
