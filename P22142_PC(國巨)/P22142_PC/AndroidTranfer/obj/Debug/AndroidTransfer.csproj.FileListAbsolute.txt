@@ -1,0 +1,6 @@
+D:\Kevin\Tutorial\P22142_PC(國巨)\P22142_PC\AndroidTranfer\bin\Debug\AndroidTransfer.dll
+D:\Kevin\Tutorial\P22142_PC(國巨)\P22142_PC\AndroidTranfer\bin\Debug\AndroidTransfer.pdb
+D:\Kevin\Tutorial\P22142_PC(國巨)\P22142_PC\AndroidTranfer\obj\Debug\AndroidTransfer.csprojAssemblyReference.cache
+D:\Kevin\Tutorial\P22142_PC(國巨)\P22142_PC\AndroidTranfer\obj\Debug\AndroidTransfer.csproj.CoreCompileInputs.cache
+D:\Kevin\Tutorial\P22142_PC(國巨)\P22142_PC\AndroidTranfer\obj\Debug\AndroidTransfer.dll
+D:\Kevin\Tutorial\P22142_PC(國巨)\P22142_PC\AndroidTranfer\obj\Debug\AndroidTransfer.pdb

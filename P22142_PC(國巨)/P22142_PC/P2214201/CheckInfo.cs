@@ -10,7 +10,7 @@ namespace P2214201
         //公用變數
         public string UserAccount, UserName, UserRole;
 
-        string MN001, MN002, MN003, MN004, MN005, MN006, MN007, MN008, MN009, MN010, MN011; //單位機械編號資料 欄位名
+        string MN001, MN002, MN003, MN004, MN005, MN006, MN007, MN008, MN009, MN010, MN011, MN012; //單位機械編號資料 欄位名
         string CK001, CK002, CK003, CK004, CK005, CK006, CK007, CK008, CK009, CK010, CK011, CK012, CK013, CK014, CK015, CK016; //檢查項目基本資料 欄位名
         string CG001, CG002, FT001;
         string strDemand = "";
@@ -96,7 +96,6 @@ namespace P2214201
                 //....建出檢查項目代號
                 tbxCheckCode.Text = CG001 + (maxNo + 1).ToString().PadLeft(5, '0');
             }
-            
         }
 
         private void cbxFactoryName_SelectedIndexChanged(object sender, EventArgs e)
@@ -186,11 +185,13 @@ namespace P2214201
                 MN009 = "";                                           //備用
                 MN010 = tbxCheckCode.Text;                            //備用
                 MN011 = "";                                           //備用
+                MN012 = "Y";                                          //是否仍然使用
 
                 strSQL = "";
-                strSQL += "Insert Into MECHNUMBERS (MN001,MN002,MN003,MN004,MN005,MN006,MN007,MN008,MN009,MN010,MN011) Values ('";
+                strSQL += "Insert Into MECHNUMBERS (MN001,MN002,MN003,MN004,MN005,MN006,MN007,MN008,MN009,MN010,MN011,MN012) Values ('";
                 strSQL += MN001 + "','" + MN002 + "','" + MN003 + "','" + MN004 + "','" + MN005 + "','" + MN006 + "','";
-                strSQL += MN007 + "','" + MN008 + "','" + MN009 + "','" + MN010 + "','" + MN011 + "')";
+                strSQL += MN007 + "','" + MN008 + "','" + MN009 + "','" + MN010 + "','" + MN011 + "','" + MN012 + "')";
+
                 USQL.SQLNonSelect(ref da, strSQL);
             }
             //重整 DataGridView 顯示

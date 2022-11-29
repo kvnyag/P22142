@@ -15,7 +15,8 @@ namespace AndroidTranferTool
         bool connectionResult = false;
         RegalScan.AndroidTransfer Transfer;
         string androidPlatformPath = "com.regalscan.platform";
-        string outputPath = ConfigurationManager.AppSettings["outputPath"];
+        //string outputPath = ConfigurationManager.AppSettings["outputPath"];
+        string outputPath = Application.StartupPath + "\\SQLDB";
         string convertInputPath = ConfigurationManager.AppSettings["convertInputPath"];
         string convertOutputPath = ConfigurationManager.AppSettings["convertOutputPath"];
         string PdaToPC = ConfigurationManager.AppSettings["PdatoPC"] + ConfigurationManager.AppSettings["outputDBName"];
@@ -126,6 +127,13 @@ namespace AndroidTranferTool
         //手持裝置 -> 電腦
         private void btnPDAtoPC_Click(object sender, EventArgs e)
         {
+            PDAToPC pp = new PDAToPC();
+            pp.UsePDAToPC();
+
+            btnPDAtoPC.Enabled = false;
+            Waitting waitting = new Waitting();
+            waitting.Show();
+            
             this.Cursor = Cursors.WaitCursor;//漏斗指標
             ThreadPool.QueueUserWorkItem(o =>
             {
@@ -139,21 +147,25 @@ namespace AndroidTranferTool
                     }
                     else
                     {
-                        ResultInfo resultInfo = Transfer.adbPull(PdaToPC, outputPath);
+                        ResultInfo resultInfo = Transfer.adbPull(PdaToPC + "-journal", outputPath);
+                        resultInfo = Transfer.adbPull(PdaToPC, outputPath);
+
+
                         if (resultInfo.resultCode == 0)
                         {
-                            if (enableOutConvert)
-                            {
-                                outputPath = RunConvertEXE(2, outputPath + PdaToPC.Replace(@"sdcard/Download/", "")); //啟用轉檔
-                                if (!outputPath.EndsWith("\\"))
-                                    outputPath = outputPath + "\\";
-                            }
+                            //if (enableOutConvert)
+                            //{
+                            //   outputPath = RunConvertEXE(2, outputPath + PdaToPC.Replace(@"sdcard/Download/", "")); //啟用轉檔
+                            //    if (!outputPath.EndsWith("\\"))
+                            //        outputPath = outputPath + "\\";
+                            //}
                             this.Cursor = Cursors.Default;
                             if (!Directory.Exists(outputPath))
                             {
                                 MessageBox.Show("轉檔失敗，請確認來源資料是否正確\n錯誤：" + outputPath, "系統提示", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
                                 return;
                             }
+
                             MessageBox.Show(resultInfo.resultMessage, "匯出成功", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
                             Process.Start("EXPLORER", outputPath);
                         }

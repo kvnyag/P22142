@@ -33,6 +33,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AndroidTranferTool, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\AndroidTranferTool\bin\Debug\AndroidTranferTool.exe</HintPath>
+    </Reference>
+    <Reference Include="AndroidTransfer, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\AndroidTranfer\obj\Debug\AndroidTransfer.dll</HintPath>
+    </Reference>
     <Reference Include="DataAccess, Version=1.2.0.26277, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\Debug\DataAccess.dll</HintPath>

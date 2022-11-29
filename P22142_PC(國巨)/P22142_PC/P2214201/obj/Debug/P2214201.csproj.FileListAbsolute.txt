@@ -68,3 +68,9 @@ E:\Tutorial\P22142_PC(國巨)\P22142_PC\P2214201\obj\Debug\P2214201.AirCondition
 E:\Tutorial\P22142_PC(國巨)\P22142_PC\P2214201\obj\Debug\P2214201.CompressRep.resources
 E:\Tutorial\P22142_PC(國巨)\P22142_PC\P2214201\obj\Debug\P2214201.HydropowerRep.resources
 E:\Tutorial\P22142_PC(國巨)\P22142_PC\P2214201\obj\Debug\P2214201.VacuumRep.resources
+D:\Kevin\Tutorial\P22142_PC(國巨)\P22142_PC\P2214201\bin\Debug\AndroidTranferTool.exe
+D:\Kevin\Tutorial\P22142_PC(國巨)\P22142_PC\P2214201\bin\Debug\AndroidTranferTool.pdb
+D:\Kevin\Tutorial\P22142_PC(國巨)\P22142_PC\P2214201\bin\Debug\AndroidTranferTool.exe.config
+D:\Kevin\Tutorial\P22142_PC(國巨)\P22142_PC\P2214201\bin\Debug\AndroidTransfer.dll
+D:\Kevin\Tutorial\P22142_PC(國巨)\P22142_PC\P2214201\bin\Debug\AndroidTransfer.pdb
+D:\Kevin\Tutorial\P22142_PC(國巨)\P22142_PC\P2214201\bin\Debug\DataAccess.SQLite.dll

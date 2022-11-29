@@ -1,15 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using REGAL.Data.DataAccess;
+﻿using REGAL.Data.DataAccess;
 using System.Data.Common;
 using System.Data;
 
 namespace P2214201
 {
-    class UseSQLServer
+    public partial class UseSQLServer
     {//所有使用 SQL Server的事都呼叫這個類別
 
         //公用變數
@@ -39,8 +34,9 @@ namespace P2214201
             objTrans = null;
 
             //da.ConnectionString = @"Data Source=192.168.9.18;Database=DB22055;User Id=sa;Password=chi";
-            da.ConnectionString = @"Data Source=DESKTOP-S567K53\SQLEXPRESS;Database=DB22142;User Id=sa;Password=sa";
-            //da.ConnectionString = @"Data Source=" + SQLBackData[0] + ";Database=" + SQLBackData[1] + ";User Id=" + SQLBackData[2] + ";Password=" + SQLBackData[3];
+            //da.ConnectionString = @"Data Source=DESKTOP-S567K53\SQLEXPRESS;Database=DB22142;User Id=sa;Password=sa";
+            //da.ConnectionString = @"Data Source=192.168.9.128\SQLEXPRESS;Database=DB22142;User Id=sa;Password=1234";
+            da.ConnectionString = @"Data Source=" + SQLBackData[0] + ";Database=" + SQLBackData[1] + ";User Id=" + SQLBackData[2] + ";Password=" + SQLBackData[3];
 
             da.ProviderName = "System.Data.SqlClient";
             objTrans = da.CreateDbTransaction();
@@ -102,7 +98,31 @@ namespace P2214201
             //執行 Insert、Update、Delete
             da.ExecuteNonQuery(strNonSelect);
         }
+        public string FindFT(string FT001, string FT002)
+        {//查詢 類別 代號及名稱
+            //參數
+            string strSQL, backFT = "";
+            DataTable dt = new DataTable();
 
+            if (FT001 != "")
+            {
+                strSQL = "";
+                strSQL += "Select FT002 From FACTORYS Where FT001 = '" + FT001 + "'";
+                dt = SQLSelect(ref da, strSQL);
+                FT002 = dt.Rows[0]["FT002"].ToString().Trim();
+                backFT = FT002;
+            }
+            else if (FT002 != "")
+            {
+                strSQL = "";
+                strSQL += "Select FT001 From FACTORYS Where FT002 = '" + FT002 + "'";
+                dt = SQLSelect(ref da, strSQL);
+                FT001 = dt.Rows[0]["FT001"].ToString().Trim();
+                backFT = FT001;
+            }
+
+            return backFT;
+        }
         public string FindCG(string CG001, string CG002)
         {//查詢 類別 代號及名稱
             //參數

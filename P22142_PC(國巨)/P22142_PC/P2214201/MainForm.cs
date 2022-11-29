@@ -135,7 +135,6 @@ namespace P2214201
                 else if (e.Node.Name == "AirConditionRep")
                 {
                     splitContainer1.Panel2.Controls.Clear();
-                    splitContainer1.Panel2.Controls.Clear();
                     this.IsMdiContainer = true;                    //設置 MainForm 為父視窗
                     AirConditionRep sfInfo = new AirConditionRep();
                     sfInfo.MdiParent = this;                       //設置視窗的父子關係
@@ -151,8 +150,6 @@ namespace P2214201
                 }
                 else if (e.Node.Name == "HydropowerRep")
                 {
-                    splitContainer1.Panel2.Controls.Clear();
-                    splitContainer1.Panel2.Controls.Clear();
                     splitContainer1.Panel2.Controls.Clear();
                     this.IsMdiContainer = true;                    //設置 MainForm 為父視窗
                     HydropowerRep sfInfo = new HydropowerRep();
@@ -189,7 +186,19 @@ namespace P2214201
                 }
                 else if (e.Node.Name == "TransportData")
                 {
-                    MessageBox.Show("傳輸資料");
+                    splitContainer1.Panel2.Controls.Clear();
+                    using (AndroidTranferTool.Main _AndroidTranferTool = new AndroidTranferTool.Main())
+                    {
+                        this.Visible = false;
+
+                        _AndroidTranferTool.Owner = this;
+                        _AndroidTranferTool.ShowDialog();
+
+                        _AndroidTranferTool.Close();
+                        _AndroidTranferTool.Dispose();
+
+                        this.Visible = true;
+                    }
                 }
                 else if (e.Node.Name == "Setting")
                 {

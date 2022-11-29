@@ -1,0 +1,6 @@
+Main:
+Size --> 502, 518
+
+pnlConnect:
+Size --> 456, 392
+Location --> 12, 12

@@ -10,53 +10,64 @@ namespace P2214201
     {//專用來處理記錄檔那四份資料表
         //公用參數
 
-        public string DGVShowSQL(string RecordName, int iRec, string[] arrDeal, string KeyValue, string INorNot)
+        public string DGVShowSQL(string CG001, int iRec, string[] arrDeal, string FT001, string INorNot)
         {//********************************************************************
          //專用來組顯示各記錄檔 DataGridView SQL 語法
-         //輸入值：RecordName --> 記錄檔名稱 ex: Vacuum or Compress ....
+         //輸入值：CG001 --> 類別代號
          //........iRec --> 各記錄檔要組的第幾種型態
          //........arrDeal --> 記錄 DataGridViewTo 內的記錄序號
-         //........KeyValue --> 記錄檔表頭編號
+         //........FT001 --> 廠房代號
          //********************************************************************
          //參數
             string strSQL = "", tCK001;
+            
+            strSQL = "";
+            strSQL += "Select CK001 as '項目代號 ',";
+            strSQL += "CK002 as '項目名稱',";
+            strSQL += "CK006 as '備註1',";
+            strSQL += "CK007 as '備註2',";
+            strSQL += "(CK003 + CK004 + CK005) as '參考值' ";
+            strSQL += "From CHECKITEMS ";
+            strSQL += "Where CK016 = '" + CG001 + "' ";
+            if(CG001 == "D")
+                strSQL += "And CK015 = '" + FT001 + "' ";
 
-            if(RecordName == "Vacuum_CHECKITEMS" || RecordName == "Compress_CHECKITEMS")
+            if (iRec == 2)
             {
-                strSQL = "";
-                strSQL += "Select CK001 as '項目代號 ',";
-                strSQL += "CK002 as '項目名稱',";
-                strSQL += "CK006 as '備註1',";
-                strSQL += "CK007 as '備註2',";
-                strSQL += "(CK003 + CK004 + CK005) as '參考值' ";
-                strSQL += "From CHECKITEMS ";
-                strSQL += "Where CK016 = 'A' ";
-
-                if (iRec == 2)
+                tCK001 = arrTostr(arrDeal);
+                //查詢
+                if (INorNot == "IN")
                 {
-                    tCK001 = arrTostr(arrDeal);
-                    //查詢
-                    if (INorNot == "IN")
-                    {
-                        if (tCK001 != "")
-                            strSQL += "And CK001 in (" + tCK001 + ") ";
-                        else
-                            strSQL += "And CK001 = '" + tCK001 + "' ";
-                    }
+                    if (tCK001 != "")
+                        strSQL += "And CK001 in (" + tCK001 + ") ";
                     else
-                    {
-                        if (tCK001 != "")
-                            strSQL += "And CK001 not in (" + tCK001 + ") ";
-                        else
-                            strSQL += "";
-                    }
-                }         
-                strSQL += "Order by CK001 ";
-            }
-            else if(RecordName == "Vacuum_VACUUM_BODYS")
+                        strSQL += "And CK001 = '" + tCK001 + "' ";
+                }
+                else
+                {
+                    if (tCK001 != "")
+                        strSQL += "And CK001 not in (" + tCK001 + ") ";
+                    else
+                        strSQL += "";
+                }
+            }         
+            strSQL += "Order by CK001 ";
+            
+            return strSQL;
+        }
+
+        public string DGVShowSQL(string RecordName, string KeyValue)
+        {//********************************************************************
+         //組合 DataGridViewTo 顯示的 SQL 語法
+         //........KeyValue --> 記錄檔表頭編號
+         //********************************************************************
+            //參數
+            string strSQL = "";
+
+            if (RecordName == "VACUUM_BODYS")
             {
                 strSQL = "";
-                strSQL += "Select VMB003 as '項目代號 ',";
+                strSQL += "Select VMB003 as '項目代號',";
                 strSQL += "VMB004 as '項目名稱',";
                 strSQL += "VMB008 as '備註1',";
                 strSQL += "VMB009 as '備註2',";
@@ -66,18 +77,44 @@ namespace P2214201
                 strSQL += "Where VMB001 = '" + KeyValue + "' ";
                 //strSQL += "And VMB015 = 'N' ";
             }
-            else if(RecordName == "Compress_COMPRESSEDAIR_BODYS")
+            else if (RecordName == "COMPRESSEDAIR_BODYS")
             {
                 strSQL = "";
-                strSQL += "Select CAB003 as '項目代號 ',";
+                strSQL += "Select CAB003 as '項目代號',";
                 strSQL += "CAB004 as '項目名稱',";
                 strSQL += "CAB008 as '備註1',";
                 strSQL += "CAB009 as '備註2',";
                 strSQL += "(CAB005 + CAB006 + CAB007) as '參考值',";
                 strSQL += "CAB015 as '是否作廢' ";
-                strSQL += "From COMPRESS_BODYS ";
+                strSQL += "From COMPRESSEDAIR_BODYS ";
                 strSQL += "Where CAB001 = '" + KeyValue + "' ";
                 //strSQL += "And CAB015 = 'N' ";
+            }
+            else if (RecordName == "COLDAIR_BODYS")
+            {
+                strSQL = "";
+                strSQL += "Select COB003 as '項目代號',";
+                strSQL += "COB004 as '項目名稱',";
+                strSQL += "COB008 as '備註1',";
+                strSQL += "COB009 as '備註2',";
+                strSQL += "(COB005 + COB006 + COB007) as '參考值',";
+                strSQL += "COB015 as '是否作廢' ";
+                strSQL += "From COLDAIR_BODYS ";
+                strSQL += "Where COB001 = '" + KeyValue + "' ";
+                //strSQL += "And COB015 = 'N' ";
+            }
+            else if (RecordName == "WATERELC_BODYS")
+            {
+                strSQL = "";
+                strSQL += "Select WEB003 as '項目代號',";
+                strSQL += "WEB004 as '項目名稱',";
+                strSQL += "WEB008 as '備註1',";
+                strSQL += "WEB009 as '備註2',";
+                strSQL += "(WEB005 + WEB006 + WEB007) as '參考值',";
+                strSQL += "WEB015 as '是否作廢' ";
+                strSQL += "From WATERELC_BODYS ";
+                strSQL += "Where WEB001 = '" + KeyValue + "' ";
+                //strSQL += "And WEB015 = 'N' ";
             }
 
             return strSQL;

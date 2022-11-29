@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace P2214201
 {
-    class UseXML
+    public partial class UseXML
     {//所有使用 XML 的事都呼叫這個類別
         //公用變數
         string xmlPath;

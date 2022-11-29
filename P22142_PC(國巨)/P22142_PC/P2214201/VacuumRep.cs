@@ -21,6 +21,9 @@ namespace P2214201
         string VMH001, VMH002, VMH003, VMH004, VMH005, VMH006, VMH007, VMH008, VMH009, VMH010, VMH011;
         string VMB001, VMB002, VMB003, VMB004, VMB005, VMB006, VMB007, VMB008, VMB009, VMB010, VMB011, VMB012, VMB013, VMB014, VMB015;
         string[] arrCGA = new string[300];
+        CheckBox ckHeader_From = new CheckBox();
+        CheckBox ckHeader_To = new CheckBox();
+        Rectangle rect_From, rect_To;
 
         public VacuumRep()
         {
@@ -35,20 +38,17 @@ namespace P2214201
 
             //DataGridView 設定
             //....dgvVacuumFrom
-            //dgvVacuumFrom.ReadOnly = true;
             dgvVacuumFrom.RowsDefaultCellStyle.Font = new Font("微軟正黑體", 10, FontStyle.Regular);
             dgvVacuumFrom.ColumnHeadersDefaultCellStyle.Font = new Font("微軟正黑體", 8, FontStyle.Regular);
             dgvVacuumFrom.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
             
             //....dgvVacuumTo
-            //dgvVacuumTo.ReadOnly = true;
             dgvVacuumTo.RowsDefaultCellStyle.Font = new Font("微軟正黑體", 9, FontStyle.Regular);
             dgvVacuumTo.ColumnHeadersDefaultCellStyle.Font = new Font("微軟正黑體", 6, FontStyle.Regular);
             dgvVacuumTo.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
 
             //填入 廠房代號(cbxFactoryCode)
-            strSQL = "";
-            strSQL += "Select * From FACTORYS";
+            strSQL = "Select * From FACTORYS";
             dt = USQL.SQLSelect(ref da, strSQL);
             RowsNo = dt.Rows.Count;
             if(RowsNo <= 0)
@@ -58,8 +58,7 @@ namespace P2214201
                 cbxFactoryCode.Items.Add(dt.Rows[i]["FT001"].ToString().Trim());
 
             //填入 類別名稱(cbxCategorysName)
-            strSQL = "";
-            strSQL += "Select CG002 From CATEGORYS Where CG001 = 'A'";
+            strSQL = "Select CG002 From CATEGORYS Where CG001 = 'A'";
             dt = USQL.SQLSelect(ref da, strSQL);
             RowsNo = dt.Rows.Count;
             if (RowsNo <= 0)
@@ -79,14 +78,14 @@ namespace P2214201
             string strSQL, strMaxVMH, strMaxVMB, CK001;
 
             //寫入資料庫_HEADS
-            strSQL = "Select ISNULL(Max(VMH001),'VMH_00000') as MaxVMH001 From VACUUM_HEADS";
+            strSQL = "Select ISNULL(Max(VMH001),'VMH_00000') as MaxVMH001 From VACUUM_HEADS"; 
             dt = USQL.SQLSelect(ref da, strSQL);
             strMaxVMH = dt.Rows[0]["MaxVMH001"].ToString();
             MaxVMH = int.Parse(strMaxVMH.Substring(4, 5)) + 1;
 
             VMH001 = "VMH_" + MaxVMH.ToString().PadLeft(5, '0');   //流水序號(VMH001)
             VMH002 = cbxFactoryCode.Text;                          //廠房代號(VMH002)
-            VMH003 = cbxCategorysName.Text;                        //類別代號(VMH003)
+            VMH003 = USQL.FindCG("", cbxCategorysName.Text);       //類別代號(VMH003)
             VMH004 = cbxMachineCode.Text;                          //機械編號代號 (VMH004)
             VMH005 = tbxMachineName.Text;                          //機械編號名稱(VMH005)
             VMH006 = UserName;                                     //建立者(VMH006)
@@ -102,7 +101,7 @@ namespace P2214201
 
             try
             { objTrans = USQL.SQLNonSelect(ref da, ref objTrans, strSQL); }
-            catch(Exception Ex)
+            catch (Exception Ex)
             {
                 objTrans.Rollback();
                 MessageBox.Show("Insert Into VACUUM_HEADS 出現錯誤，請確認資料後重新執行。系統訊息：" + Ex.Message, "Inser Into VACUUM_HEADS");
@@ -162,14 +161,13 @@ namespace P2214201
 
             //寫入資料庫
             if (objTrans != null)
-                objTrans.Commit();
+            { objTrans.Commit(); objTrans = null; }
             //新增 按鈕不可使用，修改、刪除 按鈕可使用
             isEnable("N", "Y", "Y", "", "");
             //畫面清空
             ClearForm();
             //清空 arrCGA
             Array.Clear(arrCGA, 0, arrCGA.Length);
-
         }
 
         private void btnVacuumRepModify_Click(object sender, EventArgs e)
@@ -184,7 +182,7 @@ namespace P2214201
             // dgvVacuumTo 資料列數
             RowNo = dgvVacuumTo.Rows.Count; //注意:其中包含完全無值的最後一行空白列
             //找出 標頭 檔編號
-            strSQL = "Select VMH001 From VACUUM_HEADS Where VMH002 = '" + FT001 + "' And VMH003 = '" + CG002 + "' And VMH004 = '" + MN001 + "'";
+            strSQL = "Select VMH001 From VACUUM_HEADS Where VMH002 = '" + FT001 + "' And VMH003 = '" + CG001 + "' And VMH004 = '" + MN001 + "' And VMH011 = 'Y' ";
             dt = USQL.SQLSelect(ref da, strSQL);
             VMB001 = dt.Rows[0]["VMH001"].ToString();
             //逐筆將 是否作廢 填回資料庫
@@ -195,7 +193,7 @@ namespace P2214201
                 strSQL = "Update VACUUM_BODYS Set VMB015 = '" + VMB015 + "' Where VMB001 = '" + VMB001 + "' And VMB003 = '" + VMB003 + "'";
                 try
                 { objTrans = USQL.SQLNonSelect(ref da, ref objTrans, strSQL); }
-                catch(Exception Ex)
+                catch (Exception Ex)
                 {
                     objTrans.Rollback();
                     MessageBox.Show("修改作廢資料變更有誤，請確認後重新執行。系統錯誤訊息：" + Ex.Message, "修改作廢資料變更");
@@ -205,7 +203,7 @@ namespace P2214201
             MessageBox.Show("資料修改完成。");
             //寫入資料庫
             if (objTrans != null)
-                objTrans.Commit();
+            { objTrans.Commit(); objTrans = null; }
         }
 
         private void btnVacuumRepDelete_Click(object sender, EventArgs e)
@@ -223,11 +221,11 @@ namespace P2214201
             if (DialogResult == DialogResult.No)
                 return;
             //找出 標頭 檔編號
-            strSQL = "Select VMH001 From VACUUM_HEADS Where VMH002 = '" + FT001 + "' And VMH003 = '" + CG002 + "' And VMH004 = '" + MN001 + "' And VMH011 = 'Y' ";
+            strSQL = "Select VMH001 From VACUUM_HEADS Where VMH002 = '" + FT001 + "' And VMH003 = '" + CG001 + "' And VMH004 = '" + MN001 + "' And VMH011 = 'Y' ";
             dt = USQL.SQLSelect(ref da, strSQL);
-            VMB001 = dt.Rows[0]["VMH001"].ToString();
+            VMH001 = dt.Rows[0]["VMH001"].ToString();
             //標頭檔 資料作廢，但不刪除。
-            strSQL = "Update VACUUM_HEADS Set VMH011 = 'N' Where VMH002 = '" + FT001 + "' And VMH003 = '" + CG002 + "' And VMH004 = '" + MN001 + "'";
+            strSQL = "Update VACUUM_HEADS Set VMH011 = 'N' Where VMH001 = '" + VMH001 + "' And VMH011 = 'Y' ";
             USQL.SQLNonSelect(ref da, strSQL);
             //標頭檔 資料作廢，但不刪除。
             strSQL = "Update MECHNUMBERS Set MN012 = 'N' Where MN001 = '" + MN001 + "'";
@@ -249,8 +247,7 @@ namespace P2214201
             CG002 = cbxCategorysName.Text;
             CG001 = USQL.FindCG("", CG002);
             //填入 機械編號(cbxMachineCode)
-            strSQL = "";
-            strSQL += "Select * From MECHNUMBERS Where MN004 = '" + CG001 + "' And MN003 = '" + FT001 + "' Order by MN001 ";
+            strSQL = "Select * From MECHNUMBERS Where MN003 = '" + FT001 + "' And MN004 = '" + CG001 + "' Order by MN001 ";
             dt = USQL.SQLSelect(ref da, strSQL);
             RowsNo = dt.Rows.Count;
             if (RowsNo <= 0)
@@ -274,10 +271,12 @@ namespace P2214201
             MN002 = USQL.FindMN(MN001, "");
             tbxMachineName.Text = MN002;
             //清空 DataGridView 資料
+            ckHeader_From.Visible = false;
             dgvVacuumFrom.Columns.Clear();
+            ckHeader_To.Visible = false;
             dgvVacuumTo.Columns.Clear();
             //先檢查是否已做過新增並建立資料在資料庫
-            strSQL = "Select * From VACUUM_HEADS Where VMH002 = '" + FT001 + "' And VMH003 = '" + CG002 + "' And VMH004 = '" + MN001 + "' And VMH011 = 'Y' "; //確認表頭檔是否有記錄
+            strSQL = "Select * From VACUUM_HEADS Where VMH002 = '" + FT001 + "' And VMH003 = '" + CG001 + "' And VMH004 = '" + MN001 + "' And VMH011 = 'Y' "; //確認表頭檔是否有記錄
             dt = USQL.SQLSelect(ref da, strSQL);
             
             if (dt.Rows.Count > 0)
@@ -285,88 +284,111 @@ namespace P2214201
                 //記錄 表頭檔 序號
                 VMH001 = dt.Rows[0]["VMH001"].ToString();
                 //處理 dgvVacuumFrom ******************************************
-                //....帶出 表頭檔 資料
-                strSQL = drc.DGVShowSQL("Vacuum_CHECKITEMS", 1, arrCGA, "", "");
+                //....1.畫出來的打勾圖示 不可見
+                ckHeader_From.Visible = false;
+                //....2.帶出 表頭檔 資料
+                //......<1>清空 arrCGA
+                Array.Clear(arrCGA, 0, arrCGA.Length);
+                //......<2>從 表身檔 抓出已記錄的表身資料
+                strSQL = drc.DGVShowSQL("VACUUM_BODYS", VMH001);
+                dt = USQL.SQLSelect(ref da, strSQL);
+                //......<3>將 表身檔 記錄的檢查項目寫入 arrCGA
+                for (i = 0; i < dt.Rows.Count; i++)
+                    arrCGA = drc.arrPutIn(arrCGA, dt.Rows[i]["項目代號"].ToString());
+                //......<4>組出沒有 表身檔 記錄的檢查項目的 SQL 語法
+                strSQL = drc.DGVShowSQL(CG001, 2, arrCGA, FT001, "NOT");
                 dt = USQL.SQLSelect(ref da, strSQL);
                 dgvVacuumFrom.DataSource = dt;
-                //....全都 僅可讀
+                //....3.全都 僅可讀
                 for (i = 0; i < dgvVacuumFrom.Columns.Count; i++)
                     dgvVacuumFrom.Columns[i].ReadOnly = true;
                 //處理 dgvVacuumTo ********************************************
-                //....帶出 表身檔 資料
-                strSQL = drc.DGVShowSQL("Vacuum_VACUUM_BODYS", 0, arrCGA, VMH001, "");
+                //....1.畫出來的打勾圖示 不可見
+                ckHeader_To.Visible = false;
+                //....2.帶出 表身檔 資料
+                strSQL = drc.DGVShowSQL("VACUUM_BODYS", VMH001); //從 表身檔 抓出已記錄的表身資料的 SQL 語法
                 dt = USQL.SQLSelect(ref da, strSQL);
-                //....資料第一行放 Button 欄
+                //....3.資料第一行放 Button 欄
                 DataGridViewButtonColumn colFrom = new DataGridViewButtonColumn();
                 colFrom.Name = "作廢";
                 colFrom.ReadOnly = false;
                 dgvVacuumTo.Columns.Add(colFrom);
-                //....寫入
+                //....4.寫入
                 dgvVacuumTo.DataSource = dt;
-                //....除了第一行外，其他行都 僅可讀
+                //....5.除了第一行外，其他行都 僅可讀
                 for (i = 1; i < dgvVacuumTo.Columns.Count; i++)
                     dgvVacuumTo.Columns[i].ReadOnly = true;
                 //隱藏 btnLeft 及 btnRight
                 btnLeft.Visible = false;
                 btnRight.Visible = false;
                 //新增 按鈕不可按，修改、刪除 按鈕可按
-                isEnable("N","Y","Y","","");
+                isEnable("N", "Y", "Y", "", "");
             }
             else
             {
                 //處理 dgvVacuumFrom ********************************************
+                //....畫出來的打勾圖示 可見
+                ckHeader_From.Visible = true;
                 //....帶出 表頭檔 資料
-                strSQL = drc.DGVShowSQL("Vacuum_CHECKITEMS", 1, arrCGA, "", "");
+                strSQL = drc.DGVShowSQL(CG001, 1, arrCGA, FT001, ""); //組出顯示所有檢查項目的 SQL 語法
                 dt = USQL.SQLSelect(ref da, strSQL);
                 //....資料第一行放 CheckBox 欄
                 DataGridViewColumn colFrom = new DataGridViewCheckBoxColumn();
                 dgvVacuumFrom.Columns.Insert(0, colFrom);
                 //....建立個矩形，等下計算 CheckBox 嵌入 GridView 的位置
-                Rectangle rect = dgvVacuumFrom.GetCellDisplayRectangle(0, -1, true);
-                rect.X = rect.Location.X + rect.Width / 4 - 2;
-                rect.Y = rect.Location.Y + (rect.Height / 2 - 6);
-
-                CheckBox cbHeader = new CheckBox();
-                cbHeader.Size = new Size(16, 16);
-                cbHeader.Name = "FromHeader";
-                cbHeader.Location = rect.Location;
+                if (rect_From.IsEmpty == true)
+                {
+                    rect_From = dgvVacuumFrom.GetCellDisplayRectangle(0, -1, true);
+                    rect_From.X = rect_From.Location.X + rect_From.Width / 4 - 2;
+                    rect_From.Y = rect_From.Location.Y + (rect_From.Height / 2 - 6);
+                }
+                
+                ckHeader_From.Size = new Size(16, 16);
+                ckHeader_From.Name = "FromHeader";
+                ckHeader_From.Location = rect_From.Location;
                 //....全選要設定的事件
-                cbHeader.CheckedChanged += new EventHandler(cbHeader_CheckedChanged_From);
-                dgvVacuumFrom.Controls.Add(cbHeader);
+                ckHeader_From.CheckedChanged += new EventHandler(cbHeader_CheckedChanged_From);
+                
+                dgvVacuumFrom.Controls.Add(ckHeader_From);
                 //....寫入
                 dgvVacuumFrom.DataSource = dt;
+
                 //....除了第一行外，其他行都 僅可讀
                 for (i = 1; i < dgvVacuumFrom.Columns.Count; i++)
                     dgvVacuumFrom.Columns[i].ReadOnly = true;
                 //處理 dgvVacuumTo ********************************************
+                //....畫出來的打勾圖示 可見
+                ckHeader_To.Visible = true;
                 //....帶出 表身檔 空白 資料
-                strSQL = "";
-                strSQL += "Select '' as '項目代號 ','' as '項目名稱','' as '備註1','' as '備註2','' as '參考值' Where 1 = 1";
+                strSQL = "Select '' as '項目代號 ','' as '項目名稱','' as '備註1','' as '備註2','' as '參考值' Where 1 = 1";
                 dt = USQL.SQLSelect(ref da, strSQL);
                 //....資料第一行放 CheckBox 欄
                 DataGridViewColumn colTo = new DataGridViewCheckBoxColumn();
                 dgvVacuumTo.Columns.Insert(0, colTo);
                 //....建立個矩形，等下計算 CheckBox 嵌入 GridView 的位置
-                rect = dgvVacuumTo.GetCellDisplayRectangle(0, -1, true);
-                rect.X = rect.Location.X + rect.Width / 4 - 2;
-                rect.Y = rect.Location.Y + (rect.Height / 2 - 6);
-
-                cbHeader = new CheckBox();
-                cbHeader.Size = new Size(16, 16);
-                cbHeader.Name = "ToHeader";
-                cbHeader.Location = rect.Location;
+                if(rect_To.IsEmpty == true)
+                {
+                    rect_To = dgvVacuumTo.GetCellDisplayRectangle(0, -1, true);
+                    rect_To.X = rect_To.Location.X + rect_To.Width / 4 - 2;
+                    rect_To.Y = rect_To.Location.Y + (rect_To.Height / 2 - 6);
+                }
+                
+                ckHeader_To.Size = new Size(16, 16);
+                ckHeader_To.Name = "ToHeader";
+                ckHeader_To.Location = rect_To.Location;
                 //....全選要設定的事件
-                cbHeader.CheckedChanged += new EventHandler(cbHeader_CheckedChanged_To);
-                dgvVacuumTo.Controls.Add(cbHeader);
+                ckHeader_To.CheckedChanged += new EventHandler(cbHeader_CheckedChanged_To);
+                
+                dgvVacuumTo.Controls.Add(ckHeader_To);
                 dgvVacuumTo.DataSource = dt;
                 //....除了第一行外，其他行都 僅可讀
-                for (i = 1; i < dgvVacuumFrom.Columns.Count; i++)
-                    dgvVacuumFrom.Columns[i].ReadOnly = true;
+                for (i = 1; i < dgvVacuumTo.Columns.Count; i++)
+                    dgvVacuumTo.Columns[i].ReadOnly = true;
                 //顯示 btnLeft 及 btnRight
                 btnLeft.Visible = true;
                 btnRight.Visible = true;
                 //新增 按鈕可按，修改、刪除 按鈕不可按
-                isEnable("Y","N","N","","");
+                isEnable("Y", "N", "N", "", "");
             }
         }
 
@@ -387,11 +409,11 @@ namespace P2214201
                         arrCGA = drc.arrPutIn(arrCGA, dgvVacuumFrom.Rows[i].Cells[1].Value.ToString());
                 }
             }
-            strSQL = drc.DGVShowSQL("Vacuum_CHECKITEMS", 2, arrCGA, "", "IN");
+            strSQL = drc.DGVShowSQL(CG001, 2, arrCGA, FT001, "IN");
             dt = USQL.SQLSelect(ref da, strSQL);
             dgvVacuumTo.DataSource = dt;
 
-            strSQL = drc.DGVShowSQL("Vacuum_CHECKITEMS", 2, arrCGA, "", "NOT");
+            strSQL = drc.DGVShowSQL(CG001, 2, arrCGA, FT001, "NOT");
             dt = USQL.SQLSelect(ref da, strSQL);
             dgvVacuumFrom.DataSource = dt;
 
@@ -403,7 +425,7 @@ namespace P2214201
         {//資料由 dgvVacuumTo 選至 dgvVacuumFrom
             //參數
             int i, dgvFromNo;
-            string strSQL, strCK001 = "", isCheck;
+            string strSQL, isCheck;
 
             //將 dgvVacuumTo 選取的資料移到 dgvVacuumFrom
             dgvFromNo = dgvVacuumTo.RowCount;
@@ -417,11 +439,11 @@ namespace P2214201
                 }
             }
             
-            strSQL = drc.DGVShowSQL("Vacuum_CHECKITEMS", 2, arrCGA, "", "NOT");
+            strSQL = drc.DGVShowSQL(CG001, 2, arrCGA, FT001, "NOT");
             dt = USQL.SQLSelect(ref da, strSQL);
             dgvVacuumFrom.DataSource = dt;
 
-            strSQL = drc.DGVShowSQL("Vacuum_CHECKITEMS", 2, arrCGA, "", "IN");
+            strSQL = drc.DGVShowSQL(CG001, 2, arrCGA, FT001, "IN");
             dt = USQL.SQLSelect(ref da, strSQL);
             dgvVacuumTo.DataSource = dt;
 

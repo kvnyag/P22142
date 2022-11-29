@@ -318,7 +318,9 @@ namespace P2214201
             //....確定DataGridView有值
             if (dgvMachine.Rows.Count > 0)
             {
-                cbxFactoryName.Text = dgvMachine.CurrentRow.Cells[0].Value.ToString().Trim(); //廠房名稱
+                FT002 = dgvMachine.CurrentRow.Cells[0].Value.ToString().Trim(); //廠房名稱
+                cbxFactoryName.Text = FT002;
+                tbxFactoryName.Text = USQL.FindFT("", FT002);
                 cbxReportName.Text = dgvMachine.CurrentRow.Cells[1].Value.ToString().Trim();  //類別名稱
                 tbxMachineCode.Text = dgvMachine.CurrentRow.Cells[2].Value.ToString().Trim(); //機械編號
                 tbxMachineName.Text = dgvMachine.CurrentRow.Cells[3].Value.ToString().Trim(); //機械名稱

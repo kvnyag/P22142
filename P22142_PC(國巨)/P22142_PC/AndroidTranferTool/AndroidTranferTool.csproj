@@ -64,6 +64,16 @@
     <ApplicationIcon>acm9e-mixnr-001.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DataAccess, Version=1.2.0.26277, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\P2214201\bin\Debug\DataAccess.dll</HintPath>
+    </Reference>
+    <Reference Include="DataAccess.SQLite">
+      <HintPath>..\P2214201\bin\Debug\DataAccess.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="P2214201">
+      <HintPath>..\P2214201\bin\Debug\P2214201.exe</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
@@ -84,6 +94,7 @@
     <Compile Include="Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
+    <Compile Include="PDAToPC.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Settings.cs">

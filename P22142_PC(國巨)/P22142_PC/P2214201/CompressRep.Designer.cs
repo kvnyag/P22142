@@ -55,10 +55,9 @@
             // 
             this.btnRight.BackColor = System.Drawing.Color.Teal;
             this.btnRight.Image = ((System.Drawing.Image)(resources.GetObject("btnRight.Image")));
-            this.btnRight.Location = new System.Drawing.Point(404, 522);
-            this.btnRight.Margin = new System.Windows.Forms.Padding(2);
+            this.btnRight.Location = new System.Drawing.Point(606, 783);
             this.btnRight.Name = "btnRight";
-            this.btnRight.Size = new System.Drawing.Size(43, 43);
+            this.btnRight.Size = new System.Drawing.Size(64, 64);
             this.btnRight.TabIndex = 57;
             this.btnRight.UseVisualStyleBackColor = false;
             this.btnRight.Click += new System.EventHandler(this.btnRight_Click);
@@ -67,10 +66,9 @@
             // 
             this.btnLeft.BackColor = System.Drawing.Color.Teal;
             this.btnLeft.Image = ((System.Drawing.Image)(resources.GetObject("btnLeft.Image")));
-            this.btnLeft.Location = new System.Drawing.Point(404, 327);
-            this.btnLeft.Margin = new System.Windows.Forms.Padding(2);
+            this.btnLeft.Location = new System.Drawing.Point(606, 490);
             this.btnLeft.Name = "btnLeft";
-            this.btnLeft.Size = new System.Drawing.Size(43, 43);
+            this.btnLeft.Size = new System.Drawing.Size(64, 64);
             this.btnLeft.TabIndex = 56;
             this.btnLeft.UseVisualStyleBackColor = false;
             this.btnLeft.Click += new System.EventHandler(this.btnLeft_Click);
@@ -78,22 +76,20 @@
             // tbxMachineName
             // 
             this.tbxMachineName.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.tbxMachineName.Location = new System.Drawing.Point(175, 175);
-            this.tbxMachineName.Margin = new System.Windows.Forms.Padding(2);
+            this.tbxMachineName.Location = new System.Drawing.Point(262, 262);
             this.tbxMachineName.Name = "tbxMachineName";
-            this.tbxMachineName.Size = new System.Drawing.Size(233, 29);
+            this.tbxMachineName.Size = new System.Drawing.Size(348, 39);
             this.tbxMachineName.TabIndex = 55;
             // 
             // cbxMachineCode
             // 
             this.cbxMachineCode.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.cbxMachineCode.FormattingEnabled = true;
-            this.cbxMachineCode.Location = new System.Drawing.Point(175, 145);
-            this.cbxMachineCode.Margin = new System.Windows.Forms.Padding(2);
+            this.cbxMachineCode.Location = new System.Drawing.Point(262, 218);
             this.cbxMachineCode.Name = "cbxMachineCode";
-            this.cbxMachineCode.Size = new System.Drawing.Size(151, 28);
+            this.cbxMachineCode.Size = new System.Drawing.Size(224, 38);
             this.cbxMachineCode.TabIndex = 54;
-            this.cbxMachineCode.SelectedIndexChanged += new System.EventHandler(this.comboBox3_SelectedIndexChanged);
+            this.cbxMachineCode.SelectedIndexChanged += new System.EventHandler(this.cbxMachineCode_SelectedIndexChanged);
             // 
             // label4
             // 
@@ -101,10 +97,9 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("微軟正黑體", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.label4.ForeColor = System.Drawing.Color.LimeGreen;
-            this.label4.Location = new System.Drawing.Point(85, 179);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Location = new System.Drawing.Point(128, 268);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(86, 24);
+            this.label4.Size = new System.Drawing.Size(127, 36);
             this.label4.TabIndex = 53;
             this.label4.Text = "機械名稱";
             // 
@@ -114,10 +109,9 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("微軟正黑體", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.label1.ForeColor = System.Drawing.Color.LimeGreen;
-            this.label1.Location = new System.Drawing.Point(85, 149);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(128, 224);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(86, 24);
+            this.label1.Size = new System.Drawing.Size(127, 36);
             this.label1.TabIndex = 52;
             this.label1.Text = "機械編號";
             // 
@@ -126,44 +120,40 @@
             this.cbxCategorysName.Enabled = false;
             this.cbxCategorysName.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.cbxCategorysName.FormattingEnabled = true;
-            this.cbxCategorysName.Location = new System.Drawing.Point(175, 115);
-            this.cbxCategorysName.Margin = new System.Windows.Forms.Padding(2);
+            this.cbxCategorysName.Location = new System.Drawing.Point(262, 172);
             this.cbxCategorysName.Name = "cbxCategorysName";
-            this.cbxCategorysName.Size = new System.Drawing.Size(151, 28);
+            this.cbxCategorysName.Size = new System.Drawing.Size(224, 38);
             this.cbxCategorysName.TabIndex = 51;
             // 
             // cbxFactoryCode
             // 
             this.cbxFactoryCode.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.cbxFactoryCode.FormattingEnabled = true;
-            this.cbxFactoryCode.Location = new System.Drawing.Point(175, 85);
-            this.cbxFactoryCode.Margin = new System.Windows.Forms.Padding(2);
+            this.cbxFactoryCode.Location = new System.Drawing.Point(262, 128);
             this.cbxFactoryCode.Name = "cbxFactoryCode";
-            this.cbxFactoryCode.Size = new System.Drawing.Size(151, 28);
+            this.cbxFactoryCode.Size = new System.Drawing.Size(224, 38);
             this.cbxFactoryCode.TabIndex = 50;
             this.cbxFactoryCode.SelectedIndexChanged += new System.EventHandler(this.cbxFactoryCode_SelectedIndexChanged);
             // 
             // dgvCompressTo
             // 
             this.dgvCompressTo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCompressTo.Location = new System.Drawing.Point(452, 213);
-            this.dgvCompressTo.Margin = new System.Windows.Forms.Padding(2);
+            this.dgvCompressTo.Location = new System.Drawing.Point(678, 320);
             this.dgvCompressTo.MultiSelect = false;
             this.dgvCompressTo.Name = "dgvCompressTo";
             this.dgvCompressTo.RowTemplate.Height = 31;
-            this.dgvCompressTo.Size = new System.Drawing.Size(412, 487);
+            this.dgvCompressTo.Size = new System.Drawing.Size(618, 730);
             this.dgvCompressTo.TabIndex = 49;
             this.dgvCompressTo.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCompressTo_CellContentClick);
             // 
             // dgvCompressFrom
             // 
             this.dgvCompressFrom.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCompressFrom.Location = new System.Drawing.Point(0, 209);
-            this.dgvCompressFrom.Margin = new System.Windows.Forms.Padding(2);
+            this.dgvCompressFrom.Location = new System.Drawing.Point(0, 314);
             this.dgvCompressFrom.MultiSelect = false;
             this.dgvCompressFrom.Name = "dgvCompressFrom";
             this.dgvCompressFrom.RowTemplate.Height = 31;
-            this.dgvCompressFrom.Size = new System.Drawing.Size(400, 487);
+            this.dgvCompressFrom.Size = new System.Drawing.Size(600, 730);
             this.dgvCompressFrom.TabIndex = 48;
             // 
             // label3
@@ -172,10 +162,9 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("微軟正黑體", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.label3.ForeColor = System.Drawing.Color.LimeGreen;
-            this.label3.Location = new System.Drawing.Point(85, 119);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Location = new System.Drawing.Point(128, 178);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(86, 24);
+            this.label3.Size = new System.Drawing.Size(127, 36);
             this.label3.TabIndex = 47;
             this.label3.Text = "類別名稱";
             // 
@@ -185,10 +174,9 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("微軟正黑體", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.label2.ForeColor = System.Drawing.Color.LimeGreen;
-            this.label2.Location = new System.Drawing.Point(85, 89);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(128, 134);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(86, 24);
+            this.label2.Size = new System.Drawing.Size(127, 36);
             this.label2.TabIndex = 46;
             this.label2.Text = "廠房代號";
             // 
@@ -200,10 +188,9 @@
             this.btnCompressRepStore.Font = new System.Drawing.Font("微軟正黑體", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.btnCompressRepStore.ForeColor = System.Drawing.Color.Cyan;
             this.btnCompressRepStore.Image = ((System.Drawing.Image)(resources.GetObject("btnCompressRepStore.Image")));
-            this.btnCompressRepStore.Location = new System.Drawing.Point(720, 6);
-            this.btnCompressRepStore.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCompressRepStore.Location = new System.Drawing.Point(1080, 9);
             this.btnCompressRepStore.Name = "btnCompressRepStore";
-            this.btnCompressRepStore.Size = new System.Drawing.Size(67, 67);
+            this.btnCompressRepStore.Size = new System.Drawing.Size(100, 100);
             this.btnCompressRepStore.TabIndex = 45;
             this.btnCompressRepStore.Text = "儲存";
             this.btnCompressRepStore.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -218,10 +205,9 @@
             this.btnCompressRepExit.Font = new System.Drawing.Font("微軟正黑體", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.btnCompressRepExit.ForeColor = System.Drawing.Color.Cyan;
             this.btnCompressRepExit.Image = ((System.Drawing.Image)(resources.GetObject("btnCompressRepExit.Image")));
-            this.btnCompressRepExit.Location = new System.Drawing.Point(790, 6);
-            this.btnCompressRepExit.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCompressRepExit.Location = new System.Drawing.Point(1185, 9);
             this.btnCompressRepExit.Name = "btnCompressRepExit";
-            this.btnCompressRepExit.Size = new System.Drawing.Size(67, 67);
+            this.btnCompressRepExit.Size = new System.Drawing.Size(100, 100);
             this.btnCompressRepExit.TabIndex = 44;
             this.btnCompressRepExit.Text = "離開";
             this.btnCompressRepExit.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -236,10 +222,9 @@
             this.btnCompressRepDemand.Font = new System.Drawing.Font("微軟正黑體", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.btnCompressRepDemand.ForeColor = System.Drawing.Color.Cyan;
             this.btnCompressRepDemand.Image = ((System.Drawing.Image)(resources.GetObject("btnCompressRepDemand.Image")));
-            this.btnCompressRepDemand.Location = new System.Drawing.Point(218, 6);
-            this.btnCompressRepDemand.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCompressRepDemand.Location = new System.Drawing.Point(327, 9);
             this.btnCompressRepDemand.Name = "btnCompressRepDemand";
-            this.btnCompressRepDemand.Size = new System.Drawing.Size(67, 67);
+            this.btnCompressRepDemand.Size = new System.Drawing.Size(100, 100);
             this.btnCompressRepDemand.TabIndex = 43;
             this.btnCompressRepDemand.Text = "查詢";
             this.btnCompressRepDemand.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -249,15 +234,15 @@
             // btnCompressRepDelete
             // 
             this.btnCompressRepDelete.BackColor = System.Drawing.Color.Teal;
+            this.btnCompressRepDelete.Enabled = false;
             this.btnCompressRepDelete.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnCompressRepDelete.FlatAppearance.BorderSize = 0;
             this.btnCompressRepDelete.Font = new System.Drawing.Font("微軟正黑體", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.btnCompressRepDelete.ForeColor = System.Drawing.Color.Cyan;
             this.btnCompressRepDelete.Image = ((System.Drawing.Image)(resources.GetObject("btnCompressRepDelete.Image")));
-            this.btnCompressRepDelete.Location = new System.Drawing.Point(147, 6);
-            this.btnCompressRepDelete.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCompressRepDelete.Location = new System.Drawing.Point(220, 9);
             this.btnCompressRepDelete.Name = "btnCompressRepDelete";
-            this.btnCompressRepDelete.Size = new System.Drawing.Size(67, 67);
+            this.btnCompressRepDelete.Size = new System.Drawing.Size(100, 100);
             this.btnCompressRepDelete.TabIndex = 42;
             this.btnCompressRepDelete.Text = "刪除";
             this.btnCompressRepDelete.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -267,15 +252,15 @@
             // btnCompressRepModify
             // 
             this.btnCompressRepModify.BackColor = System.Drawing.Color.Teal;
+            this.btnCompressRepModify.Enabled = false;
             this.btnCompressRepModify.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnCompressRepModify.FlatAppearance.BorderSize = 0;
             this.btnCompressRepModify.Font = new System.Drawing.Font("微軟正黑體", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.btnCompressRepModify.ForeColor = System.Drawing.Color.Cyan;
             this.btnCompressRepModify.Image = ((System.Drawing.Image)(resources.GetObject("btnCompressRepModify.Image")));
-            this.btnCompressRepModify.Location = new System.Drawing.Point(77, 6);
-            this.btnCompressRepModify.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCompressRepModify.Location = new System.Drawing.Point(116, 9);
             this.btnCompressRepModify.Name = "btnCompressRepModify";
-            this.btnCompressRepModify.Size = new System.Drawing.Size(67, 67);
+            this.btnCompressRepModify.Size = new System.Drawing.Size(100, 100);
             this.btnCompressRepModify.TabIndex = 41;
             this.btnCompressRepModify.Text = "修改";
             this.btnCompressRepModify.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -285,15 +270,15 @@
             // btnCompressRepAdd
             // 
             this.btnCompressRepAdd.BackColor = System.Drawing.Color.Teal;
+            this.btnCompressRepAdd.Enabled = false;
             this.btnCompressRepAdd.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnCompressRepAdd.FlatAppearance.BorderSize = 0;
             this.btnCompressRepAdd.Font = new System.Drawing.Font("微軟正黑體", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.btnCompressRepAdd.ForeColor = System.Drawing.Color.Cyan;
             this.btnCompressRepAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnCompressRepAdd.Image")));
-            this.btnCompressRepAdd.Location = new System.Drawing.Point(6, 6);
-            this.btnCompressRepAdd.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCompressRepAdd.Location = new System.Drawing.Point(9, 9);
             this.btnCompressRepAdd.Name = "btnCompressRepAdd";
-            this.btnCompressRepAdd.Size = new System.Drawing.Size(67, 67);
+            this.btnCompressRepAdd.Size = new System.Drawing.Size(100, 100);
             this.btnCompressRepAdd.TabIndex = 40;
             this.btnCompressRepAdd.Text = "新增";
             this.btnCompressRepAdd.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -302,10 +287,10 @@
             // 
             // CompressRep
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(864, 696);
+            this.ClientSize = new System.Drawing.Size(1296, 1044);
             this.Controls.Add(this.btnRight);
             this.Controls.Add(this.btnLeft);
             this.Controls.Add(this.tbxMachineName);
@@ -324,7 +309,6 @@
             this.Controls.Add(this.btnCompressRepDelete);
             this.Controls.Add(this.btnCompressRepModify);
             this.Controls.Add(this.btnCompressRepAdd);
-            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "CompressRep";
             this.Text = "空壓機運轉記錄表";
             this.Load += new System.EventHandler(this.CompressRep_Load);

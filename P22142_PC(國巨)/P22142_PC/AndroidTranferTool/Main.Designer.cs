@@ -132,7 +132,7 @@
             this.pnlConnect.Controls.Add(this.label4);
             this.pnlConnect.Controls.Add(this.label2);
             this.pnlConnect.Controls.Add(this.btnConnect);
-            this.pnlConnect.Location = new System.Drawing.Point(12, 12);
+            this.pnlConnect.Location = new System.Drawing.Point(533, 12);
             this.pnlConnect.Name = "pnlConnect";
             this.pnlConnect.Size = new System.Drawing.Size(456, 392);
             this.pnlConnect.TabIndex = 7;
@@ -276,7 +276,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(480, 462);
+            this.ClientSize = new System.Drawing.Size(1083, 462);
             this.Controls.Add(this.pnlConnect);
             this.Controls.Add(this.picSetting);
             this.Controls.Add(this.pictureBox2);

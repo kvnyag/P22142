@@ -16,15 +16,15 @@
       <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
         <!--
           UAC 資訊清單選項
-          如果您要變更 Windows 使用者帳戶控制層級，請將 
-          requestedExecutionLevel 節點取代為下列其中一項。
+         如需變更 Windows 使用者帳戶控制層級，
+         請以下列其中一個項目取代 requestedExecutionLevel 節點。
 
-        <requestedExecutionLevel  level="asInvoker" uiAccess="false" />
-        <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
-        <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />
+       <requestedExecutionLevel  level="asInvoker" uiAccess="false" />
+       <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
+       <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />
 
-         如果您要利用檔案及登錄模擬，
-         以便提供回溯相容性，則請刪除 requestedExecutionLevel 節點。
+        如需利用回溯相容性的檔案及登錄模擬，
+        請刪除 requestedExecutionLevel 節點。
     -->
         <requestedExecutionLevel level="asInvoker" uiAccess="false" />
       </requestedPrivileges>
@@ -43,14 +43,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="AndroidTranferTool.exe" size="586240">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="AndroidTranferTool.exe" size="586752">
       <assemblyIdentity name="AndroidTranferTool" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>a6gnS5ZhOCj2J6ACT+lMXIcZz3i7xhpU+pyAhGOsBPk=</dsig:DigestValue>
+        <dsig:DigestValue>z5YwjxOlZOq8mF8rbvhHs1T2U1jMnSl+XOFGq1EpU68=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -62,7 +62,31 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>6erRGfhT2MDzGGzmS9LCK6SNMvProafe7YYBYezZVoA=</dsig:DigestValue>
+        <dsig:DigestValue>ULwEEyEeKUgCqPMW9KZq6OFLk9jv4dK4M3ZOKcxlsXU=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DataAccess.dll" size="8192">
+      <assemblyIdentity name="DataAccess" version="1.2.0.26277" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>1DGC6Xoc9OrY5d0tSwr6HBGUoVPffR0R8/mCFWp0ZUk=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DataAccess.SQLite.dll" size="7680">
+      <assemblyIdentity name="DataAccess.SQLite" version="1.0.1.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>uH9f5Ss05P940U9BTDcTc2+cGequoeYeT+6uZyExO+c=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -75,13 +99,13 @@
       <dsig:DigestValue>HvFy6iM73Md3SAI+RYrLlQ3NGF7cp4tuzHtN8OsSULo=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="AndroidTranferTool.exe.config" size="1285">
+  <file name="AndroidTranferTool.exe.config" size="1286">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>X4tmq1gopHErBmoFcJAgMgImwDMV4Vs3aciMmElNxO4=</dsig:DigestValue>
+      <dsig:DigestValue>53JG8ilPWL+5McBkz2cNRVtnpTzYO0t9uRY/40dr9Bo=</dsig:DigestValue>
     </hash>
   </file>
 </asmv1:assembly>

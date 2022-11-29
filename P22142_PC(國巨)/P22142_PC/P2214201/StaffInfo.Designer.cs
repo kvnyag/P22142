@@ -253,6 +253,7 @@
             this.dgvStaff.RowTemplate.Height = 24;
             this.dgvStaff.Size = new System.Drawing.Size(864, 487);
             this.dgvStaff.TabIndex = 17;
+            this.dgvStaff.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvStaff_CellClick);
             // 
             // StaffInfo
             // 
