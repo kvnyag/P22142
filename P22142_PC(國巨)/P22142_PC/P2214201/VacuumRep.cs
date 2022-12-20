@@ -17,9 +17,10 @@ namespace P2214201
         DbTransaction objTrans;
         DealRecord drc = new DealRecord();
 
+        int VMH001, VMB001;
         string FT001, CG001, CG002, MN001, MN002;
-        string VMH001, VMH002, VMH003, VMH004, VMH005, VMH006, VMH007, VMH008, VMH009, VMH010, VMH011;
-        string VMB001, VMB002, VMB003, VMB004, VMB005, VMB006, VMB007, VMB008, VMB009, VMB010, VMB011, VMB012, VMB013, VMB014, VMB015;
+        string VMH002, VMH003, VMH004, VMH005, VMH006, VMH007, VMH008, VMH009, VMH010, VMH011;
+        string VMB003, VMB004, VMB005, VMB006, VMB007, VMB008, VMB009, VMB010, VMB011, VMB012, VMB013, VMB014, VMB015;
         string[] arrCGA = new string[300];
         CheckBox ckHeader_From = new CheckBox();
         CheckBox ckHeader_To = new CheckBox();
@@ -35,7 +36,7 @@ namespace P2214201
             //參數
             int i, RowsNo;
             string strSQL;
-
+            
             //DataGridView 設定
             //....dgvVacuumFrom
             dgvVacuumFrom.RowsDefaultCellStyle.Font = new Font("微軟正黑體", 10, FontStyle.Regular);
@@ -58,15 +59,7 @@ namespace P2214201
                 cbxFactoryCode.Items.Add(dt.Rows[i]["FT001"].ToString().Trim());
 
             //填入 類別名稱(cbxCategorysName)
-            strSQL = "Select CG002 From CATEGORYS Where CG001 = 'A'";
-            dt = USQL.SQLSelect(ref da, strSQL);
-            RowsNo = dt.Rows.Count;
-            if (RowsNo <= 0)
-            { MessageBox.Show("類別資訊尚未建置完成，請先行建置。"); return; }
-            
-            for (i = 0; i < RowsNo; i++)
-                cbxCategorysName.Items.Add(dt.Rows[i]["CG002"].ToString().Trim());
-            cbxCategorysName.Text = dt.Rows[i - 1]["CG002"].ToString().Trim();
+            cbxCategorysName.Text = USQL.FindCG("A", "");
         }
 
         private void btnVacuumRepAdd_Click(object sender, EventArgs e)
@@ -74,36 +67,37 @@ namespace P2214201
          //新增 功能
          //********************************************************************
             //參數
-            int i, MaxVMH, MaxVMB, arrNo;
-            string strSQL, strMaxVMH, strMaxVMB, CK001;
+            int i, arrNo, MaxVMH;
+            string strSQL;
 
             //寫入資料庫_HEADS
-            strSQL = "Select ISNULL(Max(VMH001),'VMH_00000') as MaxVMH001 From VACUUM_HEADS"; 
+            //....取得 VACUUM_HEADS 下一序號
+            strSQL = "SELECT ISNULL(MAX(VMH001),0) as VMH001 FROM VACUUM_HEADS";
             dt = USQL.SQLSelect(ref da, strSQL);
-            strMaxVMH = dt.Rows[0]["MaxVMH001"].ToString();
-            MaxVMH = int.Parse(strMaxVMH.Substring(4, 5)) + 1;
+            MaxVMH = int.Parse(dt.Rows[0]["VMH001"].ToString());
 
-            VMH001 = "VMH_" + MaxVMH.ToString().PadLeft(5, '0');   //流水序號(VMH001)
+            VMH001 = MaxVMH + 1;                                   //流水序號(VMH001)
             VMH002 = cbxFactoryCode.Text;                          //廠房代號(VMH002)
             VMH003 = USQL.FindCG("", cbxCategorysName.Text);       //類別代號(VMH003)
             VMH004 = cbxMachineCode.Text;                          //機械編號代號 (VMH004)
             VMH005 = tbxMachineName.Text;                          //機械編號名稱(VMH005)
             VMH006 = UserName;                                     //建立者(VMH006)
-            VMH007 = DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss"); //建立時間(VMH007)
+            VMH007 = DateTime.Now.ToString("yyyy/MM/dd hh:mm:ss"); //建立時間(VMH007)
             VMH008 = "";                                           //備用(VMH008)
             VMH009 = "";                                           //備用(VMH009)
             VMH010 = "";                                           //備用(VMH010)
             VMH011 = "Y";                                          //是否仍然使用(VMH011)
 
-            strSQL = "Insert into VACUUM_HEADS (VMH001,VMH002,VMH003,VMH004,VMH005,VMH006,VMH007,VMH008,VMH009,VMH010,VMH011) Values ('";
-            strSQL += VMH001 + "','" + VMH002 + "','" + VMH003 + "','" + VMH004 + "','" + VMH005 + "','" + VMH006 + "','" + VMH007 + "','";
+            strSQL = "Insert Into VACUUM_HEADS (VMH001,VMH002,VMH003,VMH004,VMH005,VMH006,VMH007,VMH008,VMH009,VMH010,VMH011) Values (";
+            strSQL += VMH001 + ",'"  + VMH002 + "','" + VMH003 + "','" + VMH004 + "','" + VMH005 + "','" + VMH006 + "','" + VMH007 + "','";
             strSQL += VMH008 + "','" + VMH009 + "','" + VMH010 + "','" + VMH011 + "')";
 
             try
             { objTrans = USQL.SQLNonSelect(ref da, ref objTrans, strSQL); }
             catch (Exception Ex)
             {
-                objTrans.Rollback();
+                if (objTrans != null)
+                    objTrans.Rollback();
                 MessageBox.Show("Insert Into VACUUM_HEADS 出現錯誤，請確認資料後重新執行。系統訊息：" + Ex.Message, "Inser Into VACUUM_HEADS");
                 return;
             }
@@ -111,11 +105,6 @@ namespace P2214201
             //寫入資料庫_BODYS
             //....記錄 arrCGA 共有多少項目
             arrNo = arrCGA.Length;
-            //....計算下一序號值
-            strSQL = "Select ISNULL(Max(VMB001),'VMB_00000') as MaxVMB001 From VACUUM_BODYS Where VMB001 = '" + VMH001 + "'";
-            dt = USQL.SQLSelect(ref da, strSQL);
-            strMaxVMB = dt.Rows[0]["MaxVMB001"].ToString();
-            MaxVMB = int.Parse(strMaxVMB.Substring(4, 5)) + 1;
             //....依序執行寫入資料庫動作
             for (i = 0; i < arrNo; i++)
             {
@@ -125,8 +114,8 @@ namespace P2214201
                     strSQL = "Select * From CHECKITEMS Where CK001 = '" + VMB003 + "'";
                     dt = USQL.SQLSelect(ref da, strSQL);
 
-                    VMB001 = VMH001; //Head序號(VMB001)
-                    VMB002 = "VMB_" + MaxVMB.ToString().PadLeft(5, '0'); //流水序號(VMB002)
+                    VMB001 = MaxVMH + 1;                     //Head序號(VMB001)
+                    //流水序號(VMB002)：因該欄位被設定為"自動識別"欄位，故不需加入 Insert 語法。
                     VMB004 = dt.Rows[0]["CK002"].ToString(); //檢查項目名稱(VMB004)
                     VMB005 = dt.Rows[0]["CK003"].ToString(); //參考 起(VMB005)
                     VMB006 = dt.Rows[0]["CK004"].ToString(); //中間符號(VMB006）
@@ -140,20 +129,19 @@ namespace P2214201
                     VMB014 = dt.Rows[0]["CK014"].ToString(); //備用(VMB014)
                     VMB015 = "N";                            //是否作廢(VMB015)
 
-                    strSQL = "Insert into VACUUM_BODYS (VMB001,VMB002,VMB003,VMB004,VMB005,VMB006,VMB007,VMB008,VMB009,VMB010,VMB011,VMB012,VMB013,VMB014,VMB015) Values ('";
-                    strSQL += VMB001 + "','" + VMB002 + "','" + VMB003 + "','" + VMB004 + "','" + VMB005 + "','" + VMB006 + "','" + VMB007 + "','" + VMB008 + "','";
+                    strSQL = "Insert into VACUUM_BODYS Values (";
+                    strSQL += VMB001 + ",'"  + VMB003 + "','" + VMB004 + "','" + VMB005 + "','" + VMB006 + "','" + VMB007 + "','" + VMB008 + "','";
                     strSQL += VMB009 + "','" + VMB010 + "','" + VMB011 + "','" + VMB012 + "','" + VMB013 + "','" + VMB014 + "','" + VMB015 + "')";
 
                     try
                     { objTrans = USQL.SQLNonSelect(ref da, ref objTrans, strSQL); }
                     catch (Exception Ex)
                     {
-                        objTrans.Rollback();
+                        if(objTrans != null)
+                            objTrans.Rollback();
                         MessageBox.Show("Insert Into VACUUM_BODYS 出現錯誤，請確認資料後重新執行。系統訊息：" + Ex.Message, "Inser Into VACUUM_BODYS");
                         return;
                     }
-                    
-                    MaxVMB++;
                 }
                 else
                     break;
@@ -184,7 +172,7 @@ namespace P2214201
             //找出 標頭 檔編號
             strSQL = "Select VMH001 From VACUUM_HEADS Where VMH002 = '" + FT001 + "' And VMH003 = '" + CG001 + "' And VMH004 = '" + MN001 + "' And VMH011 = 'Y' ";
             dt = USQL.SQLSelect(ref da, strSQL);
-            VMB001 = dt.Rows[0]["VMH001"].ToString();
+            VMB001 = int.Parse(dt.Rows[0]["VMH001"].ToString());
             //逐筆將 是否作廢 填回資料庫
             for (i = 0; i < RowNo - 1; i++)
             {
@@ -223,11 +211,11 @@ namespace P2214201
             //找出 標頭 檔編號
             strSQL = "Select VMH001 From VACUUM_HEADS Where VMH002 = '" + FT001 + "' And VMH003 = '" + CG001 + "' And VMH004 = '" + MN001 + "' And VMH011 = 'Y' ";
             dt = USQL.SQLSelect(ref da, strSQL);
-            VMH001 = dt.Rows[0]["VMH001"].ToString();
+            VMH001 = int.Parse(dt.Rows[0]["VMH001"].ToString());
             //標頭檔 資料作廢，但不刪除。
             strSQL = "Update VACUUM_HEADS Set VMH011 = 'N' Where VMH001 = '" + VMH001 + "' And VMH011 = 'Y' ";
             USQL.SQLNonSelect(ref da, strSQL);
-            //標頭檔 資料作廢，但不刪除。
+            //單位機械編號 資料作廢，但不刪除。
             strSQL = "Update MECHNUMBERS Set MN012 = 'N' Where MN001 = '" + MN001 + "'";
             USQL.SQLNonSelect(ref da, strSQL);
             //清空畫面
@@ -270,8 +258,8 @@ namespace P2214201
             MN001 = cbxMachineCode.Text;
             MN002 = USQL.FindMN(MN001, "");
             tbxMachineName.Text = MN002;
-            //清空 DataGridView 資料
-            ckHeader_From.Visible = false;
+            //清空 DataGridView 資料，畫在 DataGridView 上的 CheckBox 也隱藏。
+            ckHeader_From.Visible = false; 
             dgvVacuumFrom.Columns.Clear();
             ckHeader_To.Visible = false;
             dgvVacuumTo.Columns.Clear();
@@ -282,7 +270,7 @@ namespace P2214201
             if (dt.Rows.Count > 0)
             {
                 //記錄 表頭檔 序號
-                VMH001 = dt.Rows[0]["VMH001"].ToString();
+                VMH001 = int.Parse(dt.Rows[0]["VMH001"].ToString());
                 //處理 dgvVacuumFrom ******************************************
                 //....1.畫出來的打勾圖示 不可見
                 ckHeader_From.Visible = false;
@@ -342,7 +330,6 @@ namespace P2214201
                     rect_From.X = rect_From.Location.X + rect_From.Width / 4 - 2;
                     rect_From.Y = rect_From.Location.Y + (rect_From.Height / 2 - 6);
                 }
-                
                 ckHeader_From.Size = new Size(16, 16);
                 ckHeader_From.Name = "FromHeader";
                 ckHeader_From.Location = rect_From.Location;
@@ -372,7 +359,6 @@ namespace P2214201
                     rect_To.X = rect_To.Location.X + rect_To.Width / 4 - 2;
                     rect_To.Y = rect_To.Location.Y + (rect_To.Height / 2 - 6);
                 }
-                
                 ckHeader_To.Size = new Size(16, 16);
                 ckHeader_To.Name = "ToHeader";
                 ckHeader_To.Location = rect_To.Location;
@@ -399,6 +385,7 @@ namespace P2214201
             string strSQL, isCheck;
 
             //將 dgvVacuumFrom 選取的資料移到 dgvVacuumTo
+            //....取得 dgvVacuumFrom 勾選了哪些值
             dgvFromNo = dgvVacuumFrom.RowCount;
             for(i = 0; i < dgvFromNo - 1; i++)
             {
@@ -409,10 +396,11 @@ namespace P2214201
                         arrCGA = drc.arrPutIn(arrCGA, dgvVacuumFrom.Rows[i].Cells[1].Value.ToString());
                 }
             }
+            //....dgvVacuumFrom 勾選的值取出，填入 dgvVacuumTo
             strSQL = drc.DGVShowSQL(CG001, 2, arrCGA, FT001, "IN");
             dt = USQL.SQLSelect(ref da, strSQL);
             dgvVacuumTo.DataSource = dt;
-
+            //....dgvVacuumFrom 顯示除了勾選外的值
             strSQL = drc.DGVShowSQL(CG001, 2, arrCGA, FT001, "NOT");
             dt = USQL.SQLSelect(ref da, strSQL);
             dgvVacuumFrom.DataSource = dt;
@@ -490,27 +478,37 @@ namespace P2214201
         }
         private void isEnable(string btnAdd, string btnModify, string btnDelete, string btnR, string btnL)
         {
-            if (btnAdd == "Y")
+            if (UserRole == "OP")
+                btnVacuumRepAdd.Enabled = false;
+            else if (btnAdd == "Y")
                 btnVacuumRepAdd.Enabled = true;
             else if (btnAdd == "N")
                 btnVacuumRepAdd.Enabled = false;
 
-            if (btnModify == "Y")
+            if (UserRole == "OP")
+                btnVacuumRepModify.Enabled = false;
+            else if (btnModify == "Y")
                 btnVacuumRepModify.Enabled = true;
             else if (btnModify == "N")
                 btnVacuumRepModify.Enabled = false;
 
-            if (btnDelete == "Y")
+            if (UserRole == "OP")
+                btnVacuumRepDelete.Enabled = false;
+            else if (btnDelete == "Y")
                 btnVacuumRepDelete.Enabled = true;
             else if (btnDelete == "N")
                 btnVacuumRepDelete.Enabled = false;
 
-            if (btnR == "Y")
+            if (UserRole == "OP")
+                btnRight.Enabled = false;
+            else if (btnR == "Y")
                 btnRight.Enabled = true;
             else if (btnR == "N")
                 btnRight.Enabled = false;
 
-            if (btnL == "Y")
+            if (UserRole == "OP")
+                btnLeft.Enabled = false;
+            else if (btnL == "Y")
                 btnLeft.Enabled = true;
             else if (btnL == "N")
                 btnLeft.Enabled = false;

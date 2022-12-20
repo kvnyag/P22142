@@ -24,16 +24,14 @@ namespace P2214201
         private void StaffInfo_Load(object sender, EventArgs e)
         {
             //參數
-            int i, dtRowsNo;
-            string strSQL, strError;
+            int i;
+            string strSQL;
             
             //寫入權限群組下拉選單
-            strSQL = "";
-            strSQL += "Select * From ROLES";
+            strSQL = "Select * From ROLES";
             dt = USQL.SQLSelect(ref da, strSQL);
             
-            dtRowsNo = dt.Rows.Count;
-            for (i = 0; i < dtRowsNo; i++)
+            for (i = 0; i < dt.Rows.Count; i++)
                 cbxRuleCode.Items.Add(dt.Rows[i]["RL002"].ToString().Trim());
             //寫入帳號狀態下拉選單
             cbxAccountStatus.Items.Add("Y:停用");
@@ -57,31 +55,23 @@ namespace P2214201
             string strSQL;
 
             //防呆
-            if (cbxRuleCode.Text == "")
-            { MessageBox.Show("權限群組不可空白。"); return; }
-            if (tbxStaffAcount.Text == "")
-            { MessageBox.Show("人員帳號不可空白。"); return; }
-            if (tbxStaffName.Text == "")
-            { MessageBox.Show("人員名稱不可空白。"); return; }
-            if (cbxAccountStatus.Text == "")
-            { MessageBox.Show("帳號狀態不可空白。"); return; }
+            if (CheckData("Y", "Y", "Y", "Y") == false)
+                return;
 
             //確定要 Insert 的帳號是否已存在資料庫
-            strSQL = "";
-            strSQL += "Select * From USERS Where 1 = 1 And UR001 = '" + tbxStaffAcount.Text.Trim() + "'";
+            UR001 = tbxStaffAcount.Text.Trim(); //人員帳號(UR001)
+            strSQL = "Select * From USERS Where 1 = 1 And UR001 = '" + UR001 + "'";
             dt = USQL.SQLSelect(ref da, strSQL);
 
             if(dt.Rows.Count > 0)
             { MessageBox.Show("要新增的帳號已存在，請確認後再執行新增作業。"); return; }
 
             //進資料庫確認權限代號
-            strSQL = "";
-            strSQL += "Select * From ROLES Where RL002 = '" + cbxRuleCode.Text + "'";
+            strSQL = "Select * From ROLES Where RL002 = '" + cbxRuleCode.Text + "'";
             dt = USQL.SQLSelect(ref da, strSQL);
             UR004 = dt.Rows[0]["RL001"].ToString().Trim(); //權限代號(UR004)
 
             // Insert 資料進資料庫
-            UR001 = tbxStaffAcount.Text;                          //人員帳號(UR001)
             UR002 = tbxStaffName.Text;                            //人員名稱(UR002)
             UR003 = cbxAccountStatus.Text.Substring(0, 1);        //狀態(停用Y、啟用N)(UR003)
             UR005 = "";                                           //備註(UR005)
@@ -92,9 +82,8 @@ namespace P2214201
             UR010 = "";                                           //備用(UR010)
             UR011 = "";                                           //備用(UR011)
             UR012 = "";                                           //備用(UR012)
-
-            strSQL = "";
-            strSQL += "Insert Into USERS (UR001,UR002,UR003,UR004,UR005,UR006,UR007,UR008,UR009,UR010,UR011,UR012) Values ('";
+            
+            strSQL = "Insert Into USERS (UR001,UR002,UR003,UR004,UR005,UR006,UR007,UR008,UR009,UR010,UR011,UR012) Values ('";
             strSQL += UR001 + "','" + UR002 + "','" + UR003 + "','" + UR004 + "','" + UR005 + "','" + UR006 + "','";
             strSQL += UR007 + "','" + UR008 + "','" + UR009 + "','" + UR010 + "','" + UR011 + "','" + UR012 + "')";
             USQL.SQLNonSelect(ref da, strSQL);
@@ -107,12 +96,9 @@ namespace P2214201
             }
             catch(Exception Ex)
             { }
-            
+
             //清空所有可填入欄位
-            cbxRuleCode.Text = "";
-            tbxStaffAcount.Text = "";
-            tbxStaffName.Text = "";
-            cbxAccountStatus.Text = "";
+            ClearForm();
         }
         
         private void btnStaffInfoModify_Click(object sender, EventArgs e)
@@ -121,37 +107,28 @@ namespace P2214201
             string strSQL;
 
             //防呆
-            if (cbxRuleCode.Text == "")
-            { MessageBox.Show("權限群組不可空白。"); return; }
-            if (tbxStaffAcount.Text == "")
-            { MessageBox.Show("人員帳號不可空白。"); return; }
-            if (tbxStaffName.Text == "")
-            { MessageBox.Show("人員名稱不可空白。"); return; }
-            if (cbxAccountStatus.Text == "")
-            { MessageBox.Show("帳號狀態不可空白。"); return; }
-            
+            if (CheckData("Y", "Y", "Y", "Y") == false)
+                return;
+
             //確定要 Update 的帳號是否已存在資料庫
-            strSQL = "";
-            strSQL += "Select * From USERS Where 1 = 1 And UR001 = '" + tbxStaffAcount.Text.Trim() + "'";
+            UR001 = tbxStaffAcount.Text.Trim(); //人員帳號(UR001)
+            strSQL = "Select * From USERS Where 1 = 1 And UR001 = '" + UR001 + "'";
             dt = USQL.SQLSelect(ref da, strSQL);
 
             if (dt.Rows.Count == 0)
             { MessageBox.Show("要修改的帳號未存在，請確認後再執行修改作業。"); return; }
 
             //進資料庫確認權限代號
-            strSQL = "";
-            strSQL += "Select * From ROLES Where RL002 = '" + cbxRuleCode.Text + "'";
+            strSQL = "Select * From ROLES Where RL002 = '" + cbxRuleCode.Text + "'";
             dt = USQL.SQLSelect(ref da, strSQL);
             UR004 = dt.Rows[0]["RL001"].ToString().Trim(); //權限代號(UR004)
 
             // Update 資料進資料庫
             // PS：因帳號是唯一值，不得修改。僅可刪除後再新增。
-            UR001 = tbxStaffAcount.Text;                   //人員帳號(UR001)
             UR002 = tbxStaffName.Text;                     //人員名稱(UR002)
             UR003 = cbxAccountStatus.Text.Substring(0, 1); //狀態(停用Y、啟用N)(UR003)
-
-            strSQL = "";
-            strSQL += "Update USERS Set UR002 = '" + UR002 + "',UR003 = '" + UR003 + "',UR004 = '" + UR004 + "',";
+            
+            strSQL = "Update USERS Set UR002 = '" + UR002 + "',UR003 = '" + UR003 + "',UR004 = '" + UR004 + "',";
             strSQL += "UR007 = '" + UserName + "',UR009 = '" + DateTime.Now.ToString("yyyy/MM/dd hh:mm:ss") + "'";
             strSQL += "Where UR001 = '" + UR001 + "'";
             USQL.SQLNonSelect(ref da, strSQL);
@@ -166,10 +143,7 @@ namespace P2214201
             { }
 
             //清空所有可填入欄位
-            cbxRuleCode.Text = "";
-            tbxStaffAcount.Text = "";
-            tbxStaffName.Text = "";
-            cbxAccountStatus.Text = "";
+            ClearForm();
         }
 
         private void btnStaffInfoDelete_Click(object sender, EventArgs e)
@@ -178,22 +152,19 @@ namespace P2214201
             string strSQL;
 
             //防呆
-            if (tbxStaffAcount.Text == "")
-            { MessageBox.Show("人員帳號不可空白。"); return; }
+            if (CheckData("N", "Y", "N", "N") == false)
+                return;
 
             //確定要 Update 的帳號是否已存在資料庫
-            strSQL = "";
-            strSQL += "Select * From USERS Where 1 = 1 And UR001 = '" + tbxStaffAcount.Text.Trim() + "'";
+            UR001 = tbxStaffAcount.Text.Trim(); //人員帳號(UR001)
+            strSQL = "Select * From USERS Where 1 = 1 And UR001 = '" + UR001 + "'";
             dt = USQL.SQLSelect(ref da, strSQL);
 
             if (dt.Rows.Count == 0)
             { MessageBox.Show("要修改的帳號未存在，請確認後再執行刪除作業。"); return; }
 
             // Delete 資料庫
-            UR001 = tbxStaffAcount.Text;                   //人員帳號(UR001)
-
-            strSQL = "";
-            strSQL += "Delete From USERS Where UR001 = '" + UR001 + "'";
+            strSQL = "Delete From USERS Where UR001 = '" + UR001 + "'";
             USQL.SQLNonSelect(ref da, strSQL);
 
             //重整 DataGridView 顯示
@@ -206,10 +177,7 @@ namespace P2214201
             { }
 
             //清空所有可填入欄位
-            cbxRuleCode.Text = "";
-            tbxStaffAcount.Text = "";
-            tbxStaffName.Text = "";
-            cbxAccountStatus.Text = "";
+            ClearForm();
         }
 
         private void btnStaffInfoDemand_Click(object sender, EventArgs e)
@@ -218,6 +186,9 @@ namespace P2214201
             string strSQL;
 
             //搜尋結果填入 DataGridView
+            UR001 = tbxStaffAcount.Text.Trim();
+            UR002 = tbxStaffName.Text.Trim();
+
             strSQL = "";
             strSQL += "Select a.UR001 as '人員帳號',";
             strSQL += "a.UR002 as '人員名稱',";
@@ -231,10 +202,10 @@ namespace P2214201
             strSQL += "Where a.UR004 = b.RL001 ";
             if (cbxRuleCode.Text.Trim() != "")
                 strSQL += "And b.RL002 = '" + cbxRuleCode.Text.Trim() + "' ";
-            if (tbxStaffAcount.Text.Trim() != "")
-                strSQL += "And a.UR001 = '" + tbxStaffAcount.Text.Trim() + "' ";
-            if (tbxStaffName.Text.Trim() != "")
-                strSQL += "And a.UR002 = '" + tbxStaffName.Text.Trim() + "' ";
+            if (UR001 != "")
+                strSQL += "And a.UR001 = '" + UR001 + "' ";
+            if (UR002 != "")
+                strSQL += "And a.UR002 = '" + UR002 + "' ";
             if (cbxAccountStatus.Text.Trim() != "")
                 strSQL += "And a.UR003 = '" + cbxAccountStatus.Text.Trim().Substring(0, 1) + "' ";
 
@@ -248,10 +219,7 @@ namespace P2214201
             dgvStaff.DataSource = dt;
 
             //清空所有可填入欄位
-            cbxRuleCode.Text = "";
-            tbxStaffAcount.Text = "";
-            tbxStaffName.Text = "";
-            cbxAccountStatus.Text = "";
+            ClearForm();
         }
 
         private void dgvStaff_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -269,6 +237,33 @@ namespace P2214201
                     cbxAccountStatus.Text = "N:啟用";
             }
         }
-        
+        private bool CheckData(string Role, string Account, string Name, string AccountStatus)
+        {
+            //*************************************************************************************
+            //防呆專區
+            //*************************************************************************************
+            if(Role == "Y" && cbxRuleCode.Text == "")
+            { MessageBox.Show("權限群組不可空白。"); return false; }
+            if (Account == "Y" && tbxStaffAcount.Text == "")
+            { MessageBox.Show("人員帳號不可空白。"); return false; }
+            if (Account == "Y" && tbxStaffAcount.Text.Length < 8)
+            { MessageBox.Show("人員帳號不可小於8碼。"); return false; }
+            if (Name == "Y" && tbxStaffName.Text == "")
+            { MessageBox.Show("人員名稱不可空白。"); return false; }
+            if (AccountStatus == "Y" && cbxAccountStatus.Text == "")
+            { MessageBox.Show("帳號狀態不可空白。"); return false; }
+
+            return true;
+        }
+        private void ClearForm()
+        {
+            //*************************************************************************************
+            //清空資料專區
+            //*************************************************************************************
+            cbxRuleCode.Text = "";
+            tbxStaffAcount.Text = "";
+            tbxStaffName.Text = "";
+            cbxAccountStatus.Text = "";
+        }
     }
 }

@@ -41,14 +41,12 @@ namespace P2214201
             string strSQL;
 
             //防呆
-            if (tbxFactoryCode.Text == "")
-            { MessageBox.Show("廠房代號不可空白。"); return; }
-            if (tbxFactoryName.Text == "")
-            { MessageBox.Show("廠房名稱不可空白。"); return; }
+            if (CheckData("Y", "Y") == false)
+                return;
 
             //確定要 Insert 的帳號是否已存在資料庫
-            strSQL = "";
-            strSQL += "Select * From FACTORYS Where 1 = 1 And FT001 = '" + tbxFactoryCode.Text.Trim() + "'";
+            FT001 = tbxFactoryCode.Text.Trim(); //廠房代號(FT001)
+            strSQL = "Select * From FACTORYS Where 1 = 1 And FT001 = '" + FT001 + "'";
             dt = USQL.SQLSelect(ref da, strSQL);
 
             if (dt.Rows.Count > 0)
@@ -56,18 +54,16 @@ namespace P2214201
             
 
             // Insert 資料進資料庫
-            FT001 = tbxFactoryCode.Text;                          //廠房代號(Ft001)
             FT002 = tbxFactoryName.Text;                          //廠房名稱(FT002)
-            FT003 = UserName;                                  //建立者(FT003)
+            FT003 = UserName;                                     //建立者(FT003)
             FT004 = "";                                           //修改者(FT004)
             FT005 = DateTime.Now.ToString("yyyy/MM/dd hh:mm:ss"); //建立時間(UR008)
             FT006 = "";                                           //修改時間(UR009)
             FT007 = "";                                           //備用(UR010)
             FT008 = "";                                           //備用(UR011)
             FT009 = "";                                           //備用(UR012)
-
-            strSQL = "";
-            strSQL += "Insert Into FACTORYS (FT001,FT002,FT003,FT004,FT005,FT006,FT007,FT008,FT009) Values ('";
+            
+            strSQL = "Insert Into FACTORYS (FT001,FT002,FT003,FT004,FT005,FT006,FT007,FT008,FT009) Values ('";
             strSQL += FT001 + "','" + FT002 + "','" + FT003 + "','" + FT004 + "','" + FT005 + "','" + FT006 + "','";
             strSQL += FT007 + "','" + FT008 + "','" + FT009 + "')";
             USQL.SQLNonSelect(ref da, strSQL);
@@ -78,12 +74,11 @@ namespace P2214201
                 if (strDemand != "")
                     dgvFactory.DataSource = USQL.SQLSelect(ref da, strDemand);
             }
-            catch (Exception Ex)
+            catch
             { }
 
             //清空所有可填入欄位
-            tbxFactoryCode.Text = "";
-            tbxFactoryName.Text = "";
+            ClearForm();
         }
 
         private void btnFactoryInfoModify_Click_1(object sender, EventArgs e)
@@ -92,14 +87,12 @@ namespace P2214201
             string strSQL;
 
             //防呆
-            if (tbxFactoryCode.Text == "")
-            { MessageBox.Show("廠房代號不可空白。"); return; }
-            if (tbxFactoryName.Text == "")
-            { MessageBox.Show("廠房名稱不可空白。"); return; }
+            if (CheckData("Y", "Y") == false)
+                return;
 
             //確定要 Update 的帳號是否已存在資料庫
-            strSQL = "";
-            strSQL += "Select * From FACTORYS Where 1 = 1 And FT001 = '" + tbxFactoryCode.Text.Trim() + "'";
+            FT001 = tbxFactoryCode.Text.Trim(); //廠房代號(Ft001)
+            strSQL = "Select * From FACTORYS Where 1 = 1 And FT001 = '" + FT001 + "'";
             dt = USQL.SQLSelect(ref da, strSQL);
 
             if (dt.Rows.Count == 0)
@@ -107,11 +100,9 @@ namespace P2214201
 
             // Update 資料進資料庫
             // PS：因廠房代號 是唯一值，不得修改。僅可刪除後再新增。
-            FT001 = tbxFactoryCode.Text;                   //廠房代號(Ft001)
-            FT002 = tbxFactoryName.Text;                   //廠房名稱(FT002)
-
-            strSQL = "";
-            strSQL += "Update FACTORYS Set FT002 = '" + FT002 + "',FT004 = '" + UserName + "',";
+            FT002 = tbxFactoryName.Text;  //廠房名稱(FT002)
+            
+            strSQL = "Update FACTORYS Set FT002 = '" + FT002 + "',FT004 = '" + UserName + "',";
             strSQL += "FT006 = '" + DateTime.Now.ToString("yyyy/MM/dd hh:mm:ss") + "'";
             strSQL += "Where FT001 = '" + FT001 + "'";
             USQL.SQLNonSelect(ref da, strSQL);
@@ -126,8 +117,7 @@ namespace P2214201
             { }
 
             //清空所有可填入欄位
-            tbxFactoryCode.Text = "";
-            tbxFactoryName.Text = "";
+            ClearForm();
         }
 
         private void btnFactoryInfoDelete_Click_1(object sender, EventArgs e)
@@ -136,22 +126,19 @@ namespace P2214201
             string strSQL;
 
             //防呆
-            if (tbxFactoryCode.Text == "")
-            { MessageBox.Show("廠房代號不可空白。"); return; }
+            if (CheckData("Y", "N") == false)
+                return;
 
             //確定要 Delete 的帳號是否已存在資料庫
-            strSQL = "";
-            strSQL += "Select * From FACTORYS Where 1 = 1 And FT001 = '" + tbxFactoryCode.Text.Trim() + "'";
+            FT001 = tbxFactoryCode.Text.Trim(); //廠房代號(FT001)
+            strSQL = "Select * From FACTORYS Where 1 = 1 And FT001 = '" + FT001 + "'";
             dt = USQL.SQLSelect(ref da, strSQL);
 
             if (dt.Rows.Count == 0)
             { MessageBox.Show("要修改的帳號未存在，請確認後再執行刪除作業。"); return; }
 
             // Delete 資料庫
-            FT001 = tbxFactoryCode.Text;                   //廠房代號(Ft001)
-
-            strSQL = "";
-            strSQL += "Delete From FACTORYS Where FT001 = '" + FT001 + "'";
+            strSQL = "Delete From FACTORYS Where FT001 = '" + FT001 + "'";
             USQL.SQLNonSelect(ref da, strSQL);
 
             //重整 DataGridView 顯示
@@ -164,8 +151,7 @@ namespace P2214201
             { }
 
             //清空所有可填入欄位
-            tbxFactoryCode.Text = "";
-            tbxFactoryName.Text = "";
+            ClearForm();
         }
 
         private void btnFactoryInfoDemand_Click_1(object sender, EventArgs e)
@@ -174,8 +160,10 @@ namespace P2214201
             string strSQL;
 
             //搜尋結果填入 DataGridView
-            strSQL = "";
-            strSQL += "Select FT001 as '廠房代號',";
+            FT001 = tbxFactoryCode.Text.Trim();
+            FT002 = tbxFactoryName.Text.Trim();
+
+            strSQL = "Select FT001 as '廠房代號',";
             strSQL += "FT002 as '廠房名稱',";
             strSQL += "FT003 as '建立人員',";
             strSQL += "FT005 as '建立時間',";
@@ -183,10 +171,10 @@ namespace P2214201
             strSQL += "FT006 as '修改時間' ";
             strSQL += "From FACTORYS ";
             strSQL += "Where 1 = 1 ";
-            if (tbxFactoryCode.Text.Trim() != "")
-                strSQL += "And FT001 = '" + tbxFactoryCode.Text.Trim() + "' ";
-            if (tbxFactoryName.Text.Trim() != "")
-                strSQL += "And FT002 = '" + tbxFactoryName.Text.Trim() + "' ";
+            if (FT001 != "")
+                strSQL += "And FT001 = '" + FT001 + "' ";
+            if (FT002 != "")
+                strSQL += "And FT002 = '" + FT002 + "' ";
 
             strDemand = strSQL; //記錄查詢過的語句，方便新增、修改、刪除後重整 DataGridView 顯示
 
@@ -198,8 +186,7 @@ namespace P2214201
             dgvFactory.DataSource = dt;
 
             //清空所有可填入欄位
-            tbxFactoryCode.Text = "";
-            tbxFactoryName.Text = "";
+            ClearForm();
         }
 
         private void dgvFactory_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -212,6 +199,25 @@ namespace P2214201
                 tbxFactoryName.Text = dgvFactory.CurrentRow.Cells[1].Value.ToString().Trim(); //廠房名稱
             }
         }
-        
+        private bool CheckData(string FT001, string FT002)
+        {
+            //*************************************************************************************
+            //防呆專區
+            //*************************************************************************************
+            if (FT001 == "Y" && tbxFactoryCode.Text == "")
+            { MessageBox.Show("廠房代號不可空白。"); return false; }
+            if (FT002 == "Y" && tbxFactoryName.Text == "")
+            { MessageBox.Show("廠房名稱不可空白。"); return false; }
+
+            return true;
+        }
+        private void ClearForm()
+        {
+            //*************************************************************************************
+            //清空資料專區
+            //*************************************************************************************
+            tbxFactoryCode.Text = "";
+            tbxFactoryName.Text = "";
+        }
     }
 }

@@ -175,6 +175,36 @@ namespace RegalScan
             }
         }
 
+        public void scanSDCARD_A()
+        {
+            try
+            {
+                ProcessStartInfo Info2 = new ProcessStartInfo();
+                Info2.FileName = "RescanSD_A.bat";//執行的檔案名稱
+                Info2.WorkingDirectory = Directory.GetCurrentDirectory();//檔案所在的目錄
+                Process.Start(Info2);
+            }
+            catch (Exception e)
+            {
+                e.ToString();
+            }
+        }
+
+        public void scanSDCARD_B()
+        {
+            try
+            {
+                ProcessStartInfo Info2 = new ProcessStartInfo();
+                Info2.FileName = "RescanSD_B.bat";//執行的檔案名稱
+                Info2.WorkingDirectory = Directory.GetCurrentDirectory();//檔案所在的目錄
+                Process.Start(Info2);
+            }
+            catch (Exception e)
+            {
+                e.ToString();
+            }
+        }
+
         public class ResultInfo
         {
             public int resultCode { get; set; }

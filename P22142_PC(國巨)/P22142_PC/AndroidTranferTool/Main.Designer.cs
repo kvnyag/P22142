@@ -63,7 +63,7 @@
             this.label1.Location = new System.Drawing.Point(319, 428);
             this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(123, 30);
+            this.label1.Size = new System.Drawing.Size(102, 25);
             this.label1.TabIndex = 2;
             this.label1.Text = "Version：";
             // 
@@ -74,7 +74,7 @@
             this.labelVersion.Location = new System.Drawing.Point(393, 428);
             this.labelVersion.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.labelVersion.Name = "labelVersion";
-            this.labelVersion.Size = new System.Drawing.Size(87, 30);
+            this.labelVersion.Size = new System.Drawing.Size(75, 25);
             this.labelVersion.TabIndex = 3;
             this.labelVersion.Text = "0.0.0.0";
             // 
@@ -84,7 +84,7 @@
             this.label3.Font = new System.Drawing.Font("微軟正黑體", 18F);
             this.label3.Location = new System.Drawing.Point(65, 31);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(236, 45);
+            this.label3.Size = new System.Drawing.Size(197, 38);
             this.label3.TabIndex = 4;
             this.label3.Text = "資料傳輸工具";
             // 
@@ -110,6 +110,7 @@
             this.btnLogExport.TabIndex = 1;
             this.btnLogExport.Text = "Log 匯出";
             this.btnLogExport.UseVisualStyleBackColor = true;
+            this.btnLogExport.Visible = false;
             this.btnLogExport.Click += new System.EventHandler(this.btnLogExport_Click);
             // 
             // btnPDAtoPC
@@ -132,7 +133,7 @@
             this.pnlConnect.Controls.Add(this.label4);
             this.pnlConnect.Controls.Add(this.label2);
             this.pnlConnect.Controls.Add(this.btnConnect);
-            this.pnlConnect.Location = new System.Drawing.Point(533, 12);
+            this.pnlConnect.Location = new System.Drawing.Point(12, 12);
             this.pnlConnect.Name = "pnlConnect";
             this.pnlConnect.Size = new System.Drawing.Size(456, 392);
             this.pnlConnect.TabIndex = 7;
@@ -153,7 +154,7 @@
             this.label5.ForeColor = System.Drawing.Color.DimGray;
             this.label5.Location = new System.Drawing.Point(71, 106);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(446, 30);
+            this.label5.Size = new System.Drawing.Size(373, 25);
             this.label5.TabIndex = 6;
             this.label5.Text = "PDA端請進入傳輸模式，再按下連接按鈕";
             // 
@@ -163,7 +164,7 @@
             this.label4.ForeColor = System.Drawing.Color.DimGray;
             this.label4.Location = new System.Drawing.Point(88, 81);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(397, 30);
+            this.label4.Size = new System.Drawing.Size(331, 25);
             this.label4.TabIndex = 5;
             this.label4.Text = "請使用USB傳輸線將PDA與電腦連接";
             // 
@@ -173,7 +174,7 @@
             this.label2.Font = new System.Drawing.Font("微軟正黑體", 18F);
             this.label2.Location = new System.Drawing.Point(130, 31);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(272, 45);
+            this.label2.Size = new System.Drawing.Size(227, 38);
             this.label2.TabIndex = 4;
             this.label2.Text = "請連接您的設備";
             // 
@@ -225,6 +226,7 @@
             this.btnPCtoPDA.TabIndex = 2;
             this.btnPCtoPDA.Text = "檔案匯入";
             this.btnPCtoPDA.UseVisualStyleBackColor = true;
+            this.btnPCtoPDA.Visible = false;
             this.btnPCtoPDA.Click += new System.EventHandler(this.btnPCtoPDA_Click);
             // 
             // label6
@@ -233,7 +235,7 @@
             this.label6.ForeColor = System.Drawing.Color.DimGray;
             this.label6.Location = new System.Drawing.Point(167, 428);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(209, 30);
+            this.label6.Size = new System.Drawing.Size(176, 25);
             this.label6.TabIndex = 8;
             this.label6.Text = "RegalScan©2020";
             // 
@@ -244,7 +246,7 @@
             this.label7.ForeColor = System.Drawing.Color.DimGray;
             this.label7.Location = new System.Drawing.Point(68, 68);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(412, 25);
+            this.label7.Size = new System.Drawing.Size(350, 22);
             this.label7.TabIndex = 9;
             this.label7.Text = "請確保傳輸線保持連接，傳輸過程中請勿拔除";
             // 
@@ -272,11 +274,11 @@
             // 
             // Main
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 30F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1083, 462);
+            this.ClientSize = new System.Drawing.Size(484, 471);
             this.Controls.Add(this.pnlConnect);
             this.Controls.Add(this.picSetting);
             this.Controls.Add(this.pictureBox2);

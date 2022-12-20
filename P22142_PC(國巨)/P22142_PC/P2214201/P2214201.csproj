@@ -8,10 +8,11 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>P2214201</RootNamespace>
     <AssemblyName>P2214201</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -41,12 +42,38 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\AndroidTranfer\obj\Debug\AndroidTransfer.dll</HintPath>
     </Reference>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.9.0, Culture=neutral, PublicKeyToken=0e99375e54769942, processorArchitecture=MSIL">
+      <HintPath>..\packages\Portable.BouncyCastle.1.8.9\lib\net40\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
     <Reference Include="DataAccess, Version=1.2.0.26277, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\Debug\DataAccess.dll</HintPath>
     </Reference>
+    <Reference Include="DataAccess.SQLite, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\DataAccess.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=1.3.3.11, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <HintPath>..\packages\SharpZipLib.1.3.3\lib\net45\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI, Version=2.5.6.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NPOI.2.5.6\lib\net45\NPOI.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OOXML, Version=2.5.6.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NPOI.2.5.6\lib\net45\NPOI.OOXML.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXml4Net, Version=2.5.6.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NPOI.2.5.6\lib\net45\NPOI.OpenXml4Net.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXmlFormats, Version=2.5.6.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NPOI.2.5.6\lib\net45\NPOI.OpenXmlFormats.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.SQLite, Version=1.0.114.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\System.Data.SQLite.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -58,11 +85,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AirConditionDem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AirConditionDem.Designer.cs">
+      <DependentUpon>AirConditionDem.cs</DependentUpon>
+    </Compile>
     <Compile Include="AirConditionRep.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="AirConditionRep.Designer.cs">
       <DependentUpon>AirConditionRep.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CompressDem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CompressDem.Designer.cs">
+      <DependentUpon>CompressDem.cs</DependentUpon>
     </Compile>
     <Compile Include="CompressRep.cs">
       <SubType>Form</SubType>
@@ -71,11 +110,17 @@
       <DependentUpon>CompressRep.cs</DependentUpon>
     </Compile>
     <Compile Include="DealRecord.cs" />
-    <Compile Include="Empty.cs">
+    <Compile Include="Query_Interval.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Empty.Designer.cs">
-      <DependentUpon>Empty.cs</DependentUpon>
+    <Compile Include="Query_Interval.Designer.cs">
+      <DependentUpon>Query_Interval.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HydropowerDem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HydropowerDem.Designer.cs">
+      <DependentUpon>HydropowerDem.cs</DependentUpon>
     </Compile>
     <Compile Include="HydropowerRep.cs">
       <SubType>Form</SubType>
@@ -133,22 +178,38 @@
     <Compile Include="StaffInfo.Designer.cs">
       <DependentUpon>StaffInfo.cs</DependentUpon>
     </Compile>
+    <Compile Include="UseNPOI.cs" />
     <Compile Include="UseSQLServer.cs" />
     <Compile Include="UseXML.cs" />
+    <Compile Include="VacuumDem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VacuumDem.Designer.cs">
+      <DependentUpon>VacuumDem.cs</DependentUpon>
+    </Compile>
     <Compile Include="VacuumRep.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="VacuumRep.Designer.cs">
       <DependentUpon>VacuumRep.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AirConditionDem.resx">
+      <DependentUpon>AirConditionDem.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AirConditionRep.resx">
       <DependentUpon>AirConditionRep.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CompressDem.resx">
+      <DependentUpon>CompressDem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CompressRep.resx">
       <DependentUpon>CompressRep.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Empty.resx">
-      <DependentUpon>Empty.cs</DependentUpon>
+    <EmbeddedResource Include="Query_Interval.resx">
+      <DependentUpon>Query_Interval.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HydropowerDem.resx">
+      <DependentUpon>HydropowerDem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HydropowerRep.resx">
       <DependentUpon>HydropowerRep.cs</DependentUpon>
@@ -176,6 +237,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Settings.resx">
       <DependentUpon>Settings.cs</DependentUpon>
@@ -186,9 +248,13 @@
     <EmbeddedResource Include="StaffInfo.resx">
       <DependentUpon>StaffInfo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="VacuumDem.resx">
+      <DependentUpon>VacuumDem.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="VacuumRep.resx">
       <DependentUpon>VacuumRep.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

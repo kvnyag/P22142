@@ -17,9 +17,10 @@ namespace P2214201
         DbTransaction objTrans;
         DealRecord drc = new DealRecord();
 
+        int CAH001, CAB001;
         string FT001, CG001, CG002, MN001, MN002;
-        string CAH001, CAH002, CAH003, CAH004, CAH005, CAH006, CAH007, CAH008, CAH009, CAH010, CAH011;
-        string CAB001, CAB002, CAB003, CAB004, CAB005, CAB006, CAB007, CAB008, CAB009, CAB010, CAB011, CAB012, CAB013, CAB014, CAB015;
+        string CAH002, CAH003, CAH004, CAH005, CAH006, CAH007, CAH008, CAH009, CAH010, CAH011;
+        string CAB003, CAB004, CAB005, CAB006, CAB007, CAB008, CAB009, CAB010, CAB011, CAB012, CAB013, CAB014, CAB015;
         string[] arrCGA = new string[300];
         CheckBox ckHeader_From = new CheckBox();
         CheckBox ckHeader_To = new CheckBox();
@@ -74,16 +75,16 @@ namespace P2214201
          //新增 功能
          //********************************************************************
             //參數
-            int i, MaxCAH, MaxCAB, arrNo;
-            string strSQL, strMaxCAH, strMaxCAB;
+            int i, arrNo, MaxCAH;
+            string strSQL;
 
             //寫入資料庫_HEADS
-            strSQL = "Select ISNULL(Max(CAH001),'CAH_00000') as MaxCAH001 From COMPRESSEDAIR_HEADS";
+            //....取得 COMPRESSEDAIR_HEADS 下一序號
+            strSQL = "SELECT ISNULL(MAX(CAH001),0) as CAH001 FROM COMPRESSEDAIR_HEADS";
             dt = USQL.SQLSelect(ref da, strSQL);
-            strMaxCAH = dt.Rows[0]["MaxCAH001"].ToString();
-            MaxCAH = int.Parse(strMaxCAH.Substring(4, 5)) + 1;
+            MaxCAH = int.Parse(dt.Rows[0]["CAH001"].ToString());
 
-            CAH001 = "CAH_" + MaxCAH.ToString().PadLeft(5, '0');   //流水序號(CAH001)
+            CAH001 = MaxCAH + 1;                                   //流水序號(CAH001)
             CAH002 = cbxFactoryCode.Text;                          //廠房代號(CAH002)
             CAH003 = USQL.FindCG("", cbxCategorysName.Text);       //類別代號(CAH003)
             CAH004 = cbxMachineCode.Text;                          //機械編號代號 (CAH004)
@@ -95,15 +96,16 @@ namespace P2214201
             CAH010 = "";                                           //備用(CAH010)
             CAH011 = "Y";                                          //是否仍然使用(CAH011)
 
-            strSQL = "Insert into COMPRESSEDAIR_HEADS (CAH001,CAH002,CAH003,CAH004,CAH005,CAH006,CAH007,CAH008,CAH009,CAH010,CAH011) Values ('";
-            strSQL += CAH001 + "','" + CAH002 + "','" + CAH003 + "','" + CAH004 + "','" + CAH005 + "','" + CAH006 + "','" + CAH007 + "','";
+            strSQL = "Insert into COMPRESSEDAIR_HEADS (CAH001,CAH002, CAH003, CAH004, CAH005, CAH006, CAH007, CAH008, CAH009, CAH010, CAH011) Values (";
+            strSQL += CAH001 + ",'"  + CAH002 + "','" + CAH003 + "','" + CAH004 + "','" + CAH005 + "','" + CAH006 + "','" + CAH007 + "','";
             strSQL += CAH008 + "','" + CAH009 + "','" + CAH010 + "','" + CAH011 + "')";
 
             try
             { objTrans = USQL.SQLNonSelect(ref da, ref objTrans, strSQL); }
             catch (Exception Ex)
             {
-                objTrans.Rollback();
+                if (objTrans != null)
+                    objTrans.Rollback();
                 MessageBox.Show("Insert Into COMPRESSEDAIR_HEADS 出現錯誤，請確認資料後重新執行。系統訊息：" + Ex.Message, "Inser Into COMPRESSEDAIR_HEADS");
                 return;
             }
@@ -111,11 +113,6 @@ namespace P2214201
             //寫入資料庫_BODYS
             //....記錄 arrCGA 共有多少項目
             arrNo = arrCGA.Length;
-            //....計算下一序號值
-            strSQL = "Select ISNULL(Max(CAB001),'CAB_00000') as MaxCAB001 From COMPRESSEDAIR_BODYS Where CAB001 = '" + CAH001 + "'";
-            dt = USQL.SQLSelect(ref da, strSQL);
-            strMaxCAB = dt.Rows[0]["MaxCAB001"].ToString();
-            MaxCAB = int.Parse(strMaxCAB.Substring(4, 5)) + 1;
             //....依序執行寫入資料庫動作
             for (i = 0; i < arrNo; i++)
             {
@@ -125,8 +122,8 @@ namespace P2214201
                     strSQL = "Select * From CHECKITEMS Where CK001 = '" + CAB003 + "'";
                     dt = USQL.SQLSelect(ref da, strSQL);
 
-                    CAB001 = CAH001;                                     //Head序號(VMB001)
-                    CAB002 = "CAB_" + MaxCAB.ToString().PadLeft(5, '0'); //流水序號(VMB002)
+                    CAB001 = MaxCAH + 1;                                 //流水序號(CAB001)
+                    //流水序號(VMB002)：因該欄位被設定為"自動識別"欄位，故不需加入 Insert 語法。
                     CAB004 = dt.Rows[0]["CK002"].ToString();             //檢查項目名稱(VMB004)
                     CAB005 = dt.Rows[0]["CK003"].ToString();             //參考 起(VMB005)
                     CAB006 = dt.Rows[0]["CK004"].ToString();             //中間符號(VMB006）
@@ -140,20 +137,19 @@ namespace P2214201
                     CAB014 = dt.Rows[0]["CK014"].ToString();             //備用(VMB014)
                     CAB015 = "N";                                        //是否作廢(VMB015)
 
-                    strSQL = "Insert into COMPRESSEDAIR_BODYS (CAB001,CAB002,CAB003,CAB004,CAB005,CAB006,CAB007,CAB008,CAB009,CAB010,CAB011,CAB012,CAB013,CAB014,CAB015) Values ('";
-                    strSQL += CAB001 + "','" + CAB002 + "','" + CAB003 + "','" + CAB004 + "','" + CAB005 + "','" + CAB006 + "','" + CAB007 + "','" + CAB008 + "','";
+                    strSQL = "Insert into COMPRESSEDAIR_BODYS Values (";
+                    strSQL += CAB001 + ",'"  + CAB003 + "','" + CAB004 + "','" + CAB005 + "','" + CAB006 + "','" + CAB007 + "','" + CAB008 + "','";
                     strSQL += CAB009 + "','" + CAB010 + "','" + CAB011 + "','" + CAB012 + "','" + CAB013 + "','" + CAB014 + "','" + CAB015 + "')";
 
                     try
                     { objTrans = USQL.SQLNonSelect(ref da, ref objTrans, strSQL); }
                     catch (Exception Ex)
                     {
-                        objTrans.Rollback();
+                        if (objTrans != null)
+                            objTrans.Rollback();
                         MessageBox.Show("Insert Into COMPRESSEDAIR_BODYS 出現錯誤，請確認資料後重新執行。系統訊息：" + Ex.Message, "Inser Into COMPRESSEDAIR_BODYS");
                         return;
                     }
-
-                    MaxCAB++;
                 }
                 else
                     break;
@@ -184,7 +180,7 @@ namespace P2214201
             //找出 標頭 檔編號
             strSQL = "Select CAH001 From COMPRESSEDAIR_HEADS Where CAH002 = '" + FT001 + "' And CAH003 = '" + CG001 + "' And CAH004 = '" + MN001 + "' And CAH011 = 'Y' ";
             dt = USQL.SQLSelect(ref da, strSQL);
-            CAB001 = dt.Rows[0]["CAH001"].ToString();
+            CAB001 = int.Parse(dt.Rows[0]["CAH001"].ToString());
             //逐筆將 是否作廢 填回資料庫
             for (i = 0; i < RowNo - 1; i++)
             {
@@ -223,11 +219,11 @@ namespace P2214201
             //找出 標頭 檔編號
             strSQL = "Select CAH001 From COMPRESSEDAIR_HEADS Where CAH002 = '" + FT001 + "' And CAH003 = '" + CG001 + "' And CAH004 = '" + MN001 + "' And CAH011 = 'Y' ";
             dt = USQL.SQLSelect(ref da, strSQL);
-            CAH001 = dt.Rows[0]["CAH001"].ToString();
+            CAH001 = int.Parse(dt.Rows[0]["CAH001"].ToString());
             //標頭檔 資料作廢，但不刪除。
             strSQL = "Update COMPRESSEDAIR_HEADS Set CAH011 = 'N' Where CAH001 = '" + CAH001 + "' And CAH011 = 'Y' ";
             USQL.SQLNonSelect(ref da, strSQL);
-            //標頭檔 資料作廢，但不刪除。
+            //單位機械編號 資料作廢，但不刪除。
             strSQL = "Update MECHNUMBERS Set MN012 = 'N' Where MN001 = '" + MN001 + "'";
             USQL.SQLNonSelect(ref da, strSQL);
             //清空畫面
@@ -282,7 +278,7 @@ namespace P2214201
             if (dt.Rows.Count > 0)
             {
                 //記錄 表頭檔 序號
-                CAH001 = dt.Rows[0]["CAH001"].ToString();
+                CAH001 = int.Parse(dt.Rows[0]["CAH001"].ToString());
                 //處理 dgvCompressFrom ******************************************
                 //....1.畫出來的打勾圖示 不可見
                 ckHeader_From.Visible = false;
@@ -491,27 +487,37 @@ namespace P2214201
         }
         private void isEnable(string btnAdd, string btnModify, string btnDelete, string btnR, string btnL)
         {
-            if (btnAdd == "Y")
+            if (UserRole == "OP")
+                btnCompressRepAdd.Enabled = false;
+            else if (btnAdd == "Y")
                 btnCompressRepAdd.Enabled = true;
             else if (btnAdd == "N")
                 btnCompressRepAdd.Enabled = false;
 
-            if (btnModify == "Y")
+            if (UserRole == "OP")
+                btnCompressRepModify.Enabled = false;
+            else if (btnModify == "Y")
                 btnCompressRepModify.Enabled = true;
             else if (btnModify == "N")
                 btnCompressRepModify.Enabled = false;
 
-            if (btnDelete == "Y")
+            if (UserRole == "OP")
+                btnCompressRepDelete.Enabled = false;
+            else if (btnDelete == "Y")
                 btnCompressRepDelete.Enabled = true;
             else if (btnDelete == "N")
                 btnCompressRepDelete.Enabled = false;
 
-            if (btnR == "Y")
+            if (UserRole == "OP")
+                btnRight.Enabled = false;
+            else if (btnR == "Y")
                 btnRight.Enabled = true;
             else if (btnR == "N")
                 btnRight.Enabled = false;
 
-            if (btnL == "Y")
+            if (UserRole == "OP")
+                btnLeft.Enabled = false;
+            else if (btnL == "Y")
                 btnLeft.Enabled = true;
             else if (btnL == "N")
                 btnLeft.Enabled = false;

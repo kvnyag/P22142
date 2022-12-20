@@ -127,8 +127,9 @@ namespace AndroidTranferTool
         //手持裝置 -> 電腦
         private void btnPDAtoPC_Click(object sender, EventArgs e)
         {
-            PDAToPC pp = new PDAToPC();
-            pp.UsePDAToPC();
+            //PDAToPC pp = new PDAToPC();
+            //bool bResult = pp.UsePDAToPC();
+            //return;
 
             btnPDAtoPC.Enabled = false;
             Waitting waitting = new Waitting();
@@ -149,13 +150,12 @@ namespace AndroidTranferTool
                     {
                         ResultInfo resultInfo = Transfer.adbPull(PdaToPC + "-journal", outputPath);
                         resultInfo = Transfer.adbPull(PdaToPC, outputPath);
-
-
+                        
                         if (resultInfo.resultCode == 0)
                         {
                             //if (enableOutConvert)
                             //{
-                            //   outputPath = RunConvertEXE(2, outputPath + PdaToPC.Replace(@"sdcard/Download/", "")); //啟用轉檔
+                            //    outputPath = RunConvertEXE(2, outputPath + PdaToPC.Replace(@"sdcard/Download/", "")); //啟用轉檔
                             //    if (!outputPath.EndsWith("\\"))
                             //        outputPath = outputPath + "\\";
                             //}
@@ -166,8 +166,31 @@ namespace AndroidTranferTool
                                 return;
                             }
 
-                            MessageBox.Show(resultInfo.resultMessage, "匯出成功", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
-                            Process.Start("EXPLORER", outputPath);
+                            //1.執行 PDA端 資料寫入 PC端。
+                            //2.清空 PDA端 資料。
+                            //3.執行 PC端 資料寫回 PDA端。
+                            PDAToPC pp = new PDAToPC();
+                            bool bResult = pp.UsePDAToPC();
+
+                            if (bResult)
+                            {
+                                Transfer.adbCommand("adb shell rm -rf " + @"/sdcard/Download/P22142.db3-journal"); 
+                                Transfer.adbCommand("adb shell rm -rf " + @"/sdcard/Download/P22142.db3");
+
+                                ResultInfo resultInfo_PCToPDA = Transfer.adbPush(outputPath + "P22142.db3", "sdcard/Download/P22142.db3");
+                                resultInfo_PCToPDA = Transfer.adbPush(outputPath + "P22142.db3-journal", "sdcard/Download/P22142.db3-journal");
+
+                                //Transfer.scanSDCARD();
+                                Transfer.scanSDCARD_A();
+
+                                MessageBox.Show(resultInfo.resultMessage, "匯出成功", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                                Process.Start("EXPLORER", outputPath);
+                            }
+                            else
+                            {
+                                this.Cursor = Cursors.Default;
+                                MessageBox.Show(resultInfo.resultMessage, "匯出失敗", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                            }
                         }
                         else
                         {
@@ -175,6 +198,8 @@ namespace AndroidTranferTool
                             MessageBox.Show(resultInfo.resultMessage, "匯出失敗", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
                         }
                     }
+                    waitting.Close();
+                    btnPDAtoPC.Enabled = true;
                 }));
             });
         }
@@ -385,7 +410,7 @@ namespace AndroidTranferTool
                             Transfer.adbCommand("adb shell rm -rf " + @"/sdcard/Download/apk/" + androidPlatformPath + "/*");
                             foreach (string file in FileList)
                             {
-                                ResultInfo resultInfo = Transfer.adbPush(file.Trim(), @"/sdcard/Download/apk/" + file.Substring(file.LastIndexOf("\\") + 1));
+                                ResultInfo resultInfo = Transfer.adbPush(file.Trim(), @"/sdcard/Download/apk/" + androidPlatformPath + @"/" + file.Substring(file.LastIndexOf("\\") + 1));
                                 if (resultInfo.resultCode == 0)
                                 {
                                     message += Path.GetFileNameWithoutExtension(file.ToString()) + "..成功\n";
@@ -420,7 +445,8 @@ namespace AndroidTranferTool
                                 }
                             }
                             Transfer.adbCommand("adb shell rm -rf " + @"/sdcard/Download/Transfer.txt");
-                            Transfer.scanSDCARD();
+                            //Transfer.scanSDCARD();
+                            Transfer.scanSDCARD_B();
 
                             waitting.BeginInvoke(new Action(() =>
                             {

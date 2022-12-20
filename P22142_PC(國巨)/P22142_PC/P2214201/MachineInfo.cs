@@ -24,25 +24,21 @@ namespace P2214201
         private void MachineInfo_Load(object sender, EventArgs e)
         {
             //參數
-            int i, dtRowsNo;
+            int i;
             string strSQL;
 
             //寫入廠房名稱下拉選單
-            strSQL = "";
-            strSQL += "Select * From FACTORYS";
+            strSQL = "Select * From FACTORYS";
             dt = USQL.SQLSelect(ref da, strSQL);
-
-            dtRowsNo = dt.Rows.Count;
-            for (i = 0; i < dtRowsNo; i++)
+            
+            for (i = 0; i < dt.Rows.Count; i++)
                 cbxFactoryName.Items.Add(dt.Rows[i]["FT002"].ToString().Trim());
 
             // 寫入類別名稱下拉選單
-            strSQL = "";
-            strSQL += "Select * From CATEGORYS Where CG001 in ('A','B','C')";
+            strSQL = "SELECT * FROM CATEGORYS WHERE CG001 NOT IN ('D')";
             dt = USQL.SQLSelect(ref da, strSQL);
-
-            dtRowsNo = dt.Rows.Count;
-            for (i = 0; i < dtRowsNo; i++)
+            
+            for (i = 0; i < dt.Rows.Count; i++)
                 cbxReportName.Items.Add(dt.Rows[i]["CG002"].ToString().Trim());
 
             if (UserRole == "OP") //操作者身份
@@ -60,14 +56,9 @@ namespace P2214201
 
         private void cbxFactoryName_SelectedIndexChanged(object sender, EventArgs e)
         {//廠房名稱下拉後代入機械編號
-            string strSQL;
             FT002 = cbxFactoryName.Text;
-
-            strSQL = "";
-            strSQL += "Select * From FACTORYS Where FT002 = '" + cbxFactoryName.Text.Trim() + "'";
-            dt = USQL.SQLSelect(ref da, strSQL);
-            FT001 = dt.Rows[0]["FT001"].ToString().Trim();
-            tbxFactoryName.Text = FT001;
+            FT001 = USQL.FindFT("", FT002);
+            tbxFactoryCode.Text = FT001;
         }
 
         private void cbxReportName_SelectedIndexChanged(object sender, EventArgs e)
@@ -81,43 +72,27 @@ namespace P2214201
             string strSQL;
 
             //防呆
-            if (cbxFactoryName.Text == "")
-            { MessageBox.Show("廠房名稱不可空白。"); return; }
-            if (cbxReportName.Text == "")
-            { MessageBox.Show("類別名稱不可空白。"); return; }
-            if (tbxMachineCode.Text == "")
-            { MessageBox.Show("機械編號不可空白。"); return; }
-            if (tbxMachineName.Text == "")
-            { MessageBox.Show("機械名稱不可空白。"); return; }
+            if (CheckData("Y", "Y", "Y", "Y") == false)
+                return;
 
             //確定要 Insert 的機械編號是否已存在資料庫
-            MN001 = tbxMachineCode.Text.Trim();
-
-            strSQL = "";
-            strSQL += "Select * From MECHNUMBERS Where 1 = 1 And MN001 = '" + MN001 + "'";
+            MN001 = tbxFactoryCode.Text + "_" + tbxMachineCode.Text;
+            
+            strSQL = "Select * From MECHNUMBERS Where 1 = 1 And MN001 = '" + MN001 + "'";
             dt = USQL.SQLSelect(ref da, strSQL);
 
             if (dt.Rows.Count > 0)
             { MessageBox.Show("要新增的機械編號已存在，請確認後再執行新增作業。"); return; }
 
             //廠房代號抓取
-            FT002 = cbxFactoryName.Text.Trim();
-
-            strSQL = "";
-            strSQL += "Select FT001 From FACTORYS Where FT002 = '" + FT002 + "'";
-            dt = USQL.SQLSelect(ref da, strSQL);
-            MN003 = dt.Rows[0]["FT001"].ToString().Trim();        //廠房代號(MN003)
+            MN003 = tbxFactoryCode.Text.Trim(); //廠房代號(MN003)
 
             //類別代號抓取
             CG002 = cbxReportName.Text.Trim();
-
-            strSQL = "";
-            strSQL += "Select CG001 From CATEGORYS Where CG002 = '" + CG002 + "'";
-            dt = USQL.SQLSelect(ref da, strSQL);
-            MN004 = dt.Rows[0]["CG001"].ToString().Trim();        //類別代號 (MN004)
+            MN004 = USQL.FindCG("", CG002);        //類別代號 (MN004)
 
             // Insert 資料進資料庫
-            MN001 = tbxFactoryName.Text + "_" + tbxMachineCode.Text; //機械編號(MN001)
+            MN001 = tbxFactoryCode.Text + "_" + tbxMachineCode.Text; //機械編號(MN001)
             MN002 = tbxMachineName.Text;                             //機械名稱(MN002)
             MN005 = UserName;                                        //建立者(MN005)
             MN006 = "";                                              //修改者(MN006)
@@ -127,9 +102,8 @@ namespace P2214201
             MN010 = tbxMachineCode.Text;                             //備用(MN010)
             MN011 = "";                                              //備用(MN011)
             MN012 = "Y";                                             //是否仍然使用(MN012)
-
-            strSQL = "";
-            strSQL += "Insert Into MECHNUMBERS (MN001,MN002,MN003,MN004,MN005,MN006,MN007,MN008,MN009,MN010,MN011,MN012) Values ('";
+            
+            strSQL = "Insert Into MECHNUMBERS (MN001,MN002,MN003,MN004,MN005,MN006,MN007,MN008,MN009,MN010,MN011,MN012) Values ('";
             strSQL += MN001 + "','" + MN002 + "','" + MN003 + "','" + MN004 + "','" + MN005 + "','" + MN006 + "','";
             strSQL += MN007 + "','" + MN008 + "','" + MN009 + "','" + MN010 + "','" + MN011 + "','" + MN012 + "')";
             USQL.SQLNonSelect(ref da, strSQL);
@@ -144,11 +118,7 @@ namespace P2214201
             { }
 
             //清空所有可填入欄位
-            cbxFactoryName.Text = "";
-            cbxReportName.Text = "";
-            tbxMachineCode.Text = "";
-            tbxMachineName.Text = "";
-            tbxFactoryName.Text = "";
+            ClearForm();
         }
 
         private void btnMachineInfoModify_Click(object sender, EventArgs e)
@@ -157,45 +127,28 @@ namespace P2214201
             string strSQL;
 
             //防呆
-            if (cbxFactoryName.Text == "")
-            { MessageBox.Show("廠房名稱不可空白。"); return; }
-            if (cbxReportName.Text == "")
-            { MessageBox.Show("類別名稱不可空白。"); return; }
-            if (tbxMachineCode.Text == "")
-            { MessageBox.Show("機械編號不可空白。"); return; }
-            if (tbxMachineName.Text == "")
-            { MessageBox.Show("機械名稱不可空白。"); return; }
+            if (CheckData("Y", "Y", "Y", "Y") == false)
+                return;
 
             //確定要 Update 的帳號是否已存在資料庫
-            MN001 = tbxFactoryName.Text + "_" + tbxMachineCode.Text;
+            MN001 = tbxFactoryCode.Text + "_" + tbxMachineCode.Text; //機械編號(MN001)
 
-            strSQL = "";
-            strSQL += "Select * From MECHNUMBERS Where 1 = 1 And MN001 = '" + MN001 + "'";
+            strSQL = "Select * From MECHNUMBERS Where 1 = 1 And MN001 = '" + MN001 + "'";
             dt = USQL.SQLSelect(ref da, strSQL);
 
             if (dt.Rows.Count == 0)
             { MessageBox.Show("要修改的機械編號未存在，請確認後再執行修改作業。"); return; }
 
             //廠房代號抓取
-            FT002 = cbxFactoryName.Text.Trim();
-
-            strSQL = "";
-            strSQL += "Select FT001 From FACTORYS Where FT002 = '" + FT002 + "'";
-            dt = USQL.SQLSelect(ref da, strSQL);
-            MN003 = dt.Rows[0]["FT001"].ToString().Trim();        //廠房代號(MN003)
+            MN003 = tbxFactoryCode.Text.Trim(); //廠房代號(MN003)
 
             //類別代號抓取
             CG002 = cbxReportName.Text.Trim();
-
-            strSQL = "";
-            strSQL += "Select CG001 From CATEGORYS Where CG002 = '" + CG002 + "'";
-            dt = USQL.SQLSelect(ref da, strSQL);
-            MN004 = dt.Rows[0]["CG001"].ToString().Trim();        //類別代號 (MN004)
+            MN004 = USQL.FindCG("", CG002); //類別代號 (MN004)
 
             // Update 資料進資料庫
-            MN001 = tbxFactoryName.Text + "_" + tbxMachineCode.Text; //機械編號(MN001)
-            MN002 = tbxMachineName.Text;                             //機械名稱(MN002)
-            MN010 = tbxMachineCode.Text;                             //備存(MN010)
+            MN002 = tbxMachineName.Text; //機械名稱(MN002)
+            MN010 = tbxMachineCode.Text; //備存(MN010)
 
             strSQL = "";
             strSQL += "Update MECHNUMBERS Set MN002 = '" + MN002 + "',MN003 = '" + MN003 + "',MN004 = '" + MN004 + "',MN010 = '" + MN010 + "' ";
@@ -212,11 +165,7 @@ namespace P2214201
             { }
 
             //清空所有可填入欄位
-            cbxFactoryName.Text = "";
-            cbxReportName.Text = "";
-            tbxMachineCode.Text = "";
-            tbxMachineName.Text = "";
-            tbxFactoryName.Text = "";
+            ClearForm();
         }
 
         private void btnMachineInfoDelete_Click(object sender, EventArgs e)
@@ -225,22 +174,20 @@ namespace P2214201
             string strSQL;
 
             //防呆
-            if (tbxMachineCode.Text == "")
-            { MessageBox.Show("機械編號不可空白。"); return; }
+            if (CheckData("N", "N", "Y", "N") == false)
+                return;
 
             //確定要 Delete 的帳號是否已存在資料庫
-            strSQL = "";
-            strSQL += "Select * From MECHNUMBERS Where 1 = 1 And MN001 = '" + tbxFactoryName.Text + "_" + tbxMachineCode.Text + "'";
+            strSQL = "Select * From MECHNUMBERS Where 1 = 1 And MN001 = '" + tbxFactoryCode.Text + "_" + tbxMachineCode.Text + "'";
             dt = USQL.SQLSelect(ref da, strSQL);
 
             if (dt.Rows.Count == 0)
             { MessageBox.Show("要修改的機械編號未存在，請確認後再執行刪除作業。"); return; }
 
             // Delete 資料庫
-            MN001 = tbxFactoryName.Text + "_" + tbxMachineCode.Text; //機械編號(MN001)
-
-            strSQL = "";
-            strSQL += "Delete From MECHNUMBERS Where MN001 = '" + MN001 + "'";
+            MN001 = tbxFactoryCode.Text + "_" + tbxMachineCode.Text; //機械編號(MN001)
+            
+            strSQL = "Delete From MECHNUMBERS Where MN001 = '" + MN001 + "'";
             USQL.SQLNonSelect(ref da, strSQL);
 
             //重整 DataGridView 顯示
@@ -253,11 +200,7 @@ namespace P2214201
             { }
 
             //清空所有可填入欄位
-            cbxFactoryName.Text = "";
-            cbxReportName.Text = "";
-            tbxMachineCode.Text = "";
-            tbxMachineName.Text = "";
-            tbxFactoryName.Text = "";
+            ClearForm();
         }
 
         private void btnMachineInfoDemand_Click(object sender, EventArgs e)
@@ -270,9 +213,8 @@ namespace P2214201
             CG002 = cbxReportName.Text.Trim();
             MN002 = tbxMachineName.Text.Trim();
             MN010 = tbxMachineCode.Text.Trim();
-
-            strSQL = "";
-            strSQL += "Select b.FT002 as '廠房名稱',";
+            
+            strSQL = "Select b.FT002 as '廠房名稱',";
             strSQL += "c.CG002 as '類別名稱',";
             strSQL += "a.MN010 as '機械編號',";
             strSQL += "a.MN002 as '機械名稱',";
@@ -284,7 +226,7 @@ namespace P2214201
             strSQL += "From MECHNUMBERS a,FACTORYS b,CATEGORYS c ";
             strSQL += "Where a.MN003 = b.FT001 ";
             strSQL += "And a.MN004 = c.CG001 ";
-            strSQL += "And c.CG001 in ('A','B','C')";
+            strSQL += "And c.CG001 not in ('D')";
             if (FT002 != "")
                 strSQL += "And b.FT002 = '" + FT002 + "' ";
             if (CG002 != "")
@@ -305,11 +247,7 @@ namespace P2214201
             dgvMachine.DataSource = dt;
 
             //清空所有可填入欄位
-            cbxFactoryName.Text = "";
-            cbxReportName.Text = "";
-            tbxMachineCode.Text = "";
-            tbxMachineName.Text = "";
-            tbxFactoryName.Text = "";
+            ClearForm();
         }
 
         private void dgvMachine_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -320,12 +258,38 @@ namespace P2214201
             {
                 FT002 = dgvMachine.CurrentRow.Cells[0].Value.ToString().Trim(); //廠房名稱
                 cbxFactoryName.Text = FT002;
-                tbxFactoryName.Text = USQL.FindFT("", FT002);
+                tbxFactoryCode.Text = USQL.FindFT("", FT002);
                 cbxReportName.Text = dgvMachine.CurrentRow.Cells[1].Value.ToString().Trim();  //類別名稱
                 tbxMachineCode.Text = dgvMachine.CurrentRow.Cells[2].Value.ToString().Trim(); //機械編號
                 tbxMachineName.Text = dgvMachine.CurrentRow.Cells[3].Value.ToString().Trim(); //機械名稱
             }
         }
-        
+        private bool CheckData(string FT002, string CG002, string MN001, string MN002)
+        {
+            //*************************************************************************************
+            //防呆專區
+            //*************************************************************************************
+            if (FT002 == "Y" && cbxFactoryName.Text == "")
+            { MessageBox.Show("廠房名稱不可空白。"); return false; }
+            if (CG002 == "Y" && cbxReportName.Text == "")
+            { MessageBox.Show("類別名稱不可空白。"); return false; }
+            if (MN001 == "Y" && tbxMachineCode.Text == "")
+            { MessageBox.Show("機械編號不可空白。"); return false; }
+            if (MN002 == "Y" && tbxMachineName.Text == "")
+            { MessageBox.Show("機械名稱不可空白。"); return false; }
+
+            return true;
+        }
+        private void ClearForm()
+        {
+            //*************************************************************************************
+            //清空資料專區
+            //*************************************************************************************
+            cbxFactoryName.Text = "";
+            cbxReportName.Text = "";
+            tbxMachineCode.Text = "";
+            tbxMachineName.Text = "";
+            tbxFactoryCode.Text = "";
+        }
     }
 }

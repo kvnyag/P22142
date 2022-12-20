@@ -56,7 +56,7 @@ namespace P2214201
             return strSQL;
         }
 
-        public string DGVShowSQL(string RecordName, string KeyValue)
+        public string DGVShowSQL(string RecordName, int KeyValue)
         {//********************************************************************
          //組合 DataGridViewTo 顯示的 SQL 語法
          //........KeyValue --> 記錄檔表頭編號
@@ -66,44 +66,53 @@ namespace P2214201
 
             if (RecordName == "VACUUM_BODYS")
             {
-                strSQL = "";
-                strSQL += "Select VMB003 as '項目代號',";
+                strSQL  = "Select VMB003 as '項目代號',";
                 strSQL += "VMB004 as '項目名稱',";
                 strSQL += "VMB008 as '備註1',";
                 strSQL += "VMB009 as '備註2',";
                 strSQL += "(VMB005 + VMB006 + VMB007) as '參考值',";
                 strSQL += "VMB015 as '是否作廢' ";
                 strSQL += "From VACUUM_BODYS ";
-                strSQL += "Where VMB001 = '" + KeyValue + "' ";
+                strSQL += "Where VMB001 = " + KeyValue + " ";
                 //strSQL += "And VMB015 = 'N' ";
             }
             else if (RecordName == "COMPRESSEDAIR_BODYS")
             {
-                strSQL = "";
-                strSQL += "Select CAB003 as '項目代號',";
+                strSQL  = "Select CAB003 as '項目代號',";
                 strSQL += "CAB004 as '項目名稱',";
                 strSQL += "CAB008 as '備註1',";
                 strSQL += "CAB009 as '備註2',";
                 strSQL += "(CAB005 + CAB006 + CAB007) as '參考值',";
                 strSQL += "CAB015 as '是否作廢' ";
                 strSQL += "From COMPRESSEDAIR_BODYS ";
-                strSQL += "Where CAB001 = '" + KeyValue + "' ";
+                strSQL += "Where CAB001 = " + KeyValue + " ";
                 //strSQL += "And CAB015 = 'N' ";
             }
             else if (RecordName == "COLDAIR_BODYS")
             {
-                strSQL = "";
-                strSQL += "Select COB003 as '項目代號',";
+                strSQL  = "Select COB003 as '項目代號',";
                 strSQL += "COB004 as '項目名稱',";
                 strSQL += "COB008 as '備註1',";
                 strSQL += "COB009 as '備註2',";
                 strSQL += "(COB005 + COB006 + COB007) as '參考值',";
                 strSQL += "COB015 as '是否作廢' ";
                 strSQL += "From COLDAIR_BODYS ";
-                strSQL += "Where COB001 = '" + KeyValue + "' ";
+                strSQL += "Where COB001 = " + KeyValue + " ";
                 //strSQL += "And COB015 = 'N' ";
             }
-            else if (RecordName == "WATERELC_BODYS")
+            
+            return strSQL;
+        }
+
+        public string DGVShowSQL(string RecordName, string KeyValue)
+        {//********************************************************************
+         //組合 DataGridViewTo 顯示的 SQL 語法，專門為 水電記錄表。
+         //........KeyValue --> 檢查項目代號
+         //********************************************************************
+            //參數
+            string strSQL = "";
+
+            if (RecordName == "WATERELC_BODYS")
             {
                 strSQL = "";
                 strSQL += "Select WEB003 as '項目代號',";
@@ -113,7 +122,7 @@ namespace P2214201
                 strSQL += "(WEB005 + WEB006 + WEB007) as '參考值',";
                 strSQL += "WEB015 as '是否作廢' ";
                 strSQL += "From WATERELC_BODYS ";
-                strSQL += "Where WEB001 = '" + KeyValue + "' ";
+                strSQL += "Where WEB003 = " + KeyValue + " ";
                 //strSQL += "And WEB015 = 'N' ";
             }
 

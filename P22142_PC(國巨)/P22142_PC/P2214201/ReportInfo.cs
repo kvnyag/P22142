@@ -23,7 +23,6 @@ namespace P2214201
         private void ReportInfo_Load(object sender, EventArgs e)
         {
             //參數
-            string strSQL;
 
             if (UserRole == "OP") //操作者身份
             {
@@ -44,33 +43,28 @@ namespace P2214201
             string strSQL;
 
             //防呆
-            if (tbxReportCode.Text == "")
-            { MessageBox.Show("類別代號不可空白。"); return; }
-            if (tbxReportName.Text == "")
-            { MessageBox.Show("類別名稱不可空白。"); return; }
+            if (CheckData("Y", "Y") == false)
+                return;
 
             //確定要 Insert 的帳號是否已存在資料庫
-            strSQL = "";
-            strSQL += "Select * From CATEGORYS Where 1 = 1 And CG001 = '" + tbxReportCode.Text.Trim() + "'";
+            CG001 = tbxReportCode.Text.Trim(); //廠房代號(CG001)
+            strSQL = "Select * From CATEGORYS Where 1 = 1 And CG001 = '" + CG001 + "'";
             dt = USQL.SQLSelect(ref da, strSQL);
 
             if (dt.Rows.Count > 0)
             { MessageBox.Show("要新增的類別代號已存在，請確認後再執行新增作業。"); return; }
             
-
             // Insert 資料進資料庫
-            CG001 = tbxReportCode.Text;                           //廠房代號(Ft001)
-            CG002 = tbxReportName.Text;                           //廠房名稱(FT002)
-            CG003 = UserName;                                     //建立者(FT003)
-            CG004 = "";                                           //修改者(FT004)
-            CG005 = DateTime.Now.ToString("yyyy/MM/dd hh:mm:ss"); //建立時間(UR008)
-            CG006 = "";                                           //修改時間(UR009)
-            CG007 = "";                                           //備用(UR010)
-            CG008 = "";                                           //備用(UR011)
-            CG009 = "";                                           //備用(UR012)
-
-            strSQL = "";
-            strSQL += "Insert Into CATEGORYS (CG001,CG002,CG003,CG004,CG005,CG006,CG007,CG008,CG009) Values ('";
+            CG002 = tbxReportName.Text;                           //廠房名稱(CG002)
+            CG003 = UserName;                                     //建立者(CG003)
+            CG004 = "";                                           //修改者(CG004)
+            CG005 = DateTime.Now.ToString("yyyy/MM/dd hh:mm:ss"); //建立時間(CG005)
+            CG006 = "";                                           //修改時間(CG006)
+            CG007 = "";                                           //備用(CG007)
+            CG008 = "";                                           //備用(CG008)
+            CG009 = "";                                           //備用(CG009)
+            
+            strSQL = "Insert Into CATEGORYS (CG001,CG002,CG003,CG004,CG005,CG006,CG007,CG008,CG009) Values ('";
             strSQL += CG001 + "','" + CG002 + "','" + CG003 + "','" + CG004 + "','" + CG005 + "','" + CG006 + "','";
             strSQL += CG007 + "','" + CG008 + "','" + CG009 + "')";
             USQL.SQLNonSelect(ref da, strSQL);
@@ -85,8 +79,7 @@ namespace P2214201
             { }
 
             //清空所有可填入欄位
-            tbxReportCode.Text = "";
-            tbxReportName.Text = "";
+            ClearForm();
         }
 
         private void btnReportInfoModify_Click(object sender, EventArgs e)
@@ -95,26 +88,22 @@ namespace P2214201
             string strSQL;
 
             //防呆
-            if (tbxReportCode.Text == "")
-            { MessageBox.Show("類別代號不可空白。"); return; }
-            if (tbxReportName.Text == "")
-            { MessageBox.Show("類別名稱不可空白。"); return; }
+            if (CheckData("Y", "Y") == false)
+                return;
 
             //確定要 Update 的帳號是否已存在資料庫
-            strSQL = "";
-            strSQL += "Select * From CATEGORYS Where 1 = 1 And CG001 = '" + tbxReportCode.Text.Trim() + "'";
+            CG001 = tbxReportCode.Text.Trim(); //類別代號(Ft001)
+            strSQL = "Select * From CATEGORYS Where 1 = 1 And CG001 = '" + CG001 + "'";
             dt = USQL.SQLSelect(ref da, strSQL);
 
             if (dt.Rows.Count == 0)
             { MessageBox.Show("要修改的類別代號未存在，請確認後再執行修改作業。"); return; }
 
             // Update 資料進資料庫
-            // PS：因類別代號 是唯一值，不得修改。僅可刪除後再新增。
-            CG001 = tbxReportCode.Text;                   //類別代號(Ft001)
-            CG002 = tbxReportName.Text;                   //類別名稱(FT002)
-
-            strSQL = "";
-            strSQL += "Update CATEGORYS Set CG002 = '" + CG002 + "',CG004 = '" + UserName + "',";
+            // PS：因類別代號 是唯一值，不得修改。僅可刪除後再新增
+            CG002 = tbxReportName.Text; //類別名稱(FT002)
+            
+            strSQL = "Update CATEGORYS Set CG002 = '" + CG002 + "',CG004 = '" + UserName + "',";
             strSQL += "CG006 = '" + DateTime.Now.ToString("yyyy/MM/dd hh:mm:ss") + "'";
             strSQL += "Where CG001 = '" + CG001 + "'";
             USQL.SQLNonSelect(ref da, strSQL);
@@ -129,8 +118,7 @@ namespace P2214201
             { }
 
             //清空所有可填入欄位
-            tbxReportCode.Text = "";
-            tbxReportName.Text = "";
+            ClearForm();
         }
 
         private void btnReportInfoDelete_Click(object sender, EventArgs e)
@@ -139,22 +127,19 @@ namespace P2214201
             string strSQL;
 
             //防呆
-            if (tbxReportCode.Text == "")
-            { MessageBox.Show("類別代號不可空白。"); return; }
+            if (CheckData("Y", "N") == false)
+                return;
 
             //確定要 Delete 的帳號是否已存在資料庫
-            strSQL = "";
-            strSQL += "Select * From CATEGORYS Where 1 = 1 And CG001 = '" + tbxReportCode.Text.Trim() + "'";
+            CG001 = tbxReportCode.Text.Trim(); //類別代號(CG001)
+            strSQL = "Select * From CATEGORYS Where 1 = 1 And CG001 = '" + CG001 + "'";
             dt = USQL.SQLSelect(ref da, strSQL);
 
             if (dt.Rows.Count == 0)
             { MessageBox.Show("要修改的類別未存在，請確認後再執行刪除作業。"); return; }
 
             // Delete 資料庫
-            CG001 = tbxReportCode.Text;                   //類別代號(Ft001)
-
-            strSQL = "";
-            strSQL += "Delete From CATEGORYS Where CG001 = '" + CG001 + "'";
+            strSQL = "Delete From CATEGORYS Where CG001 = '" + CG001 + "'";
             USQL.SQLNonSelect(ref da, strSQL);
 
             //重整 DataGridView 顯示
@@ -167,8 +152,7 @@ namespace P2214201
             { }
 
             //清空所有可填入欄位
-            tbxReportCode.Text = "";
-            tbxReportName.Text = "";
+            ClearForm();
         }
 
         private void btnReportInfoDemand_Click(object sender, EventArgs e)
@@ -179,9 +163,8 @@ namespace P2214201
             //搜尋結果填入 DataGridView
             CG001 = tbxReportCode.Text.Trim();
             CG002 = tbxReportName.Text.Trim();
-
-            strSQL = "";
-            strSQL += "Select CG001 as '類別代號',";
+            
+            strSQL = "Select CG001 as '類別代號',";
             strSQL += "CG002 as '類別名稱',";
             strSQL += "CG003 as '建立人員',";
             strSQL += "CG005 as '建立時間',";
@@ -204,8 +187,7 @@ namespace P2214201
             dgvReport.DataSource = dt;
 
             //清空所有可填入欄位
-            tbxReportCode.Text = "";
-            tbxReportName.Text = "";
+            ClearForm();
         }
 
         private void dgvReport_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -218,6 +200,25 @@ namespace P2214201
                 tbxReportName.Text = dgvReport.CurrentRow.Cells[1].Value.ToString().Trim(); //廠房名稱
             }
         }
-        
+        private bool CheckData(string CG001, string CG002)
+        {
+            //*************************************************************************************
+            //防呆專區
+            //*************************************************************************************
+            if (CG001 == "Y" && tbxReportCode.Text == "")
+            { MessageBox.Show("類別代號不可空白。"); return false; }
+            if (CG002 == "Y" && tbxReportName.Text == "")
+            { MessageBox.Show("類別名稱不可空白。"); return false; }
+
+            return true;
+        }
+        private void ClearForm()
+        {
+            //*************************************************************************************
+            //清空資料專區
+            //*************************************************************************************
+            tbxReportCode.Text = "";
+            tbxReportName.Text = "";
+        }
     }
 }

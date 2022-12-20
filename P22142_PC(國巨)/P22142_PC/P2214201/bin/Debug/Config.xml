@@ -6,4 +6,11 @@
     <UserID>sa</UserID>
     <Password>chi</Password>
   </SQLServer>
+  <Report>
+    <ReportAdr>D:\巡檢報表\</ReportAdr>
+    <VacuumName>真空機</VacuumName>
+    <CompressName>空壓機</CompressName>
+    <AirConditionName>冷氣機</AirConditionName>
+    <HydropowerName>水電表</HydropowerName>
+  </Report>
 </settings>

@@ -17,9 +17,10 @@ namespace P2214201
         DbTransaction objTrans;
         DealRecord drc = new DealRecord();
 
+        int COH001, COB001;
         string FT001, CG001, CG002, MN001, MN002;
-        string COH001, COH002, COH003, COH004, COH005, COH006, COH007, COH008, COH009, COH010, COH011;
-        string COB001, COB002, COB003, COB004, COB005, COB006, COB007, COB008, COB009, COB010, COB011, COB012, COB013, COB014, COB015;
+        string COH002, COH003, COH004, COH005, COH006, COH007, COH008, COH009, COH010, COH011;
+        string COB003, COB004, COB005, COB006, COB007, COB008, COB009, COB010, COB011, COB012, COB013, COB014, COB015;
         string[] arrCGA = new string[300];
         CheckBox ckHeader_From = new CheckBox();
         CheckBox ckHeader_To = new CheckBox();
@@ -76,16 +77,16 @@ namespace P2214201
          //新增 功能
          //********************************************************************
             //參數
-            int i, MaxCOH, MaxCOB, arrNo;
-            string strSQL, strMaxCOH, strMaxCOB;
+            int i, arrNo, MaxCOH;
+            string strSQL;
 
             //寫入資料庫_HEADS
-            strSQL = "Select ISNULL(Max(COH001),'COH_00000') as MaxCOH001 From COLDAIR_HEADS";
+            //....取得 VACUUM_HEADS 下一序號
+            strSQL = "SELECT ISNULL(MAX(COH001),0) as COH001 FROM COLDAIR_HEADS";
             dt = USQL.SQLSelect(ref da, strSQL);
-            strMaxCOH = dt.Rows[0]["MaxCOH001"].ToString();
-            MaxCOH = int.Parse(strMaxCOH.Substring(4, 5)) + 1;
+            MaxCOH = int.Parse(dt.Rows[0]["COH001"].ToString()) + 1;
 
-            COH001 = "COH_" + MaxCOH.ToString().PadLeft(5, '0');   //流水序號(COH001)
+            COH001 = MaxCOH;                                       //流水序號(COH001)
             COH002 = cbxFactoryCode.Text;                          //廠房代號(COH002)
             COH003 = USQL.FindCG("", cbxCategorysName.Text);       //類別代號(COH003)
             COH004 = cbxMachineCode.Text;                          //機械編號代號 (COH004)
@@ -97,15 +98,16 @@ namespace P2214201
             COH010 = "";                                           //備用(COH010)
             COH011 = "Y";                                          //是否仍然使用(COH011)
 
-            strSQL = "Insert into COLDAIR_HEADS (COH001,COH002,COH003,COH004,COH005,COH006,COH007,COH008,COH009,COH010,COH011) Values ('";
-            strSQL += COH001 + "','" + COH002 + "','" + COH003 + "','" + COH004 + "','" + COH005 + "','" + COH006 + "','" + COH007 + "','";
+            strSQL = "Insert into COLDAIR_HEADS (COH001,COH002, COH003, COH004, COH005, COH006, COH007, COH008, COH009, COH010, COH011) Values (";
+            strSQL += COH001 + ",'"  + COH002 + "','" + COH003 + "','" + COH004 + "','" + COH005 + "','" + COH006 + "','" + COH007 + "','";
             strSQL += COH008 + "','" + COH009 + "','" + COH010 + "','" + COH011 + "')";
 
             try
             { objTrans = USQL.SQLNonSelect(ref da, ref objTrans, strSQL); }
             catch (Exception Ex)
             {
-                objTrans.Rollback();
+                if (objTrans != null)
+                    objTrans.Rollback();
                 MessageBox.Show("Insert Into COLDAIR_HEADS 出現錯誤，請確認資料後重新執行。系統訊息：" + Ex.Message, "Inser Into COLDAIR_HEADS");
                 return;
             }
@@ -113,11 +115,6 @@ namespace P2214201
             //寫入資料庫_BODYS
             //....記錄 arrCGA 共有多少項目
             arrNo = arrCGA.Length;
-            //....計算下一序號值
-            strSQL = "Select ISNULL(Max(COB001),'COB_00000') as MaxCOB001 From COLDAIR_BODYS Where COB001 = '" + COH001 + "'";
-            dt = USQL.SQLSelect(ref da, strSQL);
-            strMaxCOB = dt.Rows[0]["MaxCOB001"].ToString();
-            MaxCOB = int.Parse(strMaxCOB.Substring(4, 5)) + 1;
             //....依序執行寫入資料庫動作
             for (i = 0; i < arrNo; i++)
             {
@@ -127,8 +124,8 @@ namespace P2214201
                     strSQL = "Select * From CHECKITEMS Where CK001 = '" + COB003 + "'";
                     dt = USQL.SQLSelect(ref da, strSQL);
 
-                    COB001 = COH001;                                     //Head序號(COB001)
-                    COB002 = "COB_" + MaxCOB.ToString().PadLeft(5, '0'); //流水序號(COB002)
+                    COB001 = MaxCOH;                                     //流水序號(COB001)
+                    //流水序號(COB002)：因該欄位被設定為"自動識別"欄位，故不需加入 Insert 語法。
                     COB004 = dt.Rows[0]["CK002"].ToString();             //檢查項目名稱(COB004)
                     COB005 = dt.Rows[0]["CK003"].ToString();             //參考 起(COB005)
                     COB006 = dt.Rows[0]["CK004"].ToString();             //中間符號(COB006）
@@ -142,20 +139,19 @@ namespace P2214201
                     COB014 = dt.Rows[0]["CK014"].ToString();             //備用(COB014)
                     COB015 = "N";                                        //是否作廢(COB015)
 
-                    strSQL = "Insert into COLDAIR_BODYS (COB001,COB002,COB003,COB004,COB005,COB006,COB007,COB008,COB009,COB010,COB011,COB012,COB013,COB014,COB015) Values ('";
-                    strSQL += COB001 + "','" + COB002 + "','" + COB003 + "','" + COB004 + "','" + COB005 + "','" + COB006 + "','" + COB007 + "','" + COB008 + "','";
+                    strSQL = "Insert into COLDAIR_BODYS Values (";
+                    strSQL += COB001 + ",'"  + COB003 + "','" + COB004 + "','" + COB005 + "','" + COB006 + "','" + COB007 + "','" + COB008 + "','";
                     strSQL += COB009 + "','" + COB010 + "','" + COB011 + "','" + COB012 + "','" + COB013 + "','" + COB014 + "','" + COB015 + "')";
 
                     try
                     { objTrans = USQL.SQLNonSelect(ref da, ref objTrans, strSQL); }
                     catch (Exception Ex)
                     {
-                        objTrans.Rollback();
+                        if (objTrans != null)
+                            objTrans.Rollback();
                         MessageBox.Show("Insert Into COLDAIR_BODYS 出現錯誤，請確認資料後重新執行。系統訊息：" + Ex.Message, "Inser Into COLDAIR_BODYS");
                         return;
                     }
-
-                    MaxCOB++;
                 }
                 else
                     break;
@@ -185,7 +181,7 @@ namespace P2214201
             //找出 標頭 檔編號
             strSQL = "Select COH001 From COLDAIR_HEADS Where COH002 = '" + FT001 + "' And COH003 = '" + CG001 + "' And COH004 = '" + MN001 + "' And COH011 = 'Y' ";
             dt = USQL.SQLSelect(ref da, strSQL);
-            COB001 = dt.Rows[0]["COH001"].ToString();
+            COB001 = int.Parse(dt.Rows[0]["COH001"].ToString());
             //逐筆將 是否作廢 填回資料庫
             for (i = 0; i < RowNo - 1; i++)
             {
@@ -223,7 +219,7 @@ namespace P2214201
             //找出 標頭 檔編號
             strSQL = "Select COH001 From COLDAIR_HEADS Where COH002 = '" + FT001 + "' And COH003 = '" + CG001 + "' And COH004 = '" + MN001 + "' And COH011 = 'Y' ";
             dt = USQL.SQLSelect(ref da, strSQL);
-            COH001 = dt.Rows[0]["COH001"].ToString();
+            COH001 = int.Parse(dt.Rows[0]["COH001"].ToString());
             //標頭檔 資料作廢，但不刪除。
             strSQL = "Update COLDAIR_HEADS Set COH011 = 'N' Where COH001 = '" + COH001 + "' And COH011 = 'Y'";
             USQL.SQLNonSelect(ref da, strSQL);
@@ -280,7 +276,7 @@ namespace P2214201
             if (dt.Rows.Count > 0)
             {
                 //記錄 表頭檔 序號
-                COH001 = dt.Rows[0]["COH001"].ToString();
+                COH001 = int.Parse(dt.Rows[0]["COH001"].ToString());
                 //處理 dgvVacuumFrom ******************************************
                 //....1.畫出來的打勾圖示 不可見
                 ckHeader_From.Visible = false;
@@ -488,27 +484,37 @@ namespace P2214201
         }
         private void isEnable(string btnAdd, string btnModify, string btnDelete, string btnR, string btnL)
         {
-            if (btnAdd == "Y")
+            if(UserRole == "OP")
+                btnAirConditionRepAdd.Enabled = false;
+            else if (btnAdd == "Y")
                 btnAirConditionRepAdd.Enabled = true;
             else if (btnAdd == "N")
                 btnAirConditionRepAdd.Enabled = false;
 
-            if (btnModify == "Y")
+            if (UserRole == "OP")
+                btnAirConditionRepModify.Enabled = false;
+            else if (btnModify == "Y")
                 btnAirConditionRepModify.Enabled = true;
             else if (btnModify == "N")
                 btnAirConditionRepModify.Enabled = false;
 
-            if (btnDelete == "Y")
+            if (UserRole == "OP")
+                btnAirConditionRepDelete.Enabled = false;
+            else if (btnDelete == "Y")
                 btnAirConditionRepDelete.Enabled = true;
             else if (btnDelete == "N")
                 btnAirConditionRepDelete.Enabled = false;
 
-            if (btnR == "Y")
+            if (UserRole == "OP")
+                btnRight.Enabled = false;
+            else if (btnR == "Y")
                 btnRight.Enabled = true;
             else if (btnR == "N")
                 btnRight.Enabled = false;
 
-            if (btnL == "Y")
+            if (UserRole == "OP")
+                btnLeft.Enabled = false;
+            else if (btnL == "Y")
                 btnLeft.Enabled = true;
             else if (btnL == "N")
                 btnLeft.Enabled = false;

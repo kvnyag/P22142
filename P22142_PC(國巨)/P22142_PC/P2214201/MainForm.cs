@@ -167,22 +167,66 @@ namespace P2214201
                 else if (e.Node.Name == "VacuumDem")
                 {
                     splitContainer1.Panel2.Controls.Clear();
-                    MessageBox.Show("查詢真空機巡檢記錄");
+                    this.IsMdiContainer = true;                    //設置 MainForm 為父視窗
+                    VacuumDem sfInfo = new VacuumDem();
+                    sfInfo.MdiParent = this;                       //設置視窗的父子關係
+                    sfInfo.Parent = splitContainer1.Panel2;        //子視窗的容器是父視窗的 Panel2
+                    sfInfo.TopLevel = false;                       //必須關閉否則會衝突
+                    sfInfo.FormBorderStyle = FormBorderStyle.None; //視窗右上角(放大、縮小、關閉)功能拿掉
+                    splitContainer1.Panel2.Controls.Add(sfInfo);   //將子視窗放入 Panel2 中
+                    sfInfo.UserAccount = this.UserAccount;         //傳回人員帳號
+                    sfInfo.UserName = this.UserName;               //傳回人員姓名
+                    sfInfo.UserRole = this.UserRole;               //傳回人員權限
+                    sfInfo.Show();
+                    sfInfo.BringToFront();
                 }
                 else if (e.Node.Name == "CompressDem")
                 {
                     splitContainer1.Panel2.Controls.Clear();
-                    MessageBox.Show("查詢空壓機巡檢記錄");
+                    this.IsMdiContainer = true;                    //設置 MainForm 為父視窗
+                    CompressDem sfInfo = new CompressDem();
+                    sfInfo.MdiParent = this;                       //設置視窗的父子關係
+                    sfInfo.Parent = splitContainer1.Panel2;        //子視窗的容器是父視窗的 Panel2
+                    sfInfo.TopLevel = false;                       //必須關閉否則會衝突
+                    sfInfo.FormBorderStyle = FormBorderStyle.None; //視窗右上角(放大、縮小、關閉)功能拿掉
+                    splitContainer1.Panel2.Controls.Add(sfInfo);   //將子視窗放入 Panel2 中
+                    sfInfo.UserAccount = this.UserAccount;         //傳回人員帳號
+                    sfInfo.UserName = this.UserName;               //傳回人員姓名
+                    sfInfo.UserRole = this.UserRole;               //傳回人員權限
+                    sfInfo.Show();
+                    sfInfo.BringToFront();
                 }
                 else if (e.Node.Name == "AirConditionDem")
                 {
                     splitContainer1.Panel2.Controls.Clear();
-                    MessageBox.Show("查詢冷氣巡檢記錄");
+                    this.IsMdiContainer = true;                    //設置 MainForm 為父視窗
+                    AirConditionDem sfInfo = new AirConditionDem();
+                    sfInfo.MdiParent = this;                       //設置視窗的父子關係
+                    sfInfo.Parent = splitContainer1.Panel2;        //子視窗的容器是父視窗的 Panel2
+                    sfInfo.TopLevel = false;                       //必須關閉否則會衝突
+                    sfInfo.FormBorderStyle = FormBorderStyle.None; //視窗右上角(放大、縮小、關閉)功能拿掉
+                    splitContainer1.Panel2.Controls.Add(sfInfo);   //將子視窗放入 Panel2 中
+                    sfInfo.UserAccount = this.UserAccount;         //傳回人員帳號
+                    sfInfo.UserName = this.UserName;               //傳回人員姓名
+                    sfInfo.UserRole = this.UserRole;               //傳回人員權限
+                    sfInfo.Show();
+                    sfInfo.BringToFront();
                 }
                 else if (e.Node.Name == "HydropowerDem")
                 {
                     splitContainer1.Panel2.Controls.Clear();
-                    MessageBox.Show("查詢水電巡檢記錄");
+                    this.IsMdiContainer = true;                    //設置 MainForm 為父視窗
+                    HydropowerDem sfInfo = new HydropowerDem();
+                    sfInfo.MdiParent = this;                       //設置視窗的父子關係
+                    sfInfo.Parent = splitContainer1.Panel2;        //子視窗的容器是父視窗的 Panel2
+                    sfInfo.TopLevel = false;                       //必須關閉否則會衝突
+                    sfInfo.FormBorderStyle = FormBorderStyle.None; //視窗右上角(放大、縮小、關閉)功能拿掉
+                    splitContainer1.Panel2.Controls.Add(sfInfo);   //將子視窗放入 Panel2 中
+                    sfInfo.UserAccount = this.UserAccount;         //傳回人員帳號
+                    sfInfo.UserName = this.UserName;               //傳回人員姓名
+                    sfInfo.UserRole = this.UserRole;               //傳回人員權限
+                    sfInfo.Show();
+                    sfInfo.BringToFront();
                 }
                 else if (e.Node.Name == "TransportData")
                 {

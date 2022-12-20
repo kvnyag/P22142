@@ -26,17 +26,15 @@ namespace P2214201
         private void CheckInfo_Load(object sender, EventArgs e)
         {
             //參數
-            int i, dtRowsNo;
-            string strSQL, strError;
+            int i;
+            string strSQL;
 
             //寫入類別名稱下拉選單
-            strSQL = "";
-            strSQL += "Select * From CATEGORYS";
+            strSQL = "Select * From CATEGORYS";
             dt = USQL.SQLSelect(ref da, strSQL);
             
-            dtRowsNo = dt.Rows.Count;
-            for (i = 0; i < dtRowsNo; i++)
-                cbxReportCode.Items.Add(dt.Rows[i]["CG002"].ToString().Trim());
+            for (i = 0; i < dt.Rows.Count; i++)
+                cbxReportName.Items.Add(dt.Rows[i]["CG002"].ToString().Trim());
 
             //寫入參考項目值2
             cbxRefer2.Items.Add(">");
@@ -44,13 +42,11 @@ namespace P2214201
             cbxRefer2.Items.Add("~");
 
             //寫入廠房代號下拉選單
-            strSQL = "";
-            strSQL += "Select * From FACTORYS";
+            strSQL = "Select * From FACTORYS";
             dt = USQL.SQLSelect(ref da, strSQL);
-
-            dtRowsNo = dt.Rows.Count;
-            for (i = 0; i < dtRowsNo; i++)
-                cbxFactoryName.Items.Add(dt.Rows[i]["FT001"].ToString().Trim());
+            
+            for (i = 0; i < dt.Rows.Count; i++)
+                cbxFactoryCode.Items.Add(dt.Rows[i]["FT001"].ToString().Trim());
 
             //管理者身份可使用 新增、刪除、修改、查詢、離開
             //操作者身份可使用 查詢、離開
@@ -73,22 +69,17 @@ namespace P2214201
 
             //檢查項目代號(CK001)
             //....查目前類別名稱，找出目前類別代號
-            CG002 = cbxReportCode.Text;
-
-            strSQL = "";
-            strSQL += "Select * From CATEGORYS Where CG002 = '" + CG002 + "'";
-            dt = USQL.SQLSelect(ref da, strSQL);
-            CG001 = dt.Rows[0]["CG001"].ToString().Trim();
+            CG002 = cbxReportName.Text;
+            CG001 = USQL.FindCG("", CG002);
             //....若類別代號是 D(水電機械指數表)，需多填入 廠房代號
             if(CG001 == "D")
-            { label7.Visible = true; cbxFactoryName.Visible = true; }
+            { label7.Visible = true; cbxFactoryCode.Visible = true; }
             else
-            { label7.Visible = false; cbxFactoryName.Visible = false; }
+            { label7.Visible = false; cbxFactoryCode.Visible = false; }
             //....找出目前資料庫中該類別代號的最大值
             if (CG001 != "D")
             {
-                strSQL = "";
-                strSQL += "Select ISNULL(Max(CK001),'0000000') as MaxCK001 From CHECKITEMS Where SUBSTRING(CK001,1,1) = '" + CG001 + "'";
+                strSQL = "Select ISNULL(Max(CK001),'0000000') as MaxCK001 From CHECKITEMS Where CK016 = '" + CG001 + "'";
                 dt = USQL.SQLSelect(ref da, strSQL);
                 string MaxCK001 = dt.Rows[0]["MaxCK001"].ToString().Trim();
                 int lenMaxCK001 = MaxCK001.Length;
@@ -105,10 +96,9 @@ namespace P2214201
 
             //檢查項目代號(CK001)
             //....找出目前資料庫中該類別代號的最大值
-            FT001 = cbxFactoryName.Text;
+            FT001 = cbxFactoryCode.Text;
             noFT001 = FT001.Length;
-            strSQL = "";
-            strSQL += "Select ISNULL(Max(CK001),'0000000') as MaxCK001 From CHECKITEMS Where SUBSTRING(CK001,1," + (noFT001 + 1) + ") = '" + FT001 + "_'";
+            strSQL = "Select ISNULL(Max(CK001),'0000000') as MaxCK001 From CHECKITEMS Where CK016 = 'D' And CK015 = '" + FT001 + "'";
 
             dt = USQL.SQLSelect(ref da, strSQL);
             string MaxCK001 = dt.Rows[0]["MaxCK001"].ToString().Trim();
@@ -124,24 +114,15 @@ namespace P2214201
             string strSQL;
 
             //防呆
-            if (cbxReportCode.Text == "")
-            { MessageBox.Show("類別名稱不可空白。"); return; }
-            if(CG001 == "D" && FT001 == "")
-            { MessageBox.Show("廠房名稱不可空白。"); return; }
-            if (tbxCheckName.Text == "")
-            { MessageBox.Show("檢查項目名稱不可空白。"); return; }
+            if (CheckData("Y", "Y", "Y", "Y") == false) return;
 
             //確定要 Insert 的檢查項目代號是否已存在資料庫
             if (CG001 == "D")
                 CK001 = FT001 + "_" + tbxCheckCode.Text;          //檢查項目代號(CK001)
             else
                 CK001 = tbxCheckCode.Text;                        //檢查項目代號(CK001)
-
-            strSQL = "";
-            if(CG001 == "D")
-                strSQL += "Select * From CHECKITEMS Where 1 = 1 And CK001 = '" + CK001 + "'";
-            else
-                strSQL += "Select * From CHECKITEMS Where 1 = 1 And CK001 = '" + CK001 + "'";
+            
+            strSQL = "Select * From CHECKITEMS Where 1 = 1 And CK001 = '" + CK001 + "'";
             dt = USQL.SQLSelect(ref da, strSQL);
 
             if(dt.Rows.Count > 0)
@@ -156,16 +137,15 @@ namespace P2214201
             CK007 = tbxMemo2.Text;                                //備註2(CK007)
             CK008 = UserName;                                     //建立者(CK008)
             CK009 = "";                                           //修改者(CK009)
-            CK010 = DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss"); //建立時間(CK010)
+            CK010 = DateTime.Now.ToString("yyyy/MM/dd hh:mm:ss"); //建立時間(CK010)
             CK011 = "";                                           //修改時間(CK011)
             CK012 = "";                                           //備用(CK012)
             CK013 = "";                                           //備用(CK013)
             CK014 = "";                                           //備用(CK014)
             CK015 = FT001;                                        //廠房代號(CK015)
             CK016 = CG001;                                        //類別代號(CK016)
-
-            strSQL = "";
-            strSQL += "Insert Into CHECKITEMS (CK001,CK002,CK003,CK004,CK005,CK006,CK007,CK008,CK009,CK010,CK011,CK012,CK013,CK014,CK015,CK016) Values ('";
+            
+            strSQL = "Insert Into CHECKITEMS (CK001,CK002,CK003,CK004,CK005,CK006,CK007,CK008,CK009,CK010,CK011,CK012,CK013,CK014,CK015,CK016) Values ('";
             strSQL += CK001 + "','" + CK002 + "','" + CK003 + "','" + CK004 + "','" + CK005 + "','" + CK006 + "','";
             strSQL += CK007 + "','" + CK008 + "','" + CK009 + "','" + CK010 + "','" + CK011 + "','" + CK012 + "','";
             strSQL += CK013 + "','" + CK014 + "','" + CK015 + "','" + CK016 + "')";
@@ -180,15 +160,14 @@ namespace P2214201
                 MN004 = CG001;                                        //類別代號 
                 MN005 = UserName;                                     //建立者
                 MN006 = "";                                           //修改者
-                MN007 = DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss"); //建立時間
+                MN007 = DateTime.Now.ToString("yyyy/MM/dd hh:mm:ss"); //建立時間
                 MN008 = "";                                           //修改時間
                 MN009 = "";                                           //備用
                 MN010 = tbxCheckCode.Text;                            //備用
                 MN011 = "";                                           //備用
                 MN012 = "Y";                                          //是否仍然使用
-
-                strSQL = "";
-                strSQL += "Insert Into MECHNUMBERS (MN001,MN002,MN003,MN004,MN005,MN006,MN007,MN008,MN009,MN010,MN011,MN012) Values ('";
+                
+                strSQL = "Insert Into MECHNUMBERS (MN001,MN002,MN003,MN004,MN005,MN006,MN007,MN008,MN009,MN010,MN011,MN012) Values ('";
                 strSQL += MN001 + "','" + MN002 + "','" + MN003 + "','" + MN004 + "','" + MN005 + "','" + MN006 + "','";
                 strSQL += MN007 + "','" + MN008 + "','" + MN009 + "','" + MN010 + "','" + MN011 + "','" + MN012 + "')";
 
@@ -204,15 +183,7 @@ namespace P2214201
             { }
 
             //清空所有可填入欄位
-            cbxReportCode.Text = "";
-            tbxCheckCode.Text = "";
-            tbxCheckName.Text = "";
-            tbxMemo1.Text = "";
-            tbxMemo2.Text = "";
-            tbxRefer1.Text = "";
-            cbxRefer2.Text = "";
-            tbxRefer3.Text = "";
-            cbxFactoryName.Text = "";
+            ClearForm();
         }
         
         private void btnCheckInfoModify_Click(object sender, EventArgs e)
@@ -221,16 +192,16 @@ namespace P2214201
             string strSQL;
 
             //防呆
-            if (cbxReportCode.Text == "")
-            { MessageBox.Show("類別名稱不可空白。"); return; }
-            if (CG001 == "D" && FT001 == "")
-            { MessageBox.Show("廠房名稱不可空白。"); return; }
-            if (tbxCheckName.Text == "")
-            { MessageBox.Show("檢查項目名稱不可空白。"); return; }
+            if (CheckData("Y", "Y", "Y", "Y") == false) return;
+
 
             //確定要 Update 的檢查項目代號是否已存在資料庫
-            strSQL = "";
-            strSQL += "Select * From CHECKITEMS Where 1 = 1 And CK001 = '" + tbxCheckCode.Text.Trim() + "'";
+            if (CG001 == "D")
+                CK001 = FT001 + "_" + tbxCheckCode.Text.Trim();
+            else
+                CK001 = tbxCheckCode.Text.Trim();
+            
+            strSQL = "Select * From CHECKITEMS Where 1 = 1 And CK001 = '" + CK001 + "'";
             dt = USQL.SQLSelect(ref da, strSQL);
 
             if (dt.Rows.Count == 0)
@@ -238,7 +209,6 @@ namespace P2214201
             
             // Update 資料進資料庫
             // PS：因帳號是唯一值，不得修改。僅可刪除後再新增。
-            CK001 = tbxCheckCode.Text;                     //檢查項目代號(CK001)
             CK002 = tbxCheckName.Text;                     //檢查項目名稱(CK002)
             CK003 = tbxRefer1.Text;                        //參考 起(CK003)
             CK004 = cbxRefer2.Text;                        //中間符號(CK004)
@@ -259,15 +229,14 @@ namespace P2214201
                 MN001 = CK001;                                        //機械編號
                 MN002 = CK002;                                        //機械名稱
                 MN006 = UserName;                                     //修改者
-                MN008 = DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss"); //修改時間
-
-                strSQL = "";
-                strSQL += "Update MECHNUMBERS Set MN002 = '" + MN002 + "',MN006 = '" + MN006 + "',MN008 = '" + MN008 + "' ";
+                MN008 = DateTime.Now.ToString("yyyy/MM/dd hh:mm:ss"); //修改時間
+                
+                strSQL = "Update MECHNUMBERS Set MN002 = '" + MN002 + "',MN006 = '" + MN006 + "',MN008 = '" + MN008 + "' ";
                 strSQL += "Where MN001 = '" + MN001 + "'";
                 USQL.SQLNonSelect(ref da, strSQL);
             }
-                //重整 DataGridView 顯示
-                try
+            //重整 DataGridView 顯示
+            try
             {
                 if (strDemand != "")
                     dgvCheck.DataSource = USQL.SQLSelect(ref da, strDemand);
@@ -276,15 +245,7 @@ namespace P2214201
             { }
 
             //清空所有可填入欄位
-            cbxReportCode.Text = "";
-            tbxCheckCode.Text = "";
-            tbxCheckName.Text = "";
-            tbxMemo1.Text = "";
-            tbxMemo2.Text = "";
-            tbxRefer1.Text = "";
-            cbxRefer2.Text = "";
-            tbxRefer3.Text = "";
-            cbxFactoryName.Text = "";
+            ClearForm();
         }
 
         private void btnCheckInfoDelete_Click(object sender, EventArgs e)
@@ -293,15 +254,15 @@ namespace P2214201
             string strSQL;
 
             //防呆
-            if (tbxCheckCode.Text == "")
-            { MessageBox.Show("檢查項目代號不可空白。"); return; }
+            if (CheckData("N", "N", "Y", "N") == false) return;
 
             //確定要 Update 的帳號是否已存在資料庫
-            strSQL = "";
             if (CG001 == "D")
-                strSQL += "Select * From CHECKITEMS Where 1 = 1 And CK001 = '" + FT001 + "_" + tbxCheckCode.Text.Trim() + "'";
+                CK001 = FT001 + tbxCheckCode.Text.Trim();
             else
-                strSQL += "Select * From CHECKITEMS Where 1 = 1 And CK001 = '" + tbxCheckCode.Text.Trim() + "'";
+                CK001 = tbxCheckCode.Text.Trim();
+
+            strSQL = "Select * From CHECKITEMS Where 1 = 1 And CK001 = '" + CK001 + "'";
             dt = USQL.SQLSelect(ref da, strSQL);
 
             if (dt.Rows.Count == 0)
@@ -309,9 +270,8 @@ namespace P2214201
 
             // Delete 資料庫
             CK001 = tbxCheckCode.Text;                   //檢查項目代號 (CK001)
-
-            strSQL = "";
-            strSQL += "Delete From CHECKITEMS Where CK001 = '" + CK001 + "'";
+            
+            strSQL = "Delete From CHECKITEMS Where CK001 = '" + CK001 + "'";
             USQL.SQLNonSelect(ref da, strSQL);
 
             //重整 DataGridView 顯示
@@ -324,15 +284,7 @@ namespace P2214201
             { }
 
             //清空所有可填入欄位
-            cbxReportCode.Text = "";
-            tbxCheckCode.Text = "";
-            tbxCheckName.Text = "";
-            tbxMemo1.Text = "";
-            tbxMemo2.Text = "";
-            tbxRefer1.Text = "";
-            cbxRefer2.Text = "";
-            tbxRefer3.Text = "";
-            cbxFactoryName.Text = "";
+            ClearForm();
         }
 
         private void btnCheckInfoDemand_Click(object sender, EventArgs e)
@@ -341,8 +293,10 @@ namespace P2214201
             string strSQL;
 
             //搜尋結果填入 DataGridView
-            strSQL = "";
-            strSQL += "Select CK001 as '檢查項目代號',";
+            CK001 = tbxCheckCode.Text.Trim();
+            CK002 = tbxCheckName.Text.Trim();
+
+            strSQL = "Select CK001 as '檢查項目代號',";
             strSQL += "CK002 as '檢查項目名稱',";
             strSQL += "CK006 as '備註1',";
             strSQL += "CK007 as '備註2',";
@@ -352,10 +306,10 @@ namespace P2214201
             strSQL += "CK008 as '建立人員' ";
             strSQL += "From CHECKITEMS ";
             strSQL += "Where 1 = 1 ";
-            if (tbxCheckCode.Text.Trim() != "")
-                strSQL += "And CK001 = '" + tbxCheckCode.Text.Trim() + "' ";
-            if (tbxCheckName.Text.Trim() != "")
-                strSQL += "And CK002 = '" + tbxCheckName.Text.Trim() + "' ";
+            if (CK001 != "")
+                strSQL += "And CK001 = '" + CK001 + "' ";
+            if (CK002 != "")
+                strSQL += "And CK002 = '" + CK002 + "' ";
             if (tbxMemo1.Text.Trim() != "")
                 strSQL += "And CK006 = '" + tbxMemo1.Text.Trim().Substring(0, 1) + "' ";
             if (tbxMemo2.Text.Trim() != "")
@@ -378,15 +332,7 @@ namespace P2214201
             dgvCheck.DataSource = dt;
 
             //清空所有可填入欄位
-            cbxReportCode.Text = "";
-            tbxCheckCode.Text = "";
-            tbxCheckName.Text = "";
-            tbxMemo1.Text = "";
-            tbxMemo2.Text = "";
-            tbxRefer1.Text = "";
-            cbxRefer2.Text = "";
-            tbxRefer3.Text = "";
-            cbxFactoryName.Text = "";
+            ClearForm();
         }
 
         private void dgvCheck_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -405,8 +351,8 @@ namespace P2214201
                 string strSQL = "";
                 strSQL += "Select * From CATEGORYS Where CG001 = '" + CG001 + "'";
                 dt = USQL.SQLSelect(ref da, strSQL);
-                cbxReportCode.Text = dt.Rows[0]["CG002"].ToString();
-                cbxFactoryName.Text = FT001;
+                cbxReportName.Text = dt.Rows[0]["CG002"].ToString();
+                cbxFactoryCode.Text = FT001;
 
                 tbxCheckName.Text = dgvCheck.CurrentRow.Cells[1].Value.ToString().Trim(); //檢查項目名稱
                 tbxMemo1.Text = dgvCheck.CurrentRow.Cells[2].Value.ToString().Trim();     //備註1
@@ -415,6 +361,44 @@ namespace P2214201
                 cbxRefer2.Text = dgvCheck.CurrentRow.Cells[5].Value.ToString().Trim();    //中間符號
                 tbxRefer3.Text = dgvCheck.CurrentRow.Cells[6].Value.ToString().Trim();    //參考 訖
             }
+        }
+
+        private bool CheckData(string bCG002, string bFT001, string bCK001, string bCK002)
+        {
+            //*************************************************************************************
+            //防呆專區
+            //*************************************************************************************
+            FT001 = cbxFactoryCode.Text.Trim();
+            CG002 = cbxReportName.Text.Trim();
+            if (CG002 != "") CG001 = USQL.FindCG("", CG002);
+            CK001 = tbxCheckCode.Text.Trim();
+            CK002 = tbxCheckName.Text.Trim();
+
+            if (bCG002 == "Y" && CG002 == "")
+            { MessageBox.Show("類別名稱不可空白。"); return false; }
+            if (bFT001 == "Y" && CG001 == "D" && FT001 == "")
+            { MessageBox.Show("廠房名稱不可空白。"); return false; }
+            if(bCK001 == "Y" && CK001 == "")
+            { MessageBox.Show("檢查項目代號不可空白。"); return false; }
+            if (bCK002 == "Y" && CK002 == "")
+            { MessageBox.Show("檢查項目名稱不可空白。"); return false; }
+
+            return true;
+        }
+        private void ClearForm()
+        {
+            //*************************************************************************************
+            //清空資料專區
+            //*************************************************************************************
+            cbxReportName.Text = "";
+            tbxCheckCode.Text = "";
+            tbxCheckName.Text = "";
+            tbxMemo1.Text = "";
+            tbxMemo2.Text = "";
+            tbxRefer1.Text = "";
+            cbxRefer2.Text = "";
+            tbxRefer3.Text = "";
+            cbxFactoryCode.Text = "";
         }
     }
 }
