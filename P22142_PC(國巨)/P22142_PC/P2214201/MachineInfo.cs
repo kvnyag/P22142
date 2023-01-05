@@ -2,6 +2,7 @@
 using System.Data;
 using System.Windows.Forms;
 using REGAL.Data.DataAccess;
+using System.Drawing;
 
 namespace P2214201
 {
@@ -9,16 +10,65 @@ namespace P2214201
     {
         //公用變數
         public string UserAccount, UserName, UserRole;
+        public double oldWidth, oldHeight, newWidth, newHeight;
         string MN001, MN002, MN003, MN004, MN005, MN006, MN007, MN008, MN009, MN010, MN011, MN012; //單位機械編號資料 欄位名
         string FT001, FT002, CG001, CG002;
-        string strDemand = "";
+        string strDemand = "", isDGVUse = "N";
         UseSQLServer USQL = new UseSQLServer();
         DataAccess da = new DataAccess();
         DataTable dt = new DataTable();
+        DealRecord drc = new DealRecord();
 
         public MachineInfo()
         {
             InitializeComponent();
+        }
+        
+        private void MachineInfo_Resize(object sender, EventArgs e)
+        {
+            int NewX;
+
+            if (oldWidth > 0 && oldHeight > 0 && newWidth > 0 && newHeight > 0)
+            {
+                double x = (newWidth / oldWidth);
+                double y = (newHeight / oldHeight);
+
+                dgvMachine.Width = Convert.ToInt32(x * dgvMachine.Width);
+                dgvMachine.Height = Convert.ToInt32(y * dgvMachine.Height);
+
+                gbxFun.Width = Convert.ToInt32(x * gbxFun.Width);
+                gbxFun.Height = Convert.ToInt32(y * gbxFun.Height);
+
+                gbxShow.Width = Convert.ToInt32(x * gbxShow.Width);
+                gbxShow.Height = Convert.ToInt32(y * gbxShow.Height);
+
+                NewX = (int)(btnMachineInfoAdd.Location.X * x + btnMachineInfoAdd.Width * (x - 1));
+                btnMachineInfoAdd.Location = new Point(NewX, btnMachineInfoAdd.Location.Y);
+                btnMachineInfoAdd.Width = Convert.ToInt32(x * btnMachineInfoAdd.Width);
+                btnMachineInfoAdd.Height = Convert.ToInt32(y * btnMachineInfoAdd.Height);
+
+                NewX = (int)(btnMachineInfoModify.Location.X * x + btnMachineInfoModify.Width * (x - 1));
+                btnMachineInfoModify.Location = new Point(NewX, btnMachineInfoModify.Location.Y);
+                btnMachineInfoModify.Width = Convert.ToInt32(x * btnMachineInfoModify.Width);
+                btnMachineInfoModify.Height = Convert.ToInt32(y * btnMachineInfoModify.Height);
+
+                NewX = (int)(btnMachineInfoDelete.Location.X * x + btnMachineInfoDelete.Width * (x - 1));
+                btnMachineInfoDelete.Location = new Point(NewX, btnMachineInfoDelete.Location.Y);
+                btnMachineInfoDelete.Width = Convert.ToInt32(x * btnMachineInfoDelete.Width);
+                btnMachineInfoDelete.Height = Convert.ToInt32(y * btnMachineInfoDelete.Height);
+
+                NewX = (int)(btnMachineInfoDemand.Location.X * x + btnMachineInfoDemand.Width * (x - 1));
+                btnMachineInfoDemand.Location = new Point(NewX, btnMachineInfoDemand.Location.Y);
+                btnMachineInfoDemand.Width = Convert.ToInt32(x * btnMachineInfoDemand.Width);
+                btnMachineInfoDemand.Height = Convert.ToInt32(y * btnMachineInfoDemand.Height);
+            }
+        }
+
+        private void MachineInfo_Paint(object sender, PaintEventArgs e)
+        {
+            Graphics g = e.Graphics;
+            System.Drawing.Drawing2D.LinearGradientBrush lb = new System.Drawing.Drawing2D.LinearGradientBrush(this.DisplayRectangle, Color.Linen, Color.DarkTurquoise, 45);
+            g.FillRectangle(lb, this.DisplayRectangle);
         }
 
         private void MachineInfo_Load(object sender, EventArgs e)
@@ -26,6 +76,9 @@ namespace P2214201
             //參數
             int i;
             string strSQL;
+
+            //DataGridView 設定
+            drc.SetDataGridView(ref dgvMachine);
 
             //寫入廠房名稱下拉選單
             strSQL = "Select * From FACTORYS";
@@ -59,11 +112,28 @@ namespace P2214201
             FT002 = cbxFactoryName.Text;
             FT001 = USQL.FindFT("", FT002);
             tbxFactoryCode.Text = FT001;
+            //清空
+            if (isDGVUse != "Y")
+            {
+                cbxReportName.Text = "";
+                tbxMachineCode.Text = "";
+                tbxMachineName.Text = "";
+                tbxFactoryCode.Text = "";
+                dgvMachine.DataSource = null;
+            }
         }
 
         private void cbxReportName_SelectedIndexChanged(object sender, EventArgs e)
         {//類別名稱下拉後記錄相關資訊
             CG002 = cbxReportName.Text;
+            //清空
+            if (isDGVUse != "Y")
+            {
+                tbxMachineCode.Text = "";
+                tbxMachineName.Text = "";
+                tbxFactoryCode.Text = "";
+                dgvMachine.DataSource = null;
+            }
         }
 
         private void btnMachineInfoAdd_Click(object sender, EventArgs e)
@@ -112,7 +182,10 @@ namespace P2214201
             try
             {
                 if (strDemand != "")
+                {
                     dgvMachine.DataSource = USQL.SQLSelect(ref da, strDemand);
+                    dgvMachine.ClearSelection();
+                }
             }
             catch (Exception Ex)
             { }
@@ -159,7 +232,10 @@ namespace P2214201
             try
             {
                 if (strDemand != "")
+                {
                     dgvMachine.DataSource = USQL.SQLSelect(ref da, strDemand);
+                    dgvMachine.ClearSelection();
+                }
             }
             catch (Exception Ex)
             { }
@@ -194,7 +270,10 @@ namespace P2214201
             try
             {
                 if (strDemand != "")
+                {
                     dgvMachine.DataSource = USQL.SQLSelect(ref da, strDemand);
+                    dgvMachine.ClearSelection();
+                }
             }
             catch (Exception Ex)
             { }
@@ -245,23 +324,35 @@ namespace P2214201
                 MessageBox.Show("輸入條件未查詢到任何資料。");
 
             dgvMachine.DataSource = dt;
-
+            dgvMachine.ClearSelection();
             //清空所有可填入欄位
             ClearForm();
         }
 
         private void dgvMachine_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            string tFT002, tCG002, tMN001, tMN002;
+
             //DataGridView 任意點選，代入值進畫面。
             //....確定DataGridView有值
             if (dgvMachine.Rows.Count > 0)
             {
-                FT002 = dgvMachine.CurrentRow.Cells[0].Value.ToString().Trim(); //廠房名稱
-                cbxFactoryName.Text = FT002;
-                tbxFactoryCode.Text = USQL.FindFT("", FT002);
-                cbxReportName.Text = dgvMachine.CurrentRow.Cells[1].Value.ToString().Trim();  //類別名稱
-                tbxMachineCode.Text = dgvMachine.CurrentRow.Cells[2].Value.ToString().Trim(); //機械編號
-                tbxMachineName.Text = dgvMachine.CurrentRow.Cells[3].Value.ToString().Trim(); //機械名稱
+                isDGVUse = "Y";
+                tFT002 = dgvMachine.CurrentRow.Cells[0].Value.ToString().Trim(); //廠房名稱
+                cbxFactoryName.Text = tFT002;
+
+                tCG002 = dgvMachine.CurrentRow.Cells[1].Value.ToString().Trim(); //類別名稱
+                cbxReportName.Text = tCG002;
+                
+                tMN001 = dgvMachine.CurrentRow.Cells[2].Value.ToString().Trim(); //機械編號
+                tbxMachineCode.Text = tMN001;
+
+                tMN002 = dgvMachine.CurrentRow.Cells[3].Value.ToString().Trim(); //機械名稱
+                tbxMachineName.Text = tMN002;
+                
+                tbxFactoryCode.Text = USQL.FindFT("", FT002);   //廠房代號
+
+                isDGVUse = "N";
             }
         }
         private bool CheckData(string FT002, string CG002, string MN001, string MN002)

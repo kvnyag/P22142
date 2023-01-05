@@ -43,26 +43,26 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="AndroidTranferTool.exe" size="596992">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="AndroidTranferTool.exe" size="598528">
       <assemblyIdentity name="AndroidTranferTool" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>1QYyPISK/aLpGDOCepPHwecEQQRYvhGhOxXd9qLIH9E=</dsig:DigestValue>
+        <dsig:DigestValue>W6Z6DWqqMvisPTnCB+r6wIqXpZRMPeV9mSdyc6CpOhY=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="AndroidTranferTool.exe" size="596992">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="AndroidTranferTool.exe" size="598528">
       <assemblyIdentity name="AndroidTranferTool" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>iWsvvHCjf9k+6tg2cDCnujgPI7ajl98sK+8mi9LOo0I=</dsig:DigestValue>
+        <dsig:DigestValue>r5WyZTcDKZcuHPIkBwFa0CiyB5dHiRZ//cOkG4qr610=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -74,7 +74,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>tWImYH5+kg/K3MHSVOph28fjOaTu5AMvdmi4CBjiuU8=</dsig:DigestValue>
+        <dsig:DigestValue>Zc5+6WqJUtTP4BNEifccE2Poi5SPnPzuyDpsVmSzUA8=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -139,14 +139,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="P2214201.exe" size="392192">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="P2214201.exe" size="578048">
       <assemblyIdentity name="P2214201" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>YII09ldAm/HnSOR7h0tRqm79F3ykjOiEWSzDj+3rH1M=</dsig:DigestValue>
+        <dsig:DigestValue>swbqOw76TVXEIVp2VMHTbIem2HOqTfQp4+ac/O0q8Uo=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

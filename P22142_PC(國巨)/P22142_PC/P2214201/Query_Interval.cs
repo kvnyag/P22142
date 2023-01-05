@@ -20,6 +20,11 @@ namespace P2214201
             InitializeComponent();
         }
 
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            DialogResult = DialogResult.Cancel;
+        }
+
         private void btnVacuumDemAdd_Click(object sender, EventArgs e)
         {
             StartDate = dtpStart.Value.ToString("yyyy/MM/dd");

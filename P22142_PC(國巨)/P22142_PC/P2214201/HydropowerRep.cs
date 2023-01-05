@@ -11,6 +11,7 @@ namespace P2214201
     {
         //公用變數
         public string UserAccount, UserName, UserRole;
+        public double oldWidth, oldHeight, newWidth, newHeight;
         UseSQLServer USQL = new UseSQLServer();
         DataAccess da = new DataAccess();
         DataTable dt = new DataTable();
@@ -25,13 +26,68 @@ namespace P2214201
         CheckBox ckHeader_From = new CheckBox();
         CheckBox ckHeader_To = new CheckBox();
         Rectangle rect_From, rect_To;
-
-
-
+        
         public HydropowerRep()
         {
             InitializeComponent();
         }
+        
+        private void HydropowerRep_Resize(object sender, EventArgs e)
+        {
+            int NewX;
+
+            if (oldWidth > 0 && oldHeight > 0 && newWidth > 0 && newHeight > 0)
+            {
+                double x = (newWidth / oldWidth);
+                double y = (newHeight / oldHeight);
+
+                dgvHydropowerFrom.Width = Convert.ToInt32(x * dgvHydropowerFrom.Width);
+                dgvHydropowerFrom.Height = Convert.ToInt32(y * dgvHydropowerFrom.Height);
+
+                btnLeft.Width = Convert.ToInt32(x * btnLeft.Width);
+                btnLeft.Height = Convert.ToInt32(y * btnLeft.Height);
+                NewX = (int)(dgvHydropowerFrom.Width + 6 * x);
+                btnLeft.Location = new Point(NewX, btnLeft.Location.Y);
+
+                btnRight.Width = Convert.ToInt32(x * btnRight.Width);
+                btnRight.Height = Convert.ToInt32(y * btnRight.Height);
+                btnRight.Location = new Point(NewX, btnRight.Location.Y);
+
+                dgvHydropowerTo.Width = Convert.ToInt32(x * dgvHydropowerTo.Width);
+                dgvHydropowerTo.Height = Convert.ToInt32(y * dgvHydropowerTo.Height);
+                NewX += (int)(btnRight.Width + 6 * x);
+                dgvHydropowerTo.Location = new Point(NewX, dgvHydropowerTo.Location.Y);
+
+
+                gbxFun.Width = Convert.ToInt32(x * gbxFun.Width);
+                gbxFun.Height = Convert.ToInt32(y * gbxFun.Height);
+                gbxShow.Width = Convert.ToInt32(x * gbxShow.Width);
+                gbxShow.Height = Convert.ToInt32(y * gbxShow.Height);
+
+                NewX = (int)(btnHydropowerRepAdd.Location.X * x + btnHydropowerRepAdd.Width * (x - 1));
+                btnHydropowerRepAdd.Location = new Point(NewX, btnHydropowerRepAdd.Location.Y);
+                btnHydropowerRepAdd.Width = Convert.ToInt32(x * btnHydropowerRepAdd.Width);
+                btnHydropowerRepAdd.Height = Convert.ToInt32(y * btnHydropowerRepAdd.Height);
+
+                NewX = (int)(btnHydropowerRepModify.Location.X * x + btnHydropowerRepModify.Width * (x - 1));
+                btnHydropowerRepModify.Location = new Point(NewX, btnHydropowerRepModify.Location.Y);
+                btnHydropowerRepModify.Width = Convert.ToInt32(x * btnHydropowerRepModify.Width);
+                btnHydropowerRepModify.Height = Convert.ToInt32(y * btnHydropowerRepModify.Height);
+
+                NewX = (int)(btnHydropowerRepDelete.Location.X * x + btnHydropowerRepDelete.Width * (x - 1));
+                btnHydropowerRepDelete.Location = new Point(NewX, btnHydropowerRepDelete.Location.Y);
+                btnHydropowerRepDelete.Width = Convert.ToInt32(x * btnHydropowerRepDelete.Width);
+                btnHydropowerRepDelete.Height = Convert.ToInt32(y * btnHydropowerRepDelete.Height);
+            }
+        }
+
+        private void HydropowerRep_Paint(object sender, PaintEventArgs e)
+        {
+            Graphics g = e.Graphics;
+            System.Drawing.Drawing2D.LinearGradientBrush lb = new System.Drawing.Drawing2D.LinearGradientBrush(this.DisplayRectangle, Color.Linen, Color.DarkTurquoise, 45);
+            g.FillRectangle(lb, this.DisplayRectangle);
+        }
+
         private void HydropowerRep_Load(object sender, EventArgs e)
         {
             //參數
@@ -39,15 +95,11 @@ namespace P2214201
             string strSQL;
 
             //DataGridView 設定
-            //....dgvAirConditionFrom
-            dgvHydropowerFrom.RowsDefaultCellStyle.Font = new Font("微軟正黑體", 9, FontStyle.Regular);
-            dgvHydropowerFrom.ColumnHeadersDefaultCellStyle.Font = new Font("微軟正黑體", 6, FontStyle.Regular);
-            dgvHydropowerFrom.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            //....dgvHydropowerFrom
+            drc.SetDataGridView(ref dgvHydropowerFrom);
 
             //....dgvAirConditionTo
-            dgvHydropowerTo.RowsDefaultCellStyle.Font = new Font("微軟正黑體", 9, FontStyle.Regular);
-            dgvHydropowerTo.ColumnHeadersDefaultCellStyle.Font = new Font("微軟正黑體", 6, FontStyle.Regular);
-            dgvHydropowerTo.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            drc.SetDataGridView(ref dgvHydropowerTo);
 
             //填入 廠房代號(cbxFactoryCode)
             strSQL = "Select * From FACTORYS";
@@ -263,6 +315,7 @@ namespace P2214201
                 strSQL = drc.DGVShowSQL(CG001, 2, arrCGA, FT001, "NOT");
                 dt = USQL.SQLSelect(ref da, strSQL);
                 dgvHydropowerFrom.DataSource = dt;
+                dgvHydropowerFrom.ClearSelection();
                 //....3.全都 僅可讀
                 for (i = 0; i < dgvHydropowerFrom.Columns.Count; i++)
                     dgvHydropowerFrom.Columns[i].ReadOnly = true;
@@ -279,9 +332,18 @@ namespace P2214201
                 dgvHydropowerTo.Columns.Add(colFrom);
                 //....4.寫入
                 dgvHydropowerTo.DataSource = dt;
+                dgvHydropowerTo.ClearSelection();
                 //....5.除了第一行外，其他行都 僅可讀
                 for (i = 1; i < dgvHydropowerTo.Columns.Count; i++)
                     dgvHydropowerTo.Columns[i].ReadOnly = true;
+                //....6.若該筆為"作廢"，按鈕反黑。
+                for (i = 0; i < dgvHydropowerTo.Rows.Count - 1; i++)
+                {
+                    var cell = ((DataGridViewButtonCell)dgvHydropowerTo.Rows[i].Cells[0]);
+                    cell.FlatStyle = FlatStyle.Flat;
+                    if (dgvHydropowerTo.Rows[i].Cells[6].Value.ToString() == "Y")
+                        dgvHydropowerTo.Rows[i].Cells[0].Style.BackColor = Color.Black;
+                }
                 //隱藏 btnLeft 及 btnRight
                 btnLeft.Visible = false;
                 btnRight.Visible = false;
@@ -316,7 +378,7 @@ namespace P2214201
                 dgvHydropowerFrom.Controls.Add(ckHeader_From);
                 //....寫入
                 dgvHydropowerFrom.DataSource = dt;
-
+                dgvHydropowerFrom.ClearSelection();
                 //....除了第一行外，其他行都 僅可讀
                 for (i = 1; i < dgvHydropowerFrom.Columns.Count; i++)
                     dgvHydropowerFrom.Columns[i].ReadOnly = true;
@@ -345,6 +407,7 @@ namespace P2214201
 
                 dgvHydropowerTo.Controls.Add(ckHeader_To);
                 dgvHydropowerTo.DataSource = dt;
+                dgvHydropowerTo.ClearSelection();
                 //....除了第一行外，其他行都 僅可讀
                 for (i = 1; i < dgvHydropowerTo.Columns.Count; i++)
                     dgvHydropowerTo.Columns[i].ReadOnly = true;
@@ -379,7 +442,7 @@ namespace P2214201
             strSQL = drc.DGVShowSQL(CG001, 2, arrCGA, FT001, "NOT");
             dt = USQL.SQLSelect(ref da, strSQL);
             dgvHydropowerFrom.DataSource = dt;
-
+            dgvHydropowerFrom.ClearSelection();
             //新增 按鈕可按，修改、刪除 按鈕不可按
             isEnable("Y", "N", "N", "", "");
         }
@@ -408,7 +471,7 @@ namespace P2214201
             strSQL = drc.DGVShowSQL(CG001, 2, arrCGA, FT001, "IN");
             dt = USQL.SQLSelect(ref da, strSQL);
             dgvHydropowerTo.DataSource = dt;
-
+            dgvHydropowerTo.ClearSelection();
             //DataGridView To 回傳值到 DataGridView From，並且 DataGridView To 已沒有值時，新增按鈕消失
             if (dt.Rows.Count == 0)
                 btnHydropowerRepAdd.Enabled = false;
@@ -426,9 +489,19 @@ namespace P2214201
             {
                 WEB015 = grid.Rows[e.RowIndex].Cells[6].Value.ToString();
                 if (WEB015 == "N")
+                {
+                    var cell = ((DataGridViewButtonCell)grid.Rows[e.RowIndex].Cells[0]);
+                    cell.FlatStyle = FlatStyle.Flat;
+                    grid.Rows[e.RowIndex].Cells[0].Style.BackColor = Color.Black;
                     grid.Rows[e.RowIndex].Cells[6].Value = "Y";
-                else
+                }
+                else if (WEB015 == "Y")
+                {
+                    var cell = ((DataGridViewButtonCell)grid.Rows[e.RowIndex].Cells[0]);
+                    cell.FlatStyle = FlatStyle.Flat;
+                    grid.Rows[e.RowIndex].Cells[0].Style.BackColor = Color.White;
                     grid.Rows[e.RowIndex].Cells[6].Value = "N";
+                }
             }
 
         }

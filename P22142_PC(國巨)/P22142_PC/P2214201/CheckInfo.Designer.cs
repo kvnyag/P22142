@@ -35,7 +35,6 @@
             this.btnCheckInfoDemand = new System.Windows.Forms.Button();
             this.btnCheckInfoExit = new System.Windows.Forms.Button();
             this.btnCheckInfoStore = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.cbxReportName = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -52,7 +51,12 @@
             this.cbxFactoryCode = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.dgvCheck = new System.Windows.Forms.DataGridView();
+            this.gbxFun = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.gbxShow = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCheck)).BeginInit();
+            this.gbxFun.SuspendLayout();
+            this.gbxShow.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnCheckInfoAdd
@@ -61,9 +65,9 @@
             this.btnCheckInfoAdd.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnCheckInfoAdd.FlatAppearance.BorderSize = 0;
             this.btnCheckInfoAdd.Font = new System.Drawing.Font("微軟正黑體", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.btnCheckInfoAdd.ForeColor = System.Drawing.Color.Cyan;
+            this.btnCheckInfoAdd.ForeColor = System.Drawing.Color.DeepSkyBlue;
             this.btnCheckInfoAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnCheckInfoAdd.Image")));
-            this.btnCheckInfoAdd.Location = new System.Drawing.Point(8, 8);
+            this.btnCheckInfoAdd.Location = new System.Drawing.Point(12, 10);
             this.btnCheckInfoAdd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCheckInfoAdd.Name = "btnCheckInfoAdd";
             this.btnCheckInfoAdd.Size = new System.Drawing.Size(89, 84);
@@ -79,9 +83,9 @@
             this.btnCheckInfoModify.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnCheckInfoModify.FlatAppearance.BorderSize = 0;
             this.btnCheckInfoModify.Font = new System.Drawing.Font("微軟正黑體", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.btnCheckInfoModify.ForeColor = System.Drawing.Color.Cyan;
+            this.btnCheckInfoModify.ForeColor = System.Drawing.Color.DeepSkyBlue;
             this.btnCheckInfoModify.Image = ((System.Drawing.Image)(resources.GetObject("btnCheckInfoModify.Image")));
-            this.btnCheckInfoModify.Location = new System.Drawing.Point(103, 8);
+            this.btnCheckInfoModify.Location = new System.Drawing.Point(107, 10);
             this.btnCheckInfoModify.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCheckInfoModify.Name = "btnCheckInfoModify";
             this.btnCheckInfoModify.Size = new System.Drawing.Size(89, 84);
@@ -97,9 +101,9 @@
             this.btnCheckInfoDelete.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnCheckInfoDelete.FlatAppearance.BorderSize = 0;
             this.btnCheckInfoDelete.Font = new System.Drawing.Font("微軟正黑體", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.btnCheckInfoDelete.ForeColor = System.Drawing.Color.Cyan;
+            this.btnCheckInfoDelete.ForeColor = System.Drawing.Color.DeepSkyBlue;
             this.btnCheckInfoDelete.Image = ((System.Drawing.Image)(resources.GetObject("btnCheckInfoDelete.Image")));
-            this.btnCheckInfoDelete.Location = new System.Drawing.Point(196, 8);
+            this.btnCheckInfoDelete.Location = new System.Drawing.Point(200, 10);
             this.btnCheckInfoDelete.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCheckInfoDelete.Name = "btnCheckInfoDelete";
             this.btnCheckInfoDelete.Size = new System.Drawing.Size(89, 84);
@@ -115,9 +119,9 @@
             this.btnCheckInfoDemand.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnCheckInfoDemand.FlatAppearance.BorderSize = 0;
             this.btnCheckInfoDemand.Font = new System.Drawing.Font("微軟正黑體", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.btnCheckInfoDemand.ForeColor = System.Drawing.Color.Cyan;
+            this.btnCheckInfoDemand.ForeColor = System.Drawing.Color.DeepSkyBlue;
             this.btnCheckInfoDemand.Image = ((System.Drawing.Image)(resources.GetObject("btnCheckInfoDemand.Image")));
-            this.btnCheckInfoDemand.Location = new System.Drawing.Point(291, 8);
+            this.btnCheckInfoDemand.Location = new System.Drawing.Point(295, 10);
             this.btnCheckInfoDemand.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCheckInfoDemand.Name = "btnCheckInfoDemand";
             this.btnCheckInfoDemand.Size = new System.Drawing.Size(89, 84);
@@ -133,9 +137,9 @@
             this.btnCheckInfoExit.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnCheckInfoExit.FlatAppearance.BorderSize = 0;
             this.btnCheckInfoExit.Font = new System.Drawing.Font("微軟正黑體", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.btnCheckInfoExit.ForeColor = System.Drawing.Color.Cyan;
+            this.btnCheckInfoExit.ForeColor = System.Drawing.Color.DeepSkyBlue;
             this.btnCheckInfoExit.Image = ((System.Drawing.Image)(resources.GetObject("btnCheckInfoExit.Image")));
-            this.btnCheckInfoExit.Location = new System.Drawing.Point(1053, 8);
+            this.btnCheckInfoExit.Location = new System.Drawing.Point(1057, 10);
             this.btnCheckInfoExit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCheckInfoExit.Name = "btnCheckInfoExit";
             this.btnCheckInfoExit.Size = new System.Drawing.Size(89, 84);
@@ -151,9 +155,9 @@
             this.btnCheckInfoStore.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnCheckInfoStore.FlatAppearance.BorderSize = 0;
             this.btnCheckInfoStore.Font = new System.Drawing.Font("微軟正黑體", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.btnCheckInfoStore.ForeColor = System.Drawing.Color.Cyan;
+            this.btnCheckInfoStore.ForeColor = System.Drawing.Color.DeepSkyBlue;
             this.btnCheckInfoStore.Image = ((System.Drawing.Image)(resources.GetObject("btnCheckInfoStore.Image")));
-            this.btnCheckInfoStore.Location = new System.Drawing.Point(960, 8);
+            this.btnCheckInfoStore.Location = new System.Drawing.Point(964, 10);
             this.btnCheckInfoStore.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCheckInfoStore.Name = "btnCheckInfoStore";
             this.btnCheckInfoStore.Size = new System.Drawing.Size(89, 84);
@@ -163,23 +167,11 @@
             this.btnCheckInfoStore.UseVisualStyleBackColor = false;
             this.btnCheckInfoStore.Visible = false;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("微軟正黑體", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label1.ForeColor = System.Drawing.Color.LimeGreen;
-            this.label1.Location = new System.Drawing.Point(113, 138);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(110, 31);
-            this.label1.TabIndex = 9;
-            this.label1.Text = "類別名稱";
-            // 
             // cbxReportName
             // 
             this.cbxReportName.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.cbxReportName.FormattingEnabled = true;
-            this.cbxReportName.Location = new System.Drawing.Point(231, 129);
+            this.cbxReportName.Location = new System.Drawing.Point(235, 139);
             this.cbxReportName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbxReportName.Name = "cbxReportName";
             this.cbxReportName.Size = new System.Drawing.Size(180, 33);
@@ -191,8 +183,8 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("微軟正黑體", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label2.ForeColor = System.Drawing.Color.LimeGreen;
-            this.label2.Location = new System.Drawing.Point(64, 178);
+            this.label2.ForeColor = System.Drawing.Color.Teal;
+            this.label2.Location = new System.Drawing.Point(69, 188);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(158, 31);
             this.label2.TabIndex = 11;
@@ -203,8 +195,8 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("微軟正黑體", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label3.ForeColor = System.Drawing.Color.LimeGreen;
-            this.label3.Location = new System.Drawing.Point(627, 131);
+            this.label3.ForeColor = System.Drawing.Color.Teal;
+            this.label3.Location = new System.Drawing.Point(631, 141);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(76, 31);
             this.label3.TabIndex = 12;
@@ -215,8 +207,8 @@
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("微軟正黑體", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label4.ForeColor = System.Drawing.Color.LimeGreen;
-            this.label4.Location = new System.Drawing.Point(627, 171);
+            this.label4.ForeColor = System.Drawing.Color.Teal;
+            this.label4.Location = new System.Drawing.Point(631, 181);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(76, 31);
             this.label4.TabIndex = 13;
@@ -225,7 +217,7 @@
             // tbxCheckCode
             // 
             this.tbxCheckCode.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.tbxCheckCode.Location = new System.Drawing.Point(232, 171);
+            this.tbxCheckCode.Location = new System.Drawing.Point(235, 181);
             this.tbxCheckCode.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbxCheckCode.Name = "tbxCheckCode";
             this.tbxCheckCode.Size = new System.Drawing.Size(180, 34);
@@ -234,7 +226,7 @@
             // tbxMemo2
             // 
             this.tbxMemo2.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.tbxMemo2.Location = new System.Drawing.Point(711, 171);
+            this.tbxMemo2.Location = new System.Drawing.Point(715, 181);
             this.tbxMemo2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbxMemo2.Name = "tbxMemo2";
             this.tbxMemo2.Size = new System.Drawing.Size(180, 34);
@@ -243,7 +235,7 @@
             // tbxCheckName
             // 
             this.tbxCheckName.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.tbxCheckName.Location = new System.Drawing.Point(232, 212);
+            this.tbxCheckName.Location = new System.Drawing.Point(235, 222);
             this.tbxCheckName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbxCheckName.Name = "tbxCheckName";
             this.tbxCheckName.Size = new System.Drawing.Size(180, 34);
@@ -254,8 +246,8 @@
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("微軟正黑體", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label5.ForeColor = System.Drawing.Color.LimeGreen;
-            this.label5.Location = new System.Drawing.Point(64, 215);
+            this.label5.ForeColor = System.Drawing.Color.Teal;
+            this.label5.Location = new System.Drawing.Point(69, 225);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(158, 31);
             this.label5.TabIndex = 17;
@@ -266,8 +258,8 @@
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("微軟正黑體", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label6.ForeColor = System.Drawing.Color.LimeGreen;
-            this.label6.Location = new System.Drawing.Point(565, 211);
+            this.label6.ForeColor = System.Drawing.Color.Teal;
+            this.label6.Location = new System.Drawing.Point(573, 221);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(134, 31);
             this.label6.TabIndex = 19;
@@ -276,7 +268,7 @@
             // tbxRefer1
             // 
             this.tbxRefer1.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.tbxRefer1.Location = new System.Drawing.Point(711, 211);
+            this.tbxRefer1.Location = new System.Drawing.Point(715, 221);
             this.tbxRefer1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbxRefer1.Name = "tbxRefer1";
             this.tbxRefer1.Size = new System.Drawing.Size(72, 34);
@@ -285,7 +277,7 @@
             // tbxMemo1
             // 
             this.tbxMemo1.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.tbxMemo1.Location = new System.Drawing.Point(711, 131);
+            this.tbxMemo1.Location = new System.Drawing.Point(715, 141);
             this.tbxMemo1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbxMemo1.Name = "tbxMemo1";
             this.tbxMemo1.Size = new System.Drawing.Size(180, 34);
@@ -294,7 +286,7 @@
             // tbxRefer3
             // 
             this.tbxRefer3.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.tbxRefer3.Location = new System.Drawing.Point(871, 211);
+            this.tbxRefer3.Location = new System.Drawing.Point(876, 221);
             this.tbxRefer3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbxRefer3.Name = "tbxRefer3";
             this.tbxRefer3.Size = new System.Drawing.Size(72, 34);
@@ -304,7 +296,7 @@
             // 
             this.cbxRefer2.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.cbxRefer2.FormattingEnabled = true;
-            this.cbxRefer2.Location = new System.Drawing.Point(787, 211);
+            this.cbxRefer2.Location = new System.Drawing.Point(793, 221);
             this.cbxRefer2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbxRefer2.Name = "cbxRefer2";
             this.cbxRefer2.Size = new System.Drawing.Size(77, 33);
@@ -314,7 +306,7 @@
             // 
             this.cbxFactoryCode.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.cbxFactoryCode.FormattingEnabled = true;
-            this.cbxFactoryCode.Location = new System.Drawing.Point(425, 129);
+            this.cbxFactoryCode.Location = new System.Drawing.Point(429, 139);
             this.cbxFactoryCode.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbxFactoryCode.Name = "cbxFactoryCode";
             this.cbxFactoryCode.Size = new System.Drawing.Size(179, 33);
@@ -327,8 +319,8 @@
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("微軟正黑體", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label7.ForeColor = System.Drawing.Color.LimeGreen;
-            this.label7.Location = new System.Drawing.Point(457, 96);
+            this.label7.ForeColor = System.Drawing.Color.Teal;
+            this.label7.Location = new System.Drawing.Point(461, 106);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(110, 31);
             this.label7.TabIndex = 24;
@@ -338,52 +330,87 @@
             // dgvCheck
             // 
             this.dgvCheck.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCheck.Location = new System.Drawing.Point(0, 266);
+            this.dgvCheck.Location = new System.Drawing.Point(2, 11);
             this.dgvCheck.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvCheck.MultiSelect = false;
             this.dgvCheck.Name = "dgvCheck";
             this.dgvCheck.RowTemplate.Height = 31;
-            this.dgvCheck.Size = new System.Drawing.Size(1152, 609);
+            this.dgvCheck.Size = new System.Drawing.Size(1152, 608);
             this.dgvCheck.TabIndex = 26;
             this.dgvCheck.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCheck_CellClick);
+            // 
+            // gbxFun
+            // 
+            this.gbxFun.BackColor = System.Drawing.Color.Transparent;
+            this.gbxFun.Controls.Add(this.btnCheckInfoAdd);
+            this.gbxFun.Controls.Add(this.btnCheckInfoModify);
+            this.gbxFun.Controls.Add(this.cbxFactoryCode);
+            this.gbxFun.Controls.Add(this.btnCheckInfoDelete);
+            this.gbxFun.Controls.Add(this.label7);
+            this.gbxFun.Controls.Add(this.btnCheckInfoDemand);
+            this.gbxFun.Controls.Add(this.cbxRefer2);
+            this.gbxFun.Controls.Add(this.btnCheckInfoExit);
+            this.gbxFun.Controls.Add(this.tbxRefer3);
+            this.gbxFun.Controls.Add(this.btnCheckInfoStore);
+            this.gbxFun.Controls.Add(this.tbxMemo1);
+            this.gbxFun.Controls.Add(this.label1);
+            this.gbxFun.Controls.Add(this.tbxRefer1);
+            this.gbxFun.Controls.Add(this.cbxReportName);
+            this.gbxFun.Controls.Add(this.label6);
+            this.gbxFun.Controls.Add(this.label2);
+            this.gbxFun.Controls.Add(this.tbxCheckName);
+            this.gbxFun.Controls.Add(this.label3);
+            this.gbxFun.Controls.Add(this.label5);
+            this.gbxFun.Controls.Add(this.label4);
+            this.gbxFun.Controls.Add(this.tbxMemo2);
+            this.gbxFun.Controls.Add(this.tbxCheckCode);
+            this.gbxFun.Location = new System.Drawing.Point(0, 0);
+            this.gbxFun.Name = "gbxFun";
+            this.gbxFun.Size = new System.Drawing.Size(1157, 267);
+            this.gbxFun.TabIndex = 27;
+            this.gbxFun.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("微軟正黑體", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label1.ForeColor = System.Drawing.Color.Teal;
+            this.label1.Location = new System.Drawing.Point(117, 148);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(110, 31);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "類別名稱";
+            // 
+            // gbxShow
+            // 
+            this.gbxShow.BackColor = System.Drawing.Color.Transparent;
+            this.gbxShow.Controls.Add(this.dgvCheck);
+            this.gbxShow.Location = new System.Drawing.Point(0, 266);
+            this.gbxShow.Name = "gbxShow";
+            this.gbxShow.Size = new System.Drawing.Size(1157, 622);
+            this.gbxShow.TabIndex = 28;
+            this.gbxShow.TabStop = false;
             // 
             // CheckInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FloralWhite;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(1152, 870);
-            this.Controls.Add(this.dgvCheck);
-            this.Controls.Add(this.cbxFactoryCode);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.cbxRefer2);
-            this.Controls.Add(this.tbxRefer3);
-            this.Controls.Add(this.tbxMemo1);
-            this.Controls.Add(this.tbxRefer1);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.tbxCheckName);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.tbxMemo2);
-            this.Controls.Add(this.tbxCheckCode);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.cbxReportName);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.btnCheckInfoStore);
-            this.Controls.Add(this.btnCheckInfoExit);
-            this.Controls.Add(this.btnCheckInfoDemand);
-            this.Controls.Add(this.btnCheckInfoDelete);
-            this.Controls.Add(this.btnCheckInfoModify);
-            this.Controls.Add(this.btnCheckInfoAdd);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(1160, 889);
+            this.Controls.Add(this.gbxShow);
+            this.Controls.Add(this.gbxFun);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "CheckInfo";
             this.Text = "檢查項目資料";
             this.Load += new System.EventHandler(this.CheckInfo_Load);
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.CheckInfo_Paint);
+            this.Resize += new System.EventHandler(this.CheckInfo_Resize);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCheck)).EndInit();
+            this.gbxFun.ResumeLayout(false);
+            this.gbxFun.PerformLayout();
+            this.gbxShow.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -394,7 +421,6 @@
         private System.Windows.Forms.Button btnCheckInfoDemand;
         private System.Windows.Forms.Button btnCheckInfoExit;
         private System.Windows.Forms.Button btnCheckInfoStore;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cbxReportName;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
@@ -411,5 +437,8 @@
         private System.Windows.Forms.ComboBox cbxFactoryCode;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DataGridView dgvCheck;
+        private System.Windows.Forms.GroupBox gbxFun;
+        private System.Windows.Forms.GroupBox gbxShow;
+        private System.Windows.Forms.Label label1;
     }
 }

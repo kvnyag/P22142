@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace P2214201
 {
@@ -122,7 +124,7 @@ namespace P2214201
                 strSQL += "(WEB005 + WEB006 + WEB007) as '參考值',";
                 strSQL += "WEB015 as '是否作廢' ";
                 strSQL += "From WATERELC_BODYS ";
-                strSQL += "Where WEB003 = " + KeyValue + " ";
+                strSQL += "Where WEB003 LIKE '" + KeyValue + "' ";
                 //strSQL += "And WEB015 = 'N' ";
             }
 
@@ -201,6 +203,28 @@ namespace P2214201
             }
 
             return backDT;
+        }
+
+        public DataGridView SetDataGridView(ref DataGridView DGV)
+        {
+            DGV.AlternatingRowsDefaultCellStyle.BackColor = Color.Aqua;
+            DGV.ColumnHeadersDefaultCellStyle.Font = new Font("微軟正黑體", (float)12.00, FontStyle.Bold);
+            DGV.RowsDefaultCellStyle.Font = new Font("微軟正黑體", (float)12.00, FontStyle.Regular);
+            DGV.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            DGV.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Raised;
+            DGV.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            DGV.CellBorderStyle = DataGridViewCellBorderStyle.Single;
+            DGV.GridColor = SystemColors.ActiveBorder;
+            DGV.RowHeadersVisible = true;
+            DGV.AllowUserToResizeRows = false;
+            DGV.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(0, 64, 64);
+            DGV.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            DGV.RowHeadersDefaultCellStyle.BackColor = Color.FromArgb(0, 64, 64);
+            DGV.RowHeadersDefaultCellStyle.ForeColor = Color.White;
+            DGV.RowHeadersWidth = 23;
+            DGV.EnableHeadersVisualStyles = false;
+
+            return DGV;
         }
     }
 }

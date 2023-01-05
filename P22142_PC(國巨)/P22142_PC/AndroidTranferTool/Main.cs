@@ -131,6 +131,8 @@ namespace AndroidTranferTool
             //bool bResult = pp.UsePDAToPC();
             //return;
 
+            ResultInfo resultInfo, resultInfo_PCToPDA;
+            P2214201.UseSQLServer USQL = new P2214201.UseSQLServer();
             btnPDAtoPC.Enabled = false;
             Waitting waitting = new Waitting();
             waitting.Show();
@@ -148,17 +150,12 @@ namespace AndroidTranferTool
                     }
                     else
                     {
-                        ResultInfo resultInfo = Transfer.adbPull(PdaToPC + "-journal", outputPath);
+                        resultInfo = Transfer.adbPull(PdaToPC + "-shm", outputPath);
+                        resultInfo = Transfer.adbPull(PdaToPC + "-wal", outputPath);
                         resultInfo = Transfer.adbPull(PdaToPC, outputPath);
                         
                         if (resultInfo.resultCode == 0)
                         {
-                            //if (enableOutConvert)
-                            //{
-                            //    outputPath = RunConvertEXE(2, outputPath + PdaToPC.Replace(@"sdcard/Download/", "")); //啟用轉檔
-                            //    if (!outputPath.EndsWith("\\"))
-                            //        outputPath = outputPath + "\\";
-                            //}
                             this.Cursor = Cursors.Default;
                             if (!Directory.Exists(outputPath))
                             {
@@ -166,25 +163,34 @@ namespace AndroidTranferTool
                                 return;
                             }
 
+                            //0.確定 PDA端 資料庫中該有的 Table 是否存在，不存在則先從 PC端 傳入預設資料庫。
                             //1.執行 PDA端 資料寫入 PC端。
                             //2.清空 PDA端 資料。
-                            //3.執行 PC端 資料寫回 PDA端。
+                            //3.執行 PC端 資料寫回 PDA端
                             PDAToPC pp = new PDAToPC();
+                            if (pp.CheckPDATable() == false)
+                            {
+                                string BackDBPath = outputPath + "\\BACKDB";
+                                Transfer.adbCommand("adb shell rm -rf " + @"/sdcard/Download/P22142.db3");
+                                Transfer.adbPush(BackDBPath + "P22142.db3", "sdcard/Download/P22142.db3");
+                            }
                             bool bResult = pp.UsePDAToPC();
 
                             if (bResult)
                             {
-                                Transfer.adbCommand("adb shell rm -rf " + @"/sdcard/Download/P22142.db3-journal"); 
+                                Transfer.adbCommand("adb shell rm -rf " + @"/sdcard/Download/P22142.db3-shm");
+                                Transfer.adbCommand("adb shell rm -rf " + @"/sdcard/Download/P22142.db3-wal");
                                 Transfer.adbCommand("adb shell rm -rf " + @"/sdcard/Download/P22142.db3");
 
-                                ResultInfo resultInfo_PCToPDA = Transfer.adbPush(outputPath + "P22142.db3", "sdcard/Download/P22142.db3");
-                                resultInfo_PCToPDA = Transfer.adbPush(outputPath + "P22142.db3-journal", "sdcard/Download/P22142.db3-journal");
+                                resultInfo_PCToPDA = Transfer.adbPush(outputPath + "P22142.db3", "sdcard/Download/P22142.db3");
+                                resultInfo_PCToPDA = Transfer.adbPush(outputPath + "P22142.db3-journal", "sdcard/Download/P22142.db3-shm");
+                                resultInfo_PCToPDA = Transfer.adbPush(outputPath + "P22142.db3-journal", "sdcard/Download/P22142.db3-wal");
 
                                 //Transfer.scanSDCARD();
                                 Transfer.scanSDCARD_A();
 
                                 MessageBox.Show(resultInfo.resultMessage, "匯出成功", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
-                                Process.Start("EXPLORER", outputPath);
+                                //Process.Start("EXPLORER", outputPath);
                             }
                             else
                             {
@@ -320,7 +326,7 @@ namespace AndroidTranferTool
                     }
                     else
                     {
-                        ResultInfo resultInfo = Transfer.adbPull("sdcard/Download/Log/", outputPath + "Log_" + DateTime.Now.ToString("yyyyMMdd_HHmmss"));
+                        ResultInfo resultInfo = Transfer.adbPull("sdcard/Download/Log/", outputPath);
                         this.Cursor = Cursors.Default;
                         if (resultInfo.resultCode == 0)
                         {

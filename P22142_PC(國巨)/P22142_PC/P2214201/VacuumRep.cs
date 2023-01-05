@@ -11,13 +11,14 @@ namespace P2214201
     {
         //公用變數
         public string UserAccount, UserName, UserRole;
+        public double oldWidth, oldHeight, newWidth, newHeight;
         UseSQLServer USQL = new UseSQLServer();
         DataAccess da = new DataAccess();
         DataTable dt = new DataTable();
         DbTransaction objTrans;
         DealRecord drc = new DealRecord();
 
-        int VMH001, VMB001;
+        int VMH001, VMB001, VMB002;
         string FT001, CG001, CG002, MN001, MN002;
         string VMH002, VMH003, VMH004, VMH005, VMH006, VMH007, VMH008, VMH009, VMH010, VMH011;
         string VMB003, VMB004, VMB005, VMB006, VMB007, VMB008, VMB009, VMB010, VMB011, VMB012, VMB013, VMB014, VMB015;
@@ -30,23 +31,75 @@ namespace P2214201
         {
             InitializeComponent();
         }
+        
+        private void VacuumRep_Resize(object sender, EventArgs e)
+        {
+            int NewX;
+
+            if (oldWidth > 0 && oldHeight > 0 && newWidth > 0 && newHeight > 0)
+            {
+                double x = (newWidth / oldWidth);
+                double y = (newHeight / oldHeight);
+
+                dgvVacuumFrom.Width = Convert.ToInt32(x * dgvVacuumFrom.Width);
+                dgvVacuumFrom.Height = Convert.ToInt32(y * dgvVacuumFrom.Height);
+
+                btnLeft.Width = Convert.ToInt32(x * btnLeft.Width);
+                btnLeft.Height = Convert.ToInt32(y * btnLeft.Height);
+                NewX = (int)(dgvVacuumFrom.Width + 6 * x);
+                btnLeft.Location = new Point(NewX, btnLeft.Location.Y);
+
+                btnRight.Width = Convert.ToInt32(x * btnRight.Width);
+                btnRight.Height = Convert.ToInt32(y * btnRight.Height);
+                btnRight.Location = new Point(NewX, btnRight.Location.Y);
+                
+                dgvVacuumTo.Width = Convert.ToInt32(x * dgvVacuumTo.Width);
+                dgvVacuumTo.Height = Convert.ToInt32(y * dgvVacuumTo.Height);
+                NewX += (int)(btnRight.Width + 6 * x);
+                dgvVacuumTo.Location = new Point(NewX, dgvVacuumTo.Location.Y);
+
+
+                gbxFun.Width = Convert.ToInt32(x * gbxFun.Width);
+                gbxFun.Height = Convert.ToInt32(y * gbxFun.Height);
+                gbxShow.Width = Convert.ToInt32(x * gbxShow.Width);
+                gbxShow.Height = Convert.ToInt32(y * gbxShow.Height);
+
+                NewX = (int)(btnVacuumRepAdd.Location.X * x + btnVacuumRepAdd.Width * (x - 1));
+                btnVacuumRepAdd.Location = new Point(NewX, btnVacuumRepAdd.Location.Y);
+                btnVacuumRepAdd.Width = Convert.ToInt32(x * btnVacuumRepAdd.Width);
+                btnVacuumRepAdd.Height = Convert.ToInt32(y * btnVacuumRepAdd.Height);
+
+                NewX = (int)(btnVacuumRepModify.Location.X * x + btnVacuumRepModify.Width * (x - 1));
+                btnVacuumRepModify.Location = new Point(NewX, btnVacuumRepModify.Location.Y);
+                btnVacuumRepModify.Width = Convert.ToInt32(x * btnVacuumRepModify.Width);
+                btnVacuumRepModify.Height = Convert.ToInt32(y * btnVacuumRepModify.Height);
+
+                NewX = (int)(btnVacuumRepDelete.Location.X * x + btnVacuumRepDelete.Width * (x - 1));
+                btnVacuumRepDelete.Location = new Point(NewX, btnVacuumRepDelete.Location.Y);
+                btnVacuumRepDelete.Width = Convert.ToInt32(x * btnVacuumRepDelete.Width);
+                btnVacuumRepDelete.Height = Convert.ToInt32(y * btnVacuumRepDelete.Height);
+            }
+        }
+
+        private void VacuumRep_Paint(object sender, PaintEventArgs e)
+        {
+            Graphics g = e.Graphics;
+            System.Drawing.Drawing2D.LinearGradientBrush lb = new System.Drawing.Drawing2D.LinearGradientBrush(this.DisplayRectangle, Color.Linen, Color.DarkTurquoise, 45);
+            g.FillRectangle(lb, this.DisplayRectangle);
+        }
 
         private void VacuumRep_Load(object sender, EventArgs e)
         {
             //參數
             int i, RowsNo;
             string strSQL;
-            
+
             //DataGridView 設定
             //....dgvVacuumFrom
-            dgvVacuumFrom.RowsDefaultCellStyle.Font = new Font("微軟正黑體", 10, FontStyle.Regular);
-            dgvVacuumFrom.ColumnHeadersDefaultCellStyle.Font = new Font("微軟正黑體", 8, FontStyle.Regular);
-            dgvVacuumFrom.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
-            
+            drc.SetDataGridView(ref dgvVacuumFrom);
+
             //....dgvVacuumTo
-            dgvVacuumTo.RowsDefaultCellStyle.Font = new Font("微軟正黑體", 9, FontStyle.Regular);
-            dgvVacuumTo.ColumnHeadersDefaultCellStyle.Font = new Font("微軟正黑體", 6, FontStyle.Regular);
-            dgvVacuumTo.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            drc.SetDataGridView(ref dgvVacuumTo);
 
             //填入 廠房代號(cbxFactoryCode)
             strSQL = "Select * From FACTORYS";
@@ -67,7 +120,7 @@ namespace P2214201
          //新增 功能
          //********************************************************************
             //參數
-            int i, arrNo, MaxVMH;
+            int i, arrNo, MaxVMH, MaxVMB;
             string strSQL;
 
             //寫入資料庫_HEADS
@@ -105,6 +158,10 @@ namespace P2214201
             //寫入資料庫_BODYS
             //....記錄 arrCGA 共有多少項目
             arrNo = arrCGA.Length;
+            //....取得 VACUUM_BODYS 下一序號
+            strSQL = "SELECT ISNULL(MAX(VMB002),0) as VMB002 FROM VACUUM_BODYS";
+            dt = USQL.SQLSelect(ref da, strSQL);
+            MaxVMB = int.Parse(dt.Rows[0]["VMB002"].ToString());
             //....依序執行寫入資料庫動作
             for (i = 0; i < arrNo; i++)
             {
@@ -115,7 +172,7 @@ namespace P2214201
                     dt = USQL.SQLSelect(ref da, strSQL);
 
                     VMB001 = MaxVMH + 1;                     //Head序號(VMB001)
-                    //流水序號(VMB002)：因該欄位被設定為"自動識別"欄位，故不需加入 Insert 語法。
+                    VMB002 = MaxVMB + (i + 1);               //流水序號(VMB002)
                     VMB004 = dt.Rows[0]["CK002"].ToString(); //檢查項目名稱(VMB004)
                     VMB005 = dt.Rows[0]["CK003"].ToString(); //參考 起(VMB005)
                     VMB006 = dt.Rows[0]["CK004"].ToString(); //中間符號(VMB006）
@@ -129,8 +186,8 @@ namespace P2214201
                     VMB014 = dt.Rows[0]["CK014"].ToString(); //備用(VMB014)
                     VMB015 = "N";                            //是否作廢(VMB015)
 
-                    strSQL = "Insert into VACUUM_BODYS Values (";
-                    strSQL += VMB001 + ",'"  + VMB003 + "','" + VMB004 + "','" + VMB005 + "','" + VMB006 + "','" + VMB007 + "','" + VMB008 + "','";
+                    strSQL = "Insert into VACUUM_BODYS (VMB001,VMB002,VMB003,VMB004,VMB005,VMB006,VMB007,VMB008,VMB009,VMB010,VMB011,VMB012,VMB013,VMB014,VMB015) Values (";
+                    strSQL += VMB001 + ","   + VMB002 + ",'"  + VMB003 + "','" + VMB004 + "','" + VMB005 + "','" + VMB006 + "','" + VMB007 + "','" + VMB008 + "','";
                     strSQL += VMB009 + "','" + VMB010 + "','" + VMB011 + "','" + VMB012 + "','" + VMB013 + "','" + VMB014 + "','" + VMB015 + "')";
 
                     try
@@ -287,6 +344,7 @@ namespace P2214201
                 strSQL = drc.DGVShowSQL(CG001, 2, arrCGA, FT001, "NOT");
                 dt = USQL.SQLSelect(ref da, strSQL);
                 dgvVacuumFrom.DataSource = dt;
+                dgvVacuumFrom.ClearSelection();
                 //....3.全都 僅可讀
                 for (i = 0; i < dgvVacuumFrom.Columns.Count; i++)
                     dgvVacuumFrom.Columns[i].ReadOnly = true;
@@ -303,9 +361,18 @@ namespace P2214201
                 dgvVacuumTo.Columns.Add(colFrom);
                 //....4.寫入
                 dgvVacuumTo.DataSource = dt;
+                dgvVacuumTo.ClearSelection();
                 //....5.除了第一行外，其他行都 僅可讀
                 for (i = 1; i < dgvVacuumTo.Columns.Count; i++)
                     dgvVacuumTo.Columns[i].ReadOnly = true;
+                //....6.若該筆為"作廢"，按鈕反黑。
+                for(i = 0; i < dgvVacuumTo.Rows.Count - 1; i++)
+                {
+                    var cell = ((DataGridViewButtonCell)dgvVacuumTo.Rows[i].Cells[0]);
+                    cell.FlatStyle = FlatStyle.Flat;
+                    if(dgvVacuumTo.Rows[i].Cells[6].Value.ToString() == "Y")
+                        dgvVacuumTo.Rows[i].Cells[0].Style.BackColor = Color.Black;
+                }
                 //隱藏 btnLeft 及 btnRight
                 btnLeft.Visible = false;
                 btnRight.Visible = false;
@@ -339,7 +406,7 @@ namespace P2214201
                 dgvVacuumFrom.Controls.Add(ckHeader_From);
                 //....寫入
                 dgvVacuumFrom.DataSource = dt;
-
+                dgvVacuumFrom.ClearSelection();
                 //....除了第一行外，其他行都 僅可讀
                 for (i = 1; i < dgvVacuumFrom.Columns.Count; i++)
                     dgvVacuumFrom.Columns[i].ReadOnly = true;
@@ -367,6 +434,7 @@ namespace P2214201
                 
                 dgvVacuumTo.Controls.Add(ckHeader_To);
                 dgvVacuumTo.DataSource = dt;
+                dgvVacuumTo.ClearSelection();
                 //....除了第一行外，其他行都 僅可讀
                 for (i = 1; i < dgvVacuumTo.Columns.Count; i++)
                     dgvVacuumTo.Columns[i].ReadOnly = true;
@@ -404,7 +472,7 @@ namespace P2214201
             strSQL = drc.DGVShowSQL(CG001, 2, arrCGA, FT001, "NOT");
             dt = USQL.SQLSelect(ref da, strSQL);
             dgvVacuumFrom.DataSource = dt;
-
+            dgvVacuumFrom.ClearSelection();
             //新增 按鈕可按，修改、刪除 按鈕不可按
             isEnable("Y", "N", "N", "", "");
         }
@@ -434,7 +502,7 @@ namespace P2214201
             strSQL = drc.DGVShowSQL(CG001, 2, arrCGA, FT001, "IN");
             dt = USQL.SQLSelect(ref da, strSQL);
             dgvVacuumTo.DataSource = dt;
-
+            dgvVacuumTo.ClearSelection();
             //DataGridView To 回傳值到 DataGridView From，並且 DataGridView To 已沒有值時，新增按鈕消失
             if (dt.Rows.Count == 0)
                 btnVacuumRepAdd.Enabled = false;
@@ -452,9 +520,19 @@ namespace P2214201
             {
                 VMB015 = grid.Rows[e.RowIndex].Cells[6].Value.ToString();
                 if (VMB015 == "N")
+                {
+                    var cell = ((DataGridViewButtonCell)grid.Rows[e.RowIndex].Cells[0]);
+                    cell.FlatStyle = FlatStyle.Flat;
+                    grid.Rows[e.RowIndex].Cells[0].Style.BackColor = Color.Black;
                     grid.Rows[e.RowIndex].Cells[6].Value = "Y";
-                else
+                }
+                else if (VMB015 == "Y")
+                {
+                    var cell = ((DataGridViewButtonCell)grid.Rows[e.RowIndex].Cells[0]);
+                    cell.FlatStyle = FlatStyle.Flat;
+                    grid.Rows[e.RowIndex].Cells[0].Style.BackColor = Color.White;
                     grid.Rows[e.RowIndex].Cells[6].Value = "N";
+                }
             }
         }
         private void cbHeader_CheckedChanged_From(object sender, EventArgs e)

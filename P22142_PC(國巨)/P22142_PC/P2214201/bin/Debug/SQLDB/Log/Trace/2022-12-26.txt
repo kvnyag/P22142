@@ -1,0 +1,631 @@
+ ╠ 2022-12-26 09:08:04 RecordModel               getDateList          :53   -取得RECORDS_HEAD已記錄的日期
+ ╠ 2022-12-26 09:08:04 RecordModel               getDateList          :60   -取得RECORDS_HEAD已記錄的日期selection：SELECT DISTINCT RH009 FROM RECORDS_HEADS
+ ╠ 2022-12-26 09:08:04 RecordModel               getFactoryList       :98   -取得RECORDS_HEAD已記錄的廠房
+ ╠ 2022-12-26 09:08:04 RecordModel               getFactoryList       :105  -取得RECORDS_HEAD已記錄的廠房selection：SELECT DISTINCT RH003 FROM RECORDS_HEADS WHERE RH009='2022/12/23'
+ ╠ 2022-12-26 09:08:04 RecordModel               getFactoryRecord     :389  -取得巡檢列表已巡檢、未巡檢
+ ╠ 2022-12-26 09:08:04 RecordModel               getRecordCheckList   :143  -取得已巡檢列表
+ ╠ 2022-12-26 09:08:04 RecordModel               getRecordCheckList   :150  -取得已巡檢列表selection：SELECT * FROM RECORDS_HEADS WHERE RH003='W3' AND RH009='2022/12/23'
+ ╠ 2022-12-26 09:08:04 RecordModel               getRecordCheckBodyList:202  -取得紀錄Body已巡檢列表
+ ╠ 2022-12-26 09:08:04 RecordModel               getRecordCheckBodyList:210  -取得紀錄Body已巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='1' AND RB011='2022/12/23'
+ ╠ 2022-12-26 09:08:04 RecordModel               getRecordCheckBodyList:210  -取得紀錄Body已巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='2' AND RB011='2022/12/23'
+ ╠ 2022-12-26 09:08:04 RecordModel               getRecordCheckBodyList:210  -取得紀錄Body已巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='3' AND RB011='2022/12/23'
+ ╠ 2022-12-26 09:08:04 RecordModel               getRecordCheckBodyList:210  -取得紀錄Body已巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='4' AND RB011='2022/12/23'
+ ╠ 2022-12-26 09:08:04 RecordModel               getRecordCheckBodyList:210  -取得紀錄Body已巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='5' AND RB011='2022/12/23'
+ ╠ 2022-12-26 09:08:04 RecordModel               getRecordCheckBodyList:210  -取得紀錄Body已巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='6' AND RB011='2022/12/23'
+ ╠ 2022-12-26 09:08:04 RecordModel               getRecordCheckBodyList:210  -取得紀錄Body已巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='7' AND RB011='2022/12/23'
+ ╠ 2022-12-26 09:08:04 RecordModel               getRecordCheckBodyList:210  -取得紀錄Body已巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='13' AND RB011='2022/12/23'
+ ╠ 2022-12-26 09:08:04 RecordModel               getRecordCheckBodyList:210  -取得紀錄Body已巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='16' AND RB011='2022/12/23'
+ ╠ 2022-12-26 09:08:04 RecordModel               getRecordCheckBodyList:210  -取得紀錄Body已巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='17' AND RB011='2022/12/23'
+ ╠ 2022-12-26 09:08:04 RecordModel               getRecordCheckBodyList:210  -取得紀錄Body已巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='18' AND RB011='2022/12/23'
+ ╠ 2022-12-26 09:08:04 RecordModel               getRecordCheckBodyList:210  -取得紀錄Body已巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='19' AND RB011='2022/12/23'
+ ╠ 2022-12-26 09:08:04 RecordModel               getRecordCheckBodyList:210  -取得紀錄Body已巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='20' AND RB011='2022/12/23'
+ ╠ 2022-12-26 09:08:04 RecordModel               getRecordCheckBodyList:210  -取得紀錄Body已巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='21' AND RB011='2022/12/23'
+ ╠ 2022-12-26 09:08:04 RecordModel               getRecordCheckBodyList:210  -取得紀錄Body已巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='22' AND RB011='2022/12/23'
+ ╠ 2022-12-26 09:08:04 RecordModel               getRecordCheckBodyList:210  -取得紀錄Body已巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='23' AND RB011='2022/12/23'
+ ╠ 2022-12-26 09:08:04 RecordModel               getRecordCheckBodyList:210  -取得紀錄Body已巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='24' AND RB011='2022/12/23'
+ ╠ 2022-12-26 09:08:04 RecordModel               getRecordCheckBodyList:210  -取得紀錄Body已巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='25' AND RB011='2022/12/23'
+ ╠ 2022-12-26 09:08:04 RecordModel               getRecordCheckBodyList:210  -取得紀錄Body已巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='26' AND RB011='2022/12/23'
+ ╠ 2022-12-26 09:08:04 RecordModel               getRecordCheckBodyList:210  -取得紀錄Body已巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='27' AND RB011='2022/12/23'
+ ╠ 2022-12-26 09:08:04 RecordModel               getRecordCheckBodyList:210  -取得紀錄Body已巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='28' AND RB011='2022/12/23'
+ ╠ 2022-12-26 09:08:04 RecordModel               getRecordCheckBodyList:210  -取得紀錄Body已巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='29' AND RB011='2022/12/23'
+ ╠ 2022-12-26 09:08:04 RecordModel               getRecordCheckBodyList:210  -取得紀錄Body已巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='30' AND RB011='2022/12/23'
+ ╠ 2022-12-26 09:08:04 RecordModel               getRecordCheckBodyList:210  -取得紀錄Body已巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='31' AND RB011='2022/12/23'
+ ╠ 2022-12-26 09:08:04 RecordModel               getRecordCheckBodyList:210  -取得紀錄Body已巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='32' AND RB011='2022/12/23'
+ ╠ 2022-12-26 09:08:04 RecordModel               getRecordCheckBodyList:210  -取得紀錄Body已巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='33' AND RB011='2022/12/23'
+ ╠ 2022-12-26 09:08:04 RecordModel               getRecordCheckBodyList:210  -取得紀錄Body已巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='34' AND RB011='2022/12/23'
+ ╠ 2022-12-26 09:08:04 RecordModel               getRecordCheckBodyList:210  -取得紀錄Body已巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='35' AND RB011='2022/12/23'
+ ╠ 2022-12-26 09:08:04 RecordModel               getRecordCheckBodyList:210  -取得紀錄Body已巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='36' AND RB011='2022/12/23'
+ ╠ 2022-12-26 09:08:04 RecordModel               getRecordCheckBodyList:210  -取得紀錄Body已巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='37' AND RB011='2022/12/23'
+ ╠ 2022-12-26 09:08:05 RecordModel               getRecordCheckBodyList:210  -取得紀錄Body已巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='38' AND RB011='2022/12/23'
+ ╠ 2022-12-26 09:08:05 RecordModel               getRecordCheckBodyList:210  -取得紀錄Body已巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='39' AND RB011='2022/12/23'
+ ╠ 2022-12-26 09:08:05 RecordModel               getRecordCheckBodyList:210  -取得紀錄Body已巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='40' AND RB011='2022/12/23'
+ ╠ 2022-12-26 09:08:05 RecordModel               getRecordCheckBodyList:210  -取得紀錄Body已巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='41' AND RB011='2022/12/23'
+ ╠ 2022-12-26 09:08:05 RecordModel               getRecordCheckBodyList:210  -取得紀錄Body已巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='42' AND RB011='2022/12/23'
+ ╠ 2022-12-26 09:08:05 RecordModel               getRecordCheckBodyList:210  -取得紀錄Body已巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='43' AND RB011='2022/12/23'
+ ╠ 2022-12-26 09:08:05 RecordModel               getRecordCheckBodyList:210  -取得紀錄Body已巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='44' AND RB011='2022/12/23'
+ ╠ 2022-12-26 09:08:05 RecordModel               getRecordCheckBodyList:210  -取得紀錄Body已巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='45' AND RB011='2022/12/23'
+ ╠ 2022-12-26 09:08:05 RecordModel               getRecordCheckBodyList:210  -取得紀錄Body已巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='46' AND RB011='2022/12/23'
+ ╠ 2022-12-26 09:08:05 RecordModel               getRecordCheckBodyList:210  -取得紀錄Body已巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='47' AND RB011='2022/12/23'
+ ╠ 2022-12-26 09:08:05 RecordModel               getRecordCheckBodyList:210  -取得紀錄Body已巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='48' AND RB011='2022/12/23'
+ ╠ 2022-12-26 09:08:05 RecordModel               getRecordCheckBodyList:210  -取得紀錄Body已巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='49' AND RB011='2022/12/23'
+ ╠ 2022-12-26 09:08:05 RecordModel               getRecordCheckBodyList:210  -取得紀錄Body已巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='50' AND RB011='2022/12/23'
+ ╠ 2022-12-26 09:08:05 RecordModel               getRecordCheckBodyList:210  -取得紀錄Body已巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='51' AND RB011='2022/12/23'
+ ╠ 2022-12-26 09:08:05 RecordModel               getRecordCheckBodyList:210  -取得紀錄Body已巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='52' AND RB011='2022/12/23'
+ ╠ 2022-12-26 09:08:05 RecordModel               getRecordCheckBodyList:210  -取得紀錄Body已巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='53' AND RB011='2022/12/23'
+ ╠ 2022-12-26 09:08:05 RecordModel               getRecordCheckBodyList:210  -取得紀錄Body已巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='54' AND RB011='2022/12/23'
+ ╠ 2022-12-26 09:08:05 RecordModel               getRecordCheckBodyList:210  -取得紀錄Body已巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='55' AND RB011='2022/12/23'
+ ╠ 2022-12-26 09:08:05 RecordModel               getRecordCheckBodyList:210  -取得紀錄Body已巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='56' AND RB011='2022/12/23'
+ ╠ 2022-12-26 09:08:05 RecordModel               getRecordCheckBodyList:210  -取得紀錄Body已巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='57' AND RB011='2022/12/23'
+ ╠ 2022-12-26 09:08:05 RecordModel               getRecordCheckBodyList:210  -取得紀錄Body已巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='58' AND RB011='2022/12/23'
+ ╠ 2022-12-26 09:08:05 RecordModel               getRecordCheckBodyList:210  -取得紀錄Body已巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='59' AND RB011='2022/12/23'
+ ╠ 2022-12-26 09:08:05 RecordModel               getRecordCheckBodyList:210  -取得紀錄Body已巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='60' AND RB011='2022/12/23'
+ ╠ 2022-12-26 09:08:05 RecordModel               getRecordCheckBodyList:210  -取得紀錄Body已巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='61' AND RB011='2022/12/23'
+ ╠ 2022-12-26 09:08:05 RecordModel               getRecordCheckBodyList:210  -取得紀錄Body已巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='62' AND RB011='2022/12/23'
+ ╠ 2022-12-26 09:08:05 RecordModel               getRecordCheckBodyList:210  -取得紀錄Body已巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='63' AND RB011='2022/12/23'
+ ╠ 2022-12-26 09:08:05 RecordModel               getRecordCheckBodyList:210  -取得紀錄Body已巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='64' AND RB011='2022/12/23'
+ ╠ 2022-12-26 09:08:05 RecordModel               getRecordCheckBodyList:210  -取得紀錄Body已巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='65' AND RB011='2022/12/23'
+ ╠ 2022-12-26 09:08:05 RecordModel               getRecordNotCheckList:265  -取得未巡檢列表
+ ╠ 2022-12-26 09:08:05 RecordModel               getRecordNotCheckList:272  -取得未巡檢列表selection：SELECT * FROM RECORDS_HEADS WHERE RH003='W3' AND RH009='2022/12/23'
+ ╠ 2022-12-26 09:08:05 RecordModel               getRecordNoCheckBodyList:324  -取得紀錄Body未巡檢列表
+ ╠ 2022-12-26 09:08:05 RecordModel               getRecordNoCheckBodyList:332  -取得紀錄Body未巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='1' AND RB011='2022/12/23'
+ ╠ 2022-12-26 09:08:05 RecordModel               getRecordNoCheckBodyList:332  -取得紀錄Body未巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='2' AND RB011='2022/12/23'
+ ╠ 2022-12-26 09:08:05 RecordModel               getRecordNoCheckBodyList:332  -取得紀錄Body未巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='3' AND RB011='2022/12/23'
+ ╠ 2022-12-26 09:08:05 RecordModel               getRecordNoCheckBodyList:332  -取得紀錄Body未巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='4' AND RB011='2022/12/23'
+ ╠ 2022-12-26 09:08:05 RecordModel               getRecordNoCheckBodyList:332  -取得紀錄Body未巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='5' AND RB011='2022/12/23'
+ ╠ 2022-12-26 09:08:05 RecordModel               getRecordNoCheckBodyList:332  -取得紀錄Body未巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='6' AND RB011='2022/12/23'
+ ╠ 2022-12-26 09:08:05 RecordModel               getRecordNoCheckBodyList:332  -取得紀錄Body未巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='7' AND RB011='2022/12/23'
+ ╠ 2022-12-26 09:08:05 RecordModel               getRecordNoCheckBodyList:332  -取得紀錄Body未巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='13' AND RB011='2022/12/23'
+ ╠ 2022-12-26 09:08:05 RecordModel               getRecordNoCheckBodyList:332  -取得紀錄Body未巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='16' AND RB011='2022/12/23'
+ ╠ 2022-12-26 09:08:05 RecordModel               getRecordNoCheckBodyList:332  -取得紀錄Body未巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='17' AND RB011='2022/12/23'
+ ╠ 2022-12-26 09:08:05 RecordModel               getRecordNoCheckBodyList:332  -取得紀錄Body未巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='18' AND RB011='2022/12/23'
+ ╠ 2022-12-26 09:08:05 RecordModel               getRecordNoCheckBodyList:332  -取得紀錄Body未巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='19' AND RB011='2022/12/23'
+ ╠ 2022-12-26 09:08:05 RecordModel               getRecordNoCheckBodyList:332  -取得紀錄Body未巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='20' AND RB011='2022/12/23'
+ ╠ 2022-12-26 09:08:05 RecordModel               getRecordNoCheckBodyList:332  -取得紀錄Body未巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='21' AND RB011='2022/12/23'
+ ╠ 2022-12-26 09:08:05 RecordModel               getRecordNoCheckBodyList:332  -取得紀錄Body未巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='22' AND RB011='2022/12/23'
+ ╠ 2022-12-26 09:08:05 RecordModel               getRecordNoCheckBodyList:332  -取得紀錄Body未巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='23' AND RB011='2022/12/23'
+ ╠ 2022-12-26 09:08:05 RecordModel               getRecordNoCheckBodyList:332  -取得紀錄Body未巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='24' AND RB011='2022/12/23'
+ ╠ 2022-12-26 09:08:05 RecordModel               getRecordNoCheckBodyList:332  -取得紀錄Body未巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='25' AND RB011='2022/12/23'
+ ╠ 2022-12-26 09:08:05 RecordModel               getRecordNoCheckBodyList:332  -取得紀錄Body未巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='26' AND RB011='2022/12/23'
+ ╠ 2022-12-26 09:08:05 RecordModel               getRecordNoCheckBodyList:332  -取得紀錄Body未巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='27' AND RB011='2022/12/23'
+ ╠ 2022-12-26 09:08:05 RecordModel               getRecordNoCheckBodyList:332  -取得紀錄Body未巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='28' AND RB011='2022/12/23'
+ ╠ 2022-12-26 09:08:05 RecordModel               getRecordNoCheckBodyList:332  -取得紀錄Body未巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='29' AND RB011='2022/12/23'
+ ╠ 2022-12-26 09:08:05 RecordModel               getRecordNoCheckBodyList:332  -取得紀錄Body未巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='30' AND RB011='2022/12/23'
+ ╠ 2022-12-26 09:08:05 RecordModel               getRecordNoCheckBodyList:332  -取得紀錄Body未巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='31' AND RB011='2022/12/23'
+ ╠ 2022-12-26 09:08:05 RecordModel               getRecordNoCheckBodyList:332  -取得紀錄Body未巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='32' AND RB011='2022/12/23'
+ ╠ 2022-12-26 09:08:05 RecordModel               getRecordNoCheckBodyList:332  -取得紀錄Body未巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='33' AND RB011='2022/12/23'
+ ╠ 2022-12-26 09:08:05 RecordModel               getRecordNoCheckBodyList:332  -取得紀錄Body未巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='34' AND RB011='2022/12/23'
+ ╠ 2022-12-26 09:08:05 RecordModel               getRecordNoCheckBodyList:332  -取得紀錄Body未巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='35' AND RB011='2022/12/23'
+ ╠ 2022-12-26 09:08:05 RecordModel               getRecordNoCheckBodyList:332  -取得紀錄Body未巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='36' AND RB011='2022/12/23'
+ ╠ 2022-12-26 09:08:05 RecordModel               getRecordNoCheckBodyList:332  -取得紀錄Body未巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='37' AND RB011='2022/12/23'
+ ╠ 2022-12-26 09:08:05 RecordModel               getRecordNoCheckBodyList:332  -取得紀錄Body未巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='38' AND RB011='2022/12/23'
+ ╠ 2022-12-26 09:08:05 RecordModel               getRecordNoCheckBodyList:332  -取得紀錄Body未巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='39' AND RB011='2022/12/23'
+ ╠ 2022-12-26 09:08:05 RecordModel               getRecordNoCheckBodyList:332  -取得紀錄Body未巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='40' AND RB011='2022/12/23'
+ ╠ 2022-12-26 09:08:05 RecordModel               getRecordNoCheckBodyList:332  -取得紀錄Body未巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='41' AND RB011='2022/12/23'
+ ╠ 2022-12-26 09:08:05 RecordModel               getRecordNoCheckBodyList:332  -取得紀錄Body未巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='42' AND RB011='2022/12/23'
+ ╠ 2022-12-26 09:08:05 RecordModel               getRecordNoCheckBodyList:332  -取得紀錄Body未巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='43' AND RB011='2022/12/23'
+ ╠ 2022-12-26 09:08:05 RecordModel               getRecordNoCheckBodyList:332  -取得紀錄Body未巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='44' AND RB011='2022/12/23'
+ ╠ 2022-12-26 09:08:05 RecordModel               getRecordNoCheckBodyList:332  -取得紀錄Body未巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='45' AND RB011='2022/12/23'
+ ╠ 2022-12-26 09:08:05 RecordModel               getRecordNoCheckBodyList:332  -取得紀錄Body未巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='46' AND RB011='2022/12/23'
+ ╠ 2022-12-26 09:08:05 RecordModel               getRecordNoCheckBodyList:332  -取得紀錄Body未巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='47' AND RB011='2022/12/23'
+ ╠ 2022-12-26 09:08:05 RecordModel               getRecordNoCheckBodyList:332  -取得紀錄Body未巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='48' AND RB011='2022/12/23'
+ ╠ 2022-12-26 09:08:05 RecordModel               getRecordNoCheckBodyList:332  -取得紀錄Body未巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='49' AND RB011='2022/12/23'
+ ╠ 2022-12-26 09:08:05 RecordModel               getRecordNoCheckBodyList:332  -取得紀錄Body未巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='50' AND RB011='2022/12/23'
+ ╠ 2022-12-26 09:08:05 RecordModel               getRecordNoCheckBodyList:332  -取得紀錄Body未巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='51' AND RB011='2022/12/23'
+ ╠ 2022-12-26 09:08:05 RecordModel               getRecordNoCheckBodyList:332  -取得紀錄Body未巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='52' AND RB011='2022/12/23'
+ ╠ 2022-12-26 09:08:05 RecordModel               getRecordNoCheckBodyList:332  -取得紀錄Body未巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='53' AND RB011='2022/12/23'
+ ╠ 2022-12-26 09:08:05 RecordModel               getRecordNoCheckBodyList:332  -取得紀錄Body未巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='54' AND RB011='2022/12/23'
+ ╠ 2022-12-26 09:08:05 RecordModel               getRecordNoCheckBodyList:332  -取得紀錄Body未巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='55' AND RB011='2022/12/23'
+ ╠ 2022-12-26 09:08:05 RecordModel               getRecordNoCheckBodyList:332  -取得紀錄Body未巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='56' AND RB011='2022/12/23'
+ ╠ 2022-12-26 09:08:05 RecordModel               getRecordNoCheckBodyList:332  -取得紀錄Body未巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='57' AND RB011='2022/12/23'
+ ╠ 2022-12-26 09:08:05 RecordModel               getRecordNoCheckBodyList:332  -取得紀錄Body未巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='58' AND RB011='2022/12/23'
+ ╠ 2022-12-26 09:08:05 RecordModel               getRecordNoCheckBodyList:332  -取得紀錄Body未巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='59' AND RB011='2022/12/23'
+ ╠ 2022-12-26 09:08:05 RecordModel               getRecordNoCheckBodyList:332  -取得紀錄Body未巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='60' AND RB011='2022/12/23'
+ ╠ 2022-12-26 09:08:05 RecordModel               getRecordNoCheckBodyList:332  -取得紀錄Body未巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='61' AND RB011='2022/12/23'
+ ╠ 2022-12-26 09:08:05 RecordModel               getRecordNoCheckBodyList:332  -取得紀錄Body未巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='62' AND RB011='2022/12/23'
+ ╠ 2022-12-26 09:08:05 RecordModel               getRecordNoCheckBodyList:332  -取得紀錄Body未巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='63' AND RB011='2022/12/23'
+ ╠ 2022-12-26 09:08:05 RecordModel               getRecordNoCheckBodyList:332  -取得紀錄Body未巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='64' AND RB011='2022/12/23'
+ ╠ 2022-12-26 09:08:05 RecordModel               getRecordNoCheckBodyList:332  -取得紀錄Body未巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='65' AND RB011='2022/12/23'
+ ╠ 2022-12-26 09:22:32 SecondModel               checkCanLeave        :87   -檢查是否做完回上一頁(MainActivity)另選廠房
+ ╠ 2022-12-26 09:22:32 SecondModel               checkCanLeave        :92   -檢查是否做完回上一頁(MainActivity)另選廠房selection：SELECT * FROM RECORDS_HEADS WHERE RH009='2022/12/23'
+ ╠ 2022-12-26 09:22:32 SecondModel               checkRecordBodyHaveRecord:124  -檢查是否已記錄過
+ ╠ 2022-12-26 09:22:32 SecondModel               checkRecordBodyHaveRecord:131  -檢查是否已記錄過selection：SELECT * FROM RECORDS_BODYS WHERE RB011='2022/12/23'
+ ╠ 2022-12-26 09:22:34 MainModel                 checkCanDoFactory    :76   -檢查是否可以進入巡檢
+ ╠ 2022-12-26 09:22:34 MainModel                 checkCanDoFactory    :81   -檢查是否可以進入巡檢selection：SELECT * FROM RECORDS_HEADS WHERE RH003='W3' AND RH009='2022/12/23'
+ ╠ 2022-12-26 09:41:47 LogUtil                   writeException       :184  -****Exception****
+ ╠ 2022-12-26 09:41:47 LogUtil                   writeException       :184  -****Exception****
+ ╠ 2022-12-26 09:41:50 LogUtil                   writeException       :184  -****Exception****
+ ╠ 2022-12-26 09:41:50 LogUtil                   writeException       :184  -****Exception****
+ ╠ 2022-12-26 09:41:51 LogUtil                   writeException       :184  -****Exception****
+ ╠ 2022-12-26 09:41:51 LogUtil                   writeException       :184  -****Exception****
+ ╠ 2022-12-26 09:42:00 LogUtil                   writeException       :184  -****Exception****
+ ╠ 2022-12-26 09:42:00 LogUtil                   writeException       :184  -****Exception****
+ ╠ 2022-12-26 10:02:22 LogUtil                   writeException       :184  -****Exception****
+ ╠ 2022-12-26 10:02:22 LogUtil                   writeException       :184  -****Exception****
+ ╚═══════════════════════════════════════════════════════════
+
+ ╔════════════════════2022-12-26 10:03:16  Application Start════════════════════
+ ╠ AndroidVersion=9
+ ╠ Model=HC61
+ ╠ Serial=unknown
+ ╠ PackageName=com.operator.ContentProvider(ContentProvider)
+ ╠ VersionName=1.0.0
+ ╠
+ ╠ 2022-12-26 10:47:05 LogUtil                   writeException       :184  -****Exception****
+ ╠ 2022-12-26 10:47:05 LogUtil                   writeException       :184  -****Exception****
+ ╚═══════════════════════════════════════════════════════════
+
+ ╔════════════════════2022-12-26 13:35:13  Application Start════════════════════
+ ╠ AndroidVersion=9
+ ╠ Model=HC61
+ ╠ Serial=unknown
+ ╠ PackageName=com.operator.ContentProvider(ContentProvider)
+ ╠ VersionName=1.0.0
+ ╠
+ ╚═══════════════════════════════════════════════════════════
+
+ ╔════════════════════2022-12-26 14:10:11  Application Start════════════════════
+ ╠ AndroidVersion=9
+ ╠ Model=HC61
+ ╠ Serial=unknown
+ ╠ PackageName=com.regalscan.platform(國巨股份有限公司)
+ ╠ VersionName=1.0.1
+ ╠
+ ╠ 2022-12-26 14:10:11 LoginActivity             onCreate             :113  -機器序號：unknown
+ ╠ 2022-12-26 14:10:18 LoginActivity             onClick              :436  -登入
+ ╚═══════════════════════════════════════════════════════════
+
+ ╔════════════════════2022-12-26 14:10:19  Application Start════════════════════
+ ╠ AndroidVersion=9
+ ╠ Model=HC61
+ ╠ Serial=unknown
+ ╠ PackageName=com.operator.ContentProvider(ContentProvider)
+ ╠ VersionName=1.0.0
+ ╠
+ ╠ 2022-12-26 14:10:22 MainModel                 getFactoryInfo       :35   -取得廠房資料
+ ╠ 2022-12-26 14:10:22 MainModel                 getFactoryInfo       :42   -取得廠房資料selection：SELECT * FROM FACTORYS
+ ╠ 2022-12-26 14:10:28 MainModel                 checkCanDoFactory    :76   -檢查是否可以進入巡檢
+ ╠ 2022-12-26 14:10:28 MainModel                 checkCanDoFactory    :81   -檢查是否可以進入巡檢selection：SELECT * FROM RECORDS_HEADS WHERE RH003='W6' AND RH009='2022/12/26'
+ ╠ 2022-12-26 14:10:28 MainModel                 getFactoryAllMachineIdItemHeadInfo:105  -取得廠房所有機械編號項目Head資訊
+ ╠ 2022-12-26 14:10:28 MainModel                 getFactoryAllMachineIdItemHeadInfo:112  -取得廠房所有機械編號項目Head資訊selection：SELECT * FROM MAINS_HEADS WHERE MH002='W6'
+ ╠ 2022-12-26 14:10:28 MainModel                 writeFactoryAllMachineIdItemHeadInfo:143  -寫入廠房所有機械編號項目Head資訊
+ ╠ 2022-12-26 14:10:28 MainModel                 writeFactoryAllMachineIdItemHeadInfo:161  -寫入廠房所有機械編號項目Head資訊selection：INSERT INTO RECORDS_HEADS ( 'RH002', 'RH003', 'RH004', 'RH005', 'RH006', 'RH007', 'RH008', 'RH009', 'RH010', 'RH011' ) VALUES ( '12', 'W6', 'W6廠', 'B', '空壓機', 'W6_FUSHENG200', '復盛200HP', '2022/12/26', '', '12345678' )
+ ╠ 2022-12-26 14:10:28 MainModel                 writeFactoryAllMachineIdItemHeadInfo:161  -寫入廠房所有機械編號項目Head資訊selection：INSERT INTO RECORDS_HEADS ( 'RH002', 'RH003', 'RH004', 'RH005', 'RH006', 'RH007', 'RH008', 'RH009', 'RH010', 'RH011' ) VALUES ( '15', 'W6', 'W6廠', 'C', '冷氣記錄', 'W6_AIRCONDITION', '冷氣機', '2022/12/26', '', '12345678' )
+ ╠ 2022-12-26 14:10:28 MainModel                 writeFactoryAllMachineIdItemHeadInfo:161  -寫入廠房所有機械編號項目Head資訊selection：INSERT INTO RECORDS_HEADS ( 'RH002', 'RH003', 'RH004', 'RH005', 'RH006', 'RH007', 'RH008', 'RH009', 'RH010', 'RH011' ) VALUES ( '120', 'W6', 'W6廠', 'D', '水電機械指數表', 'W6_D00001', '尖峰', '2022/12/26', '', '12345678' )
+ ╠ 2022-12-26 14:10:28 MainModel                 writeFactoryAllMachineIdItemHeadInfo:161  -寫入廠房所有機械編號項目Head資訊selection：INSERT INTO RECORDS_HEADS ( 'RH002', 'RH003', 'RH004', 'RH005', 'RH006', 'RH007', 'RH008', 'RH009', 'RH010', 'RH011' ) VALUES ( '121', 'W6', 'W6廠', 'D', '水電機械指數表', 'W6_D00002', '半尖峰', '2022/12/26', '', '12345678' )
+ ╠ 2022-12-26 14:10:28 MainModel                 writeFactoryAllMachineIdItemHeadInfo:161  -寫入廠房所有機械編號項目Head資訊selection：INSERT INTO RECORDS_HEADS ( 'RH002', 'RH003', 'RH004', 'RH005', 'RH006', 'RH007', 'RH008', 'RH009', 'RH010', 'RH011' ) VALUES ( '122', 'W6', 'W6廠', 'D', '水電機械指數表', 'W6_D00003', '離峰', '2022/12/26', '', '12345678' )
+ ╠ 2022-12-26 14:10:28 MainModel                 writeFactoryAllMachineIdItemHeadInfo:161  -寫入廠房所有機械編號項目Head資訊selection：INSERT INTO RECORDS_HEADS ( 'RH002', 'RH003', 'RH004', 'RH005', 'RH006', 'RH007', 'RH008', 'RH009', 'RH010', 'RH011' ) VALUES ( '123', 'W6', 'W6廠', 'D', '水電機械指數表', 'W6_D00004', 'VCBMAIN', '2022/12/26', '', '12345678' )
+ ╠ 2022-12-26 14:10:28 MainModel                 writeFactoryAllMachineIdItemHeadInfo:161  -寫入廠房所有機械編號項目Head資訊selection：INSERT INTO RECORDS_HEADS ( 'RH002', 'RH003', 'RH004', 'RH005', 'RH006', 'RH007', 'RH008', 'RH009', 'RH010', 'RH011' ) VALUES ( '124', 'W6', 'W6廠', 'D', '水電機械指數表', 'W6_D00005', 'VCB1TR1', '2022/12/26', '', '12345678' )
+ ╠ 2022-12-26 14:10:28 MainModel                 writeFactoryAllMachineIdItemHeadInfo:161  -寫入廠房所有機械編號項目Head資訊selection：INSERT INTO RECORDS_HEADS ( 'RH002', 'RH003', 'RH004', 'RH005', 'RH006', 'RH007', 'RH008', 'RH009', 'RH010', 'RH011' ) VALUES ( '125', 'W6', 'W6廠', 'D', '水電機械指數表', 'W6_D00006', 'VCB2TR2', '2022/12/26', '', '12345678' )
+ ╠ 2022-12-26 14:10:28 MainModel                 writeFactoryAllMachineIdItemHeadInfo:161  -寫入廠房所有機械編號項目Head資訊selection：INSERT INTO RECORDS_HEADS ( 'RH002', 'RH003', 'RH004', 'RH005', 'RH006', 'RH007', 'RH008', 'RH009', 'RH010', 'RH011' ) VALUES ( '126', 'W6', 'W6廠', 'D', '水電機械指數表', 'W6_D00007', 'VCB3TR3', '2022/12/26', '', '12345678' )
+ ╠ 2022-12-26 14:10:28 MainModel                 writeFactoryAllMachineIdItemHeadInfo:161  -寫入廠房所有機械編號項目Head資訊selection：INSERT INTO RECORDS_HEADS ( 'RH002', 'RH003', 'RH004', 'RH005', 'RH006', 'RH007', 'RH008', 'RH009', 'RH010', 'RH011' ) VALUES ( '127', 'W6', 'W6廠', 'D', '水電機械指數表', 'W6_D00008', 'VCB4TR4', '2022/12/26', '', '12345678' )
+ ╠ 2022-12-26 14:10:28 MainModel                 writeFactoryAllMachineIdItemHeadInfo:161  -寫入廠房所有機械編號項目Head資訊selection：INSERT INTO RECORDS_HEADS ( 'RH002', 'RH003', 'RH004', 'RH005', 'RH006', 'RH007', 'RH008', 'RH009', 'RH010', 'RH011' ) VALUES ( '128', 'W6', 'W6廠', 'D', '水電機械指數表', 'W6_D00009', 'NO.1250T', '2022/12/26', '', '12345678' )
+ ╠ 2022-12-26 14:10:28 MainModel                 writeFactoryAllMachineIdItemHeadInfo:161  -寫入廠房所有機械編號項目Head資訊selection：INSERT INTO RECORDS_HEADS ( 'RH002', 'RH003', 'RH004', 'RH005', 'RH006', 'RH007', 'RH008', 'RH009', 'RH010', 'RH011' ) VALUES ( '129', 'W6', 'W6廠', 'D', '水電機械指數表', 'W6_D00010', 'NO.2250T', '2022/12/26', '', '12345678' )
+ ╠ 2022-12-26 14:10:28 MainModel                 writeFactoryAllMachineIdItemHeadInfo:161  -寫入廠房所有機械編號項目Head資訊selection：INSERT INTO RECORDS_HEADS ( 'RH002', 'RH003', 'RH004', 'RH005', 'RH006', 'RH007', 'RH008', 'RH009', 'RH010', 'RH011' ) VALUES ( '130', 'W6', 'W6廠', 'D', '水電機械指數表', 'W6_D00011', '廢水液位', '2022/12/26', '', '12345678' )
+ ╠ 2022-12-26 14:10:28 MainModel                 writeFactoryAllMachineIdItemHeadInfo:161  -寫入廠房所有機械編號項目Head資訊selection：INSERT INTO RECORDS_HEADS ( 'RH002', 'RH003', 'RH004', 'RH005', 'RH006', 'RH007', 'RH008', 'RH009', 'RH010', 'RH011' ) VALUES ( '131', 'W6', 'W6廠', 'D', '水電機械指數表', 'W6_D00012', 'RO水質', '2022/12/26', '', '12345678' )
+ ╠ 2022-12-26 14:10:28 MainModel                 writeFactoryAllMachineIdItemHeadInfo:161  -寫入廠房所有機械編號項目Head資訊selection：INSERT INTO RECORDS_HEADS ( 'RH002', 'RH003', 'RH004', 'RH005', 'RH006', 'RH007', 'RH008', 'RH009', 'RH010', 'RH011' ) VALUES ( '132', 'W6', 'W6廠', 'D', '水電機械指數表', 'W6_D00013', 'RO水錶', '2022/12/26', '', '12345678' )
+ ╠ 2022-12-26 14:10:28 MainModel                 writeFactoryAllMachineIdItemHeadInfo:161  -寫入廠房所有機械編號項目Head資訊selection：INSERT INTO RECORDS_HEADS ( 'RH002', 'RH003', 'RH004', 'RH005', 'RH006', 'RH007', 'RH008', 'RH009', 'RH010', 'RH011' ) VALUES ( '133', 'W6', 'W6廠', 'D', '水電機械指數表', 'W6_D00014', '軟水', '2022/12/26', '', '12345678' )
+ ╠ 2022-12-26 14:10:28 MainModel                 writeFactoryAllMachineIdItemHeadInfo:161  -寫入廠房所有機械編號項目Head資訊selection：INSERT INTO RECORDS_HEADS ( 'RH002', 'RH003', 'RH004', 'RH005', 'RH006', 'RH007', 'RH008', 'RH009', 'RH010', 'RH011' ) VALUES ( '134', 'W6', 'W6廠', 'D', '水電機械指數表', 'W6_D00015', '自來水', '2022/12/26', '', '12345678' )
+ ╠ 2022-12-26 14:10:28 MainModel                 writeFactoryAllMachineIdItemHeadInfo:161  -寫入廠房所有機械編號項目Head資訊selection：INSERT INTO RECORDS_HEADS ( 'RH002', 'RH003', 'RH004', 'RH005', 'RH006', 'RH007', 'RH008', 'RH009', 'RH010', 'RH011' ) VALUES ( '135', 'W6', 'W6廠', 'D', '水電機械指數表', 'W6_D00016', '民生用水', '2022/12/26', '', '12345678' )
+ ╠ 2022-12-26 14:10:28 MainModel                 getFactoryAllMachineIdItemBodyInfo:182  -取得廠房所有機械編號項目Body資訊
+ ╠ 2022-12-26 14:10:28 MainModel                 getFactoryAllMachineIdItemBodyInfo:191  -取得廠房所有機械編號項目Body資訊selection：SELECT * FROM MAINS_BODYS WHERE MB001='12'
+ ╠ 2022-12-26 14:10:28 MainModel                 getFactoryAllMachineIdItemBodyInfo:191  -取得廠房所有機械編號項目Body資訊selection：SELECT * FROM MAINS_BODYS WHERE MB001='15'
+ ╠ 2022-12-26 14:10:28 MainModel                 getFactoryAllMachineIdItemBodyInfo:191  -取得廠房所有機械編號項目Body資訊selection：SELECT * FROM MAINS_BODYS WHERE MB001='120'
+ ╠ 2022-12-26 14:10:28 MainModel                 getFactoryAllMachineIdItemBodyInfo:191  -取得廠房所有機械編號項目Body資訊selection：SELECT * FROM MAINS_BODYS WHERE MB001='121'
+ ╠ 2022-12-26 14:10:28 MainModel                 getFactoryAllMachineIdItemBodyInfo:191  -取得廠房所有機械編號項目Body資訊selection：SELECT * FROM MAINS_BODYS WHERE MB001='122'
+ ╠ 2022-12-26 14:10:28 MainModel                 getFactoryAllMachineIdItemBodyInfo:191  -取得廠房所有機械編號項目Body資訊selection：SELECT * FROM MAINS_BODYS WHERE MB001='123'
+ ╠ 2022-12-26 14:10:28 MainModel                 getFactoryAllMachineIdItemBodyInfo:191  -取得廠房所有機械編號項目Body資訊selection：SELECT * FROM MAINS_BODYS WHERE MB001='124'
+ ╠ 2022-12-26 14:10:28 MainModel                 getFactoryAllMachineIdItemBodyInfo:191  -取得廠房所有機械編號項目Body資訊selection：SELECT * FROM MAINS_BODYS WHERE MB001='125'
+ ╠ 2022-12-26 14:10:28 MainModel                 getFactoryAllMachineIdItemBodyInfo:191  -取得廠房所有機械編號項目Body資訊selection：SELECT * FROM MAINS_BODYS WHERE MB001='126'
+ ╠ 2022-12-26 14:10:28 MainModel                 getFactoryAllMachineIdItemBodyInfo:191  -取得廠房所有機械編號項目Body資訊selection：SELECT * FROM MAINS_BODYS WHERE MB001='127'
+ ╠ 2022-12-26 14:10:28 MainModel                 getFactoryAllMachineIdItemBodyInfo:191  -取得廠房所有機械編號項目Body資訊selection：SELECT * FROM MAINS_BODYS WHERE MB001='128'
+ ╠ 2022-12-26 14:10:28 MainModel                 getFactoryAllMachineIdItemBodyInfo:191  -取得廠房所有機械編號項目Body資訊selection：SELECT * FROM MAINS_BODYS WHERE MB001='129'
+ ╠ 2022-12-26 14:10:28 MainModel                 getFactoryAllMachineIdItemBodyInfo:191  -取得廠房所有機械編號項目Body資訊selection：SELECT * FROM MAINS_BODYS WHERE MB001='130'
+ ╠ 2022-12-26 14:10:28 MainModel                 getFactoryAllMachineIdItemBodyInfo:191  -取得廠房所有機械編號項目Body資訊selection：SELECT * FROM MAINS_BODYS WHERE MB001='131'
+ ╠ 2022-12-26 14:10:28 MainModel                 getFactoryAllMachineIdItemBodyInfo:191  -取得廠房所有機械編號項目Body資訊selection：SELECT * FROM MAINS_BODYS WHERE MB001='132'
+ ╠ 2022-12-26 14:10:28 MainModel                 getFactoryAllMachineIdItemBodyInfo:191  -取得廠房所有機械編號項目Body資訊selection：SELECT * FROM MAINS_BODYS WHERE MB001='133'
+ ╠ 2022-12-26 14:10:28 MainModel                 getFactoryAllMachineIdItemBodyInfo:191  -取得廠房所有機械編號項目Body資訊selection：SELECT * FROM MAINS_BODYS WHERE MB001='134'
+ ╠ 2022-12-26 14:10:28 MainModel                 getFactoryAllMachineIdItemBodyInfo:191  -取得廠房所有機械編號項目Body資訊selection：SELECT * FROM MAINS_BODYS WHERE MB001='135'
+ ╠ 2022-12-26 14:10:28 MainModel                 writeFactoryAllMachineIdItemBodyInfo:230  -寫入廠房所有機械編號項目Body資訊
+ ╠ 2022-12-26 14:10:28 MainModel                 writeFactoryAllMachineIdItemBodyInfo:257  -寫入廠房所有機械編號項目Body資訊selection：INSERT INTO RECORDS_BODYS ( 'RB002', 'RB003', 'RB004', 'RB005', 'RB006', 'RB007', 'RB008', 'RB009', 'RB010', 'RB011', 'RB012', 'RB013' ) VALUES ( '12', '60', 'B00004', '冷卻進水溫度', '', '<', '30', '℃', '', '2022/12/26', '', 'N' )
+ ╠ 2022-12-26 14:10:28 MainModel                 writeFactoryAllMachineIdItemBodyInfo:257  -寫入廠房所有機械編號項目Body資訊selection：INSERT INTO RECORDS_BODYS ( 'RB002', 'RB003', 'RB004', 'RB005', 'RB006', 'RB007', 'RB008', 'RB009', 'RB010', 'RB011', 'RB012', 'RB013' ) VALUES ( '12', '61', 'B00005', '冷卻出水溫度', '', '<', '60', '℃', '', '2022/12/26', '', 'N' )
+ ╠ 2022-12-26 14:10:28 MainModel                 writeFactoryAllMachineIdItemBodyInfo:257  -寫入廠房所有機械編號項目Body資訊selection：INSERT INTO RECORDS_BODYS ( 'RB002', 'RB003', 'RB004', 'RB005', 'RB006', 'RB007', 'RB008', 'RB009', 'RB010', 'RB011', 'RB012', 'RB013' ) VALUES ( '12', '62', 'B00006', '排氣溫度', '65', '~', '100', '℃', '', '2022/12/26', '', 'N' )
+ ╠ 2022-12-26 14:10:28 MainModel                 writeFactoryAllMachineIdItemBodyInfo:257  -寫入廠房所有機械編號項目Body資訊selection：INSERT INTO RECORDS_BODYS ( 'RB002', 'RB003', 'RB004', 'RB005', 'RB006', 'RB007', 'RB008', 'RB009', 'RB010', 'RB011', 'RB012', 'RB013' ) VALUES ( '12', '63', 'B00007', '排氣壓力', '5.5', '~', '6.5', 'kg/cm2', '', '2022/12/26', '', 'N' )
+ ╠ 2022-12-26 14:10:28 MainModel                 writeFactoryAllMachineIdItemBodyInfo:257  -寫入廠房所有機械編號項目Body資訊selection：INSERT INTO RECORDS_BODYS ( 'RB002', 'RB003', 'RB004', 'RB005', 'RB006', 'RB007', 'RB008', 'RB009', 'RB010', 'RB011', 'RB012', 'RB013' ) VALUES ( '12', '64', 'B00008', '油位視窗', '', '>', '0.5', '', '', '2022/12/26', '', 'N' )
+ ╠ 2022-12-26 14:10:28 MainModel                 writeFactoryAllMachineIdItemBodyInfo:257  -寫入廠房所有機械編號項目Body資訊selection：INSERT INTO RECORDS_BODYS ( 'RB002', 'RB003', 'RB004', 'RB005', 'RB006', 'RB007', 'RB008', 'RB009', 'RB010', 'RB011', 'RB012', 'RB013' ) VALUES ( '15', '95', 'C00001', '電流', '', '', '', 'AMP.', '', '2022/12/26', '', 'N' )
+ ╠ 2022-12-26 14:10:28 MainModel                 writeFactoryAllMachineIdItemBodyInfo:257  -寫入廠房所有機械編號項目Body資訊selection：INSERT INTO RECORDS_BODYS ( 'RB002', 'RB003', 'RB004', 'RB005', 'RB006', 'RB007', 'RB008', 'RB009', 'RB010', 'RB011', 'RB012', 'RB013' ) VALUES ( '15', '96', 'C00002', '油壓', '140', '~', '200', 'O.P.', 'Psi', '2022/12/26', '', 'N' )
+ ╠ 2022-12-26 14:10:28 MainModel                 writeFactoryAllMachineIdItemBodyInfo:257  -寫入廠房所有機械編號項目Body資訊selection：INSERT INTO RECORDS_BODYS ( 'RB002', 'RB003', 'RB004', 'RB005', 'RB006', 'RB007', 'RB008', 'RB009', 'RB010', 'RB011', 'RB012', 'RB013' ) VALUES ( '15', '97', 'C00003', '高壓', '85', '~', '145', 'H.P.', 'Psi', '2022/12/26', '', 'N' )
+ ╠ 2022-12-26 14:10:28 MainModel                 writeFactoryAllMachineIdItemBodyInfo:257  -寫入廠房所有機械編號項目Body資訊selection：INSERT INTO RECORDS_BODYS ( 'RB002', 'RB003', 'RB004', 'RB005', 'RB006', 'RB007', 'RB008', 'RB009', 'RB010', 'RB011', 'RB012', 'RB013' ) VALUES ( '15', '98', 'C00004', '低壓', '28', '~', '60', 'L.P.', 'Psi', '2022/12/26', '', 'N' )
+ ╠ 2022-12-26 14:10:28 MainModel                 writeFactoryAllMachineIdItemBodyInfo:257  -寫入廠房所有機械編號項目Body資訊selection：INSERT INTO RECORDS_BODYS ( 'RB002', 'RB003', 'RB004', 'RB005', 'RB006', 'RB007', 'RB008', 'RB009', 'RB010', 'RB011', 'RB012', 'RB013' ) VALUES ( '15', '99', 'C00005', '冷凍水水溫', '10', '~', '17', '入', '℃', '2022/12/26', '', 'N' )
+ ╠ 2022-12-26 14:10:28 MainModel                 writeFactoryAllMachineIdItemBodyInfo:257  -寫入廠房所有機械編號項目Body資訊selection：INSERT INTO RECORDS_BODYS ( 'RB002', 'RB003', 'RB004', 'RB005', 'RB006', 'RB007', 'RB008', 'RB009', 'RB010', 'RB011', 'RB012', 'RB013' ) VALUES ( '15', '100', 'C00006', '冷凍水水溫', '7', '~', '12', '出', '℃', '2022/12/26', '', 'N' )
+ ╠ 2022-12-26 14:10:28 MainModel                 writeFactoryAllMachineIdItemBodyInfo:257  -寫入廠房所有機械編號項目Body資訊selection：INSERT INTO RECORDS_BODYS ( 'RB002', 'RB003', 'RB004', 'RB005', 'RB006', 'RB007', 'RB008', 'RB009', 'RB010', 'RB011', 'RB012', 'RB013' ) VALUES ( '15', '101', 'C00007', '冷凍水水壓', '', '', '', '入', 'kg/cm2', '2022/12/26', '', 'N' )
+ ╠ 2022-12-26 14:10:28 MainModel                 writeFactoryAllMachineIdItemBodyInfo:257  -寫入廠房所有機械編號項目Body資訊selection：INSERT INTO RECORDS_BODYS ( 'RB002', 'RB003', 'RB004', 'RB005', 'RB006', 'RB007', 'RB008', 'RB009', 'RB010', 'RB011', 'RB012', 'RB013' ) VALUES ( '15', '102', 'C00008', '冷凍水水壓', '', '', '', '出', 'kg/cm2', '2022/12/26', '', 'N' )
+ ╠ 2022-12-26 14:10:28 MainModel                 writeFactoryAllMachineIdItemBodyInfo:257  -寫入廠房所有機械編號項目Body資訊selection：INSERT INTO RECORDS_BODYS ( 'RB002', 'RB003', 'RB004', 'RB005', 'RB006', 'RB007', 'RB008', 'RB009', 'RB010', 'RB011', 'RB012', 'RB013' ) VALUES ( '15', '103', 'C00009', '冷卻水水溫', '', '<', '32', '入', '℃', '2022/12/26', '', 'N' )
+ ╠ 2022-12-26 14:10:28 MainModel                 writeFactoryAllMachineIdItemBodyInfo:257  -寫入廠房所有機械編號項目Body資訊selection：INSERT INTO RECORDS_BODYS ( 'RB002', 'RB003', 'RB004', 'RB005', 'RB006', 'RB007', 'RB008', 'RB009', 'RB010', 'RB011', 'RB012', 'RB013' ) VALUES ( '15', '104', 'C00010', '冷卻水水溫', '', '<', '37', '出', '℃', '2022/12/26', '', 'N' )
+ ╠ 2022-12-26 14:10:28 MainModel                 writeFactoryAllMachineIdItemBodyInfo:257  -寫入廠房所有機械編號項目Body資訊selection：INSERT INTO RECORDS_BODYS ( 'RB002', 'RB003', 'RB004', 'RB005', 'RB006', 'RB007', 'RB008', 'RB009', 'RB010', 'RB011', 'RB012', 'RB013' ) VALUES ( '15', '105', 'C00011', '冷卻水水壓', '', '', '', '入', 'kg/cm2', '2022/12/26', '', 'N' )
+ ╠ 2022-12-26 14:10:28 MainModel                 writeFactoryAllMachineIdItemBodyInfo:257  -寫入廠房所有機械編號項目Body資訊selection：INSERT INTO RECORDS_BODYS ( 'RB002', 'RB003', 'RB004', 'RB005', 'RB006', 'RB007', 'RB008', 'RB009', 'RB010', 'RB011', 'RB012', 'RB013' ) VALUES ( '15', '106', 'C00012', '冷卻水水壓', '', '', '', '出', 'kg/cm2', '2022/12/26', '', 'N' )
+ ╠ 2022-12-26 14:10:28 MainModel                 writeFactoryAllMachineIdItemBodyInfo:257  -寫入廠房所有機械編號項目Body資訊selection：INSERT INTO RECORDS_BODYS ( 'RB002', 'RB003', 'RB004', 'RB005', 'RB006', 'RB007', 'RB008', 'RB009', 'RB010', 'RB011', 'RB012', 'RB013' ) VALUES ( '15', '107', 'C00013', '壓縮機油位視窗', '', '>', '0.33', '', '', '2022/12/26', '', 'N' )
+ ╠ 2022-12-26 14:10:28 MainModel                 writeFactoryAllMachineIdItemBodyInfo:257  -寫入廠房所有機械編號項目Body資訊selection：INSERT INTO RECORDS_BODYS ( 'RB002', 'RB003', 'RB004', 'RB005', 'RB006', 'RB007', 'RB008', 'RB009', 'RB010', 'RB011', 'RB012', 'RB013' ) VALUES ( '15', '108', 'C00014', '壓縮機運轉效率', '', '', '', '%', '', '2022/12/26', '', 'N' )
+ ╠ 2022-12-26 14:10:28 MainModel                 writeFactoryAllMachineIdItemBodyInfo:257  -寫入廠房所有機械編號項目Body資訊selection：INSERT INTO RECORDS_BODYS ( 'RB002', 'RB003', 'RB004', 'RB005', 'RB006', 'RB007', 'RB008', 'RB009', 'RB010', 'RB011', 'RB012', 'RB013' ) VALUES ( '15', '109', 'C00015', '壓縮機油溫', '', '', '', '℃', '', '2022/12/26', '', 'N' )
+ ╠ 2022-12-26 14:10:28 MainModel                 writeFactoryAllMachineIdItemBodyInfo:257  -寫入廠房所有機械編號項目Body資訊selection：INSERT INTO RECORDS_BODYS ( 'RB002', 'RB003', 'RB004', 'RB005', 'RB006', 'RB007', 'RB008', 'RB009', 'RB010', 'RB011', 'RB012', 'RB013' ) VALUES ( '120', '214', 'W6_D00001', '尖峰', '', '', '', '', '', '2022/12/26', '', 'N' )
+ ╠ 2022-12-26 14:10:28 MainModel                 writeFactoryAllMachineIdItemBodyInfo:257  -寫入廠房所有機械編號項目Body資訊selection：INSERT INTO RECORDS_BODYS ( 'RB002', 'RB003', 'RB004', 'RB005', 'RB006', 'RB007', 'RB008', 'RB009', 'RB010', 'RB011', 'RB012', 'RB013' ) VALUES ( '121', '215', 'W6_D00002', '半尖峰', '', '', '', '', '', '2022/12/26', '', 'N' )
+ ╠ 2022-12-26 14:10:28 MainModel                 writeFactoryAllMachineIdItemBodyInfo:257  -寫入廠房所有機械編號項目Body資訊selection：INSERT INTO RECORDS_BODYS ( 'RB002', 'RB003', 'RB004', 'RB005', 'RB006', 'RB007', 'RB008', 'RB009', 'RB010', 'RB011', 'RB012', 'RB013' ) VALUES ( '122', '216', 'W6_D00003', '離峰', '', '', '', '', '', '2022/12/26', '', 'N' )
+ ╠ 2022-12-26 14:10:28 MainModel                 writeFactoryAllMachineIdItemBodyInfo:257  -寫入廠房所有機械編號項目Body資訊selection：INSERT INTO RECORDS_BODYS ( 'RB002', 'RB003', 'RB004', 'RB005', 'RB006', 'RB007', 'RB008', 'RB009', 'RB010', 'RB011', 'RB012', 'RB013' ) VALUES ( '123', '217', 'W6_D00004', 'VCBMAIN', '', '', '', '總表', '', '2022/12/26', '', 'N' )
+ ╠ 2022-12-26 14:10:28 MainModel                 writeFactoryAllMachineIdItemBodyInfo:257  -寫入廠房所有機械編號項目Body資訊selection：INSERT INTO RECORDS_BODYS ( 'RB002', 'RB003', 'RB004', 'RB005', 'RB006', 'RB007', 'RB008', 'RB009', 'RB010', 'RB011', 'RB012', 'RB013' ) VALUES ( '124', '218', 'W6_D00005', 'VCB1TR1', '', '', '', '動力設備', '', '2022/12/26', '', 'N' )
+ ╠ 2022-12-26 14:10:28 MainModel                 writeFactoryAllMachineIdItemBodyInfo:257  -寫入廠房所有機械編號項目Body資訊selection：INSERT INTO RECORDS_BODYS ( 'RB002', 'RB003', 'RB004', 'RB005', 'RB006', 'RB007', 'RB008', 'RB009', 'RB010', 'RB011', 'RB012', 'RB013' ) VALUES ( '125', '219', 'W6_D00006', 'VCB2TR2', '', '', '', '公用設備', '', '2022/12/26', '', 'N' )
+ ╠ 2022-12-26 14:10:28 MainModel                 writeFactoryAllMachineIdItemBodyInfo:257  -寫入廠房所有機械編號項目Body資訊selection：INSERT INTO RECORDS_BODYS ( 'RB002', 'RB003', 'RB004', 'RB005', 'RB006', 'RB007', 'RB008', 'RB009', 'RB010', 'RB011', 'RB012', 'RB013' ) VALUES ( '126', '220', 'W6_D00007', 'VCB3TR3', '', '', '', '動力設備', '', '2022/12/26', '', 'N' )
+ ╠ 2022-12-26 14:10:28 MainModel                 writeFactoryAllMachineIdItemBodyInfo:257  -寫入廠房所有機械編號項目Body資訊selection：INSERT INTO RECORDS_BODYS ( 'RB002', 'RB003', 'RB004', 'RB005', 'RB006', 'RB007', 'RB008', 'RB009', 'RB010', 'RB011', 'RB012', 'RB013' ) VALUES ( '127', '221', 'W6_D00008', 'VCB4TR4', '', '', '', '動力設備', '', '2022/12/26', '', 'N' )
+ ╠ 2022-12-26 14:10:28 MainModel                 writeFactoryAllMachineIdItemBodyInfo:257  -寫入廠房所有機械編號項目Body資訊selection：INSERT INTO RECORDS_BODYS ( 'RB002', 'RB003', 'RB004', 'RB005', 'RB006', 'RB007', 'RB008', 'RB009', 'RB010', 'RB011', 'RB012', 'RB013' ) VALUES ( '128', '222', 'W6_D00009', 'NO.1250T', '', '', '', '冰水機', '', '2022/12/26', '', 'N' )
+ ╠ 2022-12-26 14:10:28 MainModel                 writeFactoryAllMachineIdItemBodyInfo:257  -寫入廠房所有機械編號項目Body資訊selection：INSERT INTO RECORDS_BODYS ( 'RB002', 'RB003', 'RB004', 'RB005', 'RB006', 'RB007', 'RB008', 'RB009', 'RB010', 'RB011', 'RB012', 'RB013' ) VALUES ( '129', '223', 'W6_D00010', 'NO.2250T', '', '', '', '冰水機', '', '2022/12/26', '', 'N' )
+ ╠ 2022-12-26 14:10:28 MainModel                 writeFactoryAllMachineIdItemBodyInfo:257  -寫入廠房所有機械編號項目Body資訊selection：INSERT INTO RECORDS_BODYS ( 'RB002', 'RB003', 'RB004', 'RB005', 'RB006', 'RB007', 'RB008', 'RB009', 'RB010', 'RB011', 'RB012', 'RB013' ) VALUES ( '130', '224', 'W6_D00011', '廢水液位', '', '', '', '', '', '2022/12/26', '', 'N' )
+ ╠ 2022-12-26 14:10:28 MainModel                 writeFactoryAllMachineIdItemBodyInfo:257  -寫入廠房所有機械編號項目Body資訊selection：INSERT INTO RECORDS_BODYS ( 'RB002', 'RB003', 'RB004', 'RB005', 'RB006', 'RB007', 'RB008', 'RB009', 'RB010', 'RB011', 'RB012', 'RB013' ) VALUES ( '131', '225', 'W6_D00012', 'RO水質', '', '', '', '', '', '2022/12/26', '', 'N' )
+ ╠ 2022-12-26 14:10:28 MainModel                 writeFactoryAllMachineIdItemBodyInfo:257  -寫入廠房所有機械編號項目Body資訊selection：INSERT INTO RECORDS_BODYS ( 'RB002', 'RB003', 'RB004', 'RB005', 'RB006', 'RB007', 'RB008', 'RB009', 'RB010', 'RB011', 'RB012', 'RB013' ) VALUES ( '132', '226', 'W6_D00013', 'RO水錶', '', '', '', '', '', '2022/12/26', '', 'N' )
+ ╠ 2022-12-26 14:10:28 MainModel                 writeFactoryAllMachineIdItemBodyInfo:257  -寫入廠房所有機械編號項目Body資訊selection：INSERT INTO RECORDS_BODYS ( 'RB002', 'RB003', 'RB004', 'RB005', 'RB006', 'RB007', 'RB008', 'RB009', 'RB010', 'RB011', 'RB012', 'RB013' ) VALUES ( '133', '227', 'W6_D00014', '軟水', '', '', '', '', '', '2022/12/26', '', 'N' )
+ ╠ 2022-12-26 14:10:28 MainModel                 writeFactoryAllMachineIdItemBodyInfo:257  -寫入廠房所有機械編號項目Body資訊selection：INSERT INTO RECORDS_BODYS ( 'RB002', 'RB003', 'RB004', 'RB005', 'RB006', 'RB007', 'RB008', 'RB009', 'RB010', 'RB011', 'RB012', 'RB013' ) VALUES ( '134', '228', 'W6_D00015', '自來水', '', '', '', '', '', '2022/12/26', '', 'N' )
+ ╠ 2022-12-26 14:10:28 MainModel                 writeFactoryAllMachineIdItemBodyInfo:257  -寫入廠房所有機械編號項目Body資訊selection：INSERT INTO RECORDS_BODYS ( 'RB002', 'RB003', 'RB004', 'RB005', 'RB006', 'RB007', 'RB008', 'RB009', 'RB010', 'RB011', 'RB012', 'RB013' ) VALUES ( '135', '229', 'W6_D00016', '民生用水', '', '', '', '', '', '2022/12/26', '', 'N' )
+ ╠ 2022-12-26 14:10:49 SecondModel               getMachineIdSerialNo :36   -取得機械編號的流水序號
+ ╠ 2022-12-26 14:10:49 SecondModel               getMachineIdSerialNo :43   -取得機械編號的流水序號selection：SELECT * FROM RECORDS_HEADS WHERE RH007='W6_D00001' AND RH003='W6' AND RH009='2022/12/26'
+ ╠ 2022-12-26 14:10:49 SecondModel               checkMachineIdHaveRecord:269  -檢查機械編號流水序號的項目資料有沒有在RECORDS_HEAD
+ ╠ 2022-12-26 14:10:49 SecondModel               checkMachineIdHaveRecord:274  -檢查機械編號流水序號的項目資料有沒有在RECORDS_HEAD：SELECT * FROM RECORDS_HEADS WHERE RH009='2022/12/26' AND RH007='W6_D00001'
+ ╠ 2022-12-26 14:10:49 SecondModel               getMachineSerialNoItemInfo:297  -取得機械編號流水序號的項目資料
+ ╠ 2022-12-26 14:10:49 SecondModel               getMachineSerialNoItemInfo:303  -取得機械編號流水序號的項目資料selection：SELECT * FROM RECORDS_BODYS WHERE RB002='120' AND RB011='2022/12/26'
+ ╠ 2022-12-26 14:10:53 SecondModel               writeItemInfoToDB    :223  -寫入機械編號項目資料到DB
+ ╠ 2022-12-26 14:10:53 SecondModel               writeItemInfoToDB    :246  -寫入機械編號項目資料到DB：UPDATE RECORDS_BODYS SET RB012='1' WHERE RB002='120' AND RB003='214' AND RB011='2022/12/26'
+ ╠ 2022-12-26 14:10:58 SecondModel               getMachineIdSerialNo :36   -取得機械編號的流水序號
+ ╠ 2022-12-26 14:10:58 SecondModel               getMachineIdSerialNo :43   -取得機械編號的流水序號selection：SELECT * FROM RECORDS_HEADS WHERE RH007='W6_D00002' AND RH003='W6' AND RH009='2022/12/26'
+ ╠ 2022-12-26 14:10:58 SecondModel               checkMachineIdHaveRecord:269  -檢查機械編號流水序號的項目資料有沒有在RECORDS_HEAD
+ ╠ 2022-12-26 14:10:58 SecondModel               checkMachineIdHaveRecord:274  -檢查機械編號流水序號的項目資料有沒有在RECORDS_HEAD：SELECT * FROM RECORDS_HEADS WHERE RH009='2022/12/26' AND RH007='W6_D00002'
+ ╠ 2022-12-26 14:10:58 SecondModel               getMachineSerialNoItemInfo:297  -取得機械編號流水序號的項目資料
+ ╠ 2022-12-26 14:10:58 SecondModel               getMachineSerialNoItemInfo:303  -取得機械編號流水序號的項目資料selection：SELECT * FROM RECORDS_BODYS WHERE RB002='121' AND RB011='2022/12/26'
+ ╠ 2022-12-26 14:11:02 SecondModel               writeItemInfoToDB    :223  -寫入機械編號項目資料到DB
+ ╠ 2022-12-26 14:11:02 SecondModel               writeItemInfoToDB    :246  -寫入機械編號項目資料到DB：UPDATE RECORDS_BODYS SET RB012='2' WHERE RB002='121' AND RB003='215' AND RB011='2022/12/26'
+ ╠ 2022-12-26 14:11:07 SecondModel               getMachineIdSerialNo :36   -取得機械編號的流水序號
+ ╠ 2022-12-26 14:11:07 SecondModel               getMachineIdSerialNo :43   -取得機械編號的流水序號selection：SELECT * FROM RECORDS_HEADS WHERE RH007='W6_D00003' AND RH003='W6' AND RH009='2022/12/26'
+ ╠ 2022-12-26 14:11:07 SecondModel               checkMachineIdHaveRecord:269  -檢查機械編號流水序號的項目資料有沒有在RECORDS_HEAD
+ ╠ 2022-12-26 14:11:07 SecondModel               checkMachineIdHaveRecord:274  -檢查機械編號流水序號的項目資料有沒有在RECORDS_HEAD：SELECT * FROM RECORDS_HEADS WHERE RH009='2022/12/26' AND RH007='W6_D00003'
+ ╠ 2022-12-26 14:11:07 SecondModel               getMachineSerialNoItemInfo:297  -取得機械編號流水序號的項目資料
+ ╠ 2022-12-26 14:11:07 SecondModel               getMachineSerialNoItemInfo:303  -取得機械編號流水序號的項目資料selection：SELECT * FROM RECORDS_BODYS WHERE RB002='122' AND RB011='2022/12/26'
+ ╠ 2022-12-26 14:11:12 SecondModel               writeItemInfoToDB    :223  -寫入機械編號項目資料到DB
+ ╠ 2022-12-26 14:11:12 SecondModel               writeItemInfoToDB    :246  -寫入機械編號項目資料到DB：UPDATE RECORDS_BODYS SET RB012='159.5' WHERE RB002='122' AND RB003='216' AND RB011='2022/12/26'
+ ╠ 2022-12-26 14:11:16 SecondModel               getMachineIdSerialNo :36   -取得機械編號的流水序號
+ ╠ 2022-12-26 14:11:16 SecondModel               getMachineIdSerialNo :43   -取得機械編號的流水序號selection：SELECT * FROM RECORDS_HEADS WHERE RH007='W6_D00004' AND RH003='W6' AND RH009='2022/12/26'
+ ╠ 2022-12-26 14:11:16 SecondModel               checkMachineIdHaveRecord:269  -檢查機械編號流水序號的項目資料有沒有在RECORDS_HEAD
+ ╠ 2022-12-26 14:11:16 SecondModel               checkMachineIdHaveRecord:274  -檢查機械編號流水序號的項目資料有沒有在RECORDS_HEAD：SELECT * FROM RECORDS_HEADS WHERE RH009='2022/12/26' AND RH007='W6_D00004'
+ ╠ 2022-12-26 14:11:16 SecondModel               getMachineSerialNoItemInfo:297  -取得機械編號流水序號的項目資料
+ ╠ 2022-12-26 14:11:16 SecondModel               getMachineSerialNoItemInfo:303  -取得機械編號流水序號的項目資料selection：SELECT * FROM RECORDS_BODYS WHERE RB002='123' AND RB011='2022/12/26'
+ ╠ 2022-12-26 14:11:33 SecondModel               writeItemInfoToDB    :223  -寫入機械編號項目資料到DB
+ ╠ 2022-12-26 14:11:33 SecondModel               writeItemInfoToDB    :246  -寫入機械編號項目資料到DB：UPDATE RECORDS_BODYS SET RB012='123456' WHERE RB002='123' AND RB003='217' AND RB011='2022/12/26'
+ ╠ 2022-12-26 14:11:37 SecondModel               getMachineIdSerialNo :36   -取得機械編號的流水序號
+ ╠ 2022-12-26 14:11:37 SecondModel               getMachineIdSerialNo :43   -取得機械編號的流水序號selection：SELECT * FROM RECORDS_HEADS WHERE RH007='W6_D00005' AND RH003='W6' AND RH009='2022/12/26'
+ ╠ 2022-12-26 14:11:37 SecondModel               checkMachineIdHaveRecord:269  -檢查機械編號流水序號的項目資料有沒有在RECORDS_HEAD
+ ╠ 2022-12-26 14:11:37 SecondModel               checkMachineIdHaveRecord:274  -檢查機械編號流水序號的項目資料有沒有在RECORDS_HEAD：SELECT * FROM RECORDS_HEADS WHERE RH009='2022/12/26' AND RH007='W6_D00005'
+ ╠ 2022-12-26 14:11:37 SecondModel               getMachineSerialNoItemInfo:297  -取得機械編號流水序號的項目資料
+ ╠ 2022-12-26 14:11:37 SecondModel               getMachineSerialNoItemInfo:303  -取得機械編號流水序號的項目資料selection：SELECT * FROM RECORDS_BODYS WHERE RB002='124' AND RB011='2022/12/26'
+ ╠ 2022-12-26 14:11:42 SecondModel               writeItemInfoToDB    :223  -寫入機械編號項目資料到DB
+ ╠ 2022-12-26 14:11:42 SecondModel               writeItemInfoToDB    :246  -寫入機械編號項目資料到DB：UPDATE RECORDS_BODYS SET RB012='123456' WHERE RB002='124' AND RB003='218' AND RB011='2022/12/26'
+ ╠ 2022-12-26 14:11:47 SecondModel               getMachineIdSerialNo :36   -取得機械編號的流水序號
+ ╠ 2022-12-26 14:11:47 SecondModel               getMachineIdSerialNo :43   -取得機械編號的流水序號selection：SELECT * FROM RECORDS_HEADS WHERE RH007='W6_D00006' AND RH003='W6' AND RH009='2022/12/26'
+ ╠ 2022-12-26 14:11:47 SecondModel               checkMachineIdHaveRecord:269  -檢查機械編號流水序號的項目資料有沒有在RECORDS_HEAD
+ ╠ 2022-12-26 14:11:47 SecondModel               checkMachineIdHaveRecord:274  -檢查機械編號流水序號的項目資料有沒有在RECORDS_HEAD：SELECT * FROM RECORDS_HEADS WHERE RH009='2022/12/26' AND RH007='W6_D00006'
+ ╠ 2022-12-26 14:11:47 SecondModel               getMachineSerialNoItemInfo:297  -取得機械編號流水序號的項目資料
+ ╠ 2022-12-26 14:11:47 SecondModel               getMachineSerialNoItemInfo:303  -取得機械編號流水序號的項目資料selection：SELECT * FROM RECORDS_BODYS WHERE RB002='125' AND RB011='2022/12/26'
+ ╠ 2022-12-26 14:11:51 SecondModel               writeItemInfoToDB    :223  -寫入機械編號項目資料到DB
+ ╠ 2022-12-26 14:11:51 SecondModel               writeItemInfoToDB    :246  -寫入機械編號項目資料到DB：UPDATE RECORDS_BODYS SET RB012='2' WHERE RB002='125' AND RB003='219' AND RB011='2022/12/26'
+ ╠ 2022-12-26 14:11:55 SecondModel               getMachineIdSerialNo :36   -取得機械編號的流水序號
+ ╠ 2022-12-26 14:11:56 SecondModel               getMachineIdSerialNo :43   -取得機械編號的流水序號selection：SELECT * FROM RECORDS_HEADS WHERE RH007='W6_D00007' AND RH003='W6' AND RH009='2022/12/26'
+ ╠ 2022-12-26 14:11:56 SecondModel               checkMachineIdHaveRecord:269  -檢查機械編號流水序號的項目資料有沒有在RECORDS_HEAD
+ ╠ 2022-12-26 14:11:56 SecondModel               checkMachineIdHaveRecord:274  -檢查機械編號流水序號的項目資料有沒有在RECORDS_HEAD：SELECT * FROM RECORDS_HEADS WHERE RH009='2022/12/26' AND RH007='W6_D00007'
+ ╠ 2022-12-26 14:11:56 SecondModel               getMachineSerialNoItemInfo:297  -取得機械編號流水序號的項目資料
+ ╠ 2022-12-26 14:11:56 SecondModel               getMachineSerialNoItemInfo:303  -取得機械編號流水序號的項目資料selection：SELECT * FROM RECORDS_BODYS WHERE RB002='126' AND RB011='2022/12/26'
+ ╠ 2022-12-26 14:11:59 SecondModel               writeItemInfoToDB    :223  -寫入機械編號項目資料到DB
+ ╠ 2022-12-26 14:11:59 SecondModel               writeItemInfoToDB    :246  -寫入機械編號項目資料到DB：UPDATE RECORDS_BODYS SET RB012='5' WHERE RB002='126' AND RB003='220' AND RB011='2022/12/26'
+ ╠ 2022-12-26 14:12:03 SecondModel               getMachineIdSerialNo :36   -取得機械編號的流水序號
+ ╠ 2022-12-26 14:12:03 SecondModel               getMachineIdSerialNo :43   -取得機械編號的流水序號selection：SELECT * FROM RECORDS_HEADS WHERE RH007='W6_D00008' AND RH003='W6' AND RH009='2022/12/26'
+ ╠ 2022-12-26 14:12:03 SecondModel               checkMachineIdHaveRecord:269  -檢查機械編號流水序號的項目資料有沒有在RECORDS_HEAD
+ ╠ 2022-12-26 14:12:03 SecondModel               checkMachineIdHaveRecord:274  -檢查機械編號流水序號的項目資料有沒有在RECORDS_HEAD：SELECT * FROM RECORDS_HEADS WHERE RH009='2022/12/26' AND RH007='W6_D00008'
+ ╠ 2022-12-26 14:12:03 SecondModel               getMachineSerialNoItemInfo:297  -取得機械編號流水序號的項目資料
+ ╠ 2022-12-26 14:12:03 SecondModel               getMachineSerialNoItemInfo:303  -取得機械編號流水序號的項目資料selection：SELECT * FROM RECORDS_BODYS WHERE RB002='127' AND RB011='2022/12/26'
+ ╠ 2022-12-26 14:12:05 SecondModel               writeItemInfoToDB    :223  -寫入機械編號項目資料到DB
+ ╠ 2022-12-26 14:12:05 SecondModel               writeItemInfoToDB    :246  -寫入機械編號項目資料到DB：UPDATE RECORDS_BODYS SET RB012='8' WHERE RB002='127' AND RB003='221' AND RB011='2022/12/26'
+ ╠ 2022-12-26 14:12:09 SecondModel               getMachineIdSerialNo :36   -取得機械編號的流水序號
+ ╠ 2022-12-26 14:12:09 SecondModel               getMachineIdSerialNo :43   -取得機械編號的流水序號selection：SELECT * FROM RECORDS_HEADS WHERE RH007='W6_D00009' AND RH003='W6' AND RH009='2022/12/26'
+ ╠ 2022-12-26 14:12:09 SecondModel               checkMachineIdHaveRecord:269  -檢查機械編號流水序號的項目資料有沒有在RECORDS_HEAD
+ ╠ 2022-12-26 14:12:09 SecondModel               checkMachineIdHaveRecord:274  -檢查機械編號流水序號的項目資料有沒有在RECORDS_HEAD：SELECT * FROM RECORDS_HEADS WHERE RH009='2022/12/26' AND RH007='W6_D00009'
+ ╠ 2022-12-26 14:12:09 SecondModel               getMachineSerialNoItemInfo:297  -取得機械編號流水序號的項目資料
+ ╠ 2022-12-26 14:12:09 SecondModel               getMachineSerialNoItemInfo:303  -取得機械編號流水序號的項目資料selection：SELECT * FROM RECORDS_BODYS WHERE RB002='128' AND RB011='2022/12/26'
+ ╠ 2022-12-26 14:12:14 SecondModel               writeItemInfoToDB    :223  -寫入機械編號項目資料到DB
+ ╠ 2022-12-26 14:12:14 SecondModel               writeItemInfoToDB    :246  -寫入機械編號項目資料到DB：UPDATE RECORDS_BODYS SET RB012='9.5' WHERE RB002='128' AND RB003='222' AND RB011='2022/12/26'
+ ╠ 2022-12-26 14:12:19 SecondModel               getMachineIdSerialNo :36   -取得機械編號的流水序號
+ ╠ 2022-12-26 14:12:19 SecondModel               getMachineIdSerialNo :43   -取得機械編號的流水序號selection：SELECT * FROM RECORDS_HEADS WHERE RH007='W6_D00010' AND RH003='W6' AND RH009='2022/12/26'
+ ╠ 2022-12-26 14:12:19 SecondModel               checkMachineIdHaveRecord:269  -檢查機械編號流水序號的項目資料有沒有在RECORDS_HEAD
+ ╠ 2022-12-26 14:12:19 SecondModel               checkMachineIdHaveRecord:274  -檢查機械編號流水序號的項目資料有沒有在RECORDS_HEAD：SELECT * FROM RECORDS_HEADS WHERE RH009='2022/12/26' AND RH007='W6_D00010'
+ ╠ 2022-12-26 14:12:19 SecondModel               getMachineSerialNoItemInfo:297  -取得機械編號流水序號的項目資料
+ ╠ 2022-12-26 14:12:19 SecondModel               getMachineSerialNoItemInfo:303  -取得機械編號流水序號的項目資料selection：SELECT * FROM RECORDS_BODYS WHERE RB002='129' AND RB011='2022/12/26'
+ ╠ 2022-12-26 14:12:21 SecondModel               writeItemInfoToDB    :223  -寫入機械編號項目資料到DB
+ ╠ 2022-12-26 14:12:21 SecondModel               writeItemInfoToDB    :246  -寫入機械編號項目資料到DB：UPDATE RECORDS_BODYS SET RB012='5' WHERE RB002='129' AND RB003='223' AND RB011='2022/12/26'
+ ╠ 2022-12-26 14:12:25 SecondModel               getMachineIdSerialNo :36   -取得機械編號的流水序號
+ ╠ 2022-12-26 14:12:25 SecondModel               getMachineIdSerialNo :43   -取得機械編號的流水序號selection：SELECT * FROM RECORDS_HEADS WHERE RH007='W6_D00011' AND RH003='W6' AND RH009='2022/12/26'
+ ╠ 2022-12-26 14:12:25 SecondModel               checkMachineIdHaveRecord:269  -檢查機械編號流水序號的項目資料有沒有在RECORDS_HEAD
+ ╠ 2022-12-26 14:12:25 SecondModel               checkMachineIdHaveRecord:274  -檢查機械編號流水序號的項目資料有沒有在RECORDS_HEAD：SELECT * FROM RECORDS_HEADS WHERE RH009='2022/12/26' AND RH007='W6_D00011'
+ ╠ 2022-12-26 14:12:25 SecondModel               getMachineSerialNoItemInfo:297  -取得機械編號流水序號的項目資料
+ ╠ 2022-12-26 14:12:25 SecondModel               getMachineSerialNoItemInfo:303  -取得機械編號流水序號的項目資料selection：SELECT * FROM RECORDS_BODYS WHERE RB002='130' AND RB011='2022/12/26'
+ ╠ 2022-12-26 14:12:28 SecondModel               writeItemInfoToDB    :223  -寫入機械編號項目資料到DB
+ ╠ 2022-12-26 14:12:28 SecondModel               writeItemInfoToDB    :246  -寫入機械編號項目資料到DB：UPDATE RECORDS_BODYS SET RB012='52' WHERE RB002='130' AND RB003='224' AND RB011='2022/12/26'
+ ╠ 2022-12-26 14:12:32 SecondModel               getMachineIdSerialNo :36   -取得機械編號的流水序號
+ ╠ 2022-12-26 14:12:32 SecondModel               getMachineIdSerialNo :43   -取得機械編號的流水序號selection：SELECT * FROM RECORDS_HEADS WHERE RH007='W6_D00012' AND RH003='W6' AND RH009='2022/12/26'
+ ╠ 2022-12-26 14:12:32 SecondModel               checkMachineIdHaveRecord:269  -檢查機械編號流水序號的項目資料有沒有在RECORDS_HEAD
+ ╠ 2022-12-26 14:12:32 SecondModel               checkMachineIdHaveRecord:274  -檢查機械編號流水序號的項目資料有沒有在RECORDS_HEAD：SELECT * FROM RECORDS_HEADS WHERE RH009='2022/12/26' AND RH007='W6_D00012'
+ ╠ 2022-12-26 14:12:32 SecondModel               getMachineSerialNoItemInfo:297  -取得機械編號流水序號的項目資料
+ ╠ 2022-12-26 14:12:32 SecondModel               getMachineSerialNoItemInfo:303  -取得機械編號流水序號的項目資料selection：SELECT * FROM RECORDS_BODYS WHERE RB002='131' AND RB011='2022/12/26'
+ ╠ 2022-12-26 14:12:34 SecondModel               writeItemInfoToDB    :223  -寫入機械編號項目資料到DB
+ ╠ 2022-12-26 14:12:34 SecondModel               writeItemInfoToDB    :246  -寫入機械編號項目資料到DB：UPDATE RECORDS_BODYS SET RB012='5' WHERE RB002='131' AND RB003='225' AND RB011='2022/12/26'
+ ╠ 2022-12-26 14:12:38 SecondModel               getMachineIdSerialNo :36   -取得機械編號的流水序號
+ ╠ 2022-12-26 14:12:38 SecondModel               getMachineIdSerialNo :43   -取得機械編號的流水序號selection：SELECT * FROM RECORDS_HEADS WHERE RH007='W6_D00013' AND RH003='W6' AND RH009='2022/12/26'
+ ╠ 2022-12-26 14:12:38 SecondModel               checkMachineIdHaveRecord:269  -檢查機械編號流水序號的項目資料有沒有在RECORDS_HEAD
+ ╠ 2022-12-26 14:12:38 SecondModel               checkMachineIdHaveRecord:274  -檢查機械編號流水序號的項目資料有沒有在RECORDS_HEAD：SELECT * FROM RECORDS_HEADS WHERE RH009='2022/12/26' AND RH007='W6_D00013'
+ ╠ 2022-12-26 14:12:38 SecondModel               getMachineSerialNoItemInfo:297  -取得機械編號流水序號的項目資料
+ ╠ 2022-12-26 14:12:38 SecondModel               getMachineSerialNoItemInfo:303  -取得機械編號流水序號的項目資料selection：SELECT * FROM RECORDS_BODYS WHERE RB002='132' AND RB011='2022/12/26'
+ ╠ 2022-12-26 14:12:41 SecondModel               writeItemInfoToDB    :223  -寫入機械編號項目資料到DB
+ ╠ 2022-12-26 14:12:41 SecondModel               writeItemInfoToDB    :246  -寫入機械編號項目資料到DB：UPDATE RECORDS_BODYS SET RB012='69' WHERE RB002='132' AND RB003='226' AND RB011='2022/12/26'
+ ╠ 2022-12-26 14:12:45 SecondModel               getMachineIdSerialNo :36   -取得機械編號的流水序號
+ ╠ 2022-12-26 14:12:45 SecondModel               getMachineIdSerialNo :43   -取得機械編號的流水序號selection：SELECT * FROM RECORDS_HEADS WHERE RH007='W6_D00014' AND RH003='W6' AND RH009='2022/12/26'
+ ╠ 2022-12-26 14:12:45 SecondModel               checkMachineIdHaveRecord:269  -檢查機械編號流水序號的項目資料有沒有在RECORDS_HEAD
+ ╠ 2022-12-26 14:12:45 SecondModel               checkMachineIdHaveRecord:274  -檢查機械編號流水序號的項目資料有沒有在RECORDS_HEAD：SELECT * FROM RECORDS_HEADS WHERE RH009='2022/12/26' AND RH007='W6_D00014'
+ ╠ 2022-12-26 14:12:45 SecondModel               getMachineSerialNoItemInfo:297  -取得機械編號流水序號的項目資料
+ ╠ 2022-12-26 14:12:45 SecondModel               getMachineSerialNoItemInfo:303  -取得機械編號流水序號的項目資料selection：SELECT * FROM RECORDS_BODYS WHERE RB002='133' AND RB011='2022/12/26'
+ ╠ 2022-12-26 14:12:48 SecondModel               writeItemInfoToDB    :223  -寫入機械編號項目資料到DB
+ ╠ 2022-12-26 14:12:48 SecondModel               writeItemInfoToDB    :246  -寫入機械編號項目資料到DB：UPDATE RECORDS_BODYS SET RB012='14' WHERE RB002='133' AND RB003='227' AND RB011='2022/12/26'
+ ╠ 2022-12-26 14:12:51 SecondModel               getMachineIdSerialNo :36   -取得機械編號的流水序號
+ ╠ 2022-12-26 14:12:51 SecondModel               getMachineIdSerialNo :43   -取得機械編號的流水序號selection：SELECT * FROM RECORDS_HEADS WHERE RH007='W6_D00015' AND RH003='W6' AND RH009='2022/12/26'
+ ╠ 2022-12-26 14:12:51 SecondModel               checkMachineIdHaveRecord:269  -檢查機械編號流水序號的項目資料有沒有在RECORDS_HEAD
+ ╠ 2022-12-26 14:12:51 SecondModel               checkMachineIdHaveRecord:274  -檢查機械編號流水序號的項目資料有沒有在RECORDS_HEAD：SELECT * FROM RECORDS_HEADS WHERE RH009='2022/12/26' AND RH007='W6_D00015'
+ ╠ 2022-12-26 14:12:51 SecondModel               getMachineSerialNoItemInfo:297  -取得機械編號流水序號的項目資料
+ ╠ 2022-12-26 14:12:51 SecondModel               getMachineSerialNoItemInfo:303  -取得機械編號流水序號的項目資料selection：SELECT * FROM RECORDS_BODYS WHERE RB002='134' AND RB011='2022/12/26'
+ ╠ 2022-12-26 14:12:55 SecondModel               writeItemInfoToDB    :223  -寫入機械編號項目資料到DB
+ ╠ 2022-12-26 14:12:55 SecondModel               writeItemInfoToDB    :246  -寫入機械編號項目資料到DB：UPDATE RECORDS_BODYS SET RB012='9' WHERE RB002='134' AND RB003='228' AND RB011='2022/12/26'
+ ╠ 2022-12-26 14:13:00 SecondModel               getMachineIdSerialNo :36   -取得機械編號的流水序號
+ ╠ 2022-12-26 14:13:00 SecondModel               getMachineIdSerialNo :43   -取得機械編號的流水序號selection：SELECT * FROM RECORDS_HEADS WHERE RH007='W6_D00016' AND RH003='W6' AND RH009='2022/12/26'
+ ╠ 2022-12-26 14:13:00 SecondModel               checkMachineIdHaveRecord:269  -檢查機械編號流水序號的項目資料有沒有在RECORDS_HEAD
+ ╠ 2022-12-26 14:13:00 SecondModel               checkMachineIdHaveRecord:274  -檢查機械編號流水序號的項目資料有沒有在RECORDS_HEAD：SELECT * FROM RECORDS_HEADS WHERE RH009='2022/12/26' AND RH007='W6_D00016'
+ ╠ 2022-12-26 14:13:00 SecondModel               getMachineSerialNoItemInfo:297  -取得機械編號流水序號的項目資料
+ ╠ 2022-12-26 14:13:00 SecondModel               getMachineSerialNoItemInfo:303  -取得機械編號流水序號的項目資料selection：SELECT * FROM RECORDS_BODYS WHERE RB002='135' AND RB011='2022/12/26'
+ ╠ 2022-12-26 14:13:04 SecondModel               writeItemInfoToDB    :223  -寫入機械編號項目資料到DB
+ ╠ 2022-12-26 14:13:04 SecondModel               writeItemInfoToDB    :246  -寫入機械編號項目資料到DB：UPDATE RECORDS_BODYS SET RB012='16' WHERE RB002='135' AND RB003='229' AND RB011='2022/12/26'
+ ╠ 2022-12-26 14:13:07 RecordModel               getDateList          :53   -取得RECORDS_HEAD已記錄的日期
+ ╠ 2022-12-26 14:13:07 RecordModel               getDateList          :60   -取得RECORDS_HEAD已記錄的日期selection：SELECT DISTINCT RH009 FROM RECORDS_HEADS
+ ╠ 2022-12-26 14:13:07 RecordModel               getFactoryList       :98   -取得RECORDS_HEAD已記錄的廠房
+ ╠ 2022-12-26 14:13:07 RecordModel               getFactoryList       :105  -取得RECORDS_HEAD已記錄的廠房selection：SELECT DISTINCT RH003 FROM RECORDS_HEADS WHERE RH009='2022/12/21'
+ ╠ 2022-12-26 14:13:07 RecordModel               getFactoryRecord     :389  -取得巡檢列表已巡檢、未巡檢
+ ╠ 2022-12-26 14:13:07 RecordModel               getRecordCheckList   :143  -取得已巡檢列表
+ ╠ 2022-12-26 14:13:07 RecordModel               getRecordCheckList   :150  -取得已巡檢列表selection：SELECT * FROM RECORDS_HEADS WHERE RH003='W6' AND RH009='2022/12/21'
+ ╠ 2022-12-26 14:13:07 RecordModel               getRecordCheckBodyList:202  -取得紀錄Body已巡檢列表
+ ╠ 2022-12-26 14:13:07 RecordModel               getRecordCheckBodyList:210  -取得紀錄Body已巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='12' AND RB011='2022/12/21'
+ ╠ 2022-12-26 14:13:07 RecordModel               getRecordCheckBodyList:210  -取得紀錄Body已巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='15' AND RB011='2022/12/21'
+ ╠ 2022-12-26 14:13:07 RecordModel               getRecordCheckBodyList:210  -取得紀錄Body已巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='120' AND RB011='2022/12/21'
+ ╠ 2022-12-26 14:13:07 RecordModel               getRecordCheckBodyList:210  -取得紀錄Body已巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='121' AND RB011='2022/12/21'
+ ╠ 2022-12-26 14:13:07 RecordModel               getRecordCheckBodyList:210  -取得紀錄Body已巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='122' AND RB011='2022/12/21'
+ ╠ 2022-12-26 14:13:08 RecordModel               getRecordCheckBodyList:210  -取得紀錄Body已巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='123' AND RB011='2022/12/21'
+ ╠ 2022-12-26 14:13:08 RecordModel               getRecordCheckBodyList:210  -取得紀錄Body已巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='124' AND RB011='2022/12/21'
+ ╠ 2022-12-26 14:13:08 RecordModel               getRecordCheckBodyList:210  -取得紀錄Body已巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='125' AND RB011='2022/12/21'
+ ╠ 2022-12-26 14:13:08 RecordModel               getRecordCheckBodyList:210  -取得紀錄Body已巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='126' AND RB011='2022/12/21'
+ ╠ 2022-12-26 14:13:08 RecordModel               getRecordCheckBodyList:210  -取得紀錄Body已巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='127' AND RB011='2022/12/21'
+ ╠ 2022-12-26 14:13:08 RecordModel               getRecordCheckBodyList:210  -取得紀錄Body已巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='128' AND RB011='2022/12/21'
+ ╠ 2022-12-26 14:13:08 RecordModel               getRecordCheckBodyList:210  -取得紀錄Body已巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='129' AND RB011='2022/12/21'
+ ╠ 2022-12-26 14:13:08 RecordModel               getRecordCheckBodyList:210  -取得紀錄Body已巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='130' AND RB011='2022/12/21'
+ ╠ 2022-12-26 14:13:08 RecordModel               getRecordCheckBodyList:210  -取得紀錄Body已巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='131' AND RB011='2022/12/21'
+ ╠ 2022-12-26 14:13:08 RecordModel               getRecordCheckBodyList:210  -取得紀錄Body已巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='132' AND RB011='2022/12/21'
+ ╠ 2022-12-26 14:13:08 RecordModel               getRecordCheckBodyList:210  -取得紀錄Body已巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='133' AND RB011='2022/12/21'
+ ╠ 2022-12-26 14:13:08 RecordModel               getRecordCheckBodyList:210  -取得紀錄Body已巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='134' AND RB011='2022/12/21'
+ ╠ 2022-12-26 14:13:08 RecordModel               getRecordCheckBodyList:210  -取得紀錄Body已巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='135' AND RB011='2022/12/21'
+ ╠ 2022-12-26 14:13:08 RecordModel               getRecordNotCheckList:265  -取得未巡檢列表
+ ╠ 2022-12-26 14:13:08 RecordModel               getRecordNotCheckList:272  -取得未巡檢列表selection：SELECT * FROM RECORDS_HEADS WHERE RH003='W6' AND RH009='2022/12/21'
+ ╠ 2022-12-26 14:13:08 RecordModel               getRecordNoCheckBodyList:324  -取得紀錄Body未巡檢列表
+ ╠ 2022-12-26 14:13:08 RecordModel               getRecordNoCheckBodyList:332  -取得紀錄Body未巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='12' AND RB011='2022/12/21'
+ ╠ 2022-12-26 14:13:08 RecordModel               getRecordNoCheckBodyList:332  -取得紀錄Body未巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='15' AND RB011='2022/12/21'
+ ╠ 2022-12-26 14:13:08 RecordModel               getRecordNoCheckBodyList:332  -取得紀錄Body未巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='120' AND RB011='2022/12/21'
+ ╠ 2022-12-26 14:13:08 RecordModel               getRecordNoCheckBodyList:332  -取得紀錄Body未巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='121' AND RB011='2022/12/21'
+ ╠ 2022-12-26 14:13:08 RecordModel               getRecordNoCheckBodyList:332  -取得紀錄Body未巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='122' AND RB011='2022/12/21'
+ ╠ 2022-12-26 14:13:08 RecordModel               getRecordNoCheckBodyList:332  -取得紀錄Body未巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='123' AND RB011='2022/12/21'
+ ╠ 2022-12-26 14:13:08 RecordModel               getRecordNoCheckBodyList:332  -取得紀錄Body未巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='124' AND RB011='2022/12/21'
+ ╠ 2022-12-26 14:13:08 RecordModel               getRecordNoCheckBodyList:332  -取得紀錄Body未巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='125' AND RB011='2022/12/21'
+ ╠ 2022-12-26 14:13:08 RecordModel               getRecordNoCheckBodyList:332  -取得紀錄Body未巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='126' AND RB011='2022/12/21'
+ ╠ 2022-12-26 14:13:08 RecordModel               getRecordNoCheckBodyList:332  -取得紀錄Body未巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='127' AND RB011='2022/12/21'
+ ╠ 2022-12-26 14:13:08 RecordModel               getRecordNoCheckBodyList:332  -取得紀錄Body未巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='128' AND RB011='2022/12/21'
+ ╠ 2022-12-26 14:13:08 RecordModel               getRecordNoCheckBodyList:332  -取得紀錄Body未巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='129' AND RB011='2022/12/21'
+ ╠ 2022-12-26 14:13:08 RecordModel               getRecordNoCheckBodyList:332  -取得紀錄Body未巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='130' AND RB011='2022/12/21'
+ ╠ 2022-12-26 14:13:08 RecordModel               getRecordNoCheckBodyList:332  -取得紀錄Body未巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='131' AND RB011='2022/12/21'
+ ╠ 2022-12-26 14:13:08 RecordModel               getRecordNoCheckBodyList:332  -取得紀錄Body未巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='132' AND RB011='2022/12/21'
+ ╠ 2022-12-26 14:13:08 RecordModel               getRecordNoCheckBodyList:332  -取得紀錄Body未巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='133' AND RB011='2022/12/21'
+ ╠ 2022-12-26 14:13:08 RecordModel               getRecordNoCheckBodyList:332  -取得紀錄Body未巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='134' AND RB011='2022/12/21'
+ ╠ 2022-12-26 14:13:08 RecordModel               getRecordNoCheckBodyList:332  -取得紀錄Body未巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='135' AND RB011='2022/12/21'
+ ╠ 2022-12-26 14:13:10 RecordModel               getFactoryList       :98   -取得RECORDS_HEAD已記錄的廠房
+ ╠ 2022-12-26 14:13:10 RecordModel               getFactoryList       :105  -取得RECORDS_HEAD已記錄的廠房selection：SELECT DISTINCT RH003 FROM RECORDS_HEADS WHERE RH009='2022/12/26'
+ ╠ 2022-12-26 14:13:11 RecordModel               getFactoryRecord     :389  -取得巡檢列表已巡檢、未巡檢
+ ╠ 2022-12-26 14:13:11 RecordModel               getRecordCheckList   :143  -取得已巡檢列表
+ ╠ 2022-12-26 14:13:11 RecordModel               getRecordCheckList   :150  -取得已巡檢列表selection：SELECT * FROM RECORDS_HEADS WHERE RH003='W6' AND RH009='2022/12/26'
+ ╠ 2022-12-26 14:13:11 RecordModel               getRecordCheckBodyList:202  -取得紀錄Body已巡檢列表
+ ╠ 2022-12-26 14:13:11 RecordModel               getRecordCheckBodyList:210  -取得紀錄Body已巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='12' AND RB011='2022/12/26'
+ ╠ 2022-12-26 14:13:11 RecordModel               getRecordCheckBodyList:210  -取得紀錄Body已巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='15' AND RB011='2022/12/26'
+ ╠ 2022-12-26 14:13:11 RecordModel               getRecordCheckBodyList:210  -取得紀錄Body已巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='120' AND RB011='2022/12/26'
+ ╠ 2022-12-26 14:13:11 RecordModel               getRecordCheckBodyList:210  -取得紀錄Body已巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='121' AND RB011='2022/12/26'
+ ╠ 2022-12-26 14:13:11 RecordModel               getRecordCheckBodyList:210  -取得紀錄Body已巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='122' AND RB011='2022/12/26'
+ ╠ 2022-12-26 14:13:11 RecordModel               getRecordCheckBodyList:210  -取得紀錄Body已巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='123' AND RB011='2022/12/26'
+ ╠ 2022-12-26 14:13:11 RecordModel               getRecordCheckBodyList:210  -取得紀錄Body已巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='124' AND RB011='2022/12/26'
+ ╠ 2022-12-26 14:13:11 RecordModel               getRecordCheckBodyList:210  -取得紀錄Body已巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='125' AND RB011='2022/12/26'
+ ╠ 2022-12-26 14:13:11 RecordModel               getRecordCheckBodyList:210  -取得紀錄Body已巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='126' AND RB011='2022/12/26'
+ ╠ 2022-12-26 14:13:11 RecordModel               getRecordCheckBodyList:210  -取得紀錄Body已巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='127' AND RB011='2022/12/26'
+ ╠ 2022-12-26 14:13:11 RecordModel               getRecordCheckBodyList:210  -取得紀錄Body已巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='128' AND RB011='2022/12/26'
+ ╠ 2022-12-26 14:13:11 RecordModel               getRecordCheckBodyList:210  -取得紀錄Body已巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='129' AND RB011='2022/12/26'
+ ╠ 2022-12-26 14:13:11 RecordModel               getRecordCheckBodyList:210  -取得紀錄Body已巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='130' AND RB011='2022/12/26'
+ ╠ 2022-12-26 14:13:11 RecordModel               getRecordCheckBodyList:210  -取得紀錄Body已巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='131' AND RB011='2022/12/26'
+ ╠ 2022-12-26 14:13:11 RecordModel               getRecordCheckBodyList:210  -取得紀錄Body已巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='132' AND RB011='2022/12/26'
+ ╠ 2022-12-26 14:13:11 RecordModel               getRecordCheckBodyList:210  -取得紀錄Body已巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='133' AND RB011='2022/12/26'
+ ╠ 2022-12-26 14:13:11 RecordModel               getRecordCheckBodyList:210  -取得紀錄Body已巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='134' AND RB011='2022/12/26'
+ ╠ 2022-12-26 14:13:11 RecordModel               getRecordCheckBodyList:210  -取得紀錄Body已巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='135' AND RB011='2022/12/26'
+ ╠ 2022-12-26 14:13:11 RecordModel               getRecordNotCheckList:265  -取得未巡檢列表
+ ╠ 2022-12-26 14:13:11 RecordModel               getRecordNotCheckList:272  -取得未巡檢列表selection：SELECT * FROM RECORDS_HEADS WHERE RH003='W6' AND RH009='2022/12/26'
+ ╠ 2022-12-26 14:13:11 RecordModel               getRecordNoCheckBodyList:324  -取得紀錄Body未巡檢列表
+ ╠ 2022-12-26 14:13:11 RecordModel               getRecordNoCheckBodyList:332  -取得紀錄Body未巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='12' AND RB011='2022/12/26'
+ ╠ 2022-12-26 14:13:11 RecordModel               getRecordNoCheckBodyList:332  -取得紀錄Body未巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='15' AND RB011='2022/12/26'
+ ╠ 2022-12-26 14:13:11 RecordModel               getRecordNoCheckBodyList:332  -取得紀錄Body未巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='120' AND RB011='2022/12/26'
+ ╠ 2022-12-26 14:13:11 RecordModel               getRecordNoCheckBodyList:332  -取得紀錄Body未巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='121' AND RB011='2022/12/26'
+ ╠ 2022-12-26 14:13:11 RecordModel               getRecordNoCheckBodyList:332  -取得紀錄Body未巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='122' AND RB011='2022/12/26'
+ ╠ 2022-12-26 14:13:11 RecordModel               getRecordNoCheckBodyList:332  -取得紀錄Body未巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='123' AND RB011='2022/12/26'
+ ╠ 2022-12-26 14:13:11 RecordModel               getRecordNoCheckBodyList:332  -取得紀錄Body未巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='124' AND RB011='2022/12/26'
+ ╠ 2022-12-26 14:13:11 RecordModel               getRecordNoCheckBodyList:332  -取得紀錄Body未巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='125' AND RB011='2022/12/26'
+ ╠ 2022-12-26 14:13:11 RecordModel               getRecordNoCheckBodyList:332  -取得紀錄Body未巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='126' AND RB011='2022/12/26'
+ ╠ 2022-12-26 14:13:11 RecordModel               getRecordNoCheckBodyList:332  -取得紀錄Body未巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='127' AND RB011='2022/12/26'
+ ╠ 2022-12-26 14:13:11 RecordModel               getRecordNoCheckBodyList:332  -取得紀錄Body未巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='128' AND RB011='2022/12/26'
+ ╠ 2022-12-26 14:13:11 RecordModel               getRecordNoCheckBodyList:332  -取得紀錄Body未巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='129' AND RB011='2022/12/26'
+ ╠ 2022-12-26 14:13:11 RecordModel               getRecordNoCheckBodyList:332  -取得紀錄Body未巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='130' AND RB011='2022/12/26'
+ ╠ 2022-12-26 14:13:11 RecordModel               getRecordNoCheckBodyList:332  -取得紀錄Body未巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='131' AND RB011='2022/12/26'
+ ╠ 2022-12-26 14:13:11 RecordModel               getRecordNoCheckBodyList:332  -取得紀錄Body未巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='132' AND RB011='2022/12/26'
+ ╠ 2022-12-26 14:13:11 RecordModel               getRecordNoCheckBodyList:332  -取得紀錄Body未巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='133' AND RB011='2022/12/26'
+ ╠ 2022-12-26 14:13:11 RecordModel               getRecordNoCheckBodyList:332  -取得紀錄Body未巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='134' AND RB011='2022/12/26'
+ ╠ 2022-12-26 14:13:11 RecordModel               getRecordNoCheckBodyList:332  -取得紀錄Body未巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='135' AND RB011='2022/12/26'
+ ╠ 2022-12-26 14:13:37 RecordModel               updateRecord         :451  -更新已選修改項目
+ ╠ 2022-12-26 14:13:37 RecordModel               updateRecord         :458  -更新已選修改項目selection：UPDATE RECORDS_BODYS SET RB012='123567' WHERE RB002='120' AND RB011='2022/12/26'
+ ╠ 2022-12-26 14:14:21 SecondModel               getMachineIdSerialNo :36   -取得機械編號的流水序號
+ ╠ 2022-12-26 14:14:21 SecondModel               getMachineIdSerialNo :43   -取得機械編號的流水序號selection：SELECT * FROM RECORDS_HEADS WHERE RH007='W6_FUSHENG200' AND RH003='W6' AND RH009='2022/12/26'
+ ╠ 2022-12-26 14:14:21 SecondModel               checkMachineIdHaveRecord:269  -檢查機械編號流水序號的項目資料有沒有在RECORDS_HEAD
+ ╠ 2022-12-26 14:14:21 SecondModel               checkMachineIdHaveRecord:274  -檢查機械編號流水序號的項目資料有沒有在RECORDS_HEAD：SELECT * FROM RECORDS_HEADS WHERE RH009='2022/12/26' AND RH007='W6_FUSHENG200'
+ ╠ 2022-12-26 14:14:21 SecondModel               getMachineSerialNoItemInfo:297  -取得機械編號流水序號的項目資料
+ ╠ 2022-12-26 14:14:21 SecondModel               getMachineSerialNoItemInfo:303  -取得機械編號流水序號的項目資料selection：SELECT * FROM RECORDS_BODYS WHERE RB002='12' AND RB011='2022/12/26'
+ ╠ 2022-12-26 14:14:34 SecondModel               writeItemInfoToDB    :223  -寫入機械編號項目資料到DB
+ ╠ 2022-12-26 14:14:34 SecondModel               writeItemInfoToDB    :246  -寫入機械編號項目資料到DB：UPDATE RECORDS_BODYS SET RB012='3' WHERE RB002='12' AND RB003='60' AND RB011='2022/12/26'
+ ╠ 2022-12-26 14:14:34 SecondModel               writeItemInfoToDB    :246  -寫入機械編號項目資料到DB：UPDATE RECORDS_BODYS SET RB012='66' WHERE RB002='12' AND RB003='61' AND RB011='2022/12/26'
+ ╠ 2022-12-26 14:14:34 SecondModel               writeItemInfoToDB    :246  -寫入機械編號項目資料到DB：UPDATE RECORDS_BODYS SET RB012='96' WHERE RB002='12' AND RB003='62' AND RB011='2022/12/26'
+ ╠ 2022-12-26 14:14:34 SecondModel               writeItemInfoToDB    :246  -寫入機械編號項目資料到DB：UPDATE RECORDS_BODYS SET RB012='6' WHERE RB002='12' AND RB003='63' AND RB011='2022/12/26'
+ ╠ 2022-12-26 14:14:34 SecondModel               writeItemInfoToDB    :246  -寫入機械編號項目資料到DB：UPDATE RECORDS_BODYS SET RB012='19' WHERE RB002='12' AND RB003='64' AND RB011='2022/12/26'
+ ╠ 2022-12-26 14:14:48 SecondModel               getMachineIdSerialNo :36   -取得機械編號的流水序號
+ ╠ 2022-12-26 14:14:48 SecondModel               getMachineIdSerialNo :43   -取得機械編號的流水序號selection：SELECT * FROM RECORDS_HEADS WHERE RH007='W6_AIRCONDITION' AND RH003='W6' AND RH009='2022/12/26'
+ ╠ 2022-12-26 14:14:48 SecondModel               checkMachineIdHaveRecord:269  -檢查機械編號流水序號的項目資料有沒有在RECORDS_HEAD
+ ╠ 2022-12-26 14:14:48 SecondModel               checkMachineIdHaveRecord:274  -檢查機械編號流水序號的項目資料有沒有在RECORDS_HEAD：SELECT * FROM RECORDS_HEADS WHERE RH009='2022/12/26' AND RH007='W6_AIRCONDITION'
+ ╠ 2022-12-26 14:14:48 SecondModel               getMachineSerialNoItemInfo:297  -取得機械編號流水序號的項目資料
+ ╠ 2022-12-26 14:14:48 SecondModel               getMachineSerialNoItemInfo:303  -取得機械編號流水序號的項目資料selection：SELECT * FROM RECORDS_BODYS WHERE RB002='15' AND RB011='2022/12/26'
+ ╠ 2022-12-26 14:15:23 SecondModel               writeItemInfoToDB    :223  -寫入機械編號項目資料到DB
+ ╠ 2022-12-26 14:15:23 SecondModel               writeItemInfoToDB    :246  -寫入機械編號項目資料到DB：UPDATE RECORDS_BODYS SET RB012='9' WHERE RB002='15' AND RB003='95' AND RB011='2022/12/26'
+ ╠ 2022-12-26 14:15:23 SecondModel               writeItemInfoToDB    :246  -寫入機械編號項目資料到DB：UPDATE RECORDS_BODYS SET RB012='36' WHERE RB002='15' AND RB003='96' AND RB011='2022/12/26'
+ ╠ 2022-12-26 14:15:23 SecondModel               writeItemInfoToDB    :246  -寫入機械編號項目資料到DB：UPDATE RECORDS_BODYS SET RB012='2' WHERE RB002='15' AND RB003='97' AND RB011='2022/12/26'
+ ╠ 2022-12-26 14:15:23 SecondModel               writeItemInfoToDB    :246  -寫入機械編號項目資料到DB：UPDATE RECORDS_BODYS SET RB012='5' WHERE RB002='15' AND RB003='98' AND RB011='2022/12/26'
+ ╠ 2022-12-26 14:15:23 SecondModel               writeItemInfoToDB    :246  -寫入機械編號項目資料到DB：UPDATE RECORDS_BODYS SET RB012='8' WHERE RB002='15' AND RB003='99' AND RB011='2022/12/26'
+ ╠ 2022-12-26 14:15:23 SecondModel               writeItemInfoToDB    :246  -寫入機械編號項目資料到DB：UPDATE RECORDS_BODYS SET RB012='4' WHERE RB002='15' AND RB003='100' AND RB011='2022/12/26'
+ ╠ 2022-12-26 14:15:23 SecondModel               writeItemInfoToDB    :246  -寫入機械編號項目資料到DB：UPDATE RECORDS_BODYS SET RB012='7' WHERE RB002='15' AND RB003='101' AND RB011='2022/12/26'
+ ╠ 2022-12-26 14:15:23 SecondModel               writeItemInfoToDB    :246  -寫入機械編號項目資料到DB：UPDATE RECORDS_BODYS SET RB012='9' WHERE RB002='15' AND RB003='102' AND RB011='2022/12/26'
+ ╠ 2022-12-26 14:15:23 SecondModel               writeItemInfoToDB    :246  -寫入機械編號項目資料到DB：UPDATE RECORDS_BODYS SET RB012='33' WHERE RB002='15' AND RB003='103' AND RB011='2022/12/26'
+ ╠ 2022-12-26 14:15:23 SecondModel               writeItemInfoToDB    :246  -寫入機械編號項目資料到DB：UPDATE RECORDS_BODYS SET RB012='36' WHERE RB002='15' AND RB003='104' AND RB011='2022/12/26'
+ ╠ 2022-12-26 14:15:23 SecondModel               writeItemInfoToDB    :246  -寫入機械編號項目資料到DB：UPDATE RECORDS_BODYS SET RB012='2' WHERE RB002='15' AND RB003='105' AND RB011='2022/12/26'
+ ╠ 2022-12-26 14:15:23 SecondModel               writeItemInfoToDB    :246  -寫入機械編號項目資料到DB：UPDATE RECORDS_BODYS SET RB012='5' WHERE RB002='15' AND RB003='106' AND RB011='2022/12/26'
+ ╠ 2022-12-26 14:15:23 SecondModel               writeItemInfoToDB    :246  -寫入機械編號項目資料到DB：UPDATE RECORDS_BODYS SET RB012='8' WHERE RB002='15' AND RB003='107' AND RB011='2022/12/26'
+ ╠ 2022-12-26 14:15:23 SecondModel               writeItemInfoToDB    :246  -寫入機械編號項目資料到DB：UPDATE RECORDS_BODYS SET RB012='4' WHERE RB002='15' AND RB003='108' AND RB011='2022/12/26'
+ ╠ 2022-12-26 14:15:23 SecondModel               writeItemInfoToDB    :246  -寫入機械編號項目資料到DB：UPDATE RECORDS_BODYS SET RB012='7' WHERE RB002='15' AND RB003='109' AND RB011='2022/12/26'
+ ╠ 2022-12-26 14:15:25 RecordModel               getDateList          :53   -取得RECORDS_HEAD已記錄的日期
+ ╠ 2022-12-26 14:15:25 RecordModel               getDateList          :60   -取得RECORDS_HEAD已記錄的日期selection：SELECT DISTINCT RH009 FROM RECORDS_HEADS
+ ╠ 2022-12-26 14:15:25 RecordModel               getFactoryList       :98   -取得RECORDS_HEAD已記錄的廠房
+ ╠ 2022-12-26 14:15:25 RecordModel               getFactoryList       :105  -取得RECORDS_HEAD已記錄的廠房selection：SELECT DISTINCT RH003 FROM RECORDS_HEADS WHERE RH009='2022/12/21'
+ ╠ 2022-12-26 14:15:26 RecordModel               getFactoryRecord     :389  -取得巡檢列表已巡檢、未巡檢
+ ╠ 2022-12-26 14:15:26 RecordModel               getRecordCheckList   :143  -取得已巡檢列表
+ ╠ 2022-12-26 14:15:26 RecordModel               getRecordCheckList   :150  -取得已巡檢列表selection：SELECT * FROM RECORDS_HEADS WHERE RH003='W6' AND RH009='2022/12/21'
+ ╠ 2022-12-26 14:15:26 RecordModel               getRecordCheckBodyList:202  -取得紀錄Body已巡檢列表
+ ╠ 2022-12-26 14:15:26 RecordModel               getRecordCheckBodyList:210  -取得紀錄Body已巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='12' AND RB011='2022/12/21'
+ ╠ 2022-12-26 14:15:26 RecordModel               getRecordCheckBodyList:210  -取得紀錄Body已巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='15' AND RB011='2022/12/21'
+ ╠ 2022-12-26 14:15:26 RecordModel               getRecordCheckBodyList:210  -取得紀錄Body已巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='120' AND RB011='2022/12/21'
+ ╠ 2022-12-26 14:15:26 RecordModel               getRecordCheckBodyList:210  -取得紀錄Body已巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='121' AND RB011='2022/12/21'
+ ╠ 2022-12-26 14:15:26 RecordModel               getRecordCheckBodyList:210  -取得紀錄Body已巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='122' AND RB011='2022/12/21'
+ ╠ 2022-12-26 14:15:26 RecordModel               getRecordCheckBodyList:210  -取得紀錄Body已巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='123' AND RB011='2022/12/21'
+ ╠ 2022-12-26 14:15:26 RecordModel               getRecordCheckBodyList:210  -取得紀錄Body已巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='124' AND RB011='2022/12/21'
+ ╠ 2022-12-26 14:15:26 RecordModel               getRecordCheckBodyList:210  -取得紀錄Body已巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='125' AND RB011='2022/12/21'
+ ╠ 2022-12-26 14:15:26 RecordModel               getRecordCheckBodyList:210  -取得紀錄Body已巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='126' AND RB011='2022/12/21'
+ ╠ 2022-12-26 14:15:26 RecordModel               getRecordCheckBodyList:210  -取得紀錄Body已巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='127' AND RB011='2022/12/21'
+ ╠ 2022-12-26 14:15:26 RecordModel               getRecordCheckBodyList:210  -取得紀錄Body已巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='128' AND RB011='2022/12/21'
+ ╠ 2022-12-26 14:15:26 RecordModel               getRecordCheckBodyList:210  -取得紀錄Body已巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='129' AND RB011='2022/12/21'
+ ╠ 2022-12-26 14:15:26 RecordModel               getRecordCheckBodyList:210  -取得紀錄Body已巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='130' AND RB011='2022/12/21'
+ ╠ 2022-12-26 14:15:26 RecordModel               getRecordCheckBodyList:210  -取得紀錄Body已巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='131' AND RB011='2022/12/21'
+ ╠ 2022-12-26 14:15:26 RecordModel               getRecordCheckBodyList:210  -取得紀錄Body已巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='132' AND RB011='2022/12/21'
+ ╠ 2022-12-26 14:15:26 RecordModel               getRecordCheckBodyList:210  -取得紀錄Body已巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='133' AND RB011='2022/12/21'
+ ╠ 2022-12-26 14:15:26 RecordModel               getRecordCheckBodyList:210  -取得紀錄Body已巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='134' AND RB011='2022/12/21'
+ ╠ 2022-12-26 14:15:26 RecordModel               getRecordCheckBodyList:210  -取得紀錄Body已巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='135' AND RB011='2022/12/21'
+ ╠ 2022-12-26 14:15:26 RecordModel               getRecordNotCheckList:265  -取得未巡檢列表
+ ╠ 2022-12-26 14:15:26 RecordModel               getRecordNotCheckList:272  -取得未巡檢列表selection：SELECT * FROM RECORDS_HEADS WHERE RH003='W6' AND RH009='2022/12/21'
+ ╠ 2022-12-26 14:15:26 RecordModel               getRecordNoCheckBodyList:324  -取得紀錄Body未巡檢列表
+ ╠ 2022-12-26 14:15:26 RecordModel               getRecordNoCheckBodyList:332  -取得紀錄Body未巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='12' AND RB011='2022/12/21'
+ ╠ 2022-12-26 14:15:26 RecordModel               getRecordNoCheckBodyList:332  -取得紀錄Body未巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='15' AND RB011='2022/12/21'
+ ╠ 2022-12-26 14:15:26 RecordModel               getRecordNoCheckBodyList:332  -取得紀錄Body未巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='120' AND RB011='2022/12/21'
+ ╠ 2022-12-26 14:15:26 RecordModel               getRecordNoCheckBodyList:332  -取得紀錄Body未巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='121' AND RB011='2022/12/21'
+ ╠ 2022-12-26 14:15:26 RecordModel               getRecordNoCheckBodyList:332  -取得紀錄Body未巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='122' AND RB011='2022/12/21'
+ ╠ 2022-12-26 14:15:26 RecordModel               getRecordNoCheckBodyList:332  -取得紀錄Body未巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='123' AND RB011='2022/12/21'
+ ╠ 2022-12-26 14:15:26 RecordModel               getRecordNoCheckBodyList:332  -取得紀錄Body未巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='124' AND RB011='2022/12/21'
+ ╠ 2022-12-26 14:15:26 RecordModel               getRecordNoCheckBodyList:332  -取得紀錄Body未巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='125' AND RB011='2022/12/21'
+ ╠ 2022-12-26 14:15:26 RecordModel               getRecordNoCheckBodyList:332  -取得紀錄Body未巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='126' AND RB011='2022/12/21'
+ ╠ 2022-12-26 14:15:26 RecordModel               getRecordNoCheckBodyList:332  -取得紀錄Body未巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='127' AND RB011='2022/12/21'
+ ╠ 2022-12-26 14:15:26 RecordModel               getRecordNoCheckBodyList:332  -取得紀錄Body未巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='128' AND RB011='2022/12/21'
+ ╠ 2022-12-26 14:15:26 RecordModel               getRecordNoCheckBodyList:332  -取得紀錄Body未巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='129' AND RB011='2022/12/21'
+ ╠ 2022-12-26 14:15:26 RecordModel               getRecordNoCheckBodyList:332  -取得紀錄Body未巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='130' AND RB011='2022/12/21'
+ ╠ 2022-12-26 14:15:26 RecordModel               getRecordNoCheckBodyList:332  -取得紀錄Body未巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='131' AND RB011='2022/12/21'
+ ╠ 2022-12-26 14:15:26 RecordModel               getRecordNoCheckBodyList:332  -取得紀錄Body未巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='132' AND RB011='2022/12/21'
+ ╠ 2022-12-26 14:15:26 RecordModel               getRecordNoCheckBodyList:332  -取得紀錄Body未巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='133' AND RB011='2022/12/21'
+ ╠ 2022-12-26 14:15:26 RecordModel               getRecordNoCheckBodyList:332  -取得紀錄Body未巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='134' AND RB011='2022/12/21'
+ ╠ 2022-12-26 14:15:26 RecordModel               getRecordNoCheckBodyList:332  -取得紀錄Body未巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='135' AND RB011='2022/12/21'
+ ╠ 2022-12-26 14:15:28 RecordModel               getFactoryList       :98   -取得RECORDS_HEAD已記錄的廠房
+ ╠ 2022-12-26 14:15:28 RecordModel               getFactoryList       :105  -取得RECORDS_HEAD已記錄的廠房selection：SELECT DISTINCT RH003 FROM RECORDS_HEADS WHERE RH009='2022/12/26'
+ ╠ 2022-12-26 14:15:28 RecordModel               getFactoryRecord     :389  -取得巡檢列表已巡檢、未巡檢
+ ╠ 2022-12-26 14:15:28 RecordModel               getRecordCheckList   :143  -取得已巡檢列表
+ ╠ 2022-12-26 14:15:28 RecordModel               getRecordCheckList   :150  -取得已巡檢列表selection：SELECT * FROM RECORDS_HEADS WHERE RH003='W6' AND RH009='2022/12/26'
+ ╠ 2022-12-26 14:15:28 RecordModel               getRecordCheckBodyList:202  -取得紀錄Body已巡檢列表
+ ╠ 2022-12-26 14:15:28 RecordModel               getRecordCheckBodyList:210  -取得紀錄Body已巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='12' AND RB011='2022/12/26'
+ ╠ 2022-12-26 14:15:28 RecordModel               getRecordCheckBodyList:210  -取得紀錄Body已巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='15' AND RB011='2022/12/26'
+ ╠ 2022-12-26 14:15:28 RecordModel               getRecordCheckBodyList:210  -取得紀錄Body已巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='120' AND RB011='2022/12/26'
+ ╠ 2022-12-26 14:15:28 RecordModel               getRecordCheckBodyList:210  -取得紀錄Body已巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='121' AND RB011='2022/12/26'
+ ╠ 2022-12-26 14:15:28 RecordModel               getRecordCheckBodyList:210  -取得紀錄Body已巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='122' AND RB011='2022/12/26'
+ ╠ 2022-12-26 14:15:28 RecordModel               getRecordCheckBodyList:210  -取得紀錄Body已巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='123' AND RB011='2022/12/26'
+ ╠ 2022-12-26 14:15:28 RecordModel               getRecordCheckBodyList:210  -取得紀錄Body已巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='124' AND RB011='2022/12/26'
+ ╠ 2022-12-26 14:15:28 RecordModel               getRecordCheckBodyList:210  -取得紀錄Body已巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='125' AND RB011='2022/12/26'
+ ╠ 2022-12-26 14:15:28 RecordModel               getRecordCheckBodyList:210  -取得紀錄Body已巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='126' AND RB011='2022/12/26'
+ ╠ 2022-12-26 14:15:28 RecordModel               getRecordCheckBodyList:210  -取得紀錄Body已巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='127' AND RB011='2022/12/26'
+ ╠ 2022-12-26 14:15:28 RecordModel               getRecordCheckBodyList:210  -取得紀錄Body已巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='128' AND RB011='2022/12/26'
+ ╠ 2022-12-26 14:15:28 RecordModel               getRecordCheckBodyList:210  -取得紀錄Body已巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='129' AND RB011='2022/12/26'
+ ╠ 2022-12-26 14:15:28 RecordModel               getRecordCheckBodyList:210  -取得紀錄Body已巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='130' AND RB011='2022/12/26'
+ ╠ 2022-12-26 14:15:28 RecordModel               getRecordCheckBodyList:210  -取得紀錄Body已巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='131' AND RB011='2022/12/26'
+ ╠ 2022-12-26 14:15:28 RecordModel               getRecordCheckBodyList:210  -取得紀錄Body已巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='132' AND RB011='2022/12/26'
+ ╠ 2022-12-26 14:15:28 RecordModel               getRecordCheckBodyList:210  -取得紀錄Body已巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='133' AND RB011='2022/12/26'
+ ╠ 2022-12-26 14:15:28 RecordModel               getRecordCheckBodyList:210  -取得紀錄Body已巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='134' AND RB011='2022/12/26'
+ ╠ 2022-12-26 14:15:28 RecordModel               getRecordCheckBodyList:210  -取得紀錄Body已巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='135' AND RB011='2022/12/26'
+ ╠ 2022-12-26 14:15:28 RecordModel               getRecordNotCheckList:265  -取得未巡檢列表
+ ╠ 2022-12-26 14:15:28 RecordModel               getRecordNotCheckList:272  -取得未巡檢列表selection：SELECT * FROM RECORDS_HEADS WHERE RH003='W6' AND RH009='2022/12/26'
+ ╠ 2022-12-26 14:15:28 RecordModel               getRecordNoCheckBodyList:324  -取得紀錄Body未巡檢列表
+ ╠ 2022-12-26 14:15:28 RecordModel               getRecordNoCheckBodyList:332  -取得紀錄Body未巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='12' AND RB011='2022/12/26'
+ ╠ 2022-12-26 14:15:28 RecordModel               getRecordNoCheckBodyList:332  -取得紀錄Body未巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='15' AND RB011='2022/12/26'
+ ╠ 2022-12-26 14:15:28 RecordModel               getRecordNoCheckBodyList:332  -取得紀錄Body未巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='120' AND RB011='2022/12/26'
+ ╠ 2022-12-26 14:15:28 RecordModel               getRecordNoCheckBodyList:332  -取得紀錄Body未巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='121' AND RB011='2022/12/26'
+ ╠ 2022-12-26 14:15:28 RecordModel               getRecordNoCheckBodyList:332  -取得紀錄Body未巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='122' AND RB011='2022/12/26'
+ ╠ 2022-12-26 14:15:28 RecordModel               getRecordNoCheckBodyList:332  -取得紀錄Body未巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='123' AND RB011='2022/12/26'
+ ╠ 2022-12-26 14:15:28 RecordModel               getRecordNoCheckBodyList:332  -取得紀錄Body未巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='124' AND RB011='2022/12/26'
+ ╠ 2022-12-26 14:15:28 RecordModel               getRecordNoCheckBodyList:332  -取得紀錄Body未巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='125' AND RB011='2022/12/26'
+ ╠ 2022-12-26 14:15:28 RecordModel               getRecordNoCheckBodyList:332  -取得紀錄Body未巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='126' AND RB011='2022/12/26'
+ ╠ 2022-12-26 14:15:28 RecordModel               getRecordNoCheckBodyList:332  -取得紀錄Body未巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='127' AND RB011='2022/12/26'
+ ╠ 2022-12-26 14:15:28 RecordModel               getRecordNoCheckBodyList:332  -取得紀錄Body未巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='128' AND RB011='2022/12/26'
+ ╠ 2022-12-26 14:15:28 RecordModel               getRecordNoCheckBodyList:332  -取得紀錄Body未巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='129' AND RB011='2022/12/26'
+ ╠ 2022-12-26 14:15:28 RecordModel               getRecordNoCheckBodyList:332  -取得紀錄Body未巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='130' AND RB011='2022/12/26'
+ ╠ 2022-12-26 14:15:28 RecordModel               getRecordNoCheckBodyList:332  -取得紀錄Body未巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='131' AND RB011='2022/12/26'
+ ╠ 2022-12-26 14:15:28 RecordModel               getRecordNoCheckBodyList:332  -取得紀錄Body未巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='132' AND RB011='2022/12/26'
+ ╠ 2022-12-26 14:15:28 RecordModel               getRecordNoCheckBodyList:332  -取得紀錄Body未巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='133' AND RB011='2022/12/26'
+ ╠ 2022-12-26 14:15:28 RecordModel               getRecordNoCheckBodyList:332  -取得紀錄Body未巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='134' AND RB011='2022/12/26'
+ ╠ 2022-12-26 14:15:28 RecordModel               getRecordNoCheckBodyList:332  -取得紀錄Body未巡檢列表selection：SELECT * FROM RECORDS_BODYS WHERE RB002='135' AND RB011='2022/12/26'
+ ╠ 2022-12-26 14:15:37 SecondModel               checkCanLeave        :87   -檢查是否做完回上一頁(MainActivity)另選廠房
+ ╠ 2022-12-26 14:15:37 SecondModel               checkCanLeave        :92   -檢查是否做完回上一頁(MainActivity)另選廠房selection：SELECT * FROM RECORDS_HEADS WHERE RH009='2022/12/26'
+ ╠ 2022-12-26 14:15:37 SecondModel               checkRecordBodyHaveRecord:126  -檢查是否已記錄過
+ ╠ 2022-12-26 14:15:37 SecondModel               checkRecordBodyHaveRecord:134  -檢查是否已記錄過selection：SELECT * FROM RECORDS_BODYS WHERE RB011='2022/12/26'
+ ╠ 2022-12-26 14:15:40 MainModel                 checkCanDoFactory    :76   -檢查是否可以進入巡檢
+ ╠ 2022-12-26 14:15:40 MainModel                 checkCanDoFactory    :81   -檢查是否可以進入巡檢selection：SELECT * FROM RECORDS_HEADS WHERE RH003='W6' AND RH009='2022/12/26'
+ ╠ 2022-12-26 14:16:15 Navigation_BaseActivity   lambda$null$1        :95   -登出
+ ╚═══════════════════════════════════════════════════════════
+
+ ╔════════════════════2022-12-26 14:16:24  Application Start════════════════════
+ ╠ AndroidVersion=9
+ ╠ Model=HC61
+ ╠ Serial=unknown
+ ╠ PackageName=com.regalscan.platform(國巨股份有限公司)
+ ╠ VersionName=1.0.1
+ ╠
+ ╠ 2022-12-26 14:16:25 LoginActivity             onCreate             :113  -機器序號：unknown
+ ╠ 2022-12-26 14:16:30 LoginActivity             onClick              :436  -登入
+ ╠ 2022-12-26 14:16:39 Navigation_BaseActivity   lambda$null$1        :95   -登出

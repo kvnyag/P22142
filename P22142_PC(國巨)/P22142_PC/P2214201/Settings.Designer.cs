@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Settings));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tbxSQLPassword = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -84,7 +85,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(54, 162);
+            this.label4.Location = new System.Drawing.Point(53, 162);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(99, 20);
             this.label4.TabIndex = 6;
@@ -126,7 +127,7 @@
             // 
             // tbxSQLServerIP
             // 
-            this.tbxSQLServerIP.Location = new System.Drawing.Point(167, 37);
+            this.tbxSQLServerIP.Location = new System.Drawing.Point(167, 38);
             this.tbxSQLServerIP.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbxSQLServerIP.Name = "tbxSQLServerIP";
             this.tbxSQLServerIP.Size = new System.Drawing.Size(311, 31);
@@ -143,7 +144,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(434, 467);
+            this.button1.Location = new System.Drawing.Point(191, 466);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(121, 41);
@@ -165,7 +166,7 @@
             this.groupBox2.Controls.Add(this.tbxReportAdr);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.groupBox2.Location = new System.Drawing.Point(11, 223);
+            this.groupBox2.Location = new System.Drawing.Point(11, 222);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -209,7 +210,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(5, 187);
+            this.label9.Location = new System.Drawing.Point(5, 188);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(169, 20);
             this.label9.TabIndex = 6;
@@ -227,7 +228,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(5, 117);
+            this.label7.Location = new System.Drawing.Point(5, 118);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(169, 20);
             this.label7.TabIndex = 4;
@@ -244,7 +245,7 @@
             // 
             // tbxReportAdr
             // 
-            this.tbxReportAdr.Location = new System.Drawing.Point(167, 37);
+            this.tbxReportAdr.Location = new System.Drawing.Point(167, 38);
             this.tbxReportAdr.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbxReportAdr.Name = "tbxReportAdr";
             this.tbxReportAdr.Size = new System.Drawing.Size(311, 31);
@@ -263,13 +264,15 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(986, 517);
+            this.ClientSize = new System.Drawing.Size(527, 518);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Settings";
-            this.Text = "Settings";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "設定文件";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);

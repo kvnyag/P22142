@@ -2,6 +2,7 @@
 using System.Data;
 using System.Windows.Forms;
 using REGAL.Data.DataAccess;
+using System.Drawing;
 
 namespace P2214201
 {
@@ -9,18 +10,66 @@ namespace P2214201
     {
         //公用變數
         public string UserAccount, UserName, UserRole;
-
+        public double oldWidth, oldHeight, newWidth, newHeight;
         string MN001, MN002, MN003, MN004, MN005, MN006, MN007, MN008, MN009, MN010, MN011, MN012; //單位機械編號資料 欄位名
         string CK001, CK002, CK003, CK004, CK005, CK006, CK007, CK008, CK009, CK010, CK011, CK012, CK013, CK014, CK015, CK016; //檢查項目基本資料 欄位名
         string CG001, CG002, FT001;
-        string strDemand = "";
+        string strDemand = "", isDGVUse = "N";
         UseSQLServer USQL = new UseSQLServer();
         DataAccess da = new DataAccess();
         DataTable dt = new DataTable();
+        DealRecord drc = new DealRecord();
 
         public CheckInfo()
         {
             InitializeComponent();
+        }
+
+        private void CheckInfo_Resize(object sender, EventArgs e)
+        {
+            int NewX, NewY;
+
+            if (oldWidth > 0 && oldHeight > 0 && newWidth > 0 && newHeight > 0)
+            {
+                double x = (newWidth / oldWidth);
+                double y = (newHeight / oldHeight);
+
+                dgvCheck.Width = Convert.ToInt32(x * dgvCheck.Width);
+                dgvCheck.Height = Convert.ToInt32(y * dgvCheck.Height);
+
+                gbxFun.Width = Convert.ToInt32(x * gbxFun.Width);
+                gbxFun.Height = Convert.ToInt32(y * gbxFun.Height);
+
+                gbxShow.Width = Convert.ToInt32(x * gbxShow.Width);
+                gbxShow.Height = Convert.ToInt32(y * gbxShow.Height);
+
+                NewX = (int)(btnCheckInfoAdd.Location.X * x + btnCheckInfoAdd.Width * (x - 1));
+                btnCheckInfoAdd.Location = new Point(NewX, btnCheckInfoAdd.Location.Y);
+                btnCheckInfoAdd.Width = Convert.ToInt32(x * btnCheckInfoAdd.Width);
+                btnCheckInfoAdd.Height = Convert.ToInt32(y * btnCheckInfoAdd.Height);
+
+                NewX = (int)(btnCheckInfoModify.Location.X * x + btnCheckInfoModify.Width * (x - 1));
+                btnCheckInfoModify.Location = new Point(NewX, btnCheckInfoModify.Location.Y);
+                btnCheckInfoModify.Width = Convert.ToInt32(x * btnCheckInfoModify.Width);
+                btnCheckInfoModify.Height = Convert.ToInt32(y * btnCheckInfoModify.Height);
+
+                NewX = (int)(btnCheckInfoDelete.Location.X * x + btnCheckInfoDelete.Width * (x - 1));
+                btnCheckInfoDelete.Location = new Point(NewX, btnCheckInfoDelete.Location.Y);
+                btnCheckInfoDelete.Width = Convert.ToInt32(x * btnCheckInfoDelete.Width);
+                btnCheckInfoDelete.Height = Convert.ToInt32(y * btnCheckInfoDelete.Height);
+
+                NewX = (int)(btnCheckInfoDemand.Location.X * x + btnCheckInfoDemand.Width * (x - 1));
+                btnCheckInfoDemand.Location = new Point(NewX, btnCheckInfoDemand.Location.Y);
+                btnCheckInfoDemand.Width = Convert.ToInt32(x * btnCheckInfoDemand.Width);
+                btnCheckInfoDemand.Height = Convert.ToInt32(y * btnCheckInfoDemand.Height);
+            }
+        }
+
+        private void CheckInfo_Paint(object sender, PaintEventArgs e)
+        {
+            Graphics g = e.Graphics;
+            System.Drawing.Drawing2D.LinearGradientBrush lb = new System.Drawing.Drawing2D.LinearGradientBrush(this.DisplayRectangle, Color.Linen, Color.DarkTurquoise, 45);
+            g.FillRectangle(lb, this.DisplayRectangle);
         }
 
         private void CheckInfo_Load(object sender, EventArgs e)
@@ -28,6 +77,9 @@ namespace P2214201
             //參數
             int i;
             string strSQL;
+
+            //DataGridView 設定
+            drc.SetDataGridView(ref dgvCheck);
 
             //寫入類別名稱下拉選單
             strSQL = "Select * From CATEGORYS";
@@ -66,7 +118,7 @@ namespace P2214201
             //參數
             int maxNo;
             string strSQL;
-
+            
             //檢查項目代號(CK001)
             //....查目前類別名稱，找出目前類別代號
             CG002 = cbxReportName.Text;
@@ -77,6 +129,7 @@ namespace P2214201
             else
             { label7.Visible = false; cbxFactoryCode.Visible = false; }
             //....找出目前資料庫中該類別代號的最大值
+            /*
             if (CG001 != "D")
             {
                 strSQL = "Select ISNULL(Max(CK001),'0000000') as MaxCK001 From CHECKITEMS Where CK016 = '" + CG001 + "'";
@@ -87,6 +140,14 @@ namespace P2214201
                 //....建出檢查項目代號
                 tbxCheckCode.Text = CG001 + (maxNo + 1).ToString().PadLeft(5, '0');
             }
+            */
+            //清空
+            if (isDGVUse != "Y")
+            {
+                ClearForm();
+                dgvCheck.DataSource = null;
+                dgvCheck.ClearSelection();
+            }
         }
 
         private void cbxFactoryName_SelectedIndexChanged(object sender, EventArgs e)
@@ -96,6 +157,7 @@ namespace P2214201
 
             //檢查項目代號(CK001)
             //....找出目前資料庫中該類別代號的最大值
+            /*
             FT001 = cbxFactoryCode.Text;
             noFT001 = FT001.Length;
             strSQL = "Select ISNULL(Max(CK001),'0000000') as MaxCK001 From CHECKITEMS Where CK016 = 'D' And CK015 = '" + FT001 + "'";
@@ -106,6 +168,19 @@ namespace P2214201
             maxNo = int.Parse(MaxCK001.Substring((lenMaxCK001 - 5), 5));
             //....建出檢查項目代號
             tbxCheckCode.Text = CG001 + (maxNo + 1).ToString().PadLeft(5, '0');
+            */
+            //清空
+            if (isDGVUse != "Y")
+            {
+                tbxCheckCode.Text = "";
+                tbxCheckName.Text = "";
+                tbxMemo1.Text = "";
+                tbxMemo2.Text = "";
+                tbxRefer1.Text = "";
+                cbxRefer2.Text = "";
+                tbxRefer3.Text = "";
+                dgvCheck.DataSource = null;
+            }
         }
 
         private void btnCheckInfoAdd_Click(object sender, EventArgs e)
@@ -177,7 +252,10 @@ namespace P2214201
             try
             {
                 if (strDemand != "")
+                {
                     dgvCheck.DataSource = USQL.SQLSelect(ref da, strDemand);
+                    dgvCheck.ClearSelection();
+                }
             }
             catch(Exception Ex)
             { }
@@ -239,7 +317,10 @@ namespace P2214201
             try
             {
                 if (strDemand != "")
+                {
                     dgvCheck.DataSource = USQL.SQLSelect(ref da, strDemand);
+                    dgvCheck.ClearSelection();
+                }
             }
             catch (Exception Ex)
             { }
@@ -278,7 +359,10 @@ namespace P2214201
             try
             {
                 if (strDemand != "")
+                {
                     dgvCheck.DataSource = USQL.SQLSelect(ref da, strDemand);
+                    dgvCheck.ClearSelection();
+                }
             }
             catch (Exception Ex)
             { }
@@ -293,6 +377,8 @@ namespace P2214201
             string strSQL;
 
             //搜尋結果填入 DataGridView
+            CG001 = USQL.FindCG("", cbxReportName.Text.Trim());
+            FT001 = cbxFactoryCode.Text.Trim();
             CK001 = tbxCheckCode.Text.Trim();
             CK002 = tbxCheckName.Text.Trim();
 
@@ -303,9 +389,15 @@ namespace P2214201
             strSQL += "CK003 as '參考起值',";
             strSQL += "CK004 as '符號',";
             strSQL += "CK005 as '參考訖值',";
+            strSQL += "CK015 as '廠房代號',";
+            strSQL += "CK016 as '類別代號 ',";
             strSQL += "CK008 as '建立人員' ";
             strSQL += "From CHECKITEMS ";
             strSQL += "Where 1 = 1 ";
+            if (FT001 != "")
+                strSQL += "AND CK015 = '" + FT001 + "' ";
+            if(CG001 != "")
+                strSQL += "AND CK016 = '" + CG001 + "' ";
             if (CK001 != "")
                 strSQL += "And CK001 = '" + CK001 + "' ";
             if (CK002 != "")
@@ -330,7 +422,7 @@ namespace P2214201
                 MessageBox.Show("輸入條件未查詢到任何資料。");
 
             dgvCheck.DataSource = dt;
-
+            dgvCheck.ClearSelection();
             //清空所有可填入欄位
             ClearForm();
         }
@@ -341,25 +433,21 @@ namespace P2214201
             //....確定DataGridView有值
             if (dgvCheck.Rows.Count > 0)
             {
+                isDGVUse = "Y";
+
                 tbxCheckCode.Text = dgvCheck.CurrentRow.Cells[0].Value.ToString().Trim(); //檢查項目代號
+                tbxCheckName.Text = dgvCheck.CurrentRow.Cells[1].Value.ToString().Trim();   //檢查項目名稱
+                tbxMemo1.Text = dgvCheck.CurrentRow.Cells[2].Value.ToString().Trim();       //備註1
+                tbxMemo2.Text = dgvCheck.CurrentRow.Cells[3].Value.ToString().Trim();       //備註2
+                tbxRefer1.Text = dgvCheck.CurrentRow.Cells[4].Value.ToString().Trim();      //參考 起
+                cbxRefer2.Text = dgvCheck.CurrentRow.Cells[5].Value.ToString().Trim();      //中間符號
+                tbxRefer3.Text = dgvCheck.CurrentRow.Cells[6].Value.ToString().Trim();      //參考 訖
+                cbxFactoryCode.Text = dgvCheck.CurrentRow.Cells[7].Value.ToString().Trim(); //廠房代號
+                CG001 = dgvCheck.CurrentRow.Cells[8].Value.ToString().Trim();
+                CG002 = USQL.FindCG(CG001, "");
+                cbxReportName.Text = CG002;                                                 //廠房代號
 
-                string strTmp = tbxCheckCode.Text;
-                int noTmp = strTmp.Length;
-                CG001 = strTmp.Substring((noTmp - 6), 1);
-                if(CG001 == "D")
-                    FT001 = strTmp.Substring(0, (noTmp -7));
-                string strSQL = "";
-                strSQL += "Select * From CATEGORYS Where CG001 = '" + CG001 + "'";
-                dt = USQL.SQLSelect(ref da, strSQL);
-                cbxReportName.Text = dt.Rows[0]["CG002"].ToString();
-                cbxFactoryCode.Text = FT001;
-
-                tbxCheckName.Text = dgvCheck.CurrentRow.Cells[1].Value.ToString().Trim(); //檢查項目名稱
-                tbxMemo1.Text = dgvCheck.CurrentRow.Cells[2].Value.ToString().Trim();     //備註1
-                tbxMemo2.Text = dgvCheck.CurrentRow.Cells[3].Value.ToString().Trim();     //備註2
-                tbxRefer1.Text = dgvCheck.CurrentRow.Cells[4].Value.ToString().Trim();    //參考 起
-                cbxRefer2.Text = dgvCheck.CurrentRow.Cells[5].Value.ToString().Trim();    //中間符號
-                tbxRefer3.Text = dgvCheck.CurrentRow.Cells[6].Value.ToString().Trim();    //參考 訖
+                isDGVUse = "N";
             }
         }
 

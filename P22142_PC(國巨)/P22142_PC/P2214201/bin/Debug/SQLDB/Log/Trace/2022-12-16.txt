@@ -1,0 +1,20 @@
+ ╚═══════════════════════════════════════════════════════════
+
+ ╔════════════════════2022-12-16 09:58:05  Application Start════════════════════
+ ╠ AndroidVersion=9
+ ╠ Model=HC61
+ ╠ Serial=unknown
+ ╠ PackageName=com.regalscan.platform(國巨股份有限公司)
+ ╠ VersionName=1.0.0
+ ╠
+ ╠ 2022-12-16 09:58:05 LoginActivity             onCreate             :113  -機器序號：unknown
+ ╠ 2022-12-16 09:58:07 LoginActivity             onClick              :436  -登入
+ ╚═══════════════════════════════════════════════════════════
+
+ ╔════════════════════2022-12-16 09:58:08  Application Start════════════════════
+ ╠ AndroidVersion=9
+ ╠ Model=HC61
+ ╠ Serial=unknown
+ ╠ PackageName=com.operator.ContentProvider(ContentProvider)
+ ╠ VersionName=1.0.0
+ ╠

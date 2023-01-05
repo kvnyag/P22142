@@ -110,7 +110,6 @@
             this.btnLogExport.TabIndex = 1;
             this.btnLogExport.Text = "Log 匯出";
             this.btnLogExport.UseVisualStyleBackColor = true;
-            this.btnLogExport.Visible = false;
             this.btnLogExport.Click += new System.EventHandler(this.btnLogExport_Click);
             // 
             // btnPDAtoPC

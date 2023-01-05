@@ -2,6 +2,7 @@
 using System.Data;
 using System.Windows.Forms;
 using REGAL.Data.DataAccess;
+using System.Drawing;
 
 namespace P2214201
 {
@@ -9,19 +10,71 @@ namespace P2214201
     {
         //公用變數
         public string UserAccount, UserName, UserRole;
+        public double oldWidth, oldHeight, newWidth, newHeight;
         string FT001, FT002, FT003, FT004, FT005, FT006, FT007, FT008, FT009; //廠房基本資料 欄位名
         string strDemand = "";
         UseSQLServer USQL = new UseSQLServer();
         DataAccess da = new DataAccess();
         DataTable dt = new DataTable();
+        DealRecord drc = new DealRecord();
 
         public FactoryInfo()
         {
             InitializeComponent();
         }
 
+        private void FactoryInfo_Resize(object sender, EventArgs e)
+        {
+            int NewX;
+
+            if (oldWidth > 0 && oldHeight > 0 && newWidth > 0 && newHeight > 0)
+            {
+                double x = (newWidth / oldWidth);
+                double y = (newHeight / oldHeight);
+
+                dgvFactory.Width = Convert.ToInt32(x * dgvFactory.Width);
+                dgvFactory.Height = Convert.ToInt32(y * dgvFactory.Height);
+
+                gbxFun.Width = Convert.ToInt32(x * gbxFun.Width);
+                gbxFun.Height = Convert.ToInt32(y * gbxFun.Height);
+
+                gbxShow.Width = Convert.ToInt32(x * gbxShow.Width);
+                gbxShow.Height = Convert.ToInt32(y * gbxShow.Height);
+
+                NewX = (int)(btnFactoryInfoAdd.Location.X * x + btnFactoryInfoAdd.Width * (x - 1));
+                btnFactoryInfoAdd.Location = new Point(NewX, btnFactoryInfoAdd.Location.Y);
+                btnFactoryInfoAdd.Width = Convert.ToInt32(x * btnFactoryInfoAdd.Width);
+                btnFactoryInfoAdd.Height = Convert.ToInt32(y * btnFactoryInfoAdd.Height);
+
+                NewX = (int)(btnFactoryInfoModify.Location.X * x + btnFactoryInfoModify.Width * (x - 1));
+                btnFactoryInfoModify.Location = new Point(NewX, btnFactoryInfoModify.Location.Y);
+                btnFactoryInfoModify.Width = Convert.ToInt32(x * btnFactoryInfoModify.Width);
+                btnFactoryInfoModify.Height = Convert.ToInt32(y * btnFactoryInfoModify.Height);
+
+                NewX = (int)(btnFactoryInfoDelete.Location.X * x + btnFactoryInfoDelete.Width * (x - 1));
+                btnFactoryInfoDelete.Location = new Point(NewX, btnFactoryInfoDelete.Location.Y);
+                btnFactoryInfoDelete.Width = Convert.ToInt32(x * btnFactoryInfoDelete.Width);
+                btnFactoryInfoDelete.Height = Convert.ToInt32(y * btnFactoryInfoDelete.Height);
+
+                NewX = (int)(btnFactoryInfoDemand.Location.X * x + btnFactoryInfoDemand.Width * (x - 1));
+                btnFactoryInfoDemand.Location = new Point(NewX, btnFactoryInfoDemand.Location.Y);
+                btnFactoryInfoDemand.Width = Convert.ToInt32(x * btnFactoryInfoDemand.Width);
+                btnFactoryInfoDemand.Height = Convert.ToInt32(y * btnFactoryInfoDemand.Height);
+            }
+        }
+
+        private void FactoryInfo_Paint(object sender, PaintEventArgs e)
+        {
+            Graphics g = e.Graphics;
+            System.Drawing.Drawing2D.LinearGradientBrush lb = new System.Drawing.Drawing2D.LinearGradientBrush(this.DisplayRectangle, Color.Linen, Color.DarkTurquoise, 45);
+            g.FillRectangle(lb, this.DisplayRectangle);
+        }
+
         private void FactoryInfo_Load(object sender, EventArgs e)
         {
+            //DataGridView 設定
+            drc.SetDataGridView(ref dgvFactory);
+
             if (UserRole == "OP") //操作者身份
             {
                 //管理者身份可使用 新增、刪除、修改、查詢、離開
@@ -72,7 +125,10 @@ namespace P2214201
             try
             {
                 if (strDemand != "")
+                {
                     dgvFactory.DataSource = USQL.SQLSelect(ref da, strDemand);
+                    dgvFactory.ClearSelection();
+                }
             }
             catch
             { }
@@ -111,7 +167,10 @@ namespace P2214201
             try
             {
                 if (strDemand != "")
+                {
                     dgvFactory.DataSource = USQL.SQLSelect(ref da, strDemand);
+                    dgvFactory.ClearSelection();
+                }
             }
             catch (Exception Ex)
             { }
@@ -145,7 +204,10 @@ namespace P2214201
             try
             {
                 if (strDemand != "")
+                {
                     dgvFactory.DataSource = USQL.SQLSelect(ref da, strDemand);
+                    dgvFactory.ClearSelection();
+                }
             }
             catch (Exception Ex)
             { }
@@ -184,7 +246,7 @@ namespace P2214201
                 MessageBox.Show("輸入條件未查詢到任何資料。");
 
             dgvFactory.DataSource = dt;
-
+            dgvFactory.ClearSelection();
             //清空所有可填入欄位
             ClearForm();
         }

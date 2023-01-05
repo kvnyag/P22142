@@ -40,134 +40,110 @@ namespace P2214201
             //  RuningMachine   --> 執行哪個報表。
             //*************************************************************************************
             //參數
-            int i, j = 0, k, RowNo, arrSheetLen, arrRDH006Len, arrTimesLen, idxRDH006, idxTimes, TidxRDH006 = 0;
-            string RDH006, RDH007, RDB004, RDB008, RDB009, RDB00567, RDB010, RDH008, Report, ReportPath;
+            int i, j = 0, k, RowNo, arrSheetLen, arrRDH006Len, arrTimesLen, idxRDH006, idxTimes, iCG001;
+            string CG001, CG002, RDH006, RDH007, RDB003, RDB004, RDB008, RDB009, RDB00567, RDB010, RDH008, Report, ReportPath;
             string[] arrSheet, arrRDH006, arrTimes, ReportData, ReportBackData;
-            
-            //取得工作表名稱
+
+            //取得目前的類別
             if (RuningMachine == "Vacuum")
-                arrSheet = GetSqlData(StartDate, EndDate, "SheetName", "", "A");
+            {
+                CG001 = "A";
+                CG002 = "真空機";
+            }
             else if (RuningMachine == "Compress")
-                arrSheet = GetSqlData(StartDate, EndDate, "SheetName", "", "B");
+            {
+                CG001 = "B";
+                CG002 = "空壓機";
+            }
             else
-                arrSheet = GetSqlData(StartDate, EndDate, "SheetName", "", "C");
+            {
+                CG001 = "C";
+                CG002 = "冷氣機";
+            }
+
+            //取得工作表名稱
+            arrSheet = GetSqlData(StartDate, EndDate, "SheetName", "", CG001);
             arrSheetLen = arrSheet.Length;
 
             for (k = 0; k < arrSheetLen; k++)
             {
                 //工作表
                 //....引用第一個工作表
-                if (RuningMachine == "Vacuum")
-                    sheet = book.CreateSheet(arrSheet[k] + "真空機");
-                else if (RuningMachine == "Compress")
-                    sheet = book.CreateSheet(arrSheet[k] + "空壓機");
-                else
-                    sheet = book.CreateSheet(arrSheet[k] + "冷氣機");
+                sheet = book.CreateSheet(arrSheet[k] + CG002);
                 //....設定第1列資料
                 DealCell(ref sheet, "A1", "F1", "", ""); //合併A1 ~ E1
-                
-                if (RuningMachine == "Vacuum")
-                    DealCell(ref sheet, "A1", "", "真空機運轉紀錄表", "1");
-                else if (RuningMachine == "Compress")
-                    DealCell(ref sheet, "A1", "", "空壓機運轉紀錄表", "1");
-                else
-                    DealCell(ref sheet, "A1", "", "冷氣機運轉紀錄表", "1");
-                
+                DealCell(ref sheet, "A1", "", CG002 + "運轉紀錄表", "1");
                 //....取得共有多少巡檢資料
-                if (RuningMachine == "Vacuum")
-                    arrRDH006 = GetSqlData(StartDate, EndDate, "ItemName", arrSheet[k], "A");
-                else if (RuningMachine == "Compress")
-                    arrRDH006 = GetSqlData(StartDate, EndDate, "ItemName", arrSheet[k], "B");
-                else
-                    arrRDH006 = GetSqlData(StartDate, EndDate, "ItemName", arrSheet[k], "C");
-
+                arrRDH006 = GetSqlData(StartDate, EndDate, "ItemName", arrSheet[k], CG001);
                 arrRDH006Len = arrRDH006.Length;
                 //....取得時間排序陣列
-                if (RuningMachine == "Vacuum")
-                    arrTimes = GetSqlData(StartDate, EndDate, "Chronologically", arrSheet[k], "A");
-                else if (RuningMachine == "Compress")
-                    arrTimes = GetSqlData(StartDate, EndDate, "Chronologically", arrSheet[k], "B");
-                else
-                    arrTimes = GetSqlData(StartDate, EndDate, "Chronologically", arrSheet[k], "C");
-
+                arrTimes = GetSqlData(StartDate, EndDate, "Chronologically", arrSheet[k], CG001);
                 arrTimesLen = arrTimes.Length;
                 //填入機械編號、機械名稱、項目、備註1、備註2、參考、日期
                 for (i = 0; i < arrRDH006Len; i++)
                 {
-                    RowNo = (7 + arrTimesLen) * i;
+                    RowNo = (8 + arrTimesLen) * i;
                     DealCell(ref sheet, "A" + (2 + RowNo).ToString(), "", "機械編號", "");
                     DealCell(ref sheet, "B" + (2 + RowNo).ToString(), "", arrRDH006[i], "2");
-                    
                     DealCell(ref sheet, "A" + (3 + RowNo).ToString(), "", "機械名稱", "");
                     DealCell(ref sheet, "B" + (3 + RowNo).ToString(), "", "", "2");
-                    DealCell(ref sheet, "A" + (4 + RowNo).ToString(), "", "項目", "");
-                    DealCell(ref sheet, "A" + (5 + RowNo).ToString(), "", "備註1", "");
-                    DealCell(ref sheet, "A" + (6 + RowNo).ToString(), "", "備註2", "");
-                    DealCell(ref sheet, "A" + (7 + RowNo).ToString(), "", "參考", "");
-                    
+                    DealCell(ref sheet, "A" + (4 + RowNo).ToString(), "", "項目代號", "");
+                    DealCell(ref sheet, "A" + (5 + RowNo).ToString(), "", "項目名稱", "");
+                    DealCell(ref sheet, "A" + (6 + RowNo).ToString(), "", "備註1", "");
+                    DealCell(ref sheet, "A" + (7 + RowNo).ToString(), "", "備註2", "");
+                    DealCell(ref sheet, "A" + (8 + RowNo).ToString(), "", "參考", "");
+                    //針對機械編號、名稱執行合併儲存格
+                    iCG001 = CategorysNo(StartDate, EndDate, arrSheet[k], CG001, arrRDH006[i]); //機械編號共有多少項目
+                    string EndX = arrChar[Array.IndexOf(arrChar, "B") + iCG001 - 1];
+                    DealCell(ref sheet, "B" + (2 + RowNo).ToString(), EndX + (2 + RowNo).ToString(), "", ""); //合併機械編號
+                    DealCell(ref sheet, "B" + (3 + RowNo).ToString(), EndX + (3 + RowNo).ToString(), "", ""); //合併機械編號
+
                     for (j = 0; j < arrTimesLen; j++)
-                        DealCell(ref sheet, "A" + (8 + ((7 + arrTimesLen) * i) + j).ToString(), "", arrTimes[j], "");
+                        DealCell(ref sheet, "A" + (9 + RowNo + j).ToString(), "", arrTimes[j], "");
                 }
                 //取得項目、備註1、備註2、參考值，填入Excel。
-                if (RuningMachine == "Vacuum")
-                    dt = GetSqlDataTable(StartDate, EndDate, "GetBodyParaABC", arrSheet[k], "A");
-                else if (RuningMachine == "Compress")
-                    dt = GetSqlDataTable(StartDate, EndDate, "GetBodyParaABC", arrSheet[k], "B");
-                else
-                    dt = GetSqlDataTable(StartDate, EndDate, "GetBodyParaABC", arrSheet[k], "C");
+                dt = GetSqlDataTable(StartDate, EndDate, "GetBodyParaABC", arrSheet[k], CG001);
 
                 for (i = 0; i < dt.Rows.Count; i++)
                 {
                     //儲存回傳資料
                     RDH006 = dt.Rows[i]["RDH006"].ToString().Trim();     //機械編號
                     RDH007 = dt.Rows[i]["RDH007"].ToString().Trim();     //機械名稱
-                    RDB004 = dt.Rows[i]["RDB004"].ToString().Trim();     //項目
+                    RDB003 = dt.Rows[i]["RDB003"].ToString().Trim();     //項目代號
+                    RDB004 = dt.Rows[i]["RDB004"].ToString().Trim();     //項目名稱
                     RDB00567 = dt.Rows[i]["RDB00567"].ToString().Trim(); //參考
                     RDB008 = dt.Rows[i]["RDB008"].ToString().Trim();     //備註1
                     RDB009 = dt.Rows[i]["RDB009"].ToString().Trim();     //備註2
                     RDB010 = dt.Rows[i]["RDB010"].ToString().Trim();     //數值
                     RDH008 = dt.Rows[i]["RDH008"].ToString().Trim();     //記錄日期
-                                                                         //查詢回傳資料在 arrRDH006 的索引值
+                    //查詢回傳資料在 arrRDH006 的索引值
                     idxRDH006 = Array.IndexOf(arrRDH006, RDH006);
                     //查詢回傳資料在 arrTimes 的索引值
                     idxTimes = Array.IndexOf(arrTimes, RDH008);
-                    //當項目改變針對機械編號、名稱執行合併儲存格
-                    if (TidxRDH006 != idxRDH006)
-                    {
-                        RowNo = (7 + arrTimesLen) * TidxRDH006;
-                        DealCell(ref sheet, "B" + (2 + RowNo).ToString(), ColumnName(j + 2) + (2 + RowNo).ToString(), "", ""); //合併 機械編號 欄
-                        DealCell(ref sheet, "B" + (3 + RowNo).ToString(), ColumnName(j + 2) + (3 + RowNo).ToString(), "", ""); //合併 機械名稱 欄
-                        
-                        TidxRDH006 = idxRDH006;
-                    }
                     //依索引值填入相對應的位置
-                    RowNo = (7 + arrTimesLen) * idxRDH006;
+                    RowNo = (8 + arrTimesLen) * idxRDH006;
                     DealCell(ref sheet, "B" + (3 + RowNo).ToString(), "", RDH007, ""); //機械名稱
                     string S;
                     for (j = 0; j < 100; j++)
                     {
                         S = CellValue(ref sheet, ColumnName(j + 2) + (4 + RowNo).ToString());
 
-                        if (S == RDB004)
+                        if (S == RDB003)
                             break;
 
                         if (S == "")
                         {
-                            DealCell(ref sheet, ColumnName(j + 2) + (4 + RowNo).ToString(), "", RDB004, ""); //項目
-                            DealCell(ref sheet, ColumnName(j + 2) + (5 + RowNo).ToString(), "", RDB008, ""); //備註1
-                            DealCell(ref sheet, ColumnName(j + 2) + (6 + RowNo).ToString(), "", RDB009, ""); //備註2
-                            DealCell(ref sheet, ColumnName(j + 2) + (7 + RowNo).ToString(), "", RDB00567, ""); //參考
+                            DealCell(ref sheet, ColumnName(j + 2) + (4 + RowNo).ToString(), "", RDB003, ""); //項目代號
+                            DealCell(ref sheet, ColumnName(j + 2) + (5 + RowNo).ToString(), "", RDB004, ""); //項目名稱
+                            DealCell(ref sheet, ColumnName(j + 2) + (6 + RowNo).ToString(), "", RDB008, ""); //備註1
+                            DealCell(ref sheet, ColumnName(j + 2) + (7 + RowNo).ToString(), "", RDB009, ""); //備註2
+                            DealCell(ref sheet, ColumnName(j + 2) + (8 + RowNo).ToString(), "", RDB00567, ""); //參考
 
                             break;
                         }
                     }
-                    DealCell(ref sheet, ColumnName(j + 2) + (8 + RowNo + idxTimes).ToString(), "", RDB010, ""); //數值
-
+                    DealCell(ref sheet, ColumnName(j + 2) + (9 + RowNo + idxTimes).ToString(), "", RDB010, ""); //數值
                 }
-                //針對機械編號、名稱執行合併儲存格
-                RowNo = (7 + arrTimesLen) * TidxRDH006;
-                DealCell(ref sheet, "B" + (2 + RowNo).ToString(), ColumnName(j + 2) + (2 + RowNo).ToString(), "", ""); //合併 機械編號 欄
-                DealCell(ref sheet, "B" + (3 + RowNo).ToString(), ColumnName(j + 2) + (3 + RowNo).ToString(), "", ""); //合併 機械名稱 欄
             }
             //儲存 Excel
             Report = "/settings/Report/";
@@ -421,6 +397,28 @@ namespace P2214201
             return dt;
         }
 
+        private int CategorysNo(string StartDate, string EndDate, string RDH002, string RDH004, string RDH006)
+        {
+            //*************************************************************************************
+            //回傳某一機械編號有多少項目
+            //*************************************************************************************
+            int intBack;
+
+            strSQL = "";
+            strSQL += "SELECT b.RDB003 ";
+            strSQL += "FROM RECORDS_HEADS a, RECORDS_BODYS b ";
+            strSQL += "WHERE a.RDH001 = b.RDB001 ";
+            strSQL += "AND a.RDH002 = '" + RDH002 + "' ";
+            strSQL += "AND a.RDH004 = '" + RDH004 + "' ";
+            strSQL += "AND a.RDH006 = '" + RDH006 + "' ";
+            strSQL += "AND a.RDH008 BETWEEN '" + StartDate + "' AND '" + EndDate + "' ";
+            strSQL += "GROUP BY b.RDB003 ";
+            dt = USQL.SQLSelect(ref da, strSQL);
+            intBack = dt.Rows.Count;
+
+            return intBack;
+        }
+
         private ICellStyle CellStyle(ref ISheet sheet, int CellType)
         {
             
@@ -499,7 +497,7 @@ namespace P2214201
         private string CellValue(ref ISheet sheet, string CellName)
         {
             //*************************************************************************************
-            //用以取得某 Cell 的值
+            //用以取得Excel中某 Cell 的所填的值
             //*************************************************************************************
             //參數
             int CellX, CellY;
@@ -522,9 +520,11 @@ namespace P2214201
 
         private int CellXY(string CellName, string XorY)
         {
+            //*************************************************************************************
+            //傳入CellName及要回傳的是X或Y值。回傳CellName的X或Y值，但都是以數值格式回傳。
+            //*************************************************************************************
             //參數
             int i, strLen, idxChar, CellX = 0, iCellX_01 = 0, iCellX_02 = 0, iCellX_03 = 0, CellY = 0;
-            string[] arrChar = new string[] { "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z" };
             
             //取得 Cell值 英文部份
             strLen = CellName.Length;
@@ -559,18 +559,27 @@ namespace P2214201
             else
                 return -1;
         }
-        private string ColumnName(int MaxY)
+        private string ColumnName(int CellX)
         {
             //*************************************************************************************
-            //用以計算 MaxY 所在欄位的代表值。 ex: "A" or "AC" or "BH" ....
+            //回傳CellX所代表的英文代號。 ex: "A" or "AC" or "BH" .... PS: A -> CellX = 1 ; Z -> CellX = 26
             //*************************************************************************************
             string Y1 = "", Y2 = "";
-            if (MaxY < 26)
-                Y1 = arrChar[MaxY - 1];
+            
+            if (CellX <= 26)
+                Y1 = arrChar[CellX - 1];
             else
             {
-                Y1 = arrChar[(MaxY / 26) - 1];
-                Y2 = arrChar[(MaxY % 26)];
+                if (CellX % 26 != 0)
+                {
+                    Y1 = arrChar[(CellX / 26) - 1];
+                    Y2 = arrChar[(CellX % 26) - 1];
+                }
+                else
+                {
+                    Y1 = arrChar[(CellX / 26) - 2];
+                    Y2 = arrChar[25];
+                }
             }
 
             return (Y1 + Y2);

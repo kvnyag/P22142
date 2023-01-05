@@ -14,6 +14,11 @@ namespace AndroidTranferTool
         //....2.清空 PDA端 資料，由 PC端 塞入 PDA端 所需基本資料
         //**********************************************************************************
         //公用變數
+        DbTransaction objTrans_pc = null;
+        DbTransaction objTrans_pda = null;
+        DataTable dt_pda = new DataTable();
+        DataTable dt_pc = new DataTable();
+        P2214201.UseSQLServer USQL = new P2214201.UseSQLServer();
 
         public bool UsePDAToPC()
         {
@@ -21,18 +26,13 @@ namespace AndroidTranferTool
             int i, j, RowsNo_pda, RowsNo_pc, MaxRDH001, MaxRDB002, idxKEY;
             int MH001 = 0, MB001 = 0, MB002 = 0, RDH001 = 0, RDB001 = 0, RDB002 = 0;
             string DBPath, strSQL_pda, strSQL_pc;
-            string FT001 = "", CG001 = "", MN001 = "", CK001 = "";
+            string FT001 = "", FT002 = "", CG001 = "", MN001 = "", CK001 = "";
             string MH002, MH003, MH004, MH005, MH006, MH007; //PDA端 MAINS_HEADS 欄位名
             string MB003, MB004, MB005, MB006, MB007, MB008, MB009, MB010; //PDA端 MAINS_BODYS 欄位名
             string US001, US002, US003, US004, US005, US006, US007, US008; //PDA端 USERS 欄位名
             string RDH002, RDH003, RDH004, RDH005, RDH006, RDH007, RDH008, RDH009, RDH010, RDH011, RDH012 = "", RDH013, RDH014 = "", RDH015, RDH016, RDH017, RDH018; //PC端 RECORDS_HEADS 欄位名
             string RDB003, RDB004, RDB005, RDB006, RDB007, RDB008, RDB009, RDB010, RDB011, RDB012, RDB013, RDB014, RDB015, RDB016, RDB017, RDB018; //PC端 RECORDS_BODYS 欄位名
             string[] arrKEY;
-            DbTransaction objTrans_pc = null;
-            DbTransaction objTrans_pda = null;
-            DataTable dt_pda = new DataTable();
-            DataTable dt_pc = new DataTable();
-            P2214201.UseSQLServer USQL = new P2214201.UseSQLServer();
 
             //SQLite設定
             REGAL.Data.DataAccess.SQLite.DataAccess da_pda = new REGAL.Data.DataAccess.SQLite.DataAccess();
@@ -211,6 +211,9 @@ namespace AndroidTranferTool
                 //........清空 PDA端 USERS
                 strSQL_pda = "Delete From USERS";
                 da_pda.ExecuteNonQuery(strSQL_pda, objTrans_pda);
+                //........清空 PDA端 FACTORYS
+                strSQL_pda = "Delete From FACTORYS";
+                da_pda.ExecuteNonQuery(strSQL_pda, objTrans_pda);
                 //........清空 PDA端 SETTINGS
                 strSQL_pda = "UPDATE SETTINGS SET Value = ''";
                 da_pda.ExecuteNonQuery(strSQL_pda, objTrans_pda);
@@ -327,6 +330,30 @@ namespace AndroidTranferTool
                         return false;
                     }
                 }
+                //........寫入 PDA端 FACTORYS
+                strSQL_pc = "SELECT FT001, FT002 FROM FACTORYS";
+                dt_pc = USQL.SQLSelect(ref da_pc, strSQL_pc);
+                RowsNo_pc = dt_pc.Rows.Count;
+                for(i = 0; i < RowsNo_pc; i++)
+                {
+                    FT001 = dt_pc.Rows[i]["FT001"].ToString().Trim(); //廠房代號(FT001)
+                    FT002 = dt_pc.Rows[i]["FT002"].ToString().Trim(); //廠房名稱(FT002)
+
+                    strSQL_pda = "INSERT INTO FACTORYS (FT001,FT002) VALUES ('" + FT001 + "','" + FT002 + "')";
+
+                    try
+                    {
+                        da_pda.ExecuteNonQuery(strSQL_pda, objTrans_pda);
+                    }
+                    catch (Exception Ex)
+                    {
+                        if(objTrans_pda != null)
+                            objTrans_pda.Rollback();
+                        MessageBox.Show("PC端 FACTORYS 資料寫入 PDA端 FACTORYS 有誤，系統訊息：" + Ex.Message, "FACTORYS寫入作業");
+                        return false;
+                    }
+                }
+
                 //PC端 & PDA端 資料寫入
                 if (objTrans_pc != null) objTrans_pc.Commit();
                 if (objTrans_pda != null) objTrans_pda.Commit();
@@ -345,6 +372,28 @@ namespace AndroidTranferTool
                 if (objTrans_pc != null) objTrans_pc.Dispose();
                 if (objTrans_pda != null) objTrans_pda.Dispose();
             }
+        }
+        public bool CheckPDATable()
+        {
+            string DBPath;
+
+            //SQLite設定
+            REGAL.Data.DataAccess.SQLite.DataAccess da_pda = new REGAL.Data.DataAccess.SQLite.DataAccess();
+            DBPath = "Data Source=" + Application.StartupPath + "\\SQLDB\\P22142.db3";
+            da_pda.ConnectionString = DBPath;
+            //SQL Server參數部份
+            REGAL.Data.DataAccess.DataAccess da_pc = new REGAL.Data.DataAccess.DataAccess();
+
+            try
+            {
+                dt_pda = da_pda.ExecuteDataTable("SELECT * FROM RECORDS_HEADS");
+            }
+            catch
+            {
+                return false;
+            }
+
+            return true;
         }
     }
 }

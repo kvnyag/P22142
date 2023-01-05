@@ -2,6 +2,7 @@
 using System.Data;
 using System.Windows.Forms;
 using REGAL.Data.DataAccess;
+using System.Drawing;
 
 namespace P2214201
 {
@@ -9,20 +10,70 @@ namespace P2214201
     {
         //公用變數
         public string UserAccount, UserName, UserRole;
+        public double oldWidth, oldHeight, newWidth, newHeight;
         string CG001, CG002, CG003, CG004, CG005, CG006, CG007, CG008, CG009; //類別基本資料 欄位名
         string strDemand = "";
         UseSQLServer USQL = new UseSQLServer();
         DataAccess da = new DataAccess();
         DataTable dt = new DataTable();
+        DealRecord drc = new DealRecord();
 
         public ReportInfo()
         {
             InitializeComponent();
         }
 
+        private void ReportInfo_Resize(object sender, EventArgs e)
+        {
+            int NewX, NewY;
+
+            if (oldWidth > 0 && oldHeight > 0 && newWidth > 0 && newHeight > 0)
+            {
+                double x = (newWidth / oldWidth);
+                double y = (newHeight / oldHeight);
+
+                dgvReport.Width = Convert.ToInt32(x * dgvReport.Width);
+                dgvReport.Height = Convert.ToInt32(y * dgvReport.Height);
+
+                gbxFun.Width = Convert.ToInt32(x * gbxFun.Width);
+                gbxFun.Height = Convert.ToInt32(y * gbxFun.Height);
+
+                gbxShow.Width = Convert.ToInt32(x * gbxShow.Width);
+                gbxShow.Height = Convert.ToInt32(y * gbxShow.Height);
+
+                NewX = (int)(btnReportInfoAdd.Location.X * x + btnReportInfoAdd.Width * (x - 1));
+                btnReportInfoAdd.Location = new Point(NewX, btnReportInfoAdd.Location.Y);
+                btnReportInfoAdd.Width = Convert.ToInt32(x * btnReportInfoAdd.Width);
+                btnReportInfoAdd.Height = Convert.ToInt32(y * btnReportInfoAdd.Height);
+
+                NewX = (int)(btnReportInfoModify.Location.X * x + btnReportInfoModify.Width * (x - 1));
+                btnReportInfoModify.Location = new Point(NewX, btnReportInfoModify.Location.Y);
+                btnReportInfoModify.Width = Convert.ToInt32(x * btnReportInfoModify.Width);
+                btnReportInfoModify.Height = Convert.ToInt32(y * btnReportInfoModify.Height);
+
+                NewX = (int)(btnReportInfoDelete.Location.X * x + btnReportInfoDelete.Width * (x - 1));
+                btnReportInfoDelete.Location = new Point(NewX, btnReportInfoDelete.Location.Y);
+                btnReportInfoDelete.Width = Convert.ToInt32(x * btnReportInfoDelete.Width);
+                btnReportInfoDelete.Height = Convert.ToInt32(y * btnReportInfoDelete.Height);
+
+                NewX = (int)(btnReportInfoDemand.Location.X * x + btnReportInfoDemand.Width * (x - 1));
+                btnReportInfoDemand.Location = new Point(NewX, btnReportInfoDemand.Location.Y);
+                btnReportInfoDemand.Width = Convert.ToInt32(x * btnReportInfoDemand.Width);
+                btnReportInfoDemand.Height = Convert.ToInt32(y * btnReportInfoDemand.Height);
+            }
+        }
+
+        private void ReportInfo_Paint(object sender, PaintEventArgs e)
+        {
+            Graphics g = e.Graphics;
+            System.Drawing.Drawing2D.LinearGradientBrush lb = new System.Drawing.Drawing2D.LinearGradientBrush(this.DisplayRectangle, Color.Linen, Color.DarkTurquoise, 45);
+            g.FillRectangle(lb, this.DisplayRectangle);
+        }
+        
         private void ReportInfo_Load(object sender, EventArgs e)
         {
-            //參數
+            //DataGridView 設定
+            drc.SetDataGridView(ref dgvReport);
 
             if (UserRole == "OP") //操作者身份
             {
@@ -73,7 +124,10 @@ namespace P2214201
             try
             {
                 if (strDemand != "")
+                {
                     dgvReport.DataSource = USQL.SQLSelect(ref da, strDemand);
+                    dgvReport.ClearSelection();
+                }
             }
             catch (Exception Ex)
             { }
@@ -112,7 +166,10 @@ namespace P2214201
             try
             {
                 if (strDemand != "")
+                {
                     dgvReport.DataSource = USQL.SQLSelect(ref da, strDemand);
+                    dgvReport.ClearSelection();
+                }
             }
             catch (Exception Ex)
             { }
@@ -146,7 +203,10 @@ namespace P2214201
             try
             {
                 if (strDemand != "")
+                {
                     dgvReport.DataSource = USQL.SQLSelect(ref da, strDemand);
+                    dgvReport.ClearSelection();
+                }
             }
             catch (Exception Ex)
             { }

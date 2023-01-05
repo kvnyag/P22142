@@ -1,0 +1,1063 @@
+ ╚═══════════════════════════════════════════════════════════
+
+ ╔════════════════════2022-12-21 09:33:54  Application Start════════════════════
+ ╠ AndroidVersion=9
+ ╠ Model=HC61
+ ╠ Serial=unknown
+ ╠ PackageName=com.regalscan.platform(國巨股份有限公司)
+ ╠ VersionName=1.0.0
+ ╠
+ ╠ 2022-12-21 09:33:54 LoginActivity             onCreate             :113  -機器序號：unknown
+ ╠ 2022-12-21 09:34:02 LoginActivity             onClick              :436  -登入
+ ╚═══════════════════════════════════════════════════════════
+
+ ╔════════════════════2022-12-21 09:34:02  Application Start════════════════════
+ ╠ AndroidVersion=9
+ ╠ Model=HC61
+ ╠ Serial=unknown
+ ╠ PackageName=com.operator.ContentProvider(ContentProvider)
+ ╠ VersionName=1.0.0
+ ╠
+ ╠ 2022-12-21 09:34:02 LogUtil                   writeException       :184  -****Exception****
+ ╠ 2022-12-21 09:34:03 LogUtil                   writeException       :184  -****Exception****
+ ╠ 2022-12-21 09:34:03 LogUtil                   writeException       :184  -****Exception****
+ ╠ 2022-12-21 09:34:05 LogUtil                   writeException       :184  -****Exception****
+ ╠ 2022-12-21 09:34:05 MainModel                 getFactoryInfo       :34   -取得廠房資料
+ ╠ 2022-12-21 09:34:05 LogUtil                   writeException       :184  -****Exception****
+ ╠ 2022-12-21 09:50:04 LogUtil                   writeException       :184  -****Exception****
+ ╠ 2022-12-21 09:50:04 MainModel                 getFactoryInfo       :34   -取得廠房資料
+ ╠ 2022-12-21 09:50:04 LogUtil                   writeException       :184  -****Exception****
+ ╠ 2022-12-21 09:50:17 MenuActivity              lambda$onBackPressed$0:276  -登出
+ ╠ 2022-12-21 09:51:09 LoginActivity             onClick              :436  -登入
+ ╚═══════════════════════════════════════════════════════════
+
+ ╔════════════════════2022-12-21 09:51:09  Application Start════════════════════
+ ╠ AndroidVersion=9
+ ╠ Model=HC61
+ ╠ Serial=unknown
+ ╠ PackageName=com.operator.ContentProvider(ContentProvider)
+ ╠ VersionName=1.0.0
+ ╠
+ ╠ 2022-12-21 09:51:09 LogUtil                   writeException       :184  -****Exception****
+ ╠ 2022-12-21 09:51:10 LogUtil                   writeException       :184  -****Exception****
+ ╠ 2022-12-21 09:51:10 LogUtil                   writeException       :184  -****Exception****
+ ╠ 2022-12-21 09:51:22 Navigation_BaseActivity   lambda$null$1        :95   -登出
+ ╠ 2022-12-21 09:51:31 LoginActivity             onClick              :436  -登入
+ ╠ 2022-12-21 09:51:31 LogUtil                   writeException       :184  -****Exception****
+ ╠ 2022-12-21 09:51:31 LogUtil                   writeException       :184  -****Exception****
+ ╠ 2022-12-21 09:51:34 LoginActivity             onClick              :436  -登入
+ ╠ 2022-12-21 09:51:34 LogUtil                   writeException       :184  -****Exception****
+ ╠ 2022-12-21 09:51:34 LogUtil                   writeException       :184  -****Exception****
+ ╠ 2022-12-21 09:51:53 LoginActivity             onClick              :436  -登入
+ ╠ 2022-12-21 09:51:53 LogUtil                   writeException       :184  -****Exception****
+ ╠ 2022-12-21 09:51:53 LogUtil                   writeException       :184  -****Exception****
+ ╠ 2022-12-21 09:52:03 LoginActivity             onClick              :436  -登入
+ ╠ 2022-12-21 09:52:03 LogUtil                   writeException       :184  -****Exception****
+ ╠ 2022-12-21 09:52:03 LogUtil                   writeException       :184  -****Exception****
+ ╚═══════════════════════════════════════════════════════════
+
+ ╔════════════════════2022-12-21 09:53:47  Application Start════════════════════
+ ╠ AndroidVersion=9
+ ╠ Model=HC61
+ ╠ Serial=unknown
+ ╠ PackageName=com.regalscan.platform(國巨股份有限公司)
+ ╠ VersionName=1.0.0
+ ╠
+ ╠ 2022-12-21 09:53:48 LoginActivity             onCreate             :113  -機器序號：unknown
+ ╠ 2022-12-21 09:54:30 LoginActivity             onClick              :436  -登入
+ ╠ 2022-12-21 09:54:30 LogUtil                   writeException       :184  -****Exception****
+ ╠ 2022-12-21 09:54:30 LogUtil                   writeException       :184  -****Exception****
+ ╚═══════════════════════════════════════════════════════════
+
+ ╔════════════════════2022-12-21 10:03:27  Application Start════════════════════
+ ╠ AndroidVersion=9
+ ╠ Model=HC61
+ ╠ Serial=unknown
+ ╠ PackageName=com.regalscan.platform(國巨股份有限公司)
+ ╠ VersionName=1.0.0
+ ╠
+ ╠ 2022-12-21 10:03:29 LoginActivity             onCreate             :113  -機器序號：unknown
+ ╠ 2022-12-21 10:04:44 LoginActivity             onClick              :436  -登入
+ ╠ 2022-12-21 10:04:49 LogUtil                   writeException       :184  -****Exception****
+ ╚═══════════════════════════════════════════════════════════
+
+ ╔════════════════════2022-12-21 10:29:57  Application Start════════════════════
+ ╠ AndroidVersion=9
+ ╠ Model=HC61
+ ╠ Serial=unknown
+ ╠ PackageName=com.operator.ContentProvider(ContentProvider)
+ ╠ VersionName=1.0.0
+ ╠
+ ╚═══════════════════════════════════════════════════════════
+
+ ╔════════════════════2022-12-21 10:30:13  Application Start════════════════════
+ ╠ AndroidVersion=9
+ ╠ Model=HC61
+ ╠ Serial=unknown
+ ╠ PackageName=com.regalscan.platform(國巨股份有限公司)
+ ╠ VersionName=1.0.1
+ ╠
+ ╠ 2022-12-21 10:30:13 LoginActivity             onCreate             :113  -機器序號：unknown
+ ╠ 2022-12-21 10:31:39 LoginActivity             onClick              :436  -登入
+ ╠ 2022-12-21 10:31:42 TransferActivity          init                 :69   -進入傳輸模式
+ ╠ 2022-12-21 10:31:42 TransferActivity          createFile           :96   -建立Transfer.txt 成功
+ ╠ 2022-12-21 10:33:13 TransferActivity          onReceive            :39   -com.action.a
+ ╠ 2022-12-21 10:33:14 TransferActivity          onDestroy            :123  -退出傳輸模式
+ ╠ 2022-12-21 10:33:14 TransferActivity          onDestroy            :133  -刪除Transfer.txt 成功
+ ╠ 2022-12-21 10:33:29 MenuActivity              lambda$onBackPressed$0:276  -登出
+ ╠ 2022-12-21 10:33:43 LoginActivity             onClick              :436  -登入
+ ╠ 2022-12-21 10:33:45 MainModel                 getFactoryInfo       :34   -取得廠房資料
+ ╠ 2022-12-21 10:34:01 MainModel                 getFactoryInfo       :34   -取得廠房資料
+ ╠ 2022-12-21 10:37:18 Navigation_BaseActivity   lambda$null$1        :95   -登出
+ ╚═══════════════════════════════════════════════════════════
+
+ ╔════════════════════2022-12-21 16:08:21  Application Start════════════════════
+ ╠ AndroidVersion=9
+ ╠ Model=HC61
+ ╠ Serial=unknown
+ ╠ PackageName=com.regalscan.platform(國巨股份有限公司)
+ ╠ VersionName=1.0.1
+ ╠
+ ╠ 2022-12-21 16:08:21 LoginActivity             onCreate             :113  -機器序號：unknown
+ ╠ 2022-12-21 16:08:29 LoginActivity             onClick              :436  -登入
+ ╚═══════════════════════════════════════════════════════════
+
+ ╔════════════════════2022-12-21 16:08:29  Application Start════════════════════
+ ╠ AndroidVersion=9
+ ╠ Model=HC61
+ ╠ Serial=unknown
+ ╠ PackageName=com.operator.ContentProvider(ContentProvider)
+ ╠ VersionName=1.0.0
+ ╠
+ ╠ 2022-12-21 16:08:32 TransferActivity          init                 :69   -進入傳輸模式
+ ╠ 2022-12-21 16:08:32 TransferActivity          createFile           :96   -建立Transfer.txt 成功
+ ╠ 2022-12-21 16:08:34 TransferActivity          onDestroy            :123  -退出傳輸模式
+ ╠ 2022-12-21 16:08:34 TransferActivity          onDestroy            :133  -刪除Transfer.txt 成功
+ ╠ 2022-12-21 16:08:38 TransferActivity          init                 :69   -進入傳輸模式
+ ╠ 2022-12-21 16:08:38 TransferActivity          createFile           :96   -建立Transfer.txt 成功
+ ╠ 2022-12-21 16:11:03 TransferActivity          onDestroy            :123  -退出傳輸模式
+ ╠ 2022-12-21 16:11:03 TransferActivity          onDestroy            :133  -刪除Transfer.txt 成功
+ ╠ 2022-12-21 16:11:04 TransferActivity          init                 :69   -進入傳輸模式
+ ╠ 2022-12-21 16:11:04 TransferActivity          createFile           :96   -建立Transfer.txt 成功
+ ╠ 2022-12-21 16:11:58 TransferActivity          onDestroy            :123  -退出傳輸模式
+ ╠ 2022-12-21 16:11:58 TransferActivity          onDestroy            :133  -刪除Transfer.txt 成功
+ ╠ 2022-12-21 16:12:02 TransferActivity          init                 :69   -進入傳輸模式
+ ╠ 2022-12-21 16:12:02 TransferActivity          createFile           :96   -建立Transfer.txt 成功
+ ╠ 2022-12-21 16:12:33 TransferActivity          onDestroy            :123  -退出傳輸模式
+ ╠ 2022-12-21 16:12:33 TransferActivity          onDestroy            :133  -刪除Transfer.txt 成功
+ ╠ 2022-12-21 16:12:33 TransferActivity          init                 :69   -進入傳輸模式
+ ╠ 2022-12-21 16:12:33 TransferActivity          createFile           :96   -建立Transfer.txt 成功
+ ╠ 2022-12-21 16:12:44 TransferActivity          onDestroy            :123  -退出傳輸模式
+ ╠ 2022-12-21 16:12:44 TransferActivity          onDestroy            :133  -刪除Transfer.txt 成功
+ ╠ 2022-12-21 16:12:49 Navigation_BaseActivity   lambda$null$1        :95   -登出
+ ╚═══════════════════════════════════════════════════════════
+
+ ╔════════════════════2022-12-21 16:12:51  Application Start════════════════════
+ ╠ AndroidVersion=9
+ ╠ Model=HC61
+ ╠ Serial=unknown
+ ╠ PackageName=com.operator.ContentProvider(ContentProvider)
+ ╠ VersionName=1.0.0
+ ╠
+ ╠ 2022-12-21 16:12:56 LoginActivity             onClick              :436  -登入
+ ╠ 2022-12-21 16:12:57 TransferActivity          init                 :69   -進入傳輸模式
+ ╠ 2022-12-21 16:12:57 TransferActivity          createFile           :96   -建立Transfer.txt 成功
+ ╠ 2022-12-21 16:13:37 TransferActivity          onDestroy            :123  -退出傳輸模式
+ ╠ 2022-12-21 16:13:37 TransferActivity          onDestroy            :133  -刪除Transfer.txt 成功
+ ╠ 2022-12-21 16:13:42 MenuActivity              lambda$onBackPressed$0:276  -登出
+ ╚═══════════════════════════════════════════════════════════
+
+ ╔════════════════════2022-12-21 16:13:45  Application Start════════════════════
+ ╠ AndroidVersion=9
+ ╠ Model=HC61
+ ╠ Serial=unknown
+ ╠ PackageName=com.regalscan.platform(國巨股份有限公司)
+ ╠ VersionName=1.0.1
+ ╠
+ ╠ 2022-12-21 16:13:46 LoginActivity             onCreate             :113  -機器序號：unknown
+ ╠ 2022-12-21 16:13:51 LoginActivity             onClick              :436  -登入
+ ╠ 2022-12-21 16:13:53 TransferActivity          init                 :69   -進入傳輸模式
+ ╠ 2022-12-21 16:13:53 TransferActivity          createFile           :96   -建立Transfer.txt 成功
+ ╚═══════════════════════════════════════════════════════════
+
+ ╔════════════════════2022-12-21 16:14:02  Application Start════════════════════
+ ╠ AndroidVersion=9
+ ╠ Model=HC61
+ ╠ Serial=unknown
+ ╠ PackageName=com.regalscan.platform(國巨股份有限公司)
+ ╠ VersionName=1.0.1
+ ╠
+ ╠ 2022-12-21 16:14:04 TransferActivity          init                 :69   -進入傳輸模式
+ ╠ 2022-12-21 16:14:04 TransferActivity          createFile           :89   -Transfer.txt 已存在
+ ╠ 2022-12-21 16:14:04 TransferActivity          createFile           :98   -建立Transfer.txt 失敗
+ ╠ 2022-12-21 16:15:06 TransferActivity          onDestroy            :123  -退出傳輸模式
+ ╠ 2022-12-21 16:15:06 TransferActivity          onDestroy            :133  -刪除Transfer.txt 成功
+ ╠ 2022-12-21 16:15:07 TransferActivity          init                 :69   -進入傳輸模式
+ ╠ 2022-12-21 16:15:07 TransferActivity          createFile           :96   -建立Transfer.txt 成功
+ ╠ 2022-12-21 16:15:37 TransferActivity          onDestroy            :123  -退出傳輸模式
+ ╠ 2022-12-21 16:15:37 TransferActivity          onDestroy            :133  -刪除Transfer.txt 成功
+ ╠ 2022-12-21 16:15:39 MenuActivity              lambda$onBackPressed$0:276  -登出
+ ╠ 2022-12-21 16:15:40 LoginActivity             onCreate             :113  -機器序號：unknown
+ ╚═══════════════════════════════════════════════════════════
+
+ ╔════════════════════2022-12-21 16:15:58  Application Start════════════════════
+ ╠ AndroidVersion=9
+ ╠ Model=HC61
+ ╠ Serial=unknown
+ ╠ PackageName=com.regalscan.platform(國巨股份有限公司)
+ ╠ VersionName=1.0.1
+ ╠
+ ╠ 2022-12-21 16:15:58 LoginActivity             onCreate             :113  -機器序號：unknown
+ ╠ 2022-12-21 16:16:05 LoginActivity             onClick              :436  -登入
+ ╠ 2022-12-21 16:16:07 TransferActivity          init                 :69   -進入傳輸模式
+ ╠ 2022-12-21 16:16:07 TransferActivity          createFile           :96   -建立Transfer.txt 成功
+ ╠ 2022-12-21 16:18:08 TransferActivity          onDestroy            :123  -退出傳輸模式
+ ╠ 2022-12-21 16:18:08 TransferActivity          onDestroy            :133  -刪除Transfer.txt 成功
+ ╚═══════════════════════════════════════════════════════════
+
+ ╔════════════════════2022-12-21 16:18:58  Application Start════════════════════
+ ╠ AndroidVersion=9
+ ╠ Model=HC61
+ ╠ Serial=unknown
+ ╠ PackageName=com.regalscan.platform(國巨股份有限公司)
+ ╠ VersionName=1.0.1
+ ╠
+ ╠ 2022-12-21 16:18:58 LoginActivity             onCreate             :113  -機器序號：unknown
+ ╠ 2022-12-21 16:19:05 LoginActivity             onClick              :436  -登入
+ ╚═══════════════════════════════════════════════════════════
+
+ ╔════════════════════2022-12-21 16:19:05  Application Start════════════════════
+ ╠ AndroidVersion=9
+ ╠ Model=HC61
+ ╠ Serial=unknown
+ ╠ PackageName=com.operator.ContentProvider(ContentProvider)
+ ╠ VersionName=1.0.0
+ ╠
+ ╠ 2022-12-21 16:19:09 TransferActivity          init                 :69   -進入傳輸模式
+ ╠ 2022-12-21 16:19:09 TransferActivity          createFile           :96   -建立Transfer.txt 成功
+ ╠ 2022-12-21 16:20:00 TransferActivity          onDestroy            :123  -退出傳輸模式
+ ╠ 2022-12-21 16:20:00 TransferActivity          onDestroy            :133  -刪除Transfer.txt 成功
+ ╠ 2022-12-21 16:20:03 Navigation_BaseActivity   lambda$null$1        :95   -登出
+ ╚═══════════════════════════════════════════════════════════
+
+ ╔════════════════════2022-12-21 16:20:06  Application Start════════════════════
+ ╠ AndroidVersion=9
+ ╠ Model=HC61
+ ╠ Serial=unknown
+ ╠ PackageName=com.operator.ContentProvider(ContentProvider)
+ ╠ VersionName=1.0.0
+ ╠
+ ╚═══════════════════════════════════════════════════════════
+
+ ╔════════════════════2022-12-21 16:21:53  Application Start════════════════════
+ ╠ AndroidVersion=9
+ ╠ Model=HC61
+ ╠ Serial=unknown
+ ╠ PackageName=com.regalscan.platform(國巨股份有限公司)
+ ╠ VersionName=1.0.1
+ ╠
+ ╠ 2022-12-21 16:21:53 LoginActivity             onCreate             :113  -機器序號：unknown
+ ╠ 2022-12-21 16:22:03 LoginActivity             onClick              :436  -登入
+ ╠ 2022-12-21 16:22:07 TransferActivity          init                 :69   -進入傳輸模式
+ ╠ 2022-12-21 16:22:07 TransferActivity          createFile           :96   -建立Transfer.txt 成功
+ ╠ 2022-12-21 16:22:53 TransferActivity          onDestroy            :123  -退出傳輸模式
+ ╠ 2022-12-21 16:22:53 TransferActivity          onDestroy            :133  -刪除Transfer.txt 成功
+ ╠ 2022-12-21 16:29:03 MenuActivity              lambda$onBackPressed$0:276  -登出
+ ╠ 2022-12-21 16:30:05 LoginActivity             onClick              :436  -登入
+ ╚═══════════════════════════════════════════════════════════
+
+ ╔════════════════════2022-12-21 16:30:05  Application Start════════════════════
+ ╠ AndroidVersion=9
+ ╠ Model=HC61
+ ╠ Serial=unknown
+ ╠ PackageName=com.operator.ContentProvider(ContentProvider)
+ ╠ VersionName=1.0.0
+ ╠
+ ╠ 2022-12-21 16:30:17 TransferActivity          init                 :69   -進入傳輸模式
+ ╠ 2022-12-21 16:30:17 TransferActivity          createFile           :96   -建立Transfer.txt 成功
+ ╠ 2022-12-21 16:31:05 TransferActivity          onReceive            :39   -com.action.a
+ ╠ 2022-12-21 16:31:06 TransferActivity          onDestroy            :123  -退出傳輸模式
+ ╠ 2022-12-21 16:31:06 TransferActivity          onDestroy            :133  -刪除Transfer.txt 成功
+ ╠ 2022-12-21 16:31:44 TransferActivity          init                 :69   -進入傳輸模式
+ ╠ 2022-12-21 16:31:44 TransferActivity          createFile           :96   -建立Transfer.txt 成功
+ ╠ 2022-12-21 16:31:54 TransferActivity          onReceive            :39   -com.action.a
+ ╠ 2022-12-21 16:31:55 TransferActivity          onDestroy            :123  -退出傳輸模式
+ ╠ 2022-12-21 16:31:55 TransferActivity          onDestroy            :133  -刪除Transfer.txt 成功
+ ╠ 2022-12-21 16:32:22 Navigation_BaseActivity   lambda$null$1        :95   -登出
+ ╠ 2022-12-21 16:32:34 LoginActivity             onClick              :436  -登入
+ ╠ 2022-12-21 16:32:36 MainModel                 getFactoryInfo       :34   -取得廠房資料
+ ╠ 2022-12-21 16:32:43 Navigation_BaseActivity   lambda$null$1        :95   -登出
+ ╠ 2022-12-21 16:32:52 LoginActivity             onClick              :436  -登入
+ ╠ 2022-12-21 16:33:01 LoginActivity             onClick              :436  -登入
+ ╠ 2022-12-21 16:33:45 LoginActivity             onClick              :436  -登入
+ ╠ 2022-12-21 16:33:53 LoginActivity             onClick              :436  -登入
+ ╠ 2022-12-21 16:33:55 TransferActivity          init                 :69   -進入傳輸模式
+ ╠ 2022-12-21 16:33:55 TransferActivity          createFile           :96   -建立Transfer.txt 成功
+ ╠ 2022-12-21 16:34:13 TransferActivity          onReceive            :39   -com.action.a
+ ╠ 2022-12-21 16:34:14 TransferActivity          onDestroy            :123  -退出傳輸模式
+ ╠ 2022-12-21 16:34:14 TransferActivity          onDestroy            :133  -刪除Transfer.txt 成功
+ ╠ 2022-12-21 16:34:39 MainModel                 getFactoryInfo       :34   -取得廠房資料
+ ╠ 2022-12-21 16:34:43 MainModel                 checkCanDoFactory    :72   -檢查是否可以進入巡檢
+ ╠ 2022-12-21 16:34:43 MainModel                 getFactoryAllMachineIdItemHeadInfo:94   -取得廠房所有機械編號項目Head資訊
+ ╠ 2022-12-21 16:34:43 MainModel                 writeFactoryAllMachineIdItemHeadInfo:131  -寫入廠房所有機械編號項目Head資訊
+ ╠ 2022-12-21 16:34:44 MainModel                 getFactoryAllMachineIdItemBodyInfo:169  -取得廠房所有機械編號項目Body資訊
+ ╠ 2022-12-21 16:34:45 MainModel                 writeFactoryAllMachineIdItemBodyInfo:215  -寫入廠房所有機械編號項目Body資訊
+ ╠ 2022-12-21 17:27:14 SecondModel               checkCanLeave        :85   -檢查是否做完回上一頁(MainActivity)另選廠房
+ ╠ 2022-12-21 17:27:14 SecondModel               deleteRecordHeadInfo :160  -刪除RECORDS_HEAD and RECORDS_BODY
+ ╠ 2022-12-21 17:27:19 MainModel                 getFactoryInfo       :34   -取得廠房資料
+ ╠ 2022-12-21 17:27:21 MainModel                 checkCanDoFactory    :72   -檢查是否可以進入巡檢
+ ╠ 2022-12-21 17:27:21 MainModel                 getFactoryAllMachineIdItemHeadInfo:94   -取得廠房所有機械編號項目Head資訊
+ ╠ 2022-12-21 17:27:21 MainModel                 writeFactoryAllMachineIdItemHeadInfo:131  -寫入廠房所有機械編號項目Head資訊
+ ╠ 2022-12-21 17:27:22 MainModel                 getFactoryAllMachineIdItemBodyInfo:169  -取得廠房所有機械編號項目Body資訊
+ ╠ 2022-12-21 17:27:22 MainModel                 writeFactoryAllMachineIdItemBodyInfo:215  -寫入廠房所有機械編號項目Body資訊
+ ╠ 2022-12-21 17:29:56 SecondModel               getMachineIdSerialNo :35   -取得機械編號的流水序號
+ ╠ 2022-12-21 17:30:18 SecondModel               getMachineIdSerialNo :35   -取得機械編號的流水序號
+ ╠ 2022-12-21 17:30:18 SecondModel               checkMachineIdHaveRecord:247  -檢查機械編號流水序號的項目資料有沒有在RECORDS_HEAD
+ ╠ 2022-12-21 17:30:18 SecondModel               getMachineSerialNoItemInfo:274  -取得機械編號流水序號的項目資料
+ ╠ 2022-12-21 17:31:20 RecordModel               getDateList          :53   -取得RECORDS_HEAD已記錄的日期
+ ╠ 2022-12-21 17:31:20 RecordModel               getFactoryList       :98   -取得RECORDS_HEAD已記錄的廠房
+ ╠ 2022-12-21 17:31:20 RecordModel               getFactoryRecord     :384  -取得巡檢列表已巡檢、未巡檢
+ ╠ 2022-12-21 17:31:20 RecordModel               getRecordCheckList   :143  -取得已巡檢列表
+ ╠ 2022-12-21 17:31:20 RecordModel               getRecordCheckBodyList:200  -取得紀錄Body已巡檢列表
+ ╠ 2022-12-21 17:31:21 RecordModel               getRecordNotCheckList:262  -取得未巡檢列表
+ ╠ 2022-12-21 17:31:21 RecordModel               getRecordNoCheckBodyList:320  -取得紀錄Body未巡檢列表
+ ╠ 2022-12-21 17:33:06 SecondModel               writeItemInfoToDB    :202  -寫入機械編號項目資料到DB
+ ╠ 2022-12-21 17:35:10 SecondModel               getMachineIdSerialNo :35   -取得機械編號的流水序號
+ ╠ 2022-12-21 17:35:10 SecondModel               checkMachineIdHaveRecord:247  -檢查機械編號流水序號的項目資料有沒有在RECORDS_HEAD
+ ╠ 2022-12-21 17:35:10 SecondModel               getMachineSerialNoItemInfo:274  -取得機械編號流水序號的項目資料
+ ╠ 2022-12-21 17:35:47 SecondModel               writeItemInfoToDB    :202  -寫入機械編號項目資料到DB
+ ╠ 2022-12-21 17:36:40 SecondModel               getMachineIdSerialNo :35   -取得機械編號的流水序號
+ ╠ 2022-12-21 17:36:40 SecondModel               checkMachineIdHaveRecord:247  -檢查機械編號流水序號的項目資料有沒有在RECORDS_HEAD
+ ╠ 2022-12-21 17:36:40 SecondModel               getMachineSerialNoItemInfo:274  -取得機械編號流水序號的項目資料
+ ╠ 2022-12-21 17:37:41 SecondModel               writeItemInfoToDB    :202  -寫入機械編號項目資料到DB
+ ╠ 2022-12-21 17:47:45 SecondModel               getMachineIdSerialNo :35   -取得機械編號的流水序號
+ ╠ 2022-12-21 17:47:45 SecondModel               checkMachineIdHaveRecord:247  -檢查機械編號流水序號的項目資料有沒有在RECORDS_HEAD
+ ╠ 2022-12-21 17:47:45 SecondModel               getMachineSerialNoItemInfo:274  -取得機械編號流水序號的項目資料
+ ╠ 2022-12-21 17:48:11 SecondModel               writeItemInfoToDB    :202  -寫入機械編號項目資料到DB
+ ╠ 2022-12-21 17:48:47 SecondModel               getMachineIdSerialNo :35   -取得機械編號的流水序號
+ ╠ 2022-12-21 17:48:47 SecondModel               checkMachineIdHaveRecord:247  -檢查機械編號流水序號的項目資料有沒有在RECORDS_HEAD
+ ╠ 2022-12-21 17:48:47 SecondModel               getMachineSerialNoItemInfo:274  -取得機械編號流水序號的項目資料
+ ╠ 2022-12-21 17:49:29 SecondModel               writeItemInfoToDB    :202  -寫入機械編號項目資料到DB
+ ╠ 2022-12-21 17:50:12 SecondModel               getMachineIdSerialNo :35   -取得機械編號的流水序號
+ ╠ 2022-12-21 17:50:12 SecondModel               checkMachineIdHaveRecord:247  -檢查機械編號流水序號的項目資料有沒有在RECORDS_HEAD
+ ╠ 2022-12-21 17:50:12 SecondModel               getMachineSerialNoItemInfo:274  -取得機械編號流水序號的項目資料
+ ╠ 2022-12-21 17:50:30 SecondModel               writeItemInfoToDB    :202  -寫入機械編號項目資料到DB
+ ╠ 2022-12-21 17:50:34 RecordModel               getDateList          :53   -取得RECORDS_HEAD已記錄的日期
+ ╠ 2022-12-21 17:50:35 RecordModel               getFactoryList       :98   -取得RECORDS_HEAD已記錄的廠房
+ ╠ 2022-12-21 17:50:35 RecordModel               getFactoryRecord     :384  -取得巡檢列表已巡檢、未巡檢
+ ╠ 2022-12-21 17:50:35 RecordModel               getRecordCheckList   :143  -取得已巡檢列表
+ ╠ 2022-12-21 17:50:35 RecordModel               getRecordCheckBodyList:200  -取得紀錄Body已巡檢列表
+ ╠ 2022-12-21 17:50:35 RecordModel               getRecordNotCheckList:262  -取得未巡檢列表
+ ╠ 2022-12-21 17:50:35 RecordModel               getRecordNoCheckBodyList:320  -取得紀錄Body未巡檢列表
+ ╠ 2022-12-21 17:52:27 SecondModel               getMachineIdSerialNo :35   -取得機械編號的流水序號
+ ╠ 2022-12-21 17:52:27 SecondModel               checkMachineIdHaveRecord:247  -檢查機械編號流水序號的項目資料有沒有在RECORDS_HEAD
+ ╠ 2022-12-21 17:52:27 SecondModel               getMachineSerialNoItemInfo:274  -取得機械編號流水序號的項目資料
+ ╠ 2022-12-21 17:57:54 SecondModel               writeItemInfoToDB    :202  -寫入機械編號項目資料到DB
+ ╠ 2022-12-21 17:57:59 RecordModel               getDateList          :53   -取得RECORDS_HEAD已記錄的日期
+ ╠ 2022-12-21 17:58:00 RecordModel               getFactoryList       :98   -取得RECORDS_HEAD已記錄的廠房
+ ╠ 2022-12-21 17:58:00 RecordModel               getFactoryRecord     :384  -取得巡檢列表已巡檢、未巡檢
+ ╠ 2022-12-21 17:58:00 RecordModel               getRecordCheckList   :143  -取得已巡檢列表
+ ╠ 2022-12-21 17:58:00 RecordModel               getRecordCheckBodyList:200  -取得紀錄Body已巡檢列表
+ ╠ 2022-12-21 17:58:00 RecordModel               getRecordNotCheckList:262  -取得未巡檢列表
+ ╠ 2022-12-21 17:58:00 RecordModel               getRecordNoCheckBodyList:320  -取得紀錄Body未巡檢列表
+ ╠ 2022-12-21 17:58:45 SecondModel               checkCanLeave        :85   -檢查是否做完回上一頁(MainActivity)另選廠房
+ ╠ 2022-12-21 18:03:16 SecondModel               getMachineIdSerialNo :35   -取得機械編號的流水序號
+ ╠ 2022-12-21 18:03:16 SecondModel               checkMachineIdHaveRecord:247  -檢查機械編號流水序號的項目資料有沒有在RECORDS_HEAD
+ ╠ 2022-12-21 18:03:16 SecondModel               getMachineSerialNoItemInfo:274  -取得機械編號流水序號的項目資料
+ ╠ 2022-12-21 18:03:35 SecondModel               writeItemInfoToDB    :202  -寫入機械編號項目資料到DB
+ ╠ 2022-12-21 18:03:46 SecondModel               getMachineIdSerialNo :35   -取得機械編號的流水序號
+ ╠ 2022-12-21 18:03:46 SecondModel               checkMachineIdHaveRecord:247  -檢查機械編號流水序號的項目資料有沒有在RECORDS_HEAD
+ ╠ 2022-12-21 18:03:46 SecondModel               getMachineSerialNoItemInfo:274  -取得機械編號流水序號的項目資料
+ ╠ 2022-12-21 18:03:51 SecondModel               writeItemInfoToDB    :202  -寫入機械編號項目資料到DB
+ ╠ 2022-12-21 18:04:14 SecondModel               getMachineIdSerialNo :35   -取得機械編號的流水序號
+ ╠ 2022-12-21 18:04:14 SecondModel               checkMachineIdHaveRecord:247  -檢查機械編號流水序號的項目資料有沒有在RECORDS_HEAD
+ ╠ 2022-12-21 18:04:14 SecondModel               getMachineSerialNoItemInfo:274  -取得機械編號流水序號的項目資料
+ ╠ 2022-12-21 18:04:21 SecondModel               writeItemInfoToDB    :202  -寫入機械編號項目資料到DB
+ ╠ 2022-12-21 18:04:25 SecondModel               checkCanLeave        :85   -檢查是否做完回上一頁(MainActivity)另選廠房
+ ╠ 2022-12-21 18:04:27 RecordModel               getDateList          :53   -取得RECORDS_HEAD已記錄的日期
+ ╠ 2022-12-21 18:04:27 RecordModel               getFactoryList       :98   -取得RECORDS_HEAD已記錄的廠房
+ ╠ 2022-12-21 18:04:27 RecordModel               getFactoryRecord     :384  -取得巡檢列表已巡檢、未巡檢
+ ╠ 2022-12-21 18:04:27 RecordModel               getRecordCheckList   :143  -取得已巡檢列表
+ ╠ 2022-12-21 18:04:27 RecordModel               getRecordCheckBodyList:200  -取得紀錄Body已巡檢列表
+ ╠ 2022-12-21 18:04:28 RecordModel               getRecordNotCheckList:262  -取得未巡檢列表
+ ╠ 2022-12-21 18:04:28 RecordModel               getRecordNoCheckBodyList:320  -取得紀錄Body未巡檢列表
+ ╠ 2022-12-21 18:04:49 SecondModel               getMachineIdSerialNo :35   -取得機械編號的流水序號
+ ╠ 2022-12-21 18:04:49 SecondModel               checkMachineIdHaveRecord:247  -檢查機械編號流水序號的項目資料有沒有在RECORDS_HEAD
+ ╠ 2022-12-21 18:04:49 SecondModel               getMachineSerialNoItemInfo:274  -取得機械編號流水序號的項目資料
+ ╠ 2022-12-21 18:04:56 SecondModel               writeItemInfoToDB    :202  -寫入機械編號項目資料到DB
+ ╠ 2022-12-21 18:05:12 SecondModel               getMachineIdSerialNo :35   -取得機械編號的流水序號
+ ╠ 2022-12-21 18:05:12 SecondModel               checkMachineIdHaveRecord:247  -檢查機械編號流水序號的項目資料有沒有在RECORDS_HEAD
+ ╠ 2022-12-21 18:05:12 SecondModel               getMachineSerialNoItemInfo:274  -取得機械編號流水序號的項目資料
+ ╠ 2022-12-21 18:05:18 SecondModel               writeItemInfoToDB    :202  -寫入機械編號項目資料到DB
+ ╠ 2022-12-21 18:05:22 SecondModel               checkCanLeave        :85   -檢查是否做完回上一頁(MainActivity)另選廠房
+ ╠ 2022-12-21 18:05:24 RecordModel               getDateList          :53   -取得RECORDS_HEAD已記錄的日期
+ ╠ 2022-12-21 18:05:24 RecordModel               getFactoryList       :98   -取得RECORDS_HEAD已記錄的廠房
+ ╠ 2022-12-21 18:05:25 RecordModel               getFactoryRecord     :384  -取得巡檢列表已巡檢、未巡檢
+ ╠ 2022-12-21 18:05:25 RecordModel               getRecordCheckList   :143  -取得已巡檢列表
+ ╠ 2022-12-21 18:05:25 RecordModel               getRecordCheckBodyList:200  -取得紀錄Body已巡檢列表
+ ╠ 2022-12-21 18:05:25 RecordModel               getRecordNotCheckList:262  -取得未巡檢列表
+ ╠ 2022-12-21 18:05:25 RecordModel               getRecordNoCheckBodyList:320  -取得紀錄Body未巡檢列表
+ ╠ 2022-12-21 18:13:25 SecondModel               getMachineIdSerialNo :35   -取得機械編號的流水序號
+ ╠ 2022-12-21 18:13:25 SecondModel               checkMachineIdHaveRecord:247  -檢查機械編號流水序號的項目資料有沒有在RECORDS_HEAD
+ ╠ 2022-12-21 18:13:25 SecondModel               getMachineSerialNoItemInfo:274  -取得機械編號流水序號的項目資料
+ ╠ 2022-12-21 18:13:31 SecondModel               writeItemInfoToDB    :202  -寫入機械編號項目資料到DB
+ ╠ 2022-12-21 18:13:38 SecondModel               getMachineIdSerialNo :35   -取得機械編號的流水序號
+ ╠ 2022-12-21 18:13:38 SecondModel               checkMachineIdHaveRecord:247  -檢查機械編號流水序號的項目資料有沒有在RECORDS_HEAD
+ ╠ 2022-12-21 18:13:38 SecondModel               getMachineSerialNoItemInfo:274  -取得機械編號流水序號的項目資料
+ ╠ 2022-12-21 18:13:44 SecondModel               writeItemInfoToDB    :202  -寫入機械編號項目資料到DB
+ ╠ 2022-12-21 18:14:04 SecondModel               getMachineIdSerialNo :35   -取得機械編號的流水序號
+ ╠ 2022-12-21 18:14:04 SecondModel               checkMachineIdHaveRecord:247  -檢查機械編號流水序號的項目資料有沒有在RECORDS_HEAD
+ ╠ 2022-12-21 18:14:04 SecondModel               getMachineSerialNoItemInfo:274  -取得機械編號流水序號的項目資料
+ ╠ 2022-12-21 18:14:11 SecondModel               writeItemInfoToDB    :202  -寫入機械編號項目資料到DB
+ ╠ 2022-12-21 18:14:19 SecondModel               getMachineIdSerialNo :35   -取得機械編號的流水序號
+ ╠ 2022-12-21 18:14:19 SecondModel               checkMachineIdHaveRecord:247  -檢查機械編號流水序號的項目資料有沒有在RECORDS_HEAD
+ ╠ 2022-12-21 18:14:19 SecondModel               getMachineSerialNoItemInfo:274  -取得機械編號流水序號的項目資料
+ ╠ 2022-12-21 18:14:27 SecondModel               writeItemInfoToDB    :202  -寫入機械編號項目資料到DB
+ ╠ 2022-12-21 18:14:41 SecondModel               getMachineIdSerialNo :35   -取得機械編號的流水序號
+ ╠ 2022-12-21 18:14:41 SecondModel               checkMachineIdHaveRecord:247  -檢查機械編號流水序號的項目資料有沒有在RECORDS_HEAD
+ ╠ 2022-12-21 18:14:41 SecondModel               getMachineSerialNoItemInfo:274  -取得機械編號流水序號的項目資料
+ ╠ 2022-12-21 18:14:49 SecondModel               writeItemInfoToDB    :202  -寫入機械編號項目資料到DB
+ ╠ 2022-12-21 18:14:59 SecondModel               getMachineIdSerialNo :35   -取得機械編號的流水序號
+ ╠ 2022-12-21 18:14:59 SecondModel               checkMachineIdHaveRecord:247  -檢查機械編號流水序號的項目資料有沒有在RECORDS_HEAD
+ ╠ 2022-12-21 18:14:59 SecondModel               getMachineSerialNoItemInfo:274  -取得機械編號流水序號的項目資料
+ ╠ 2022-12-21 18:27:17 SecondModel               writeItemInfoToDB    :202  -寫入機械編號項目資料到DB
+ ╠ 2022-12-21 18:27:22 SecondModel               getMachineIdSerialNo :35   -取得機械編號的流水序號
+ ╠ 2022-12-21 18:27:22 SecondModel               checkMachineIdHaveRecord:247  -檢查機械編號流水序號的項目資料有沒有在RECORDS_HEAD
+ ╠ 2022-12-21 18:27:22 SecondModel               getMachineSerialNoItemInfo:274  -取得機械編號流水序號的項目資料
+ ╠ 2022-12-21 18:27:30 SecondModel               writeItemInfoToDB    :202  -寫入機械編號項目資料到DB
+ ╠ 2022-12-21 18:27:47 SecondModel               getMachineIdSerialNo :35   -取得機械編號的流水序號
+ ╠ 2022-12-21 18:27:47 SecondModel               checkMachineIdHaveRecord:247  -檢查機械編號流水序號的項目資料有沒有在RECORDS_HEAD
+ ╠ 2022-12-21 18:27:47 SecondModel               getMachineSerialNoItemInfo:274  -取得機械編號流水序號的項目資料
+ ╠ 2022-12-21 18:28:00 SecondModel               writeItemInfoToDB    :202  -寫入機械編號項目資料到DB
+ ╠ 2022-12-21 18:28:15 SecondModel               getMachineIdSerialNo :35   -取得機械編號的流水序號
+ ╠ 2022-12-21 18:28:15 SecondModel               checkMachineIdHaveRecord:247  -檢查機械編號流水序號的項目資料有沒有在RECORDS_HEAD
+ ╠ 2022-12-21 18:28:15 SecondModel               getMachineSerialNoItemInfo:274  -取得機械編號流水序號的項目資料
+ ╠ 2022-12-21 18:28:26 SecondModel               writeItemInfoToDB    :202  -寫入機械編號項目資料到DB
+ ╠ 2022-12-21 18:28:32 SecondModel               getMachineIdSerialNo :35   -取得機械編號的流水序號
+ ╠ 2022-12-21 18:28:38 SecondModel               getMachineIdSerialNo :35   -取得機械編號的流水序號
+ ╠ 2022-12-21 18:28:38 SecondModel               checkMachineIdHaveRecord:247  -檢查機械編號流水序號的項目資料有沒有在RECORDS_HEAD
+ ╠ 2022-12-21 18:28:38 SecondModel               getMachineSerialNoItemInfo:274  -取得機械編號流水序號的項目資料
+ ╠ 2022-12-21 18:28:45 SecondModel               writeItemInfoToDB    :202  -寫入機械編號項目資料到DB
+ ╠ 2022-12-21 18:28:52 SecondModel               getMachineIdSerialNo :35   -取得機械編號的流水序號
+ ╠ 2022-12-21 18:28:52 SecondModel               checkMachineIdHaveRecord:247  -檢查機械編號流水序號的項目資料有沒有在RECORDS_HEAD
+ ╠ 2022-12-21 18:28:52 SecondModel               getMachineSerialNoItemInfo:274  -取得機械編號流水序號的項目資料
+ ╠ 2022-12-21 18:28:58 SecondModel               writeItemInfoToDB    :202  -寫入機械編號項目資料到DB
+ ╠ 2022-12-21 18:29:05 SecondModel               getMachineIdSerialNo :35   -取得機械編號的流水序號
+ ╠ 2022-12-21 18:29:05 SecondModel               checkMachineIdHaveRecord:247  -檢查機械編號流水序號的項目資料有沒有在RECORDS_HEAD
+ ╠ 2022-12-21 18:29:05 SecondModel               getMachineSerialNoItemInfo:274  -取得機械編號流水序號的項目資料
+ ╠ 2022-12-21 18:29:10 SecondModel               writeItemInfoToDB    :202  -寫入機械編號項目資料到DB
+ ╠ 2022-12-21 18:29:24 SecondModel               getMachineIdSerialNo :35   -取得機械編號的流水序號
+ ╠ 2022-12-21 18:29:24 SecondModel               checkMachineIdHaveRecord:247  -檢查機械編號流水序號的項目資料有沒有在RECORDS_HEAD
+ ╠ 2022-12-21 18:29:24 SecondModel               getMachineSerialNoItemInfo:274  -取得機械編號流水序號的項目資料
+ ╠ 2022-12-21 18:29:37 SecondModel               writeItemInfoToDB    :202  -寫入機械編號項目資料到DB
+ ╠ 2022-12-21 18:29:43 SecondModel               getMachineIdSerialNo :35   -取得機械編號的流水序號
+ ╠ 2022-12-21 18:29:43 SecondModel               checkMachineIdHaveRecord:247  -檢查機械編號流水序號的項目資料有沒有在RECORDS_HEAD
+ ╠ 2022-12-21 18:29:43 SecondModel               getMachineSerialNoItemInfo:274  -取得機械編號流水序號的項目資料
+ ╠ 2022-12-21 18:29:48 SecondModel               writeItemInfoToDB    :202  -寫入機械編號項目資料到DB
+ ╠ 2022-12-21 18:29:55 SecondModel               getMachineIdSerialNo :35   -取得機械編號的流水序號
+ ╠ 2022-12-21 18:30:01 SecondModel               getMachineIdSerialNo :35   -取得機械編號的流水序號
+ ╠ 2022-12-21 18:30:01 SecondModel               checkMachineIdHaveRecord:247  -檢查機械編號流水序號的項目資料有沒有在RECORDS_HEAD
+ ╠ 2022-12-21 18:30:01 SecondModel               getMachineSerialNoItemInfo:274  -取得機械編號流水序號的項目資料
+ ╠ 2022-12-21 18:30:08 SecondModel               writeItemInfoToDB    :202  -寫入機械編號項目資料到DB
+ ╠ 2022-12-21 18:30:15 SecondModel               getMachineIdSerialNo :35   -取得機械編號的流水序號
+ ╠ 2022-12-21 18:30:15 SecondModel               checkMachineIdHaveRecord:247  -檢查機械編號流水序號的項目資料有沒有在RECORDS_HEAD
+ ╠ 2022-12-21 18:30:15 SecondModel               getMachineSerialNoItemInfo:274  -取得機械編號流水序號的項目資料
+ ╠ 2022-12-21 18:30:20 SecondModel               writeItemInfoToDB    :202  -寫入機械編號項目資料到DB
+ ╠ 2022-12-21 18:30:33 SecondModel               getMachineIdSerialNo :35   -取得機械編號的流水序號
+ ╠ 2022-12-21 18:30:33 SecondModel               checkMachineIdHaveRecord:247  -檢查機械編號流水序號的項目資料有沒有在RECORDS_HEAD
+ ╠ 2022-12-21 18:30:33 SecondModel               getMachineSerialNoItemInfo:274  -取得機械編號流水序號的項目資料
+ ╠ 2022-12-21 18:30:39 SecondModel               writeItemInfoToDB    :202  -寫入機械編號項目資料到DB
+ ╠ 2022-12-21 18:30:48 SecondModel               getMachineIdSerialNo :35   -取得機械編號的流水序號
+ ╠ 2022-12-21 18:30:48 SecondModel               checkMachineIdHaveRecord:247  -檢查機械編號流水序號的項目資料有沒有在RECORDS_HEAD
+ ╠ 2022-12-21 18:30:48 SecondModel               getMachineSerialNoItemInfo:274  -取得機械編號流水序號的項目資料
+ ╠ 2022-12-21 18:30:54 SecondModel               writeItemInfoToDB    :202  -寫入機械編號項目資料到DB
+ ╠ 2022-12-21 18:31:02 SecondModel               getMachineIdSerialNo :35   -取得機械編號的流水序號
+ ╠ 2022-12-21 18:31:02 SecondModel               checkMachineIdHaveRecord:247  -檢查機械編號流水序號的項目資料有沒有在RECORDS_HEAD
+ ╠ 2022-12-21 18:31:02 SecondModel               getMachineSerialNoItemInfo:274  -取得機械編號流水序號的項目資料
+ ╠ 2022-12-21 18:31:17 SecondModel               writeItemInfoToDB    :202  -寫入機械編號項目資料到DB
+ ╠ 2022-12-21 18:31:30 SecondModel               getMachineIdSerialNo :35   -取得機械編號的流水序號
+ ╠ 2022-12-21 18:31:30 SecondModel               checkMachineIdHaveRecord:247  -檢查機械編號流水序號的項目資料有沒有在RECORDS_HEAD
+ ╠ 2022-12-21 18:31:30 SecondModel               getMachineSerialNoItemInfo:274  -取得機械編號流水序號的項目資料
+ ╠ 2022-12-21 18:31:37 SecondModel               writeItemInfoToDB    :202  -寫入機械編號項目資料到DB
+ ╠ 2022-12-21 18:31:44 SecondModel               getMachineIdSerialNo :35   -取得機械編號的流水序號
+ ╠ 2022-12-21 18:31:44 SecondModel               checkMachineIdHaveRecord:247  -檢查機械編號流水序號的項目資料有沒有在RECORDS_HEAD
+ ╠ 2022-12-21 18:31:44 SecondModel               getMachineSerialNoItemInfo:274  -取得機械編號流水序號的項目資料
+ ╠ 2022-12-21 18:31:48 SecondModel               writeItemInfoToDB    :202  -寫入機械編號項目資料到DB
+ ╠ 2022-12-21 18:31:54 SecondModel               getMachineIdSerialNo :35   -取得機械編號的流水序號
+ ╠ 2022-12-21 18:31:54 SecondModel               checkMachineIdHaveRecord:247  -檢查機械編號流水序號的項目資料有沒有在RECORDS_HEAD
+ ╠ 2022-12-21 18:31:54 SecondModel               getMachineSerialNoItemInfo:274  -取得機械編號流水序號的項目資料
+ ╠ 2022-12-21 18:31:58 SecondModel               writeItemInfoToDB    :202  -寫入機械編號項目資料到DB
+ ╠ 2022-12-21 18:32:04 SecondModel               getMachineIdSerialNo :35   -取得機械編號的流水序號
+ ╠ 2022-12-21 18:32:04 SecondModel               checkMachineIdHaveRecord:247  -檢查機械編號流水序號的項目資料有沒有在RECORDS_HEAD
+ ╠ 2022-12-21 18:32:04 SecondModel               getMachineSerialNoItemInfo:274  -取得機械編號流水序號的項目資料
+ ╠ 2022-12-21 18:32:07 SecondModel               writeItemInfoToDB    :202  -寫入機械編號項目資料到DB
+ ╠ 2022-12-21 18:32:13 SecondModel               getMachineIdSerialNo :35   -取得機械編號的流水序號
+ ╠ 2022-12-21 18:32:13 SecondModel               checkMachineIdHaveRecord:247  -檢查機械編號流水序號的項目資料有沒有在RECORDS_HEAD
+ ╠ 2022-12-21 18:32:13 SecondModel               getMachineSerialNoItemInfo:274  -取得機械編號流水序號的項目資料
+ ╠ 2022-12-21 18:32:16 SecondModel               writeItemInfoToDB    :202  -寫入機械編號項目資料到DB
+ ╠ 2022-12-21 18:32:22 SecondModel               getMachineIdSerialNo :35   -取得機械編號的流水序號
+ ╠ 2022-12-21 18:32:22 SecondModel               checkMachineIdHaveRecord:247  -檢查機械編號流水序號的項目資料有沒有在RECORDS_HEAD
+ ╠ 2022-12-21 18:32:22 SecondModel               getMachineSerialNoItemInfo:274  -取得機械編號流水序號的項目資料
+ ╠ 2022-12-21 18:32:26 SecondModel               writeItemInfoToDB    :202  -寫入機械編號項目資料到DB
+ ╠ 2022-12-21 18:32:33 SecondModel               getMachineIdSerialNo :35   -取得機械編號的流水序號
+ ╠ 2022-12-21 18:32:33 SecondModel               checkMachineIdHaveRecord:247  -檢查機械編號流水序號的項目資料有沒有在RECORDS_HEAD
+ ╠ 2022-12-21 18:32:33 SecondModel               getMachineSerialNoItemInfo:274  -取得機械編號流水序號的項目資料
+ ╠ 2022-12-21 18:32:37 SecondModel               writeItemInfoToDB    :202  -寫入機械編號項目資料到DB
+ ╠ 2022-12-21 18:32:44 SecondModel               getMachineIdSerialNo :35   -取得機械編號的流水序號
+ ╠ 2022-12-21 18:32:44 SecondModel               checkMachineIdHaveRecord:247  -檢查機械編號流水序號的項目資料有沒有在RECORDS_HEAD
+ ╠ 2022-12-21 18:32:44 SecondModel               getMachineSerialNoItemInfo:274  -取得機械編號流水序號的項目資料
+ ╠ 2022-12-21 18:32:48 SecondModel               writeItemInfoToDB    :202  -寫入機械編號項目資料到DB
+ ╠ 2022-12-21 18:32:54 SecondModel               getMachineIdSerialNo :35   -取得機械編號的流水序號
+ ╠ 2022-12-21 18:32:54 SecondModel               checkMachineIdHaveRecord:247  -檢查機械編號流水序號的項目資料有沒有在RECORDS_HEAD
+ ╠ 2022-12-21 18:32:54 SecondModel               getMachineSerialNoItemInfo:274  -取得機械編號流水序號的項目資料
+ ╠ 2022-12-21 18:32:58 SecondModel               writeItemInfoToDB    :202  -寫入機械編號項目資料到DB
+ ╠ 2022-12-21 18:33:04 SecondModel               getMachineIdSerialNo :35   -取得機械編號的流水序號
+ ╠ 2022-12-21 18:33:04 SecondModel               checkMachineIdHaveRecord:247  -檢查機械編號流水序號的項目資料有沒有在RECORDS_HEAD
+ ╠ 2022-12-21 18:33:04 SecondModel               getMachineSerialNoItemInfo:274  -取得機械編號流水序號的項目資料
+ ╠ 2022-12-21 18:33:07 SecondModel               writeItemInfoToDB    :202  -寫入機械編號項目資料到DB
+ ╠ 2022-12-21 18:33:13 SecondModel               getMachineIdSerialNo :35   -取得機械編號的流水序號
+ ╠ 2022-12-21 18:33:13 SecondModel               checkMachineIdHaveRecord:247  -檢查機械編號流水序號的項目資料有沒有在RECORDS_HEAD
+ ╠ 2022-12-21 18:33:13 SecondModel               getMachineSerialNoItemInfo:274  -取得機械編號流水序號的項目資料
+ ╠ 2022-12-21 18:33:17 SecondModel               writeItemInfoToDB    :202  -寫入機械編號項目資料到DB
+ ╠ 2022-12-21 18:33:24 SecondModel               getMachineIdSerialNo :35   -取得機械編號的流水序號
+ ╠ 2022-12-21 18:33:24 SecondModel               checkMachineIdHaveRecord:247  -檢查機械編號流水序號的項目資料有沒有在RECORDS_HEAD
+ ╠ 2022-12-21 18:33:24 SecondModel               getMachineSerialNoItemInfo:274  -取得機械編號流水序號的項目資料
+ ╠ 2022-12-21 18:33:28 SecondModel               writeItemInfoToDB    :202  -寫入機械編號項目資料到DB
+ ╠ 2022-12-21 18:33:34 SecondModel               getMachineIdSerialNo :35   -取得機械編號的流水序號
+ ╠ 2022-12-21 18:33:34 SecondModel               checkMachineIdHaveRecord:247  -檢查機械編號流水序號的項目資料有沒有在RECORDS_HEAD
+ ╠ 2022-12-21 18:33:34 SecondModel               getMachineSerialNoItemInfo:274  -取得機械編號流水序號的項目資料
+ ╠ 2022-12-21 18:33:38 SecondModel               writeItemInfoToDB    :202  -寫入機械編號項目資料到DB
+ ╠ 2022-12-21 18:33:46 SecondModel               getMachineIdSerialNo :35   -取得機械編號的流水序號
+ ╠ 2022-12-21 18:33:46 SecondModel               checkMachineIdHaveRecord:247  -檢查機械編號流水序號的項目資料有沒有在RECORDS_HEAD
+ ╠ 2022-12-21 18:33:46 SecondModel               getMachineSerialNoItemInfo:274  -取得機械編號流水序號的項目資料
+ ╠ 2022-12-21 18:33:50 SecondModel               writeItemInfoToDB    :202  -寫入機械編號項目資料到DB
+ ╠ 2022-12-21 18:33:57 SecondModel               getMachineIdSerialNo :35   -取得機械編號的流水序號
+ ╠ 2022-12-21 18:33:57 SecondModel               checkMachineIdHaveRecord:247  -檢查機械編號流水序號的項目資料有沒有在RECORDS_HEAD
+ ╠ 2022-12-21 18:33:57 SecondModel               getMachineSerialNoItemInfo:274  -取得機械編號流水序號的項目資料
+ ╠ 2022-12-21 18:34:01 SecondModel               writeItemInfoToDB    :202  -寫入機械編號項目資料到DB
+ ╠ 2022-12-21 18:34:06 SecondModel               getMachineIdSerialNo :35   -取得機械編號的流水序號
+ ╠ 2022-12-21 18:34:06 SecondModel               checkMachineIdHaveRecord:247  -檢查機械編號流水序號的項目資料有沒有在RECORDS_HEAD
+ ╠ 2022-12-21 18:34:06 SecondModel               getMachineSerialNoItemInfo:274  -取得機械編號流水序號的項目資料
+ ╠ 2022-12-21 18:34:10 SecondModel               writeItemInfoToDB    :202  -寫入機械編號項目資料到DB
+ ╠ 2022-12-21 18:34:16 SecondModel               getMachineIdSerialNo :35   -取得機械編號的流水序號
+ ╠ 2022-12-21 18:34:16 SecondModel               checkMachineIdHaveRecord:247  -檢查機械編號流水序號的項目資料有沒有在RECORDS_HEAD
+ ╠ 2022-12-21 18:34:16 SecondModel               getMachineSerialNoItemInfo:274  -取得機械編號流水序號的項目資料
+ ╠ 2022-12-21 18:34:20 SecondModel               writeItemInfoToDB    :202  -寫入機械編號項目資料到DB
+ ╠ 2022-12-21 18:34:25 SecondModel               getMachineIdSerialNo :35   -取得機械編號的流水序號
+ ╠ 2022-12-21 18:34:25 SecondModel               checkMachineIdHaveRecord:247  -檢查機械編號流水序號的項目資料有沒有在RECORDS_HEAD
+ ╠ 2022-12-21 18:34:25 SecondModel               getMachineSerialNoItemInfo:274  -取得機械編號流水序號的項目資料
+ ╠ 2022-12-21 18:34:29 SecondModel               writeItemInfoToDB    :202  -寫入機械編號項目資料到DB
+ ╠ 2022-12-21 18:34:36 SecondModel               getMachineIdSerialNo :35   -取得機械編號的流水序號
+ ╠ 2022-12-21 18:34:36 SecondModel               checkMachineIdHaveRecord:247  -檢查機械編號流水序號的項目資料有沒有在RECORDS_HEAD
+ ╠ 2022-12-21 18:34:36 SecondModel               getMachineSerialNoItemInfo:274  -取得機械編號流水序號的項目資料
+ ╠ 2022-12-21 18:34:39 SecondModel               writeItemInfoToDB    :202  -寫入機械編號項目資料到DB
+ ╠ 2022-12-21 18:34:45 SecondModel               getMachineIdSerialNo :35   -取得機械編號的流水序號
+ ╠ 2022-12-21 18:34:45 SecondModel               checkMachineIdHaveRecord:247  -檢查機械編號流水序號的項目資料有沒有在RECORDS_HEAD
+ ╠ 2022-12-21 18:34:45 SecondModel               getMachineSerialNoItemInfo:274  -取得機械編號流水序號的項目資料
+ ╠ 2022-12-21 18:34:49 SecondModel               writeItemInfoToDB    :202  -寫入機械編號項目資料到DB
+ ╠ 2022-12-21 18:34:57 SecondModel               getMachineIdSerialNo :35   -取得機械編號的流水序號
+ ╠ 2022-12-21 18:34:57 SecondModel               checkMachineIdHaveRecord:247  -檢查機械編號流水序號的項目資料有沒有在RECORDS_HEAD
+ ╠ 2022-12-21 18:34:57 SecondModel               getMachineSerialNoItemInfo:274  -取得機械編號流水序號的項目資料
+ ╠ 2022-12-21 18:35:01 SecondModel               writeItemInfoToDB    :202  -寫入機械編號項目資料到DB
+ ╠ 2022-12-21 18:35:03 RecordModel               getDateList          :53   -取得RECORDS_HEAD已記錄的日期
+ ╠ 2022-12-21 18:35:03 RecordModel               getFactoryList       :98   -取得RECORDS_HEAD已記錄的廠房
+ ╠ 2022-12-21 18:35:03 RecordModel               getFactoryRecord     :384  -取得巡檢列表已巡檢、未巡檢
+ ╠ 2022-12-21 18:35:03 RecordModel               getRecordCheckList   :143  -取得已巡檢列表
+ ╠ 2022-12-21 18:35:03 RecordModel               getRecordCheckBodyList:200  -取得紀錄Body已巡檢列表
+ ╠ 2022-12-21 18:35:04 RecordModel               getRecordNotCheckList:262  -取得未巡檢列表
+ ╠ 2022-12-21 18:35:04 RecordModel               getRecordNoCheckBodyList:320  -取得紀錄Body未巡檢列表
+ ╠ 2022-12-21 18:35:29 SecondModel               getMachineIdSerialNo :35   -取得機械編號的流水序號
+ ╠ 2022-12-21 18:35:29 SecondModel               checkMachineIdHaveRecord:247  -檢查機械編號流水序號的項目資料有沒有在RECORDS_HEAD
+ ╠ 2022-12-21 18:35:29 SecondModel               getMachineSerialNoItemInfo:274  -取得機械編號流水序號的項目資料
+ ╠ 2022-12-21 18:35:34 SecondModel               writeItemInfoToDB    :202  -寫入機械編號項目資料到DB
+ ╠ 2022-12-21 18:35:41 SecondModel               getMachineIdSerialNo :35   -取得機械編號的流水序號
+ ╠ 2022-12-21 18:35:41 SecondModel               checkMachineIdHaveRecord:247  -檢查機械編號流水序號的項目資料有沒有在RECORDS_HEAD
+ ╠ 2022-12-21 18:35:41 SecondModel               getMachineSerialNoItemInfo:274  -取得機械編號流水序號的項目資料
+ ╠ 2022-12-21 18:35:46 SecondModel               writeItemInfoToDB    :202  -寫入機械編號項目資料到DB
+ ╠ 2022-12-21 18:35:53 SecondModel               getMachineIdSerialNo :35   -取得機械編號的流水序號
+ ╠ 2022-12-21 18:35:53 SecondModel               checkMachineIdHaveRecord:247  -檢查機械編號流水序號的項目資料有沒有在RECORDS_HEAD
+ ╠ 2022-12-21 18:35:53 SecondModel               getMachineSerialNoItemInfo:274  -取得機械編號流水序號的項目資料
+ ╠ 2022-12-21 18:35:57 SecondModel               writeItemInfoToDB    :202  -寫入機械編號項目資料到DB
+ ╠ 2022-12-21 18:36:02 SecondModel               getMachineIdSerialNo :35   -取得機械編號的流水序號
+ ╠ 2022-12-21 18:36:02 SecondModel               checkMachineIdHaveRecord:247  -檢查機械編號流水序號的項目資料有沒有在RECORDS_HEAD
+ ╠ 2022-12-21 18:36:02 SecondModel               getMachineSerialNoItemInfo:274  -取得機械編號流水序號的項目資料
+ ╠ 2022-12-21 18:36:08 SecondModel               writeItemInfoToDB    :202  -寫入機械編號項目資料到DB
+ ╠ 2022-12-21 18:36:13 SecondModel               getMachineIdSerialNo :35   -取得機械編號的流水序號
+ ╠ 2022-12-21 18:36:13 SecondModel               checkMachineIdHaveRecord:247  -檢查機械編號流水序號的項目資料有沒有在RECORDS_HEAD
+ ╠ 2022-12-21 18:36:13 SecondModel               getMachineSerialNoItemInfo:274  -取得機械編號流水序號的項目資料
+ ╠ 2022-12-21 18:36:17 SecondModel               writeItemInfoToDB    :202  -寫入機械編號項目資料到DB
+ ╠ 2022-12-21 18:36:21 SecondModel               getMachineIdSerialNo :35   -取得機械編號的流水序號
+ ╠ 2022-12-21 18:36:21 SecondModel               checkMachineIdHaveRecord:247  -檢查機械編號流水序號的項目資料有沒有在RECORDS_HEAD
+ ╠ 2022-12-21 18:36:21 SecondModel               getMachineSerialNoItemInfo:274  -取得機械編號流水序號的項目資料
+ ╠ 2022-12-21 18:36:22 SecondModel               writeItemInfoToDB    :202  -寫入機械編號項目資料到DB
+ ╠ 2022-12-21 18:36:29 RecordModel               getDateList          :53   -取得RECORDS_HEAD已記錄的日期
+ ╠ 2022-12-21 18:36:29 RecordModel               getFactoryList       :98   -取得RECORDS_HEAD已記錄的廠房
+ ╠ 2022-12-21 18:36:29 RecordModel               getFactoryRecord     :384  -取得巡檢列表已巡檢、未巡檢
+ ╠ 2022-12-21 18:36:29 RecordModel               getRecordCheckList   :143  -取得已巡檢列表
+ ╠ 2022-12-21 18:36:29 RecordModel               getRecordCheckBodyList:200  -取得紀錄Body已巡檢列表
+ ╠ 2022-12-21 18:36:29 RecordModel               getRecordNotCheckList:262  -取得未巡檢列表
+ ╠ 2022-12-21 18:36:29 RecordModel               getRecordNoCheckBodyList:320  -取得紀錄Body未巡檢列表
+ ╠ 2022-12-21 18:36:50 SecondModel               getMachineIdSerialNo :35   -取得機械編號的流水序號
+ ╠ 2022-12-21 18:36:50 SecondModel               checkMachineIdHaveRecord:247  -檢查機械編號流水序號的項目資料有沒有在RECORDS_HEAD
+ ╠ 2022-12-21 18:36:50 SecondModel               getMachineSerialNoItemInfo:274  -取得機械編號流水序號的項目資料
+ ╠ 2022-12-21 18:36:55 SecondModel               writeItemInfoToDB    :202  -寫入機械編號項目資料到DB
+ ╠ 2022-12-21 18:36:59 SecondModel               checkCanLeave        :85   -檢查是否做完回上一頁(MainActivity)另選廠房
+ ╠ 2022-12-21 18:37:02 RecordModel               getDateList          :53   -取得RECORDS_HEAD已記錄的日期
+ ╠ 2022-12-21 18:37:02 RecordModel               getFactoryList       :98   -取得RECORDS_HEAD已記錄的廠房
+ ╠ 2022-12-21 18:37:03 RecordModel               getFactoryRecord     :384  -取得巡檢列表已巡檢、未巡檢
+ ╠ 2022-12-21 18:37:03 RecordModel               getRecordCheckList   :143  -取得已巡檢列表
+ ╠ 2022-12-21 18:37:03 RecordModel               getRecordCheckBodyList:200  -取得紀錄Body已巡檢列表
+ ╠ 2022-12-21 18:37:03 RecordModel               getRecordNotCheckList:262  -取得未巡檢列表
+ ╠ 2022-12-21 18:37:03 RecordModel               getRecordNoCheckBodyList:320  -取得紀錄Body未巡檢列表
+ ╠ 2022-12-21 18:37:04 LogUtil                   writeException       :184  -****Exception****
+ ╠ 2022-12-21 18:37:04 LogUtil                   writeException       :184  -****Exception****
+ ╠ 2022-12-21 18:37:04 LogUtil                   writeException       :184  -****Exception****
+ ╠ 2022-12-21 18:37:04 LogUtil                   writeException       :184  -****Exception****
+ ╠ 2022-12-21 18:37:04 LogUtil                   writeException       :184  -****Exception****
+ ╠ 2022-12-21 18:37:04 LogUtil                   writeException       :184  -****Exception****
+ ╠ 2022-12-21 18:37:10 SecondModel               checkCanLeave        :85   -檢查是否做完回上一頁(MainActivity)另選廠房
+ ╠ 2022-12-21 18:37:10 LogUtil                   writeException       :184  -****Exception****
+ ╠ 2022-12-21 18:37:23 MainModel                 checkCanDoFactory    :72   -檢查是否可以進入巡檢
+ ╠ 2022-12-21 18:37:23 LogUtil                   writeException       :184  -****Exception****
+ ╠ 2022-12-21 18:37:23 MainModel                 getFactoryAllMachineIdItemHeadInfo:94   -取得廠房所有機械編號項目Head資訊
+ ╠ 2022-12-21 18:37:23 LogUtil                   writeException       :184  -****Exception****
+ ╠ 2022-12-21 18:37:23 MainModel                 writeFactoryAllMachineIdItemHeadInfo:131  -寫入廠房所有機械編號項目Head資訊
+ ╠ 2022-12-21 18:37:23 MainModel                 getFactoryAllMachineIdItemBodyInfo:169  -取得廠房所有機械編號項目Body資訊
+ ╠ 2022-12-21 18:37:24 MainModel                 checkCanDoFactory    :72   -檢查是否可以進入巡檢
+ ╠ 2022-12-21 18:37:24 LogUtil                   writeException       :184  -****Exception****
+ ╠ 2022-12-21 18:37:24 MainModel                 getFactoryAllMachineIdItemHeadInfo:94   -取得廠房所有機械編號項目Head資訊
+ ╠ 2022-12-21 18:37:24 LogUtil                   writeException       :184  -****Exception****
+ ╠ 2022-12-21 18:37:24 MainModel                 writeFactoryAllMachineIdItemHeadInfo:131  -寫入廠房所有機械編號項目Head資訊
+ ╠ 2022-12-21 18:37:24 MainModel                 getFactoryAllMachineIdItemBodyInfo:169  -取得廠房所有機械編號項目Body資訊
+ ╠ 2022-12-21 18:37:26 MainModel                 checkCanDoFactory    :72   -檢查是否可以進入巡檢
+ ╠ 2022-12-21 18:37:26 LogUtil                   writeException       :184  -****Exception****
+ ╠ 2022-12-21 18:37:26 MainModel                 getFactoryAllMachineIdItemHeadInfo:94   -取得廠房所有機械編號項目Head資訊
+ ╠ 2022-12-21 18:37:26 LogUtil                   writeException       :184  -****Exception****
+ ╠ 2022-12-21 18:37:26 MainModel                 writeFactoryAllMachineIdItemHeadInfo:131  -寫入廠房所有機械編號項目Head資訊
+ ╠ 2022-12-21 18:37:26 MainModel                 getFactoryAllMachineIdItemBodyInfo:169  -取得廠房所有機械編號項目Body資訊
+ ╠ 2022-12-21 18:37:26 MainModel                 checkCanDoFactory    :72   -檢查是否可以進入巡檢
+ ╠ 2022-12-21 18:37:26 LogUtil                   writeException       :184  -****Exception****
+ ╠ 2022-12-21 18:37:26 MainModel                 getFactoryAllMachineIdItemHeadInfo:94   -取得廠房所有機械編號項目Head資訊
+ ╠ 2022-12-21 18:37:26 LogUtil                   writeException       :184  -****Exception****
+ ╠ 2022-12-21 18:37:26 MainModel                 writeFactoryAllMachineIdItemHeadInfo:131  -寫入廠房所有機械編號項目Head資訊
+ ╠ 2022-12-21 18:37:26 MainModel                 getFactoryAllMachineIdItemBodyInfo:169  -取得廠房所有機械編號項目Body資訊
+ ╠ 2022-12-21 18:37:27 MainModel                 checkCanDoFactory    :72   -檢查是否可以進入巡檢
+ ╠ 2022-12-21 18:37:27 LogUtil                   writeException       :184  -****Exception****
+ ╠ 2022-12-21 18:37:27 MainModel                 getFactoryAllMachineIdItemHeadInfo:94   -取得廠房所有機械編號項目Head資訊
+ ╠ 2022-12-21 18:37:27 LogUtil                   writeException       :184  -****Exception****
+ ╠ 2022-12-21 18:37:27 MainModel                 writeFactoryAllMachineIdItemHeadInfo:131  -寫入廠房所有機械編號項目Head資訊
+ ╠ 2022-12-21 18:37:27 MainModel                 getFactoryAllMachineIdItemBodyInfo:169  -取得廠房所有機械編號項目Body資訊
+ ╠ 2022-12-21 18:37:29 MainModel                 checkCanDoFactory    :72   -檢查是否可以進入巡檢
+ ╠ 2022-12-21 18:37:29 LogUtil                   writeException       :184  -****Exception****
+ ╠ 2022-12-21 18:37:29 MainModel                 getFactoryAllMachineIdItemHeadInfo:94   -取得廠房所有機械編號項目Head資訊
+ ╠ 2022-12-21 18:37:29 LogUtil                   writeException       :184  -****Exception****
+ ╠ 2022-12-21 18:37:29 MainModel                 writeFactoryAllMachineIdItemHeadInfo:131  -寫入廠房所有機械編號項目Head資訊
+ ╠ 2022-12-21 18:37:29 MainModel                 getFactoryAllMachineIdItemBodyInfo:169  -取得廠房所有機械編號項目Body資訊
+ ╠ 2022-12-21 18:37:30 MainModel                 checkCanDoFactory    :72   -檢查是否可以進入巡檢
+ ╠ 2022-12-21 18:37:30 LogUtil                   writeException       :184  -****Exception****
+ ╠ 2022-12-21 18:37:30 MainModel                 getFactoryAllMachineIdItemHeadInfo:94   -取得廠房所有機械編號項目Head資訊
+ ╠ 2022-12-21 18:37:30 LogUtil                   writeException       :184  -****Exception****
+ ╠ 2022-12-21 18:37:30 MainModel                 writeFactoryAllMachineIdItemHeadInfo:131  -寫入廠房所有機械編號項目Head資訊
+ ╠ 2022-12-21 18:37:30 MainModel                 getFactoryAllMachineIdItemBodyInfo:169  -取得廠房所有機械編號項目Body資訊
+ ╠ 2022-12-21 18:37:30 MainModel                 checkCanDoFactory    :72   -檢查是否可以進入巡檢
+ ╠ 2022-12-21 18:37:30 LogUtil                   writeException       :184  -****Exception****
+ ╠ 2022-12-21 18:37:30 MainModel                 getFactoryAllMachineIdItemHeadInfo:94   -取得廠房所有機械編號項目Head資訊
+ ╠ 2022-12-21 18:37:30 LogUtil                   writeException       :184  -****Exception****
+ ╠ 2022-12-21 18:37:30 MainModel                 writeFactoryAllMachineIdItemHeadInfo:131  -寫入廠房所有機械編號項目Head資訊
+ ╠ 2022-12-21 18:37:30 MainModel                 getFactoryAllMachineIdItemBodyInfo:169  -取得廠房所有機械編號項目Body資訊
+ ╠ 2022-12-21 18:37:33 MainModel                 checkCanDoFactory    :72   -檢查是否可以進入巡檢
+ ╠ 2022-12-21 18:37:33 LogUtil                   writeException       :184  -****Exception****
+ ╠ 2022-12-21 18:37:33 MainModel                 getFactoryAllMachineIdItemHeadInfo:94   -取得廠房所有機械編號項目Head資訊
+ ╠ 2022-12-21 18:37:33 LogUtil                   writeException       :184  -****Exception****
+ ╠ 2022-12-21 18:37:33 MainModel                 writeFactoryAllMachineIdItemHeadInfo:131  -寫入廠房所有機械編號項目Head資訊
+ ╠ 2022-12-21 18:37:33 MainModel                 getFactoryAllMachineIdItemBodyInfo:169  -取得廠房所有機械編號項目Body資訊
+ ╠ 2022-12-21 18:37:34 MainModel                 checkCanDoFactory    :72   -檢查是否可以進入巡檢
+ ╠ 2022-12-21 18:37:34 LogUtil                   writeException       :184  -****Exception****
+ ╠ 2022-12-21 18:37:34 MainModel                 getFactoryAllMachineIdItemHeadInfo:94   -取得廠房所有機械編號項目Head資訊
+ ╠ 2022-12-21 18:37:34 LogUtil                   writeException       :184  -****Exception****
+ ╠ 2022-12-21 18:37:34 MainModel                 writeFactoryAllMachineIdItemHeadInfo:131  -寫入廠房所有機械編號項目Head資訊
+ ╠ 2022-12-21 18:37:34 MainModel                 getFactoryAllMachineIdItemBodyInfo:169  -取得廠房所有機械編號項目Body資訊
+ ╠ 2022-12-21 18:37:34 MainModel                 checkCanDoFactory    :72   -檢查是否可以進入巡檢
+ ╠ 2022-12-21 18:37:34 LogUtil                   writeException       :184  -****Exception****
+ ╠ 2022-12-21 18:37:34 MainModel                 getFactoryAllMachineIdItemHeadInfo:94   -取得廠房所有機械編號項目Head資訊
+ ╠ 2022-12-21 18:37:34 LogUtil                   writeException       :184  -****Exception****
+ ╠ 2022-12-21 18:37:34 MainModel                 writeFactoryAllMachineIdItemHeadInfo:131  -寫入廠房所有機械編號項目Head資訊
+ ╠ 2022-12-21 18:37:34 MainModel                 getFactoryAllMachineIdItemBodyInfo:169  -取得廠房所有機械編號項目Body資訊
+ ╠ 2022-12-21 18:37:34 MainModel                 checkCanDoFactory    :72   -檢查是否可以進入巡檢
+ ╠ 2022-12-21 18:37:34 LogUtil                   writeException       :184  -****Exception****
+ ╠ 2022-12-21 18:37:34 MainModel                 getFactoryAllMachineIdItemHeadInfo:94   -取得廠房所有機械編號項目Head資訊
+ ╠ 2022-12-21 18:37:34 LogUtil                   writeException       :184  -****Exception****
+ ╠ 2022-12-21 18:37:34 MainModel                 writeFactoryAllMachineIdItemHeadInfo:131  -寫入廠房所有機械編號項目Head資訊
+ ╠ 2022-12-21 18:37:34 MainModel                 getFactoryAllMachineIdItemBodyInfo:169  -取得廠房所有機械編號項目Body資訊
+ ╠ 2022-12-21 18:37:35 MainModel                 checkCanDoFactory    :72   -檢查是否可以進入巡檢
+ ╠ 2022-12-21 18:37:35 LogUtil                   writeException       :184  -****Exception****
+ ╠ 2022-12-21 18:37:35 MainModel                 getFactoryAllMachineIdItemHeadInfo:94   -取得廠房所有機械編號項目Head資訊
+ ╠ 2022-12-21 18:37:35 LogUtil                   writeException       :184  -****Exception****
+ ╠ 2022-12-21 18:37:35 MainModel                 writeFactoryAllMachineIdItemHeadInfo:131  -寫入廠房所有機械編號項目Head資訊
+ ╠ 2022-12-21 18:37:35 MainModel                 getFactoryAllMachineIdItemBodyInfo:169  -取得廠房所有機械編號項目Body資訊
+ ╠ 2022-12-21 18:37:35 MainModel                 checkCanDoFactory    :72   -檢查是否可以進入巡檢
+ ╠ 2022-12-21 18:37:35 LogUtil                   writeException       :184  -****Exception****
+ ╠ 2022-12-21 18:37:35 MainModel                 getFactoryAllMachineIdItemHeadInfo:94   -取得廠房所有機械編號項目Head資訊
+ ╠ 2022-12-21 18:37:35 LogUtil                   writeException       :184  -****Exception****
+ ╠ 2022-12-21 18:37:35 MainModel                 writeFactoryAllMachineIdItemHeadInfo:131  -寫入廠房所有機械編號項目Head資訊
+ ╠ 2022-12-21 18:37:35 MainModel                 getFactoryAllMachineIdItemBodyInfo:169  -取得廠房所有機械編號項目Body資訊
+ ╠ 2022-12-21 18:37:35 MainModel                 checkCanDoFactory    :72   -檢查是否可以進入巡檢
+ ╠ 2022-12-21 18:37:35 LogUtil                   writeException       :184  -****Exception****
+ ╠ 2022-12-21 18:37:35 MainModel                 getFactoryAllMachineIdItemHeadInfo:94   -取得廠房所有機械編號項目Head資訊
+ ╠ 2022-12-21 18:37:35 LogUtil                   writeException       :184  -****Exception****
+ ╠ 2022-12-21 18:37:35 MainModel                 writeFactoryAllMachineIdItemHeadInfo:131  -寫入廠房所有機械編號項目Head資訊
+ ╠ 2022-12-21 18:37:35 MainModel                 getFactoryAllMachineIdItemBodyInfo:169  -取得廠房所有機械編號項目Body資訊
+ ╠ 2022-12-21 18:37:35 MainModel                 checkCanDoFactory    :72   -檢查是否可以進入巡檢
+ ╠ 2022-12-21 18:37:35 LogUtil                   writeException       :184  -****Exception****
+ ╠ 2022-12-21 18:37:35 MainModel                 getFactoryAllMachineIdItemHeadInfo:94   -取得廠房所有機械編號項目Head資訊
+ ╠ 2022-12-21 18:37:35 LogUtil                   writeException       :184  -****Exception****
+ ╠ 2022-12-21 18:37:35 MainModel                 writeFactoryAllMachineIdItemHeadInfo:131  -寫入廠房所有機械編號項目Head資訊
+ ╠ 2022-12-21 18:37:35 MainModel                 getFactoryAllMachineIdItemBodyInfo:169  -取得廠房所有機械編號項目Body資訊
+ ╠ 2022-12-21 18:37:39 MainModel                 checkCanDoFactory    :72   -檢查是否可以進入巡檢
+ ╠ 2022-12-21 18:37:39 LogUtil                   writeException       :184  -****Exception****
+ ╠ 2022-12-21 18:37:39 MainModel                 getFactoryAllMachineIdItemHeadInfo:94   -取得廠房所有機械編號項目Head資訊
+ ╠ 2022-12-21 18:37:39 LogUtil                   writeException       :184  -****Exception****
+ ╠ 2022-12-21 18:37:39 MainModel                 writeFactoryAllMachineIdItemHeadInfo:131  -寫入廠房所有機械編號項目Head資訊
+ ╠ 2022-12-21 18:37:39 MainModel                 getFactoryAllMachineIdItemBodyInfo:169  -取得廠房所有機械編號項目Body資訊
+ ╠ 2022-12-21 18:37:40 MainModel                 checkCanDoFactory    :72   -檢查是否可以進入巡檢
+ ╠ 2022-12-21 18:37:40 LogUtil                   writeException       :184  -****Exception****
+ ╠ 2022-12-21 18:37:40 MainModel                 getFactoryAllMachineIdItemHeadInfo:94   -取得廠房所有機械編號項目Head資訊
+ ╠ 2022-12-21 18:37:40 LogUtil                   writeException       :184  -****Exception****
+ ╠ 2022-12-21 18:37:40 MainModel                 writeFactoryAllMachineIdItemHeadInfo:131  -寫入廠房所有機械編號項目Head資訊
+ ╠ 2022-12-21 18:37:40 MainModel                 getFactoryAllMachineIdItemBodyInfo:169  -取得廠房所有機械編號項目Body資訊
+ ╠ 2022-12-21 18:37:40 MainModel                 checkCanDoFactory    :72   -檢查是否可以進入巡檢
+ ╠ 2022-12-21 18:37:40 LogUtil                   writeException       :184  -****Exception****
+ ╠ 2022-12-21 18:37:40 MainModel                 getFactoryAllMachineIdItemHeadInfo:94   -取得廠房所有機械編號項目Head資訊
+ ╠ 2022-12-21 18:37:40 LogUtil                   writeException       :184  -****Exception****
+ ╠ 2022-12-21 18:37:40 MainModel                 writeFactoryAllMachineIdItemHeadInfo:131  -寫入廠房所有機械編號項目Head資訊
+ ╠ 2022-12-21 18:37:40 MainModel                 getFactoryAllMachineIdItemBodyInfo:169  -取得廠房所有機械編號項目Body資訊
+ ╠ 2022-12-21 18:37:54 MainModel                 checkCanDoFactory    :72   -檢查是否可以進入巡檢
+ ╠ 2022-12-21 18:37:54 LogUtil                   writeException       :184  -****Exception****
+ ╠ 2022-12-21 18:37:54 MainModel                 getFactoryAllMachineIdItemHeadInfo:94   -取得廠房所有機械編號項目Head資訊
+ ╠ 2022-12-21 18:37:54 LogUtil                   writeException       :184  -****Exception****
+ ╠ 2022-12-21 18:37:54 MainModel                 writeFactoryAllMachineIdItemHeadInfo:131  -寫入廠房所有機械編號項目Head資訊
+ ╠ 2022-12-21 18:37:54 MainModel                 getFactoryAllMachineIdItemBodyInfo:169  -取得廠房所有機械編號項目Body資訊
+ ╠ 2022-12-21 18:37:54 MainModel                 checkCanDoFactory    :72   -檢查是否可以進入巡檢
+ ╠ 2022-12-21 18:37:54 LogUtil                   writeException       :184  -****Exception****
+ ╠ 2022-12-21 18:37:54 MainModel                 getFactoryAllMachineIdItemHeadInfo:94   -取得廠房所有機械編號項目Head資訊
+ ╠ 2022-12-21 18:37:54 LogUtil                   writeException       :184  -****Exception****
+ ╠ 2022-12-21 18:37:54 MainModel                 writeFactoryAllMachineIdItemHeadInfo:131  -寫入廠房所有機械編號項目Head資訊
+ ╠ 2022-12-21 18:37:54 MainModel                 getFactoryAllMachineIdItemBodyInfo:169  -取得廠房所有機械編號項目Body資訊
+ ╠ 2022-12-21 18:37:55 MainModel                 checkCanDoFactory    :72   -檢查是否可以進入巡檢
+ ╠ 2022-12-21 18:37:55 LogUtil                   writeException       :184  -****Exception****
+ ╠ 2022-12-21 18:37:55 MainModel                 getFactoryAllMachineIdItemHeadInfo:94   -取得廠房所有機械編號項目Head資訊
+ ╠ 2022-12-21 18:37:55 LogUtil                   writeException       :184  -****Exception****
+ ╠ 2022-12-21 18:37:55 MainModel                 writeFactoryAllMachineIdItemHeadInfo:131  -寫入廠房所有機械編號項目Head資訊
+ ╠ 2022-12-21 18:37:55 MainModel                 getFactoryAllMachineIdItemBodyInfo:169  -取得廠房所有機械編號項目Body資訊
+ ╠ 2022-12-21 18:37:55 MainModel                 checkCanDoFactory    :72   -檢查是否可以進入巡檢
+ ╠ 2022-12-21 18:37:55 LogUtil                   writeException       :184  -****Exception****
+ ╠ 2022-12-21 18:37:55 MainModel                 getFactoryAllMachineIdItemHeadInfo:94   -取得廠房所有機械編號項目Head資訊
+ ╠ 2022-12-21 18:37:55 LogUtil                   writeException       :184  -****Exception****
+ ╠ 2022-12-21 18:37:55 MainModel                 writeFactoryAllMachineIdItemHeadInfo:131  -寫入廠房所有機械編號項目Head資訊
+ ╠ 2022-12-21 18:37:55 MainModel                 getFactoryAllMachineIdItemBodyInfo:169  -取得廠房所有機械編號項目Body資訊
+ ╠ 2022-12-21 18:37:59 LogUtil                   writeException       :184  -****Exception****
+ ╠ 2022-12-21 18:37:59 MainModel                 getFactoryInfo       :34   -取得廠房資料
+ ╠ 2022-12-21 18:37:59 LogUtil                   writeException       :184  -****Exception****
+ ╠ 2022-12-21 18:38:04 LogUtil                   writeException       :184  -****Exception****
+ ╠ 2022-12-21 18:38:04 MainModel                 getFactoryInfo       :34   -取得廠房資料
+ ╠ 2022-12-21 18:38:04 LogUtil                   writeException       :184  -****Exception****
+ ╠ 2022-12-21 18:38:10 LogUtil                   writeException       :184  -****Exception****
+ ╠ 2022-12-21 18:38:10 MainModel                 getFactoryInfo       :34   -取得廠房資料
+ ╠ 2022-12-21 18:38:10 LogUtil                   writeException       :184  -****Exception****
+ ╠ 2022-12-21 18:38:18 TransferActivity          init                 :69   -進入傳輸模式
+ ╠ 2022-12-21 18:38:18 TransferActivity          createFile           :96   -建立Transfer.txt 成功
+ ╠ 2022-12-21 18:38:52 TransferActivity          onReceive            :39   -com.action.a
+ ╠ 2022-12-21 18:38:52 TransferActivity          onDestroy            :123  -退出傳輸模式
+ ╠ 2022-12-21 18:38:52 TransferActivity          onDestroy            :133  -刪除Transfer.txt 成功
+ ╠ 2022-12-21 18:42:04 TransferActivity          init                 :69   -進入傳輸模式
+ ╠ 2022-12-21 18:42:04 TransferActivity          createFile           :96   -建立Transfer.txt 成功
+ ╠ 2022-12-21 18:44:22 TransferActivity          onReceive            :39   -com.action.b
+ ╚═══════════════════════════════════════════════════════════
+
+ ╔════════════════════2022-12-21 18:44:22  Application Start════════════════════
+ ╠ AndroidVersion=9
+ ╠ Model=HC61
+ ╠ Serial=unknown
+ ╠ PackageName=com.regalscan.platform(國巨股份有限公司)
+ ╠ VersionName=1.0.1
+ ╠
+ ╠ 2022-12-21 18:44:23 LoginActivity             onCreate             :113  -機器序號：unknown
+ ╠ 2022-12-21 18:44:52 LoginActivity             onClick              :436  -登入
+ ╚═══════════════════════════════════════════════════════════
+
+ ╔════════════════════2022-12-21 18:44:52  Application Start════════════════════
+ ╠ AndroidVersion=9
+ ╠ Model=HC61
+ ╠ Serial=unknown
+ ╠ PackageName=com.operator.ContentProvider(ContentProvider)
+ ╠ VersionName=1.0.0
+ ╠
+ ╠ 2022-12-21 18:44:54 MainModel                 getFactoryInfo       :34   -取得廠房資料
+ ╠ 2022-12-21 18:44:57 MainModel                 checkCanDoFactory    :72   -檢查是否可以進入巡檢
+ ╠ 2022-12-21 18:44:58 MainModel                 getFactoryAllMachineIdItemHeadInfo:94   -取得廠房所有機械編號項目Head資訊
+ ╠ 2022-12-21 18:44:58 MainModel                 writeFactoryAllMachineIdItemHeadInfo:131  -寫入廠房所有機械編號項目Head資訊
+ ╠ 2022-12-21 18:44:58 MainModel                 getFactoryAllMachineIdItemBodyInfo:169  -取得廠房所有機械編號項目Body資訊
+ ╠ 2022-12-21 18:44:59 MainModel                 writeFactoryAllMachineIdItemBodyInfo:215  -寫入廠房所有機械編號項目Body資訊
+ ╠ 2022-12-21 18:44:59 MainModel                 checkCanDoFactory    :72   -檢查是否可以進入巡檢
+ ╠ 2022-12-21 18:45:01 SecondModel               checkCanLeave        :85   -檢查是否做完回上一頁(MainActivity)另選廠房
+ ╠ 2022-12-21 18:45:01 SecondModel               deleteRecordHeadInfo :160  -刪除RECORDS_HEAD and RECORDS_BODY
+ ╠ 2022-12-21 18:45:05 MainModel                 checkCanDoFactory    :72   -檢查是否可以進入巡檢
+ ╠ 2022-12-21 18:45:05 MainModel                 getFactoryAllMachineIdItemHeadInfo:94   -取得廠房所有機械編號項目Head資訊
+ ╠ 2022-12-21 18:45:05 MainModel                 writeFactoryAllMachineIdItemHeadInfo:131  -寫入廠房所有機械編號項目Head資訊
+ ╠ 2022-12-21 18:45:06 MainModel                 getFactoryAllMachineIdItemBodyInfo:169  -取得廠房所有機械編號項目Body資訊
+ ╠ 2022-12-21 18:45:07 MainModel                 writeFactoryAllMachineIdItemBodyInfo:215  -寫入廠房所有機械編號項目Body資訊
+ ╠ 2022-12-21 18:45:13 SecondModel               checkCanLeave        :85   -檢查是否做完回上一頁(MainActivity)另選廠房
+ ╠ 2022-12-21 18:45:13 SecondModel               deleteRecordHeadInfo :160  -刪除RECORDS_HEAD and RECORDS_BODY
+ ╠ 2022-12-21 18:45:17 MainModel                 checkCanDoFactory    :72   -檢查是否可以進入巡檢
+ ╠ 2022-12-21 18:45:17 MainModel                 getFactoryAllMachineIdItemHeadInfo:94   -取得廠房所有機械編號項目Head資訊
+ ╠ 2022-12-21 18:45:17 MainModel                 writeFactoryAllMachineIdItemHeadInfo:131  -寫入廠房所有機械編號項目Head資訊
+ ╠ 2022-12-21 18:45:18 MainModel                 getFactoryAllMachineIdItemBodyInfo:169  -取得廠房所有機械編號項目Body資訊
+ ╠ 2022-12-21 18:45:18 MainModel                 writeFactoryAllMachineIdItemBodyInfo:215  -寫入廠房所有機械編號項目Body資訊
+ ╠ 2022-12-21 18:45:18 MainModel                 checkCanDoFactory    :72   -檢查是否可以進入巡檢
+ ╠ 2022-12-21 18:45:20 SecondModel               checkCanLeave        :85   -檢查是否做完回上一頁(MainActivity)另選廠房
+ ╠ 2022-12-21 18:45:20 SecondModel               deleteRecordHeadInfo :160  -刪除RECORDS_HEAD and RECORDS_BODY
+ ╠ 2022-12-21 18:46:42 MainModel                 checkCanDoFactory    :72   -檢查是否可以進入巡檢
+ ╠ 2022-12-21 18:46:42 MainModel                 getFactoryAllMachineIdItemHeadInfo:94   -取得廠房所有機械編號項目Head資訊
+ ╠ 2022-12-21 18:46:42 MainModel                 writeFactoryAllMachineIdItemHeadInfo:131  -寫入廠房所有機械編號項目Head資訊
+ ╠ 2022-12-21 18:46:43 MainModel                 getFactoryAllMachineIdItemBodyInfo:169  -取得廠房所有機械編號項目Body資訊
+ ╠ 2022-12-21 18:46:43 MainModel                 writeFactoryAllMachineIdItemBodyInfo:215  -寫入廠房所有機械編號項目Body資訊
+ ╠ 2022-12-21 18:46:49 SecondModel               checkCanLeave        :85   -檢查是否做完回上一頁(MainActivity)另選廠房
+ ╠ 2022-12-21 18:46:49 SecondModel               deleteRecordHeadInfo :160  -刪除RECORDS_HEAD and RECORDS_BODY
+ ╠ 2022-12-21 18:46:53 MainModel                 checkCanDoFactory    :72   -檢查是否可以進入巡檢
+ ╠ 2022-12-21 18:46:53 MainModel                 getFactoryAllMachineIdItemHeadInfo:94   -取得廠房所有機械編號項目Head資訊
+ ╠ 2022-12-21 18:46:53 MainModel                 writeFactoryAllMachineIdItemHeadInfo:131  -寫入廠房所有機械編號項目Head資訊
+ ╠ 2022-12-21 18:46:54 MainModel                 getFactoryAllMachineIdItemBodyInfo:169  -取得廠房所有機械編號項目Body資訊
+ ╠ 2022-12-21 18:46:54 MainModel                 writeFactoryAllMachineIdItemBodyInfo:215  -寫入廠房所有機械編號項目Body資訊
+ ╠ 2022-12-21 18:47:49 SecondModel               getMachineIdSerialNo :35   -取得機械編號的流水序號
+ ╠ 2022-12-21 18:47:49 SecondModel               checkMachineIdHaveRecord:247  -檢查機械編號流水序號的項目資料有沒有在RECORDS_HEAD
+ ╠ 2022-12-21 18:47:49 SecondModel               getMachineSerialNoItemInfo:274  -取得機械編號流水序號的項目資料
+ ╠ 2022-12-21 18:49:09 SecondModel               writeItemInfoToDB    :202  -寫入機械編號項目資料到DB
+ ╠ 2022-12-21 18:49:24 RecordModel               getDateList          :53   -取得RECORDS_HEAD已記錄的日期
+ ╠ 2022-12-21 18:49:24 RecordModel               getFactoryList       :98   -取得RECORDS_HEAD已記錄的廠房
+ ╠ 2022-12-21 18:49:24 RecordModel               getFactoryRecord     :384  -取得巡檢列表已巡檢、未巡檢
+ ╠ 2022-12-21 18:49:24 RecordModel               getRecordCheckList   :143  -取得已巡檢列表
+ ╠ 2022-12-21 18:49:24 RecordModel               getRecordCheckBodyList:200  -取得紀錄Body已巡檢列表
+ ╠ 2022-12-21 18:49:24 RecordModel               getRecordNotCheckList:262  -取得未巡檢列表
+ ╠ 2022-12-21 18:49:24 RecordModel               getRecordNoCheckBodyList:320  -取得紀錄Body未巡檢列表
+ ╠ 2022-12-21 18:49:33 RecordModel               deleteFactoryIdDateRecord:413  -刪除選擇日期跟選擇廠房的紀錄
+ ╠ 2022-12-21 18:49:33 RecordModel               searchFactoryIdDateRecord:472  -查詢選擇日期跟選擇廠房的紀錄
+ ╠ 2022-12-21 18:49:33 RecordModel               deleteFactoryIdDateBodyRecord:514  -刪除選擇日期跟選擇廠房的紀錄Body
+ ╠ 2022-12-21 18:49:34 RecordModel               getDateList          :53   -取得RECORDS_HEAD已記錄的日期
+ ╠ 2022-12-21 18:49:34 RecordModel               getDateList          :53   -取得RECORDS_HEAD已記錄的日期
+ ╠ 2022-12-21 18:49:40 SecondModel               getMachineIdSerialNo :35   -取得機械編號的流水序號
+ ╠ 2022-12-21 18:49:45 SecondModel               getMachineIdSerialNo :35   -取得機械編號的流水序號
+ ╠ 2022-12-21 18:49:56 SecondModel               checkCanLeave        :85   -檢查是否做完回上一頁(MainActivity)另選廠房
+ ╠ 2022-12-21 18:49:59 MainModel                 checkCanDoFactory    :72   -檢查是否可以進入巡檢
+ ╠ 2022-12-21 18:49:59 MainModel                 getFactoryAllMachineIdItemHeadInfo:94   -取得廠房所有機械編號項目Head資訊
+ ╠ 2022-12-21 18:49:59 MainModel                 writeFactoryAllMachineIdItemHeadInfo:131  -寫入廠房所有機械編號項目Head資訊
+ ╠ 2022-12-21 18:50:00 MainModel                 getFactoryAllMachineIdItemBodyInfo:169  -取得廠房所有機械編號項目Body資訊
+ ╠ 2022-12-21 18:50:00 MainModel                 writeFactoryAllMachineIdItemBodyInfo:215  -寫入廠房所有機械編號項目Body資訊
+ ╠ 2022-12-21 18:50:10 SecondModel               getMachineIdSerialNo :35   -取得機械編號的流水序號
+ ╠ 2022-12-21 18:50:10 SecondModel               checkMachineIdHaveRecord:247  -檢查機械編號流水序號的項目資料有沒有在RECORDS_HEAD
+ ╠ 2022-12-21 18:50:10 SecondModel               getMachineSerialNoItemInfo:274  -取得機械編號流水序號的項目資料
+ ╠ 2022-12-21 18:50:40 SecondModel               writeItemInfoToDB    :202  -寫入機械編號項目資料到DB
+ ╠ 2022-12-21 18:50:46 RecordModel               getDateList          :53   -取得RECORDS_HEAD已記錄的日期
+ ╠ 2022-12-21 18:50:46 RecordModel               getFactoryList       :98   -取得RECORDS_HEAD已記錄的廠房
+ ╠ 2022-12-21 18:50:46 RecordModel               getFactoryRecord     :384  -取得巡檢列表已巡檢、未巡檢
+ ╠ 2022-12-21 18:50:46 RecordModel               getRecordCheckList   :143  -取得已巡檢列表
+ ╠ 2022-12-21 18:50:46 RecordModel               getRecordCheckBodyList:200  -取得紀錄Body已巡檢列表
+ ╠ 2022-12-21 18:50:47 RecordModel               getRecordNotCheckList:262  -取得未巡檢列表
+ ╠ 2022-12-21 18:50:47 RecordModel               getRecordNoCheckBodyList:320  -取得紀錄Body未巡檢列表
+ ╠ 2022-12-21 18:51:17 RecordModel               deleteFactoryIdDateRecord:413  -刪除選擇日期跟選擇廠房的紀錄
+ ╠ 2022-12-21 18:51:17 RecordModel               searchFactoryIdDateRecord:472  -查詢選擇日期跟選擇廠房的紀錄
+ ╠ 2022-12-21 18:51:17 RecordModel               deleteFactoryIdDateBodyRecord:514  -刪除選擇日期跟選擇廠房的紀錄Body
+ ╠ 2022-12-21 18:51:18 RecordModel               getDateList          :53   -取得RECORDS_HEAD已記錄的日期
+ ╠ 2022-12-21 18:51:18 RecordModel               getDateList          :53   -取得RECORDS_HEAD已記錄的日期
+ ╠ 2022-12-21 18:52:44 SecondModel               getMachineIdSerialNo :35   -取得機械編號的流水序號
+ ╠ 2022-12-21 18:52:52 SecondModel               checkCanLeave        :85   -檢查是否做完回上一頁(MainActivity)另選廠房
+ ╠ 2022-12-21 18:52:56 MainModel                 checkCanDoFactory    :72   -檢查是否可以進入巡檢
+ ╠ 2022-12-21 18:52:56 MainModel                 getFactoryAllMachineIdItemHeadInfo:94   -取得廠房所有機械編號項目Head資訊
+ ╠ 2022-12-21 18:52:56 MainModel                 writeFactoryAllMachineIdItemHeadInfo:131  -寫入廠房所有機械編號項目Head資訊
+ ╠ 2022-12-21 18:52:56 MainModel                 getFactoryAllMachineIdItemBodyInfo:169  -取得廠房所有機械編號項目Body資訊
+ ╠ 2022-12-21 18:52:56 MainModel                 writeFactoryAllMachineIdItemBodyInfo:215  -寫入廠房所有機械編號項目Body資訊
+ ╠ 2022-12-21 18:53:00 RecordModel               getDateList          :53   -取得RECORDS_HEAD已記錄的日期
+ ╠ 2022-12-21 18:53:00 RecordModel               getFactoryList       :98   -取得RECORDS_HEAD已記錄的廠房
+ ╠ 2022-12-21 18:53:01 RecordModel               getFactoryRecord     :384  -取得巡檢列表已巡檢、未巡檢
+ ╠ 2022-12-21 18:53:01 RecordModel               getRecordCheckList   :143  -取得已巡檢列表
+ ╠ 2022-12-21 18:53:01 RecordModel               getRecordCheckBodyList:200  -取得紀錄Body已巡檢列表
+ ╠ 2022-12-21 18:53:01 RecordModel               getRecordNotCheckList:262  -取得未巡檢列表
+ ╠ 2022-12-21 18:53:01 RecordModel               getRecordNoCheckBodyList:320  -取得紀錄Body未巡檢列表
+ ╠ 2022-12-21 18:53:56 SecondModel               getMachineIdSerialNo :35   -取得機械編號的流水序號
+ ╠ 2022-12-21 18:53:56 SecondModel               checkMachineIdHaveRecord:247  -檢查機械編號流水序號的項目資料有沒有在RECORDS_HEAD
+ ╠ 2022-12-21 18:53:56 SecondModel               getMachineSerialNoItemInfo:274  -取得機械編號流水序號的項目資料
+ ╠ 2022-12-21 18:54:25 SecondModel               writeItemInfoToDB    :202  -寫入機械編號項目資料到DB
+ ╠ 2022-12-21 18:55:18 SecondModel               getMachineIdSerialNo :35   -取得機械編號的流水序號
+ ╠ 2022-12-21 18:55:18 SecondModel               checkMachineIdHaveRecord:247  -檢查機械編號流水序號的項目資料有沒有在RECORDS_HEAD
+ ╠ 2022-12-21 18:55:18 SecondModel               getMachineSerialNoItemInfo:274  -取得機械編號流水序號的項目資料
+ ╠ 2022-12-21 18:56:28 SecondModel               writeItemInfoToDB    :202  -寫入機械編號項目資料到DB
+ ╠ 2022-12-21 18:58:01 SecondModel               getMachineIdSerialNo :35   -取得機械編號的流水序號
+ ╠ 2022-12-21 18:58:01 SecondModel               checkMachineIdHaveRecord:247  -檢查機械編號流水序號的項目資料有沒有在RECORDS_HEAD
+ ╠ 2022-12-21 18:58:01 SecondModel               getMachineSerialNoItemInfo:274  -取得機械編號流水序號的項目資料
+ ╠ 2022-12-21 18:58:40 SecondModel               writeItemInfoToDB    :202  -寫入機械編號項目資料到DB
+ ╠ 2022-12-21 18:58:47 SecondModel               getMachineIdSerialNo :35   -取得機械編號的流水序號
+ ╠ 2022-12-21 18:58:53 SecondModel               getMachineIdSerialNo :35   -取得機械編號的流水序號
+ ╠ 2022-12-21 18:58:53 SecondModel               checkMachineIdHaveRecord:247  -檢查機械編號流水序號的項目資料有沒有在RECORDS_HEAD
+ ╠ 2022-12-21 18:58:53 SecondModel               getMachineSerialNoItemInfo:274  -取得機械編號流水序號的項目資料
+ ╠ 2022-12-21 18:58:58 SecondModel               writeItemInfoToDB    :202  -寫入機械編號項目資料到DB
+ ╠ 2022-12-21 18:59:03 SecondModel               getMachineIdSerialNo :35   -取得機械編號的流水序號
+ ╠ 2022-12-21 18:59:03 SecondModel               checkMachineIdHaveRecord:247  -檢查機械編號流水序號的項目資料有沒有在RECORDS_HEAD
+ ╠ 2022-12-21 18:59:03 SecondModel               getMachineSerialNoItemInfo:274  -取得機械編號流水序號的項目資料
+ ╠ 2022-12-21 18:59:08 SecondModel               writeItemInfoToDB    :202  -寫入機械編號項目資料到DB
+ ╠ 2022-12-21 18:59:12 SecondModel               getMachineIdSerialNo :35   -取得機械編號的流水序號
+ ╠ 2022-12-21 18:59:12 SecondModel               checkMachineIdHaveRecord:247  -檢查機械編號流水序號的項目資料有沒有在RECORDS_HEAD
+ ╠ 2022-12-21 18:59:12 SecondModel               getMachineSerialNoItemInfo:274  -取得機械編號流水序號的項目資料
+ ╠ 2022-12-21 18:59:16 SecondModel               writeItemInfoToDB    :202  -寫入機械編號項目資料到DB
+ ╠ 2022-12-21 18:59:20 SecondModel               getMachineIdSerialNo :35   -取得機械編號的流水序號
+ ╠ 2022-12-21 18:59:20 SecondModel               checkMachineIdHaveRecord:247  -檢查機械編號流水序號的項目資料有沒有在RECORDS_HEAD
+ ╠ 2022-12-21 18:59:20 SecondModel               getMachineSerialNoItemInfo:274  -取得機械編號流水序號的項目資料
+ ╠ 2022-12-21 18:59:23 SecondModel               writeItemInfoToDB    :202  -寫入機械編號項目資料到DB
+ ╠ 2022-12-21 18:59:28 SecondModel               getMachineIdSerialNo :35   -取得機械編號的流水序號
+ ╠ 2022-12-21 18:59:28 SecondModel               checkMachineIdHaveRecord:247  -檢查機械編號流水序號的項目資料有沒有在RECORDS_HEAD
+ ╠ 2022-12-21 18:59:28 SecondModel               getMachineSerialNoItemInfo:274  -取得機械編號流水序號的項目資料
+ ╠ 2022-12-21 18:59:32 SecondModel               writeItemInfoToDB    :202  -寫入機械編號項目資料到DB
+ ╠ 2022-12-21 18:59:37 SecondModel               getMachineIdSerialNo :35   -取得機械編號的流水序號
+ ╠ 2022-12-21 18:59:37 SecondModel               checkMachineIdHaveRecord:247  -檢查機械編號流水序號的項目資料有沒有在RECORDS_HEAD
+ ╠ 2022-12-21 18:59:37 SecondModel               getMachineSerialNoItemInfo:274  -取得機械編號流水序號的項目資料
+ ╠ 2022-12-21 18:59:40 SecondModel               writeItemInfoToDB    :202  -寫入機械編號項目資料到DB
+ ╠ 2022-12-21 18:59:44 SecondModel               getMachineIdSerialNo :35   -取得機械編號的流水序號
+ ╠ 2022-12-21 18:59:44 SecondModel               checkMachineIdHaveRecord:247  -檢查機械編號流水序號的項目資料有沒有在RECORDS_HEAD
+ ╠ 2022-12-21 18:59:44 SecondModel               getMachineSerialNoItemInfo:274  -取得機械編號流水序號的項目資料
+ ╠ 2022-12-21 18:59:48 SecondModel               writeItemInfoToDB    :202  -寫入機械編號項目資料到DB
+ ╠ 2022-12-21 18:59:52 SecondModel               getMachineIdSerialNo :35   -取得機械編號的流水序號
+ ╠ 2022-12-21 18:59:52 SecondModel               checkMachineIdHaveRecord:247  -檢查機械編號流水序號的項目資料有沒有在RECORDS_HEAD
+ ╠ 2022-12-21 18:59:52 SecondModel               getMachineSerialNoItemInfo:274  -取得機械編號流水序號的項目資料
+ ╠ 2022-12-21 18:59:56 SecondModel               writeItemInfoToDB    :202  -寫入機械編號項目資料到DB
+ ╠ 2022-12-21 19:00:01 SecondModel               getMachineIdSerialNo :35   -取得機械編號的流水序號
+ ╠ 2022-12-21 19:00:01 SecondModel               checkMachineIdHaveRecord:247  -檢查機械編號流水序號的項目資料有沒有在RECORDS_HEAD
+ ╠ 2022-12-21 19:00:01 SecondModel               getMachineSerialNoItemInfo:274  -取得機械編號流水序號的項目資料
+ ╠ 2022-12-21 19:00:05 SecondModel               writeItemInfoToDB    :202  -寫入機械編號項目資料到DB
+ ╠ 2022-12-21 19:00:09 SecondModel               getMachineIdSerialNo :35   -取得機械編號的流水序號
+ ╠ 2022-12-21 19:00:09 SecondModel               checkMachineIdHaveRecord:247  -檢查機械編號流水序號的項目資料有沒有在RECORDS_HEAD
+ ╠ 2022-12-21 19:00:09 SecondModel               getMachineSerialNoItemInfo:274  -取得機械編號流水序號的項目資料
+ ╠ 2022-12-21 19:00:12 SecondModel               writeItemInfoToDB    :202  -寫入機械編號項目資料到DB
+ ╠ 2022-12-21 19:00:17 SecondModel               getMachineIdSerialNo :35   -取得機械編號的流水序號
+ ╠ 2022-12-21 19:00:17 SecondModel               checkMachineIdHaveRecord:247  -檢查機械編號流水序號的項目資料有沒有在RECORDS_HEAD
+ ╠ 2022-12-21 19:00:17 SecondModel               getMachineSerialNoItemInfo:274  -取得機械編號流水序號的項目資料
+ ╠ 2022-12-21 19:00:21 SecondModel               writeItemInfoToDB    :202  -寫入機械編號項目資料到DB
+ ╠ 2022-12-21 19:00:26 SecondModel               getMachineIdSerialNo :35   -取得機械編號的流水序號
+ ╠ 2022-12-21 19:00:26 SecondModel               checkMachineIdHaveRecord:247  -檢查機械編號流水序號的項目資料有沒有在RECORDS_HEAD
+ ╠ 2022-12-21 19:00:26 SecondModel               getMachineSerialNoItemInfo:274  -取得機械編號流水序號的項目資料
+ ╠ 2022-12-21 19:00:31 SecondModel               writeItemInfoToDB    :202  -寫入機械編號項目資料到DB
+ ╠ 2022-12-21 19:00:36 SecondModel               getMachineIdSerialNo :35   -取得機械編號的流水序號
+ ╠ 2022-12-21 19:00:36 SecondModel               checkMachineIdHaveRecord:247  -檢查機械編號流水序號的項目資料有沒有在RECORDS_HEAD
+ ╠ 2022-12-21 19:00:36 SecondModel               getMachineSerialNoItemInfo:274  -取得機械編號流水序號的項目資料
+ ╠ 2022-12-21 19:00:39 SecondModel               writeItemInfoToDB    :202  -寫入機械編號項目資料到DB
+ ╠ 2022-12-21 19:00:43 SecondModel               getMachineIdSerialNo :35   -取得機械編號的流水序號
+ ╠ 2022-12-21 19:00:43 SecondModel               checkMachineIdHaveRecord:247  -檢查機械編號流水序號的項目資料有沒有在RECORDS_HEAD
+ ╠ 2022-12-21 19:00:43 SecondModel               getMachineSerialNoItemInfo:274  -取得機械編號流水序號的項目資料
+ ╠ 2022-12-21 19:00:46 SecondModel               writeItemInfoToDB    :202  -寫入機械編號項目資料到DB
+ ╠ 2022-12-21 19:00:50 RecordModel               getDateList          :53   -取得RECORDS_HEAD已記錄的日期
+ ╠ 2022-12-21 19:00:50 RecordModel               getFactoryList       :98   -取得RECORDS_HEAD已記錄的廠房
+ ╠ 2022-12-21 19:00:50 RecordModel               getFactoryRecord     :384  -取得巡檢列表已巡檢、未巡檢
+ ╠ 2022-12-21 19:00:50 RecordModel               getRecordCheckList   :143  -取得已巡檢列表
+ ╠ 2022-12-21 19:00:50 RecordModel               getRecordCheckBodyList:200  -取得紀錄Body已巡檢列表
+ ╠ 2022-12-21 19:00:50 RecordModel               getRecordNotCheckList:262  -取得未巡檢列表
+ ╠ 2022-12-21 19:00:50 RecordModel               getRecordNoCheckBodyList:320  -取得紀錄Body未巡檢列表
+ ╠ 2022-12-21 19:01:15 SecondModel               getMachineIdSerialNo :35   -取得機械編號的流水序號
+ ╠ 2022-12-21 19:01:15 SecondModel               checkMachineIdHaveRecord:247  -檢查機械編號流水序號的項目資料有沒有在RECORDS_HEAD
+ ╠ 2022-12-21 19:01:15 SecondModel               getMachineSerialNoItemInfo:274  -取得機械編號流水序號的項目資料
+ ╠ 2022-12-21 19:01:22 SecondModel               writeItemInfoToDB    :202  -寫入機械編號項目資料到DB
+ ╠ 2022-12-21 19:01:34 RecordModel               getDateList          :53   -取得RECORDS_HEAD已記錄的日期
+ ╠ 2022-12-21 19:01:34 RecordModel               getFactoryList       :98   -取得RECORDS_HEAD已記錄的廠房
+ ╠ 2022-12-21 19:01:34 RecordModel               getFactoryRecord     :384  -取得巡檢列表已巡檢、未巡檢
+ ╠ 2022-12-21 19:01:34 RecordModel               getRecordCheckList   :143  -取得已巡檢列表
+ ╠ 2022-12-21 19:01:34 RecordModel               getRecordCheckBodyList:200  -取得紀錄Body已巡檢列表
+ ╠ 2022-12-21 19:01:34 RecordModel               getRecordNotCheckList:262  -取得未巡檢列表
+ ╠ 2022-12-21 19:01:35 RecordModel               getRecordNoCheckBodyList:320  -取得紀錄Body未巡檢列表
+ ╠ 2022-12-21 19:01:54 SecondModel               checkCanLeave        :85   -檢查是否做完回上一頁(MainActivity)另選廠房
+ ╠ 2022-12-21 19:02:15 SecondModel               checkCanLeave        :85   -檢查是否做完回上一頁(MainActivity)另選廠房
+ ╠ 2022-12-21 19:02:19 RecordModel               getDateList          :53   -取得RECORDS_HEAD已記錄的日期
+ ╠ 2022-12-21 19:02:19 RecordModel               getFactoryList       :98   -取得RECORDS_HEAD已記錄的廠房
+ ╠ 2022-12-21 19:02:19 RecordModel               getFactoryRecord     :384  -取得巡檢列表已巡檢、未巡檢
+ ╠ 2022-12-21 19:02:19 RecordModel               getRecordCheckList   :143  -取得已巡檢列表
+ ╠ 2022-12-21 19:02:19 RecordModel               getRecordCheckBodyList:200  -取得紀錄Body已巡檢列表
+ ╠ 2022-12-21 19:02:19 RecordModel               getRecordNotCheckList:262  -取得未巡檢列表
+ ╠ 2022-12-21 19:02:19 RecordModel               getRecordNoCheckBodyList:320  -取得紀錄Body未巡檢列表
+ ╠ 2022-12-21 19:02:23 SecondModel               checkCanLeave        :85   -檢查是否做完回上一頁(MainActivity)另選廠房
+ ╠ 2022-12-21 19:02:34 SecondModel               checkCanLeave        :85   -檢查是否做完回上一頁(MainActivity)另選廠房
+ ╠ 2022-12-21 19:02:39 SecondModel               checkCanLeave        :85   -檢查是否做完回上一頁(MainActivity)另選廠房
+ ╠ 2022-12-21 19:02:48 RecordModel               getDateList          :53   -取得RECORDS_HEAD已記錄的日期
+ ╠ 2022-12-21 19:02:48 RecordModel               getFactoryList       :98   -取得RECORDS_HEAD已記錄的廠房
+ ╠ 2022-12-21 19:02:48 RecordModel               getFactoryRecord     :384  -取得巡檢列表已巡檢、未巡檢
+ ╠ 2022-12-21 19:02:48 RecordModel               getRecordCheckList   :143  -取得已巡檢列表
+ ╠ 2022-12-21 19:02:48 RecordModel               getRecordCheckBodyList:200  -取得紀錄Body已巡檢列表
+ ╠ 2022-12-21 19:02:48 RecordModel               getRecordNotCheckList:262  -取得未巡檢列表
+ ╠ 2022-12-21 19:02:48 RecordModel               getRecordNoCheckBodyList:320  -取得紀錄Body未巡檢列表
+ ╠ 2022-12-21 19:02:53 SecondModel               checkCanLeave        :85   -檢查是否做完回上一頁(MainActivity)另選廠房
+ ╠ 2022-12-21 19:02:56 SecondModel               checkCanLeave        :85   -檢查是否做完回上一頁(MainActivity)另選廠房
+ ╠ 2022-12-21 19:03:11 SecondModel               checkCanLeave        :85   -檢查是否做完回上一頁(MainActivity)另選廠房
+ ╠ 2022-12-21 19:03:14 RecordModel               getDateList          :53   -取得RECORDS_HEAD已記錄的日期
+ ╠ 2022-12-21 19:03:14 RecordModel               getFactoryList       :98   -取得RECORDS_HEAD已記錄的廠房
+ ╠ 2022-12-21 19:03:14 RecordModel               getFactoryRecord     :384  -取得巡檢列表已巡檢、未巡檢
+ ╠ 2022-12-21 19:03:14 RecordModel               getRecordCheckList   :143  -取得已巡檢列表
+ ╠ 2022-12-21 19:03:14 RecordModel               getRecordCheckBodyList:200  -取得紀錄Body已巡檢列表
+ ╠ 2022-12-21 19:03:15 RecordModel               getRecordNotCheckList:262  -取得未巡檢列表
+ ╠ 2022-12-21 19:03:15 RecordModel               getRecordNoCheckBodyList:320  -取得紀錄Body未巡檢列表
+ ╠ 2022-12-21 19:03:19 SecondModel               checkCanLeave        :85   -檢查是否做完回上一頁(MainActivity)另選廠房
+ ╠ 2022-12-21 19:03:29 SecondModel               checkCanLeave        :85   -檢查是否做完回上一頁(MainActivity)另選廠房
+ ╠ 2022-12-21 19:03:30 SecondModel               checkCanLeave        :85   -檢查是否做完回上一頁(MainActivity)另選廠房
+ ╠ 2022-12-21 19:03:32 SecondModel               checkCanLeave        :85   -檢查是否做完回上一頁(MainActivity)另選廠房
+ ╠ 2022-12-21 19:03:35 RecordModel               getDateList          :53   -取得RECORDS_HEAD已記錄的日期
+ ╠ 2022-12-21 19:03:35 RecordModel               getFactoryList       :98   -取得RECORDS_HEAD已記錄的廠房
+ ╠ 2022-12-21 19:03:36 RecordModel               getFactoryRecord     :384  -取得巡檢列表已巡檢、未巡檢
+ ╠ 2022-12-21 19:03:36 RecordModel               getRecordCheckList   :143  -取得已巡檢列表
+ ╠ 2022-12-21 19:03:36 RecordModel               getRecordCheckBodyList:200  -取得紀錄Body已巡檢列表
+ ╠ 2022-12-21 19:03:36 RecordModel               getRecordNotCheckList:262  -取得未巡檢列表
+ ╠ 2022-12-21 19:03:36 RecordModel               getRecordNoCheckBodyList:320  -取得紀錄Body未巡檢列表
+ ╠ 2022-12-21 19:03:44 SecondModel               checkCanLeave        :85   -檢查是否做完回上一頁(MainActivity)另選廠房
+ ╠ 2022-12-21 19:03:52 SecondModel               getMachineIdSerialNo :35   -取得機械編號的流水序號
+ ╠ 2022-12-21 19:03:52 SecondModel               checkMachineIdHaveRecord:247  -檢查機械編號流水序號的項目資料有沒有在RECORDS_HEAD
+ ╠ 2022-12-21 19:03:52 SecondModel               getMachineSerialNoItemInfo:274  -取得機械編號流水序號的項目資料
+ ╠ 2022-12-21 19:03:54 SecondModel               checkCanLeave        :85   -檢查是否做完回上一頁(MainActivity)另選廠房
+ ╠ 2022-12-21 19:04:00 SecondModel               checkCanLeave        :85   -檢查是否做完回上一頁(MainActivity)另選廠房
+ ╠ 2022-12-21 19:04:06 SecondModel               writeItemInfoToDB    :202  -寫入機械編號項目資料到DB
+ ╠ 2022-12-21 19:04:10 SecondModel               checkCanLeave        :85   -檢查是否做完回上一頁(MainActivity)另選廠房
+ ╠ 2022-12-21 19:04:12 RecordModel               getDateList          :53   -取得RECORDS_HEAD已記錄的日期
+ ╠ 2022-12-21 19:04:13 RecordModel               getFactoryList       :98   -取得RECORDS_HEAD已記錄的廠房
+ ╠ 2022-12-21 19:04:13 RecordModel               getFactoryRecord     :384  -取得巡檢列表已巡檢、未巡檢
+ ╠ 2022-12-21 19:04:13 RecordModel               getRecordCheckList   :143  -取得已巡檢列表
+ ╠ 2022-12-21 19:04:13 RecordModel               getRecordCheckBodyList:200  -取得紀錄Body已巡檢列表
+ ╠ 2022-12-21 19:04:13 RecordModel               getRecordNotCheckList:262  -取得未巡檢列表
+ ╠ 2022-12-21 19:04:13 RecordModel               getRecordNoCheckBodyList:320  -取得紀錄Body未巡檢列表
+ ╠ 2022-12-21 19:04:18 SecondModel               checkCanLeave        :85   -檢查是否做完回上一頁(MainActivity)另選廠房
+ ╠ 2022-12-21 19:04:53 SecondModel               checkCanLeave        :85   -檢查是否做完回上一頁(MainActivity)另選廠房
+ ╠ 2022-12-21 19:28:57 RecordModel               getDateList          :53   -取得RECORDS_HEAD已記錄的日期
+ ╠ 2022-12-21 19:28:57 RecordModel               getFactoryList       :98   -取得RECORDS_HEAD已記錄的廠房
+ ╠ 2022-12-21 19:28:58 RecordModel               getFactoryRecord     :384  -取得巡檢列表已巡檢、未巡檢
+ ╠ 2022-12-21 19:28:58 RecordModel               getRecordCheckList   :143  -取得已巡檢列表
+ ╠ 2022-12-21 19:28:58 RecordModel               getRecordCheckBodyList:200  -取得紀錄Body已巡檢列表
+ ╠ 2022-12-21 19:28:58 RecordModel               getRecordNotCheckList:262  -取得未巡檢列表
+ ╠ 2022-12-21 19:28:58 RecordModel               getRecordNoCheckBodyList:320  -取得紀錄Body未巡檢列表
+ ╠ 2022-12-21 19:29:24 RecordModel               getDateList          :53   -取得RECORDS_HEAD已記錄的日期
+ ╠ 2022-12-21 19:29:24 RecordModel               getFactoryList       :98   -取得RECORDS_HEAD已記錄的廠房
+ ╠ 2022-12-21 19:29:24 RecordModel               getFactoryRecord     :384  -取得巡檢列表已巡檢、未巡檢
+ ╠ 2022-12-21 19:29:24 RecordModel               getRecordCheckList   :143  -取得已巡檢列表
+ ╠ 2022-12-21 19:29:25 RecordModel               getRecordCheckBodyList:200  -取得紀錄Body已巡檢列表
+ ╠ 2022-12-21 19:29:25 RecordModel               getRecordNotCheckList:262  -取得未巡檢列表
+ ╠ 2022-12-21 19:29:25 RecordModel               getRecordNoCheckBodyList:320  -取得紀錄Body未巡檢列表
+ ╠ 2022-12-21 19:31:11 SecondModel               checkCanLeave        :85   -檢查是否做完回上一頁(MainActivity)另選廠房
+ ╠ 2022-12-21 19:31:13 RecordModel               getDateList          :53   -取得RECORDS_HEAD已記錄的日期
+ ╠ 2022-12-21 19:31:13 RecordModel               getFactoryList       :98   -取得RECORDS_HEAD已記錄的廠房
+ ╠ 2022-12-21 19:31:14 RecordModel               getFactoryRecord     :384  -取得巡檢列表已巡檢、未巡檢
+ ╠ 2022-12-21 19:31:14 RecordModel               getRecordCheckList   :143  -取得已巡檢列表
+ ╠ 2022-12-21 19:31:14 RecordModel               getRecordCheckBodyList:200  -取得紀錄Body已巡檢列表
+ ╠ 2022-12-21 19:31:14 RecordModel               getRecordNotCheckList:262  -取得未巡檢列表
+ ╠ 2022-12-21 19:31:14 RecordModel               getRecordNoCheckBodyList:320  -取得紀錄Body未巡檢列表
+ ╠ 2022-12-21 19:31:16 SecondModel               checkCanLeave        :85   -檢查是否做完回上一頁(MainActivity)另選廠房
+ ╠ 2022-12-21 19:31:17 RecordModel               getDateList          :53   -取得RECORDS_HEAD已記錄的日期
+ ╠ 2022-12-21 19:31:17 RecordModel               getFactoryList       :98   -取得RECORDS_HEAD已記錄的廠房
+ ╠ 2022-12-21 19:31:18 RecordModel               getFactoryRecord     :384  -取得巡檢列表已巡檢、未巡檢
+ ╠ 2022-12-21 19:31:18 RecordModel               getRecordCheckList   :143  -取得已巡檢列表
+ ╠ 2022-12-21 19:31:18 RecordModel               getRecordCheckBodyList:200  -取得紀錄Body已巡檢列表
+ ╠ 2022-12-21 19:31:18 RecordModel               getRecordNotCheckList:262  -取得未巡檢列表
+ ╠ 2022-12-21 19:31:18 RecordModel               getRecordNoCheckBodyList:320  -取得紀錄Body未巡檢列表
+ ╠ 2022-12-21 19:31:23 SecondModel               checkCanLeave        :85   -檢查是否做完回上一頁(MainActivity)另選廠房
+ ╠ 2022-12-21 19:31:29 SecondModel               getMachineIdSerialNo :35   -取得機械編號的流水序號
+ ╠ 2022-12-21 19:31:29 SecondModel               checkMachineIdHaveRecord:247  -檢查機械編號流水序號的項目資料有沒有在RECORDS_HEAD
+ ╠ 2022-12-21 19:31:29 SecondModel               getMachineSerialNoItemInfo:274  -取得機械編號流水序號的項目資料
+ ╠ 2022-12-21 20:49:01 SecondModel               checkCanLeave        :85   -檢查是否做完回上一頁(MainActivity)另選廠房

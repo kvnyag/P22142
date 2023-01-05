@@ -11,6 +11,7 @@ namespace P2214201
     {
         //公用變數
         public string StartDate, EndDate, UserAccount, UserName, UserRole;
+        public double oldWidth, oldHeight, newWidth, newHeight;
         int RowsNo;
         string strSQL, CheckDate;
         string FT001, FT002, CG001, CG002, CK001;
@@ -18,24 +19,73 @@ namespace P2214201
         DataTable dt = new DataTable();
         DbTransaction objTrans = null;
         UseSQLServer USQL = new UseSQLServer();
-
+        DealRecord drc = new DealRecord();
+        
         public HydropowerDem()
         {
             InitializeComponent();
+        }
+
+        private void HydropowerDem_Resize(object sender, EventArgs e)
+        {
+            int NewX, NewY;
+
+            if (oldWidth > 0 && oldHeight > 0 && newWidth > 0 && newHeight > 0)
+            {
+                double x = (newWidth / oldWidth);
+                double y = (newHeight / oldHeight);
+
+                dgvHydropowerFrom.Width = Convert.ToInt32(x * dgvHydropowerFrom.Width);
+                dgvHydropowerFrom.Height = Convert.ToInt32(y * dgvHydropowerFrom.Height);
+
+                dgvHydropowerTo.Width = Convert.ToInt32(x * dgvHydropowerTo.Width);
+                dgvHydropowerTo.Height = Convert.ToInt32(y * dgvHydropowerTo.Height);
+
+                gbxFun.Width = Convert.ToInt32(x * gbxFun.Width);
+                gbxFun.Height = Convert.ToInt32(y * gbxFun.Height);
+
+                gbxShow1.Width = Convert.ToInt32(x * gbxShow1.Width);
+                gbxShow1.Height = Convert.ToInt32(y * gbxShow1.Height);
+                NewY = gbxFun.Height;
+                gbxShow1.Location = new Point(gbxShow1.Location.X, NewY);
+
+                gbxShow2.Width = Convert.ToInt32(x * gbxShow2.Width);
+                gbxShow2.Height = Convert.ToInt32(y * gbxShow2.Height);
+                NewY = gbxFun.Height + gbxShow1.Height;
+                gbxShow2.Location = new Point(gbxShow2.Location.X, NewY);
+
+                NewX = (int)(btnHydropowerDemModify.Location.X * x + btnHydropowerDemModify.Width * (x - 1));
+                btnHydropowerDemModify.Location = new Point(NewX, btnHydropowerDemModify.Location.Y);
+                btnHydropowerDemModify.Width = Convert.ToInt32(x * btnHydropowerDemModify.Width);
+                btnHydropowerDemModify.Height = Convert.ToInt32(y * btnHydropowerDemModify.Height);
+
+                NewX = (int)(btnHydropowerDemDemand.Location.X * x + btnHydropowerDemDemand.Width * (x - 1));
+                btnHydropowerDemDemand.Location = new Point(NewX, btnHydropowerDemDemand.Location.Y);
+                btnHydropowerDemDemand.Width = Convert.ToInt32(x * btnHydropowerDemDemand.Width);
+                btnHydropowerDemDemand.Height = Convert.ToInt32(y * btnHydropowerDemDemand.Height);
+
+                NewX = (int)(btnHydropowerDemExport.Location.X * x + btnHydropowerDemExport.Width * (x - 1));
+                btnHydropowerDemExport.Location = new Point(NewX, btnHydropowerDemExport.Location.Y);
+                btnHydropowerDemExport.Width = Convert.ToInt32(x * btnHydropowerDemExport.Width);
+                btnHydropowerDemExport.Height = Convert.ToInt32(y * btnHydropowerDemExport.Height);
+            }
+        }
+
+        private void HydropowerDem_Paint(object sender, PaintEventArgs e)
+        {
+            Graphics g = e.Graphics;
+            System.Drawing.Drawing2D.LinearGradientBrush lb = new System.Drawing.Drawing2D.LinearGradientBrush(this.DisplayRectangle, Color.Linen, Color.DarkTurquoise, 45);
+            g.FillRectangle(lb, this.DisplayRectangle);
         }
 
         private void HydropowerDem_Load(object sender, EventArgs e)
         {
             //DataGridView 設定
             //....dgvAirConditionFrom
-            dgvHydropowerFrom.RowsDefaultCellStyle.Font = new Font("微軟正黑體", 10, FontStyle.Regular);
-            dgvHydropowerFrom.ColumnHeadersDefaultCellStyle.Font = new Font("微軟正黑體", 10, FontStyle.Regular);
-            dgvHydropowerFrom.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            drc.SetDataGridView(ref dgvHydropowerFrom);
 
             //....dgvAirConditionTo
-            dgvHydropowerTo.RowsDefaultCellStyle.Font = new Font("微軟正黑體", 10, FontStyle.Regular);
-            dgvHydropowerTo.ColumnHeadersDefaultCellStyle.Font = new Font("微軟正黑體", 10, FontStyle.Regular);
-            dgvHydropowerTo.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            drc.SetDataGridView(ref dgvHydropowerTo);
 
             //廠房名稱 下拉資料填入
             strSQL = "Select * From FACTORYS";
@@ -64,9 +114,9 @@ namespace P2214201
             //dgvCompressTo 若沒有值，不可按此鈕。
             if (dgvHydropowerTo.Rows.Count <= 0)
                 return;
-            //記錄有Key值的變數
-            FT002 = cbxFactoryCode.Text;
-            CG002 = cbxCategorysName.Text;
+            //記錄有Key值的變數.
+            FT002 = dgvHydropowerFrom.CurrentRow.Cells[1].Value.ToString().Trim();     //廠房名稱
+            CG002 = dgvHydropowerFrom.CurrentRow.Cells[2].Value.ToString().Trim();     //類別名稱
             //取得 RECORDS_HEADS 的表頭序號
             strSQL = "SELECT RDH001 FROM RECORDS_HEADS WHERE RDH003 = '" + FT002 + "' AND RDH005 = '" + CG002 + "' AND RDH008 = '" + CheckDate + "'";
             dt = USQL.SQLSelect(ref da, strSQL);
@@ -101,45 +151,34 @@ namespace P2214201
 
         private void btnHydropowerDemDemand_Click(object sender, EventArgs e)
         {//查詢 功能區
-
-            //防呆
-            if (cbxFactoryCode.Text == "")
-            { MessageBox.Show("請選擇廠房名稱。"); return; }
+            
             //資料清空 & 選擇顯示
             ClearForm("", "Y", "Y");
             isEnable("N", "Y", "Y");
-            //從外部取得搜尋起訖日期
-            using (Query_Interval qi = new Query_Interval())
-            {
-                this.Visible = false;
-                qi.Owner = this;
-                qi.ShowDialog();
-
-                StartDate = qi.StartDate;
-                EndDate = qi.EndDate;
-
-                qi.Close();
-                qi.Dispose();
-                this.Visible = true;
-            }
+            //記錄時間區間
+            StartDate = dtpStart.Value.ToString("yyyy/MM/dd");
+            EndDate = dtpEnd.Value.ToString("yyyy/MM/dd");
+            //填入 KEY 值
+            FT002 = cbxFactoryCode.Text.Trim();
             //透過區間抓取歷程記錄
             strSQL = "Select RDH008 as '巡檢日期',RDH003 as '廠房',RDH005 as '類別' ";
             strSQL += "From RECORDS_HEADS ";
-            strSQL += "Where RDH002 = '" + FT001 + "' And RDH004 = '" + CG001 + "' ";
-            if (StartDate != "" && EndDate != "")
-                strSQL += "And RDH008 Between '" + StartDate + "' And '" + EndDate + "' ";
+            strSQL += "WHERE RDH008 Between '" + StartDate + "' And '" + EndDate + "' ";
+            strSQL += "AND RDH004 = '" + CG001 + "' ";
+            if (FT002 != "")
+                strSQL += "AND RDH002 = '" + FT001 + "' ";
             strSQL += "GROUP BY RDH008,RDH003,RDH005 ";
             strSQL += "ORDER BY RDH008 ";
 
             dt = USQL.SQLSelect(ref da, strSQL);
             dgvHydropowerFrom.DataSource = dt;
+            dgvHydropowerFrom.ClearSelection();
         }
 
         private void btnHydropowerDemExport_Click(object sender, EventArgs e)
         {//匯出Excel 功能區
             //參數
             string NewStartDate = "";
-            //UseMicrosoftExcel UMEx = new UseMicrosoftExcel();
             UseNPOI NPOI = new UseNPOI();
 
             //從外部取得搜尋起訖日期
@@ -152,26 +191,28 @@ namespace P2214201
                 StartDate = qi.StartDate;
                 EndDate = qi.EndDate;
 
+                if(qi.DialogResult == DialogResult.OK)
+                {
+                    //取得起始日期往前最近的一天
+                    strSQL = "SELECT ISNULL(MAX(RDH008),null) as MAXRDH008 ";
+                    strSQL += "FROM RECORDS_HEADS ";
+                    strSQL += "WHERE RDH008 < '" + StartDate + "' AND RDH004 = 'D' ";
+                    dt = USQL.SQLSelect(ref da, strSQL);
+                    NewStartDate = dt.Rows[0]["MAXRDH008"].ToString();
+                    if (NewStartDate != "")
+                    {
+                        StartDate = NewStartDate;
+                        NPOI.RepHydropower(StartDate, EndDate, "Y");
+                    }
+                    else
+                        NPOI.RepHydropower(StartDate, EndDate, "N");
+                    MessageBox.Show("報表匯出完成。");
+                }
+
                 qi.Close();
                 qi.Dispose();
                 this.Visible = true;
             }
-            //取得起始日期往前最近的一天
-            strSQL = "SELECT ISNULL(MAX(RDH008),null) as MAXRDH008 ";
-            strSQL += "FROM RECORDS_HEADS ";
-            strSQL += "WHERE RDH008 < '" + StartDate + "' AND RDH004 = 'D' ";
-            dt = USQL.SQLSelect(ref da, strSQL);
-            NewStartDate = dt.Rows[0]["MAXRDH008"].ToString();
-            if (NewStartDate != "")
-            {
-                StartDate = NewStartDate;
-                //UMEx.RepHydropower(StartDate, EndDate, "Y");
-                NPOI.RepHydropower(StartDate, EndDate, "Y");
-            }
-            else
-                //UMEx.RepHydropower(StartDate, EndDate, "N");
-                NPOI.RepHydropower(StartDate, EndDate, "N");
-            MessageBox.Show("報表匯出完成。");
         }
 
         private void cbxFactoryCode_SelectedIndexChanged(object sender, EventArgs e)
@@ -208,6 +249,7 @@ namespace P2214201
                     strSQL += "AND a.RDH008 = '" + CheckDate + "' AND a.RDH003 = '" + FT002 + "' AND RDH005 = '" + CG002 + "'";
                     dt = USQL.SQLSelect(ref da, strSQL);
                     dgvHydropowerTo.DataSource = dt;
+                    dgvHydropowerTo.ClearSelection();
                     //dgvHydropowerTo 僅 記錄資料 可供修改，其餘欄位均不可變更。
                     if (dgvHydropowerTo.Rows.Count > 0)
                     {

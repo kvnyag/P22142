@@ -2,6 +2,7 @@
 using System.Data;
 using System.Windows.Forms;
 using REGAL.Data.DataAccess;
+using System.Drawing;
 
 namespace P2214201
 {
@@ -9,24 +10,75 @@ namespace P2214201
     {
         //公用變數
         public string UserAccount, UserName, UserRole;
+        public double oldWidth, oldHeight, newWidth, newHeight;
         string UR001, UR002, UR003, UR004, UR005, UR006, UR007, UR008, UR009, UR010, UR011, UR012; //人員基本資料 欄位名
         string strDemand = "";
         UseSQLServer USQL = new UseSQLServer();
         DataAccess da = new DataAccess();
         DataTable dt = new DataTable();
+        DealRecord drc = new DealRecord();
 
         public StaffInfo()
         {
             InitializeComponent();
-            
         }
 
+        private void StaffInfo_Resize(object sender, EventArgs e)
+        {
+            int NewX;
+
+            if(oldWidth > 0 && oldHeight > 0 && newWidth > 0 && newHeight > 0)
+            {
+                double x = (newWidth / oldWidth);
+                double y = (newHeight / oldHeight);
+
+                dgvStaff.Width = Convert.ToInt32(x * dgvStaff.Width);
+                dgvStaff.Height = Convert.ToInt32(y * dgvStaff.Height);
+
+                gbxFun.Width = Convert.ToInt32(x * gbxFun.Width);
+                gbxFun.Height = Convert.ToInt32(y * gbxFun.Height);
+
+                gbxShow.Width = Convert.ToInt32(x * gbxShow.Width);
+                gbxShow.Height = Convert.ToInt32(y * gbxShow.Height);
+
+                NewX = (int)(btnStaffInfoAdd.Location.X * x + btnStaffInfoAdd.Width * (x - 1));
+                btnStaffInfoAdd.Location = new Point(NewX, btnStaffInfoAdd.Location.Y);
+                btnStaffInfoAdd.Width = Convert.ToInt32(x * btnStaffInfoAdd.Width);
+                btnStaffInfoAdd.Height = Convert.ToInt32(y * btnStaffInfoAdd.Height);
+
+                NewX = (int)(btnStaffInfoModify.Location.X * x + btnStaffInfoModify.Width * (x - 1));
+                btnStaffInfoModify.Location = new Point(NewX, btnStaffInfoModify.Location.Y);
+                btnStaffInfoModify.Width = Convert.ToInt32(x * btnStaffInfoModify.Width);
+                btnStaffInfoModify.Height = Convert.ToInt32(y * btnStaffInfoModify.Height);
+
+                NewX = (int)(btnStaffInfoDelete.Location.X * x + btnStaffInfoDelete.Width * (x - 1));
+                btnStaffInfoDelete.Location = new Point(NewX, btnStaffInfoDelete.Location.Y);
+                btnStaffInfoDelete.Width = Convert.ToInt32(x * btnStaffInfoDelete.Width);
+                btnStaffInfoDelete.Height = Convert.ToInt32(y * btnStaffInfoDelete.Height);
+
+                NewX = (int)(btnStaffInfoDemand.Location.X * x + btnStaffInfoDemand.Width * (x - 1));
+                btnStaffInfoDemand.Location = new Point(NewX, btnStaffInfoDemand.Location.Y);
+                btnStaffInfoDemand.Width = Convert.ToInt32(x * btnStaffInfoDemand.Width);
+                btnStaffInfoDemand.Height = Convert.ToInt32(y * btnStaffInfoDemand.Height);
+            }
+        }
+
+        private void StaffInfo_Paint(object sender, PaintEventArgs e)
+        {
+            Graphics g = e.Graphics;
+            System.Drawing.Drawing2D.LinearGradientBrush lb = new System.Drawing.Drawing2D.LinearGradientBrush(this.DisplayRectangle, Color.Linen, Color.DarkTurquoise, 45);
+            g.FillRectangle(lb, this.DisplayRectangle);
+        }
+        
         private void StaffInfo_Load(object sender, EventArgs e)
         {
             //參數
             int i;
             string strSQL;
-            
+
+            //DataGridView 設定
+            drc.SetDataGridView(ref dgvStaff);
+
             //寫入權限群組下拉選單
             strSQL = "Select * From ROLES";
             dt = USQL.SQLSelect(ref da, strSQL);
@@ -53,13 +105,31 @@ namespace P2214201
         {//執行"新增"動作
             //參數
             string strSQL;
+            string[] arrNum = new string[] { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9" };
 
             //防呆
+            //....欄位均不可空白
             if (CheckData("Y", "Y", "Y", "Y") == false)
                 return;
+            //....帳號必須8碼
+            UR001 = tbxStaffAcount.Text; //人員帳號(UR001)
+            if (UR001.Length != 8)
+            {
+                MessageBox.Show("薪號少於 8 碼，請再次輸入。");
+                return;
+            }
+            //....帳號必須都是數字
+            for (int i = 0; i < UR001.Length; i++)
+            {
+                string subUR001 = UR001.Substring(i, 1);
+                if (Array.IndexOf(arrNum, subUR001) == -1)
+                {
+                    MessageBox.Show("不可輸入非數字，請再次輸入。");
+                    return;
+                }
+            }
 
             //確定要 Insert 的帳號是否已存在資料庫
-            UR001 = tbxStaffAcount.Text.Trim(); //人員帳號(UR001)
             strSQL = "Select * From USERS Where 1 = 1 And UR001 = '" + UR001 + "'";
             dt = USQL.SQLSelect(ref da, strSQL);
 
@@ -92,7 +162,10 @@ namespace P2214201
             try
             {
                 if (strDemand != "")
+                {
                     dgvStaff.DataSource = USQL.SQLSelect(ref da, strDemand);
+                    dgvStaff.ClearSelection();
+                }
             }
             catch(Exception Ex)
             { }
@@ -137,7 +210,10 @@ namespace P2214201
             try
             {
                 if (strDemand != "")
+                {
                     dgvStaff.DataSource = USQL.SQLSelect(ref da, strDemand);
+                    dgvStaff.ClearSelection();
+                }
             }
             catch (Exception Ex)
             { }
@@ -171,7 +247,10 @@ namespace P2214201
             try
             {
                 if (strDemand != "")
+                {
                     dgvStaff.DataSource = USQL.SQLSelect(ref da, strDemand);
+                    dgvStaff.ClearSelection();
+                }
             }
             catch (Exception Ex)
             { }
@@ -217,7 +296,7 @@ namespace P2214201
                 MessageBox.Show("輸入條件未查詢到任何資料。");
 
             dgvStaff.DataSource = dt;
-
+            dgvStaff.ClearSelection();
             //清空所有可填入欄位
             ClearForm();
         }

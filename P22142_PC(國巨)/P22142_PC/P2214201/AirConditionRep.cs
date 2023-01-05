@@ -11,13 +11,14 @@ namespace P2214201
     {
         //公用變數
         public string UserAccount, UserName, UserRole;
+        public double oldWidth, oldHeight, newWidth, newHeight;
         UseSQLServer USQL = new UseSQLServer();
         DataAccess da = new DataAccess();
         DataTable dt = new DataTable();
         DbTransaction objTrans;
         DealRecord drc = new DealRecord();
 
-        int COH001, COB001;
+        int COH001, COB001, COB002;
         string FT001, CG001, CG002, MN001, MN002;
         string COH002, COH003, COH004, COH005, COH006, COH007, COH008, COH009, COH010, COH011;
         string COB003, COB004, COB005, COB006, COB007, COB008, COB009, COB010, COB011, COB012, COB013, COB014, COB015;
@@ -25,14 +26,67 @@ namespace P2214201
         CheckBox ckHeader_From = new CheckBox();
         CheckBox ckHeader_To = new CheckBox();
         Rectangle rect_From, rect_To;
-
-
-
+        
         public AirConditionRep()
         {
             InitializeComponent();
         }
 
+        private void AirConditionRep_Resize(object sender, EventArgs e)
+        {
+            int NewX;
+
+            if (oldWidth > 0 && oldHeight > 0 && newWidth > 0 && newHeight > 0)
+            {
+                double x = (newWidth / oldWidth);
+                double y = (newHeight / oldHeight);
+
+                dgvAirConditionFrom.Width = Convert.ToInt32(x * dgvAirConditionFrom.Width);
+                dgvAirConditionFrom.Height = Convert.ToInt32(y * dgvAirConditionFrom.Height);
+
+                btnLeft.Width = Convert.ToInt32(x * btnLeft.Width);
+                btnLeft.Height = Convert.ToInt32(y * btnLeft.Height);
+                NewX = (int)(dgvAirConditionFrom.Width + 6 * x);
+                btnLeft.Location = new Point(NewX, btnLeft.Location.Y);
+
+                btnRight.Width = Convert.ToInt32(x * btnRight.Width);
+                btnRight.Height = Convert.ToInt32(y * btnRight.Height);
+                btnRight.Location = new Point(NewX, btnRight.Location.Y);
+
+                dgvAirConditionTo.Width = Convert.ToInt32(x * dgvAirConditionTo.Width);
+                dgvAirConditionTo.Height = Convert.ToInt32(y * dgvAirConditionTo.Height);
+                NewX += (int)(btnRight.Width + 6 * x);
+                dgvAirConditionTo.Location = new Point(NewX, dgvAirConditionTo.Location.Y);
+                
+                gbxFun.Width = Convert.ToInt32(x * gbxFun.Width);
+                gbxFun.Height = Convert.ToInt32(y * gbxFun.Height);
+                gbxShow.Width = Convert.ToInt32(x * gbxShow.Width);
+                gbxShow.Height = Convert.ToInt32(y * gbxShow.Height);
+
+                NewX = (int)(btnAirConditionRepAdd.Location.X * x + btnAirConditionRepAdd.Width * (x - 1));
+                btnAirConditionRepAdd.Location = new Point(NewX, btnAirConditionRepAdd.Location.Y);
+                btnAirConditionRepAdd.Width = Convert.ToInt32(x * btnAirConditionRepAdd.Width);
+                btnAirConditionRepAdd.Height = Convert.ToInt32(y * btnAirConditionRepAdd.Height);
+
+                NewX = (int)(btnAirConditionRepModify.Location.X * x + btnAirConditionRepModify.Width * (x - 1));
+                btnAirConditionRepModify.Location = new Point(NewX, btnAirConditionRepModify.Location.Y);
+                btnAirConditionRepModify.Width = Convert.ToInt32(x * btnAirConditionRepModify.Width);
+                btnAirConditionRepModify.Height = Convert.ToInt32(y * btnAirConditionRepModify.Height);
+
+                NewX = (int)(btnAirConditionRepDelete.Location.X * x + btnAirConditionRepDelete.Width * (x - 1));
+                btnAirConditionRepDelete.Location = new Point(NewX, btnAirConditionRepDelete.Location.Y);
+                btnAirConditionRepDelete.Width = Convert.ToInt32(x * btnAirConditionRepDelete.Width);
+                btnAirConditionRepDelete.Height = Convert.ToInt32(y * btnAirConditionRepDelete.Height);
+            }
+        }
+
+        private void AirConditionRep_Paint(object sender, PaintEventArgs e)
+        {
+            Graphics g = e.Graphics;
+            System.Drawing.Drawing2D.LinearGradientBrush lb = new System.Drawing.Drawing2D.LinearGradientBrush(this.DisplayRectangle, Color.Linen, Color.DarkTurquoise, 45);
+            g.FillRectangle(lb, this.DisplayRectangle);
+        }
+        
         private void AirConditionRep_Load(object sender, EventArgs e)
         {
             //參數
@@ -41,14 +95,10 @@ namespace P2214201
 
             //DataGridView 設定
             //....dgvAirConditionFrom
-            dgvAirConditionFrom.RowsDefaultCellStyle.Font = new Font("微軟正黑體", 9, FontStyle.Regular);
-            dgvAirConditionFrom.ColumnHeadersDefaultCellStyle.Font = new Font("微軟正黑體", 6, FontStyle.Regular);
-            dgvAirConditionFrom.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            drc.SetDataGridView(ref dgvAirConditionFrom);
 
             //....dgvAirConditionTo
-            dgvAirConditionTo.RowsDefaultCellStyle.Font = new Font("微軟正黑體", 9, FontStyle.Regular);
-            dgvAirConditionTo.ColumnHeadersDefaultCellStyle.Font = new Font("微軟正黑體", 6, FontStyle.Regular);
-            dgvAirConditionTo.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            drc.SetDataGridView(ref dgvAirConditionTo);
 
             //填入 廠房代號(cbxFactoryCode)
             strSQL = "Select * From FACTORYS";
@@ -77,16 +127,16 @@ namespace P2214201
          //新增 功能
          //********************************************************************
             //參數
-            int i, arrNo, MaxCOH;
+            int i, arrNo, MaxCOH, MaxCOB;
             string strSQL;
 
             //寫入資料庫_HEADS
             //....取得 VACUUM_HEADS 下一序號
             strSQL = "SELECT ISNULL(MAX(COH001),0) as COH001 FROM COLDAIR_HEADS";
             dt = USQL.SQLSelect(ref da, strSQL);
-            MaxCOH = int.Parse(dt.Rows[0]["COH001"].ToString()) + 1;
+            MaxCOH = int.Parse(dt.Rows[0]["COH001"].ToString());
 
-            COH001 = MaxCOH;                                       //流水序號(COH001)
+            COH001 = MaxCOH + 1;                                   //流水序號(COH001)
             COH002 = cbxFactoryCode.Text;                          //廠房代號(COH002)
             COH003 = USQL.FindCG("", cbxCategorysName.Text);       //類別代號(COH003)
             COH004 = cbxMachineCode.Text;                          //機械編號代號 (COH004)
@@ -115,6 +165,10 @@ namespace P2214201
             //寫入資料庫_BODYS
             //....記錄 arrCGA 共有多少項目
             arrNo = arrCGA.Length;
+            //....取得 VACUUM_BODYS 下一序號
+            strSQL = "SELECT ISNULL(MAX(COB002),0) as COB002 FROM COLDAIR_BODYS";
+            dt = USQL.SQLSelect(ref da, strSQL);
+            MaxCOB = int.Parse(dt.Rows[0]["COB002"].ToString());
             //....依序執行寫入資料庫動作
             for (i = 0; i < arrNo; i++)
             {
@@ -124,8 +178,8 @@ namespace P2214201
                     strSQL = "Select * From CHECKITEMS Where CK001 = '" + COB003 + "'";
                     dt = USQL.SQLSelect(ref da, strSQL);
 
-                    COB001 = MaxCOH;                                     //流水序號(COB001)
-                    //流水序號(COB002)：因該欄位被設定為"自動識別"欄位，故不需加入 Insert 語法。
+                    COB001 = MaxCOH + 1;                                 //流水序號(COB001)
+                    COB002 = MaxCOB + (i + 1);                           //流水序號(COB002)
                     COB004 = dt.Rows[0]["CK002"].ToString();             //檢查項目名稱(COB004)
                     COB005 = dt.Rows[0]["CK003"].ToString();             //參考 起(COB005)
                     COB006 = dt.Rows[0]["CK004"].ToString();             //中間符號(COB006）
@@ -139,8 +193,8 @@ namespace P2214201
                     COB014 = dt.Rows[0]["CK014"].ToString();             //備用(COB014)
                     COB015 = "N";                                        //是否作廢(COB015)
 
-                    strSQL = "Insert into COLDAIR_BODYS Values (";
-                    strSQL += COB001 + ",'"  + COB003 + "','" + COB004 + "','" + COB005 + "','" + COB006 + "','" + COB007 + "','" + COB008 + "','";
+                    strSQL = "Insert into COLDAIR_BODYS (COB001,COB002,COB003,COB004,COB005,COB006,COB007,COB008,COB009,COB010,COB011,COB012,COB013,COB014,COB015) Values (";
+                    strSQL += COB001 +  ","  + COB002 +  ",'" + COB003 + "','" + COB004 + "','" + COB005 + "','" + COB006 + "','" + COB007 + "','" + COB008 + "','";
                     strSQL += COB009 + "','" + COB010 + "','" + COB011 + "','" + COB012 + "','" + COB013 + "','" + COB014 + "','" + COB015 + "')";
 
                     try
@@ -293,6 +347,7 @@ namespace P2214201
                 strSQL = drc.DGVShowSQL(CG001, 2, arrCGA, FT001, "NOT");
                 dt = USQL.SQLSelect(ref da, strSQL);
                 dgvAirConditionFrom.DataSource = dt;
+                dgvAirConditionFrom.ClearSelection();
                 //....3.全都 僅可讀
                 for (i = 0; i < dgvAirConditionFrom.Columns.Count; i++)
                     dgvAirConditionFrom.Columns[i].ReadOnly = true;
@@ -309,9 +364,18 @@ namespace P2214201
                 dgvAirConditionTo.Columns.Add(colFrom);
                 //....4.寫入
                 dgvAirConditionTo.DataSource = dt;
+                dgvAirConditionTo.ClearSelection();
                 //....5.除了第一行外，其他行都 僅可讀
                 for (i = 1; i < dgvAirConditionTo.Columns.Count; i++)
                     dgvAirConditionTo.Columns[i].ReadOnly = true;
+                //....6.若該筆為"作廢"，按鈕反黑。
+                for (i = 0; i < dgvAirConditionTo.Rows.Count - 1; i++)
+                {
+                    var cell = ((DataGridViewButtonCell)dgvAirConditionTo.Rows[i].Cells[0]);
+                    cell.FlatStyle = FlatStyle.Flat;
+                    if (dgvAirConditionTo.Rows[i].Cells[6].Value.ToString() == "Y")
+                        dgvAirConditionTo.Rows[i].Cells[0].Style.BackColor = Color.Black;
+                }
                 //隱藏 btnLeft 及 btnRight
                 btnLeft.Visible = false;
                 btnRight.Visible = false;
@@ -348,7 +412,7 @@ namespace P2214201
                 dgvAirConditionFrom.Controls.Add(ckHeader_From);
                 //....寫入
                 dgvAirConditionFrom.DataSource = dt;
-
+                dgvAirConditionFrom.ClearSelection();
                 //....除了第一行外，其他行都 僅可讀
                 for (i = 1; i < dgvAirConditionFrom.Columns.Count; i++)
                     dgvAirConditionFrom.Columns[i].ReadOnly = true;
@@ -378,6 +442,7 @@ namespace P2214201
 
                 dgvAirConditionTo.Controls.Add(ckHeader_To);
                 dgvAirConditionTo.DataSource = dt;
+                dgvAirConditionTo.ClearSelection();
                 //....除了第一行外，其他行都 僅可讀
                 for (i = 1; i < dgvAirConditionTo.Columns.Count; i++)
                     dgvAirConditionTo.Columns[i].ReadOnly = true;
@@ -408,10 +473,12 @@ namespace P2214201
             strSQL = drc.DGVShowSQL(CG001, 2, arrCGA, FT001, "IN");
             dt = USQL.SQLSelect(ref da, strSQL);
             dgvAirConditionTo.DataSource = dt;
+            dgvAirConditionTo.ClearSelection();
 
             strSQL = drc.DGVShowSQL(CG001, 2, arrCGA, FT001, "NOT");
             dt = USQL.SQLSelect(ref da, strSQL);
             dgvAirConditionFrom.DataSource = dt;
+            dgvAirConditionFrom.ClearSelection();
 
             //新增 按鈕可按，修改、刪除 按鈕不可按
             isEnable("Y", "N", "N", "", "");
@@ -437,10 +504,12 @@ namespace P2214201
             strSQL = drc.DGVShowSQL(CG001, 2, arrCGA, FT001, "NOT");
             dt = USQL.SQLSelect(ref da, strSQL);
             dgvAirConditionFrom.DataSource = dt;
+            dgvAirConditionFrom.ClearSelection();
 
             strSQL = drc.DGVShowSQL(CG001, 2, arrCGA, FT001, "IN");
             dt = USQL.SQLSelect(ref da, strSQL);
             dgvAirConditionTo.DataSource = dt;
+            dgvAirConditionTo.ClearSelection();
 
             //DataGridView To 回傳值到 DataGridView From，並且 DataGridView To 已沒有值時，新增按鈕消失
             if (dt.Rows.Count == 0)
@@ -458,9 +527,19 @@ namespace P2214201
             {
                 COB015 = grid.Rows[e.RowIndex].Cells[6].Value.ToString();
                 if (COB015 == "N")
+                {
+                    var cell = ((DataGridViewButtonCell)grid.Rows[e.RowIndex].Cells[0]);
+                    cell.FlatStyle = FlatStyle.Flat;
+                    grid.Rows[e.RowIndex].Cells[0].Style.BackColor = Color.Black;
                     grid.Rows[e.RowIndex].Cells[6].Value = "Y";
-                else
+                }
+                else if (COB015 == "Y")
+                {
+                    var cell = ((DataGridViewButtonCell)grid.Rows[e.RowIndex].Cells[0]);
+                    cell.FlatStyle = FlatStyle.Flat;
+                    grid.Rows[e.RowIndex].Cells[0].Style.BackColor = Color.White;
                     grid.Rows[e.RowIndex].Cells[6].Value = "N";
+                }
             }
         }
         private void cbHeader_CheckedChanged_From(object sender, EventArgs e)

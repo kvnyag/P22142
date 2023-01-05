@@ -11,13 +11,14 @@ namespace P2214201
     {
         //公用變數
         public string UserAccount, UserName, UserRole;
+        public double oldWidth, oldHeight, newWidth, newHeight;
         UseSQLServer USQL = new UseSQLServer();
         DataAccess da = new DataAccess();
         DataTable dt = new DataTable();
         DbTransaction objTrans;
         DealRecord drc = new DealRecord();
 
-        int CAH001, CAB001;
+        int CAH001, CAB001, CAB002;
         string FT001, CG001, CG002, MN001, MN002;
         string CAH002, CAH003, CAH004, CAH005, CAH006, CAH007, CAH008, CAH009, CAH010, CAH011;
         string CAB003, CAB004, CAB005, CAB006, CAB007, CAB008, CAB009, CAB010, CAB011, CAB012, CAB013, CAB014, CAB015;
@@ -31,6 +32,62 @@ namespace P2214201
             InitializeComponent();
         }
 
+        private void CompressRep_Resize(object sender, EventArgs e)
+        {
+            int NewX;
+
+            if (oldWidth > 0 && oldHeight > 0 && newWidth > 0 && newHeight > 0)
+            {
+                double x = (newWidth / oldWidth);
+                double y = (newHeight / oldHeight);
+
+                dgvCompressFrom.Width = Convert.ToInt32(x * dgvCompressFrom.Width);
+                dgvCompressFrom.Height = Convert.ToInt32(y * dgvCompressFrom.Height);
+
+                btnLeft.Width = Convert.ToInt32(x * btnLeft.Width);
+                btnLeft.Height = Convert.ToInt32(y * btnLeft.Height);
+                NewX = (int)(dgvCompressFrom.Width + 6 * x);
+                btnLeft.Location = new Point(NewX, btnLeft.Location.Y);
+
+                btnRight.Width = Convert.ToInt32(x * btnRight.Width);
+                btnRight.Height = Convert.ToInt32(y * btnRight.Height);
+                btnRight.Location = new Point(NewX, btnRight.Location.Y);
+
+                dgvCompressTo.Width = Convert.ToInt32(x * dgvCompressTo.Width);
+                dgvCompressTo.Height = Convert.ToInt32(y * dgvCompressTo.Height);
+                NewX += (int)(btnRight.Width + 6 * x);
+                dgvCompressTo.Location = new Point(NewX, dgvCompressTo.Location.Y);
+
+
+                gbxFun.Width = Convert.ToInt32(x * gbxFun.Width);
+                gbxFun.Height = Convert.ToInt32(y * gbxFun.Height);
+                gbxShow.Width = Convert.ToInt32(x * gbxShow.Width);
+                gbxShow.Height = Convert.ToInt32(y * gbxShow.Height);
+
+                NewX = (int)(btnCompressRepAdd.Location.X * x + btnCompressRepAdd.Width * (x - 1));
+                btnCompressRepAdd.Location = new Point(NewX, btnCompressRepAdd.Location.Y);
+                btnCompressRepAdd.Width = Convert.ToInt32(x * btnCompressRepAdd.Width);
+                btnCompressRepAdd.Height = Convert.ToInt32(y * btnCompressRepAdd.Height);
+
+                NewX = (int)(btnCompressRepModify.Location.X * x + btnCompressRepModify.Width * (x - 1));
+                btnCompressRepModify.Location = new Point(NewX, btnCompressRepModify.Location.Y);
+                btnCompressRepModify.Width = Convert.ToInt32(x * btnCompressRepModify.Width);
+                btnCompressRepModify.Height = Convert.ToInt32(y * btnCompressRepModify.Height);
+
+                NewX = (int)(btnCompressRepDelete.Location.X * x + btnCompressRepDelete.Width * (x - 1));
+                btnCompressRepDelete.Location = new Point(NewX, btnCompressRepDelete.Location.Y);
+                btnCompressRepDelete.Width = Convert.ToInt32(x * btnCompressRepDelete.Width);
+                btnCompressRepDelete.Height = Convert.ToInt32(y * btnCompressRepDelete.Height);
+            }
+        }
+
+        private void CompressRep_Paint(object sender, PaintEventArgs e)
+        {
+            Graphics g = e.Graphics;
+            System.Drawing.Drawing2D.LinearGradientBrush lb = new System.Drawing.Drawing2D.LinearGradientBrush(this.DisplayRectangle, Color.Linen, Color.DarkTurquoise, 45);
+            g.FillRectangle(lb, this.DisplayRectangle);
+        }
+
         private void CompressRep_Load(object sender, EventArgs e)
         {
             //參數
@@ -39,14 +96,10 @@ namespace P2214201
 
             //DataGridView 設定
             //....dgvVacuumFrom
-            dgvCompressFrom.RowsDefaultCellStyle.Font = new Font("微軟正黑體", 9, FontStyle.Regular);
-            dgvCompressFrom.ColumnHeadersDefaultCellStyle.Font = new Font("微軟正黑體", 6, FontStyle.Regular);
-            dgvCompressFrom.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            drc.SetDataGridView(ref dgvCompressFrom);
 
             //....dgvVacuumTo
-            dgvCompressTo.RowsDefaultCellStyle.Font = new Font("微軟正黑體", 9, FontStyle.Regular);
-            dgvCompressTo.ColumnHeadersDefaultCellStyle.Font = new Font("微軟正黑體", 6, FontStyle.Regular);
-            dgvCompressTo.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            drc.SetDataGridView(ref dgvCompressTo);
 
             //填入 廠房代號(cbxFactoryCode)
             strSQL = "Select * From FACTORYS";
@@ -75,7 +128,7 @@ namespace P2214201
          //新增 功能
          //********************************************************************
             //參數
-            int i, arrNo, MaxCAH;
+            int i, arrNo, MaxCAH, MaxCAB;
             string strSQL;
 
             //寫入資料庫_HEADS
@@ -113,6 +166,10 @@ namespace P2214201
             //寫入資料庫_BODYS
             //....記錄 arrCGA 共有多少項目
             arrNo = arrCGA.Length;
+            //....取得 COMPRESSEDAIR_BODYS 下一序號
+            strSQL = "SELECT ISNULL(MAX(CAB002),0) as CAB002 FROM COMPRESSEDAIR_BODYS";
+            dt = USQL.SQLSelect(ref da, strSQL);
+            MaxCAB = int.Parse(dt.Rows[0]["CAB002"].ToString());
             //....依序執行寫入資料庫動作
             for (i = 0; i < arrNo; i++)
             {
@@ -123,7 +180,7 @@ namespace P2214201
                     dt = USQL.SQLSelect(ref da, strSQL);
 
                     CAB001 = MaxCAH + 1;                                 //流水序號(CAB001)
-                    //流水序號(VMB002)：因該欄位被設定為"自動識別"欄位，故不需加入 Insert 語法。
+                    CAB002 = MaxCAB + (i + 1);                           //流水序號(VMB002)
                     CAB004 = dt.Rows[0]["CK002"].ToString();             //檢查項目名稱(VMB004)
                     CAB005 = dt.Rows[0]["CK003"].ToString();             //參考 起(VMB005)
                     CAB006 = dt.Rows[0]["CK004"].ToString();             //中間符號(VMB006）
@@ -137,8 +194,8 @@ namespace P2214201
                     CAB014 = dt.Rows[0]["CK014"].ToString();             //備用(VMB014)
                     CAB015 = "N";                                        //是否作廢(VMB015)
 
-                    strSQL = "Insert into COMPRESSEDAIR_BODYS Values (";
-                    strSQL += CAB001 + ",'"  + CAB003 + "','" + CAB004 + "','" + CAB005 + "','" + CAB006 + "','" + CAB007 + "','" + CAB008 + "','";
+                    strSQL = "Insert into COMPRESSEDAIR_BODYS (CAB001,CAB002,CAB003,CAB004,CAB005,CAB006,CAB007,CAB008,CAB009,CAB010,CAB011,CAB012,CAB013,CAB014,CAB015) Values (";
+                    strSQL += CAB001 +  ","  + CAB002 +  ",'" + CAB003 + "','" + CAB004 + "','" + CAB005 + "','" + CAB006 + "','" + CAB007 + "','" + CAB008 + "','";
                     strSQL += CAB009 + "','" + CAB010 + "','" + CAB011 + "','" + CAB012 + "','" + CAB013 + "','" + CAB014 + "','" + CAB015 + "')";
 
                     try
@@ -295,6 +352,7 @@ namespace P2214201
                 strSQL = drc.DGVShowSQL(CG001, 2, arrCGA, FT001, "NOT");
                 dt = USQL.SQLSelect(ref da, strSQL);
                 dgvCompressFrom.DataSource = dt;
+                dgvCompressFrom.ClearSelection();
                 //....3.全都 僅可讀
                 for (i = 0; i < dgvCompressFrom.Columns.Count; i++)
                     dgvCompressFrom.Columns[i].ReadOnly = true;
@@ -311,9 +369,18 @@ namespace P2214201
                 dgvCompressTo.Columns.Add(colFrom);
                 //....4.寫入
                 dgvCompressTo.DataSource = dt;
+                dgvCompressTo.ClearSelection();
                 //....5.除了第一行外，其他行都 僅可讀
                 for (i = 1; i < dgvCompressTo.Columns.Count; i++)
                     dgvCompressTo.Columns[i].ReadOnly = true;
+                //....6.若該筆為"作廢"，按鈕反黑。
+                for (i = 0; i < dgvCompressTo.Rows.Count - 1; i++)
+                {
+                    var cell = ((DataGridViewButtonCell)dgvCompressTo.Rows[i].Cells[0]);
+                    cell.FlatStyle = FlatStyle.Flat;
+                    if (dgvCompressTo.Rows[i].Cells[6].Value.ToString() == "Y")
+                        dgvCompressTo.Rows[i].Cells[0].Style.BackColor = Color.Black;
+                }
                 //隱藏 btnLeft 及 btnRight
                 btnLeft.Visible = false;
                 btnRight.Visible = false;
@@ -348,7 +415,7 @@ namespace P2214201
                 dgvCompressFrom.Controls.Add(ckHeader_From);
                 //....寫入
                 dgvCompressFrom.DataSource = dt;
-
+                dgvCompressFrom.ClearSelection();
                 //....除了第一行外，其他行都 僅可讀
                 for (i = 1; i < dgvCompressFrom.Columns.Count; i++)
                     dgvCompressFrom.Columns[i].ReadOnly = true;
@@ -378,6 +445,7 @@ namespace P2214201
 
                 dgvCompressTo.Controls.Add(ckHeader_To);
                 dgvCompressTo.DataSource = dt;
+                dgvCompressTo.ClearSelection();
                 //....除了第一行外，其他行都 僅可讀
                 for (i = 1; i < dgvCompressTo.Columns.Count; i++)
                     dgvCompressTo.Columns[i].ReadOnly = true;
@@ -413,7 +481,7 @@ namespace P2214201
             strSQL = drc.DGVShowSQL(CG001, 2, arrCGA, FT001, "NOT");
             dt = USQL.SQLSelect(ref da, strSQL);
             dgvCompressFrom.DataSource = dt;
-
+            dgvCompressFrom.ClearSelection();
             //新增 按鈕可按，修改、刪除 按鈕不可按
             isEnable("Y", "N", "N", "", "");
         }
@@ -443,7 +511,7 @@ namespace P2214201
             strSQL = drc.DGVShowSQL(CG001, 2, arrCGA, FT001, "IN");
             dt = USQL.SQLSelect(ref da, strSQL);
             dgvCompressTo.DataSource = dt;
-
+            dgvCompressTo.ClearSelection();
             //DataGridView To 回傳值到 DataGridView From，並且 DataGridView To 已沒有值時，新增按鈕消失
             if (dt.Rows.Count == 0)
                 btnCompressRepAdd.Enabled = false;
@@ -461,9 +529,19 @@ namespace P2214201
             {
                 CAB015 = grid.Rows[e.RowIndex].Cells[6].Value.ToString();
                 if (CAB015 == "N")
+                {
+                    var cell = ((DataGridViewButtonCell)grid.Rows[e.RowIndex].Cells[0]);
+                    cell.FlatStyle = FlatStyle.Flat;
+                    grid.Rows[e.RowIndex].Cells[0].Style.BackColor = Color.Black;
                     grid.Rows[e.RowIndex].Cells[6].Value = "Y";
-                else
+                }
+                else if (CAB015 == "Y")
+                {
+                    var cell = ((DataGridViewButtonCell)grid.Rows[e.RowIndex].Cells[0]);
+                    cell.FlatStyle = FlatStyle.Flat;
+                    grid.Rows[e.RowIndex].Cells[0].Style.BackColor = Color.White;
                     grid.Rows[e.RowIndex].Cells[6].Value = "N";
+                }
             }
         }
         private void cbHeader_CheckedChanged_From(object sender, EventArgs e)
